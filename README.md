@@ -1,6 +1,6 @@
-# Story Chain #
+# Luna #
 
-*So you think you can write?*
+*Private Practice for Holistic Sexuality for Woman*
 
 ![Header Image](/static/images/hero-header.jpg)
 
