@@ -1,6 +1,6 @@
 # Dark Luna #
 
-*Private Practice for Holistic Sexuality for Woman*
+## Private Practice for Holistic Sexuality for Woman ##
 
 ![Header Image](/static/images/hero-header.jpg)
 
@@ -52,7 +52,7 @@
 
 ## Project goals ##
 
-Supply a website that woman who have hormonal related issues like problem with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointment for session so they can start getting healthier again.
+Supply a website that woman who have hormonal related issues, like problems with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointments for sessions so they can start getting healthier again.
 
 ## UX ##
 
@@ -145,7 +145,9 @@ Icons used are from [Font Awesome.](https://fontawesome.com/) The are used in mo
 For the structure I have used [Bootstrap.](https://getbootstrap.com/)
 
 ## Wireframes, Flowcharts and Data Models ##
+
 WIP
+
 ### Wireframes ###
 
 For wireframing I have used [Pencil.](https://pencil.evolus.vn/)
@@ -154,13 +156,12 @@ View my wireframes [here]().
 
 ### Flowcharts ###
 
-
 ### Data Models ###
 
-
 #### Database Structure ####
+
 WIP
-For this project I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) as a database.It contains... 
+For this project I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) as a database.It contains...
 
 A more accurate Data model can be viewed here:
 
@@ -172,15 +173,16 @@ A more accurate Data model can be viewed here:
 
 - Registration functionality
 - Log In and Out functionality
-- 
-- 
+-
+-
 - CRUD Functions:
-  - Create: 
-  - Read: 
-  - Update: 
-  - Delete: 
+  - Create:
+  - Read:
+  - Update:
+  - Delete:
 
 ### The Big Struggle ###
+
 Might not be needed
 
 ### Features to be implemented ###
@@ -229,29 +231,22 @@ The site was tested by using the LightHouse function for Chromium Developer Tool
 
 ### Testing user stories ###
 
-
-
 ## Manual testing ##
 
 All manual testing was done using Chromium Developer Tools and testing on an iPhone 11 and an iPad Pro.
 
 Home
 
-
 Register
-
-
 
 Log In
 
-
-
 ### From validating ###
 
-- Python code has been validated for pep8 compliance with [pep8 validator](http://pep8online.com/) 
-- HTML code has been validated with [HTML validator](https://validator.w3.org/nu/) 
-- CSS code has been validated with [CSS validator](https://jigsaw.w3.org/css-validator/). 
-- JS code has been run through [Esprima](https://esprima.org/index.html) 
+- Python code has been validated for pep8 compliance with [pep8 validator](http://pep8online.com/)
+- HTML code has been validated with [HTML validator](https://validator.w3.org/nu/)
+- CSS code has been validated with [CSS validator](https://jigsaw.w3.org/css-validator/)
+- JS code has been run through [Esprima](https://esprima.org/index.html)
 
 ## Bugs ##
 
@@ -265,36 +260,23 @@ Name
 
 - Verdict:
 
-
-
 ### From peer code review ###
 
-
 ### From friends and family testing ###
-
 
 ## Deployment ##
 
 ### Local Deployment ###
 
-
 **To clone the project:**
-
 
 **To deploy your project on Heroku, use the following steps:**
 
-
-
 **Requirements:**
-
-
 
 **Procfile:**
 
-
-
 **And then:**
-
 
 ## Credit ##
 
@@ -302,8 +284,6 @@ Credits
     • Texts are all created by myself or the client who wrote the testimonials.
 
 ### Image credits ###
-
-
 
 ### Special thanks ###
 
