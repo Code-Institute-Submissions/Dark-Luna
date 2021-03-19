@@ -1,4 +1,4 @@
-# Luna #
+# Dark Luna #
 
 *Private Practice for Holistic Sexuality for Woman*
 
@@ -52,7 +52,7 @@
 
 ## Project goals ##
 
-Supply a website that woman who have hormonal related issues and more general life questions can go to and get information and book appointment for session so they can start getting healthier again.
+Supply a website that woman who have hormonal related issues like problem with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointment for session so they can start getting healthier again.
 
 ## UX ##
 
