@@ -24,7 +24,6 @@
   - [Structure](#structure)
 - [Wireframes, Flowcharts and Data Models](#wireframes--flowcharts-and-data-models)
   - [Wireframes](#wireframes)
-  - [Flowcharts](#flowcharts)
   - [Data Models](#data-models)
     - [Database Structure](#database-structure)
 - [Features](#features)
@@ -157,18 +156,17 @@ For wireframing I have used [Pencil.](https://pencil.evolus.vn/)
 
 View my wireframes [here]().
 
-### Flowcharts ###
-
 ### Data Models ###
+
+Data models can be viewed here. WIP
 
 #### Database Structure ####
 
 WIP
-For this project I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) as a database.It contains...
+During the development, I worked with sqlite3 databases, installed with Django. For production I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql).
 
-A more accurate Data model can be viewed here:
+* The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
 
-![dbdiagram]()
 
 ## Features ##
 
