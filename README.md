@@ -66,7 +66,7 @@ Supply a website that woman who have hormonal related issues, like problems with
 
 ### Scope ###
 
-An easy to navigate and responsive website that is fun to use and allows users to perform CRUD operations. Users can sign up and, once logged in, the can either buy products or book appointments. These users manage their purchases and bookings, meaning they can edit and delete them when they want.
+An easy to navigate and responsive website that is fun to use and allows users as well as site owners, to perform CRUD operations. Users can sign up and, once logged in, the can either buy products or book appointments. These users manage their purchases and bookings, meaning they can edit and delete them when they want.
 Also, they can update their password and username and even delete their account.
 
 ## Structure of the website ##
@@ -78,7 +78,7 @@ On all pages where services or products are offered, they are prompted to regist
 
 ### View for logged in user ###
 
-A logged in user will benefit from the full functionality of the site. The navigation will contain extra: 'Account(Icon)' and 'Logout'.
+A logged in user will benefit from the full functionality of the site. The navigation will contain extra: 'Logout'.
 This user is able to book appointments, book workshops and buy products they might need for exercises given in sessions.
 In the profile there are also functions for changing once username, password and even delete their account.
 
@@ -112,6 +112,7 @@ See ["User Stories"](#user-stories)
 
 ## Design Choices ##
 
+I have decided on a clean, but playful look and feel for this project. There are many images, short texts with read more options and video's to support the textual content.
 WIP
 
 ### When and why i've diverted from the wireframes ###
@@ -119,6 +120,8 @@ WIP
 WIP
 
 ### Colors ###
+
+I have chosen the following colours I have taken from the logo to support the connection between the logo and the site itself:
 
 WIP
 
@@ -284,6 +287,8 @@ Credits
     • Texts are all created by myself or the client who wrote the testimonials.
 
 ### Image credits ###
+
+Favicon generated with: [Favicon generator](https://www.favicon-generator.org/)
 
 ### Special thanks ###
 
