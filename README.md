@@ -2,7 +2,7 @@
 
 ## Private Practice for Holistic Sexuality for Woman ##
 
-![Header Image](/static/images/hero-header.jpg)
+![Header Image](/readmecontent/logo.png)
 
 - [Project goals](#project-goals)
 - [UX](#ux)
