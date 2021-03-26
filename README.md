@@ -123,25 +123,33 @@ WIP
 
 I have chosen the following colours I have taken from the logo to support the connection between the logo and the site itself:
 
-WIP
+#580c2d for headers and titles
+#15020a for the company name and body texts
+#79113F for section backgrounds
+#ffffff for body background
 
 I have used [Coolors](https://coolors.co/) for creating a color scheme.
 
-![Color scheme]()
+![Color scheme](/readmecontent/darklunacolours.png)
 
 I have used a contrast checker in order to make sure that the contrast is sufficient. This way my content will be easily readable.
 
 ### Fonts ###
 
-The fonts I’ll be using are:
+For headers, titles and company name: [Oregano](https://fonts.google.com/specimen/Oregano?preview.text=&preview.text_type=custom)
 
-WIP
+For body text:
+[Open Sans](https://fonts.google.com/specimen/Open+Sans?preview.text_type=custom)
 
 Fonts are from [Google Fonts.](https://fonts.google.com/)
 
 ### Icons ###
 
 Icons used are from [Font Awesome.](https://fontawesome.com/) The are used in moderation and match the colors and overall feel of the design.
+
+[Shopping bag](https://fontawesome.com/icons/shopping-bag?style=solid)
+
+[Account icon](https://fontawesome.com/icons/user-circle?style=solid)
 
 ### Structure ###
 
