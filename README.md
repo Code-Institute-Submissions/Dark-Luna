@@ -366,7 +366,7 @@ All of the mentioned above are already installed in this project in the requirem
 * Set the following config variables there: 
 
 | KEY                  | Value    | 
-| :-------------       | :----------: | 
+| :-------------       | :---------- | 
 |AWS_ACCESS_KEY_ID     | your aws access key  | 
 |AWS_SECRET_ACCESS_KEY | your aws secret access key |
 |DATABASE_URL          |  your postgres database url|
