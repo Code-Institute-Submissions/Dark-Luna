@@ -163,7 +163,11 @@ WIP
 
 For wireframing I have used [LucidChart](https://www.lucidchart.com/pages/)
 
-View my wireframes [here]().
+View my wireframes:
+
+[Mobile](/readmecontent/mobile.pdf)
+
+[Tablet and desktop](/readmecontent/tabletdesktop.pdf)
 
 ### Data Models ###
 
