@@ -180,6 +180,25 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 * The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
 
+## Profile app ##
+
+| Name                 | Database Key         | Field Type           | Validation                                                      |
+|----------------------|----------------------|----------------------|-----------------------------------------------------------------|
+| User                 | user                 | OneToOneField 'User' | on_delete=models.CASCADE                                        |
+| Full Name            | full_name            | CharField            | max_length=200, null=True, blank=True                           |
+| First Name           | first_name           | models.CharField     | max_length=100, null=True, blank=True                           |
+| Last Name            | last_name            | models.CharField     | max_length=100, null=True, blank=True                           |
+| Email Address        | email_address        | models.EmailField    | max_length=254, null=False, blank=True                          |
+| Phone Number         | phone_number         | models.CharField     | max_length=20, null=True, blank=True                            |
+| Street Address 1     | street_address1      | models.CharField     | max_length=80, null=True, blank=True                            |
+| Street Address 2     | street_address2      | models.CharField     | max_length=80, null=True, blank=True                            |
+| Postcode             | postcode             | models.CharField     | max_length=20, null=True, blank=True                            |
+| Town or City         | town_or_city         | models.CharField     | max_length=40, null=True, blank=True                            |
+| County               | county               | models.CharField     | max_length=80, null=True, blank=True                            |
+| Country              | country              | CountryField         | blank_label='Select Country', null=True, blank=True             |
+| Receiving Newsletter | receiving_newsletter | models.CharField     | max_length=3, choices=newsletter_choices, blank=True, null=True |
+
+
 
 ## Features ##
 
