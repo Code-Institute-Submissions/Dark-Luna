@@ -238,6 +238,13 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | About | about        | models.textField  | null=True, blank=False                       |
 | Image | image        | models.imageField | upload_to=”therapist”, null=True, blank=True |
 
+#### MailChimp integration ####
+
+| Name      | Database Key | Field Type           | Validation           |
+|-----------|--------------|----------------------|----------------------|
+| Email id  | email_id     | models.EmailField    | null=True,blank=True |
+| Timestamp | timestamp    | models.DateTimeField | default=timezone.now |
+
 
 ## Features ##
 
