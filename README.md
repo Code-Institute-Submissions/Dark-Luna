@@ -297,6 +297,7 @@ WIP
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 - [Github](https://github.com/)
 - [Firefox](https://www.mozilla.org/nl/firefox/all/)
+- [Tables generator](https://www.tablesgenerator.com/)
 
 ## Testing ##
 
