@@ -386,6 +386,8 @@ In this it was done using the following way:
         os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"    
         os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"    
         os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"
+        os.environ["MAILCHIMP_API_KEY"] = "<Your API Key>"
+        os.environ["MAILCHIMP_SUBSCRIBE_LIST_ID"] = "<Your list Key>"
 
  
 Read more about how to set up the Stripe keys in the Stripe Documentation.
@@ -451,7 +453,8 @@ All of the mentioned above are already installed in this project in the requirem
 |STRIPE_SECRET_KEY     |  your stripe secret key|
 |STRIPE_WH_SECRET      |  your stripe wh key|
 |USE_AWS               |  True|
-|
+|MAILCHIMP_API_KEY     |  Your API Key|
+|MAILCHIMP_SUBSCRIBE_LIST_ID | Your list Key|
 
 * Copy DATABASE_URL's value(Postrgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
 
