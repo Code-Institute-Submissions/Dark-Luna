@@ -521,7 +521,7 @@ MailChimp
 
     * Fill up your details or credentials of your and your website and finally activate your account from the mail they sent you.
 
-* Create a List
+* Create an Audience
 
     * After complete registration with MailChimp, you will land to the Dashboard of MailChimp.
 
@@ -529,7 +529,7 @@ MailChimp
 
     * Now fill up your all necessary details in the Embedded Forms section. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
 
-* Get Your List and API KEY
+* Get Your Audience and API KEY
 
     * After creating your List, get your List Key and API key.
 
