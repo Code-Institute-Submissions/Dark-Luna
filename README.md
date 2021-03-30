@@ -153,7 +153,7 @@ Icons used are from [Font Awesome.](https://fontawesome.com/) The are used in mo
 
 For the structure I have used [Bootstrap.](https://getbootstrap.com/)
 
-## Wireframes, Flowcharts and Data Models ##
+## Wireframes and Data Models ##
 
 WIP
 
@@ -252,10 +252,6 @@ During the development, I worked with sqlite3 databases, installed with Django. 
   - Read:
   - Update:
   - Delete:
-
-### The Big Struggle ###
-
-Might not be needed
 
 ### Features to be implemented ###
 
