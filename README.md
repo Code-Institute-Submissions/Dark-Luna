@@ -387,7 +387,7 @@ In this it was done using the following way:
         os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"    
         os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"
         os.environ["MAILCHIMP_API_KEY"] = "<Your API Key>"
-        os.environ["MAILCHIMP_SUBSCRIBE_LIST_ID"] = "<Your list Key>"
+        os.environ["MAILCHIMP_AUDIENCE_ID"] = "<Your audience Key>"
 
  
 Read more about how to set up the Stripe keys in the Stripe Documentation.
@@ -454,7 +454,7 @@ All of the mentioned above are already installed in this project in the requirem
 |STRIPE_WH_SECRET      |  your stripe wh key|
 |USE_AWS               |  True|
 |MAILCHIMP_API_KEY     |  Your API Key|
-|MAILCHIMP_SUBSCRIBE_LIST_ID | Your list Key|
+|MAILCHIMP_AUDIENCE_ID | Your audience Key|
 
 * Copy DATABASE_URL's value(Postrgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
 
@@ -525,15 +525,16 @@ MailChimp
 
     * After complete registration with MailChimp, you will land to the Dashboard of MailChimp.
 
-    * Now we have to create a List. So click on the button of Create a List shown below, or by going to the List Panel from the menu bar and there after clicking on Create a list Button.
+    * Now we have to create an Audience. So click on the Audience button in the right hand side menu bar. Then click signup forms in the yellow bar, then click Embedded Forms.
 
-    * Now fill up your all necessary details in List Form. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
+    * Now fill up your all necessary details in the Embedded Forms section. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
 
 * Get Your List and API KEY
 
     * After creating your List, get your List Key and API key.
 
-    * You can get your List Key from lists > settings. Scroll down the page, you fill find a field of Unique id for list list. Copy your list id from there.
+    * You can get your Audience Key from audience > settings
+    * Scroll down the page, you fill find a field of Unique id for <your audience name>. Copy your audience id from there.
 
     * After that, get your API key from Account > Extras > API Keys. Then click on Create a Key button to get your API key.
 
