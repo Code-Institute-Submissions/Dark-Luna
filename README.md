@@ -174,7 +174,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 * The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
 
-## Profile app ##
+#### Profile app ####
 
 | Name                 | Database Key         | Field Type           | Validation                                                      |
 |----------------------|----------------------|----------------------|-----------------------------------------------------------------|
@@ -192,7 +192,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Country              | country              | CountryField         | blank_label='Select Country', null=True, blank=True             |
 | Receiving Newsletter | receiving_newsletter | models.CharField     | max_length=3, choices=newsletter_choices, blank=True, null=True |
 
-## Workshops app ##
+#### Workshops app ####
 
 | Name         | Database Key | Field Type                   | Validation                                             |
 |--------------|--------------|------------------------------|--------------------------------------------------------|
@@ -208,7 +208,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Image        | image        | models.ImageField            | upload_to="lessons", null=True, blank=True             |
 | Comments     | comments     | models.TextField             | null=True, blank=False                                 |
 
-## Products app ##
+#### Products app ####
 
 | Name        | Database Key | Field Type          | Validation                                                   |
 |-------------|--------------|---------------------|--------------------------------------------------------------|
@@ -218,7 +218,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Price       | price        | models.DecimalField | max_digits=6, decimal_places=2                               |
 | Image       | image        | models.ImageField   | blank=True                                                   |
 
-## Blog app ##
+#### Blog app ####
 
 | Name              | Database Key      | Field Type                                  | Validation                                                                                               |
 |-------------------|-------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -231,7 +231,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Status            | status            | models.CharField(_('status')                | max_length=1, choices=STATUSES, default=DRAFT, db_index=True)                                            |
 | Excerpt text      | excerpt_text      | PluginHtmlField(_("Excerpt text")           | help_text=_("This is the summary in the list of articles."))                                             |
 
-## Therapists app ##
+#### Therapists app ####
 
 | Name  | Database Key | Field Type        | Validation                                   |
 |-------|--------------|-------------------|----------------------------------------------|
