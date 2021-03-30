@@ -329,13 +329,9 @@ WIP
 
 ## Testing ##
 
-The site was tested by using the LightHouse function for Chromium Developer Tools. A report can be found [here]()
-
 ### Testing user stories ###
 
 ## Manual testing ##
-
-All manual testing was done using Chromium Developer Tools and testing on an iPhone 11 and an iPad Pro.
 
 Home
 
