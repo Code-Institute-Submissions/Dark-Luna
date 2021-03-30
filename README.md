@@ -522,7 +522,7 @@ Favicon generated with: [Favicon generator](https://www.favicon-generator.org/)
 ### Special thanks ###
 
 - My Yoda-mentor [Simen Daehlin](https://github.com/Eventyret) for being there when I lost my way and didn't know how to get back. And for being the kick-ass person that he is.
-
+- Fellow student [Karol Sliwka](https://github.com/KarolSliwka) for his [Arctic school](https://github.com/KarolSliwka/ArcticSchool) project, from whom I've learned a lot!
 - Everybody at Slack for their support, tips and humor!
 
 For his undying love and support and always being there, my love, you know who you are ;)
