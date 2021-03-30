@@ -231,6 +231,14 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Status            | status            | models.CharField(_('status')                | max_length=1, choices=STATUSES, default=DRAFT, db_index=True)                                            |
 | Excerpt text      | excerpt_text      | PluginHtmlField(_("Excerpt text")           | help_text=_("This is the summary in the list of articles."))                                             |
 
+## Therapists app ##
+
+| Name  | Database Key | Field Type        | Validation                                   |
+|-------|--------------|-------------------|----------------------------------------------|
+| Name  | name         | models.charField  | max_length=200, null=True, blank=False       |
+| About | about        | models.textField  | null=True, blank=False                       |
+| Image | image        | models.imageField | upload_to=”therapist”, null=True, blank=True |
+
 
 ## Features ##
 
