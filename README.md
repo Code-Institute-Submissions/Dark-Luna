@@ -25,7 +25,6 @@
 - [Wireframes, Flowcharts and Data Models](#wireframes--flowcharts-and-data-models)
   - [Wireframes](#wireframes)
   - [Data Models](#data-models)
-    - [Database Structure](#database-structure)
 - [Features](#features)
   - [Features that are implemented](#features-that-are-implemented)
   - [The Big Struggle](#the-big-struggle)
@@ -171,11 +170,6 @@ View my wireframes:
 
 ### Data Models ###
 
-Data models can be viewed here. WIP
-
-#### Database Structure ####
-
-WIP
 During the development, I worked with sqlite3 databases, installed with Django. For production I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql).
 
 * The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
@@ -200,21 +194,43 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 ## Workshops app ##
 
-| Name                 | Database Key         | Field Type           | Validation                                                      |
-|----------------------|----------------------|----------------------|-----------------------------------------------------------------|
-| User                 | user                 | OneToOneField 'User' | on_delete=models.CASCADE                                        |
-| Full Name            | full_name            | CharField            | max_length=200, null=True, blank=True                           |
-| First Name           | first_name           | models.CharField     | max_length=100, null=True, blank=True                           |
-| Last Name            | last_name            | models.CharField     | max_length=100, null=True, blank=True                           |
-| Email Address        | email_address        | models.EmailField    | max_length=254, null=False, blank=True                          |
-| Phone Number         | phone_number         | models.CharField     | max_length=20, null=True, blank=True                            |
-| Street Address 1     | street_address1      | models.CharField     | max_length=80, null=True, blank=True                            |
-| Street Address 2     | street_address2      | models.CharField     | max_length=80, null=True, blank=True                            |
-| Postcode             | postcode             | models.CharField     | max_length=20, null=True, blank=True                            |
-| Town or City         | town_or_city         | models.CharField     | max_length=40, null=True, blank=True                            |
-| County               | county               | models.CharField     | max_length=80, null=True, blank=True                            |
-| Country              | country              | CountryField         | blank_label='Select Country', null=True, blank=True             |
-| Receiving Newsletter | receiving_newsletter | models.CharField     | max_length=3, choices=newsletter_choices, blank=True, null=True |
+| Name         | Database Key | Field Type                   | Validation                                             |
+|--------------|--------------|------------------------------|--------------------------------------------------------|
+| Name         | name         | models.CharField             | max_length=254                                         |
+| Description  | description  | models.TextField             | null=True, blank=True                                  |
+| Start Date   | start_date   | models.DateField             | null=True, blank=False                                 |
+| End Date     | end_date     | models.DateField             | null=True, blank=False                                 |
+| Start Time   | start_time   | models.TimeField             | auto_now=False, auto_now_add=False                     |
+| End Time     | end_time     | models.TimeField             | auto_now=False, auto_now_add=False                     |
+| Participants | participants | models.IntegerField          | null=True, blank=False                                 |
+| Location     | location     | models.ForeignKey 'Location' | null=True, blank=False, on_delete=models.PROTECT       |
+| Price        | price        | models.DecimalField          | max_digits=6, decimal_places=2, null=True, blank=False |
+| Image        | image        | models.ImageField            | upload_to="lessons", null=True, blank=True             |
+| Comments     | comments     | models.TextField             | null=True, blank=False                                 |
+
+## Products app ##
+
+| Name        | Database Key | Field Type          | Validation                                                   |
+|-------------|--------------|---------------------|--------------------------------------------------------------|
+| Category    | category     | models.ForeignKey   | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| sku         | sku          | models.CharField    | max_length=254, blank=True                                   |
+| Description | description  | models.TextField()  |                                                              |
+| Price       | price        | models.DecimalField | max_digits=6, decimal_places=2                               |
+| Image       | image        | models.ImageField   | blank=True                                                   |
+
+## Blog app ##
+
+| Name              | Database Key      | Field Type                                  | Validation                                                                                               |
+|-------------------|-------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| Title             | title             | models.CharField(_("Title")                 | max_length=200                                                                                           |
+| Slug              | slug              | SlugPreviewField(_("Slug"))                 |                                                                                                          |
+| Author            | author            | models.ForeignKey                           | (settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, verbose_name=_('author'))               |
+| Creation date     | creation_date     | models.DateTimeField(_('creation date')     | editable=False, auto_now_add=True)                                                                       |
+| Modification date | modification_date | models.DateTimeField(_('last modification') | editable=False, auto_now=True                                                                            |
+| Publication date  | publication_date  | models.DateTimeField(_('publication date')  | null=True, db_index=True, help_text=_('''When the entry should go live, status must be "Published".''')) |
+| Status            | status            | models.CharField(_('status')                | max_length=1, choices=STATUSES, default=DRAFT, db_index=True)                                            |
+| Excerpt text      | excerpt_text      | PluginHtmlField(_("Excerpt text")           | help_text=_("This is the summary in the list of articles."))                                             |
+
 
 ## Features ##
 
