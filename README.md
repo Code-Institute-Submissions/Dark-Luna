@@ -252,13 +252,39 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 - Registration functionality
 - Log In and Out functionality 
--
--
+- Shop (products)
+- Booking (sessions, massages and/or workshops)
+- Sign Up for newsletter (MailChimp)
+- Contact site owner
+- Have a profile page
+- Testimonials
+- Blog (with comments section)
+
 - CRUD Functions:
-  - Create:
-  - Read:
-  - Update:
-  - Delete:
+  * Create:
+    * Account(profile)
+    * Testimonials
+    * Comment to blog
+    * Contact form content
+
+  * Read:
+    * Account(profile)
+    * Testimonials
+    * General info (sessions, massage, workshops, therapists, blog, testimonials)
+
+  * Update:
+    * Account(profile)
+    * Bookings
+    * Purchases(shop, before checkout)
+    * Testimonials
+    * Comment to blog
+
+  * Delete:
+    * Account(profile)
+    * Bookings
+    * Purchases(shop, before checkout)
+    * Testimonials
+    * Comment to blog
 
 ### Features to be implemented ###
 
@@ -357,6 +383,7 @@ Apart from that, you also need to create accounts with the following services:
 * Stripe
 * AWS to setup the S3 basket
 * Gmail
+* MailChimp
 
 To clone the project:
 
