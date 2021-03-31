@@ -1,7 +1,7 @@
 {
    "python.linting.pylintEnabled": true,
    "python.linting.enabled": true,
-   "python.linting.flake8Enabled": true,
+   "python.linting.flake8Enabled": false,
    "python.terminal.activateEnvironment": false,
    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
@@ -19,5 +19,12 @@
       "**/core.python*": true
    },
 "emmet.extensionsPath": ".theia",
-"markdownlint.run": "onType"
+"markdownlint.run": "onType",
+"python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.8/bin/python",
+"python.linting.mypyEnabled": false,
+"cSpell.ignoreWords": [
+    "fhks",
+    "lcxp",
+    "sghsl"
+]
 }
