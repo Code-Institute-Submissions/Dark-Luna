@@ -2,7 +2,7 @@
 
 ## Private Practice for Holistic Sexuality for Woman ##
 
-![Header Image](/readmecontent/logo.png)
+![Header Image](/wireframes/logo.png)
 
 - [Project goals](#project-goals)
 - [UX](#ux)
@@ -85,7 +85,7 @@ In the profile there are also functions for changing once username, password and
 Because there are many user stories for this project, I have made a spreadsheet containing different levels of users (client and user) as well as the stories for the shop owner.
 This fill is by no means complete. During development there might be some added or removed, depending on functionality and usability.
 
-View the stories [here](https://github.com/byIlsa/luna/blob/master/readmecontent/userandsiteownerstories.pdf).
+View the stories [here](https://github.com/byIlsa/luna/blob/master/wireframes/userandsiteownerstories.pdf).
 
 ### Site owner goals ###
 
@@ -128,7 +128,7 @@ I have chosen the following colours I have taken from the logo to support the co
 
 I have used [Coolors](https://coolors.co/) for creating a color scheme.
 
-![Color scheme](/readmecontent/darklunacolours.png)
+![Color scheme](/wireframes/darklunacolours.png)
 
 I have used a contrast checker in order to make sure that the contrast is sufficient. This way my content will be easily readable.
 
@@ -163,9 +163,9 @@ For wireframing I have used [LucidChart](https://www.lucidchart.com/pages/)
 
 View my wireframes:
 
-[Mobile](/readmecontent/mobile.pdf)
+[Mobile](/wireframes/mobile.pdf)
 
-[Tablet and desktop](/readmecontent/tabletdesktop.pdf)
+[Tablet and desktop](/wireframes/tabletdesktop.pdf)
 
 ### Data Models ###
 
