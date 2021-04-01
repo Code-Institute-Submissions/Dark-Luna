@@ -52,6 +52,17 @@
 <title>Dark Luna {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
+    <header class="container-fluid">
+    <!-- <div class="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+        {% include 'layout/mobile-navigation.html' %}
+    </div>
+    <div class="d-none d-sm-none d-md-block d-lg-none d-xl-none">
+        {% include 'layout/tablet-navigation.html' %}
+    </div> -->
+    <div class="d-none d-lg-block d-xl-block">
+        {% include 'layout/main-navbar.html' %}
+    </div>
+</header>
 
 {% block corejs %}
 
