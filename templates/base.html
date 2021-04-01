@@ -61,6 +61,18 @@
         </div>
     </header>
 
+        <!-- Messages container -->
+    {% if messages %}
+    <div class="messages-container">
+    </div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
 {% block corejs %}
 
     <!-- jQuery and JS bundle w/ Popper.js -->
