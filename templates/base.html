@@ -37,11 +37,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <!-- Hover.css  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-        type="text/css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+        type="text/css" /> -->
 
     <!-- Main CSS Files -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/base.css' %}"> -->
 
     {% endblock %}
 
@@ -53,12 +53,8 @@
 </head>
 <body>
     <header class="container-fluid">
-        <div class="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
-            {% include 'layout/mobile-navbar.html' %}
-        </div>
-        <div class="d-none d-lg-block d-xl-block">
             {% include 'layout/main-navbar.html' %}
-        </div>
+
     </header>
 
         <!-- Messages container -->
@@ -77,8 +73,8 @@
 
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 
 {% endblock %}
 
