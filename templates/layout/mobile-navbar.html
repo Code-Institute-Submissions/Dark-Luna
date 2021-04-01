@@ -13,52 +13,52 @@
     </button>
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link mr-3" href="{% url '' %}">Coaching</a>
+            <a class="nav-link mr-3" href="">Coaching</a>
             <div class="dropdown-menu border-0" aria-labelledby="coaching-link">
-                <a href="{% url '' %}" class="dropdown-item">Shadow Work</a>
-                <a href="{% url '' %}" class="dropdown-item ">Life Coaching</a>
-                <a href="{% url '' %}" class="dropdown-item ">Sex Coaching</a>
+                <a href="" class="dropdown-item">Shadow Work</a>
+                <a href="" class="dropdown-item ">Life Coaching</a>
+                <a href="" class="dropdown-item ">Sex Coaching</a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Massage</a>
+            <a class="nav-link mr-3" href="">Massage</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Workshops</a>
+            <a class="nav-link mr-3" href="">Workshops</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Shop</a>
+            <a class="nav-link mr-3" href="">Shop</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Blog</a>
+            <a class="nav-link mr-3" href="">Blog</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Therapists</a>
+            <a class="nav-link mr-3" href="">Therapists</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mr-3" href="{% url '' %}">Contact</a>
+            <a class="nav-link mr-3" href="">Contact</a>
         </li>
         <li class="nav-item">
             <div class="dropdown">
-                <a class="nav-link mr-3" href="{% url '' %}"><i class="fas fa-user-circle"></i></a>
+                <a class="nav-link mr-3" href=""><i class="fas fa-user-circle"></i></a>
                 <div class="dropdown-content shadow-sm">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="{%url '' %}" class="dropdown-item">Site Management</a>
+                        <a href="" class="dropdown-item">Site Management</a>
                         {% endif %}
-                    <a href="{% url '' %}" class="dropdown-item">My Profile</a>
-                    <a href="{% url '' %}" class="dropdown-item">Logout</a>
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="" class="dropdown-item">Logout</a>
                     {% else %}
-                        <a href="{% url '' %}" class="dropdown-item">Register</a>
-                        <a href="{% url '' %}" class="dropdown-item">Login</a>
+                        <a href="" class="dropdown-item">Register</a>
+                        <a href="" class="dropdown-item">Login</a>
                     {% endif %}
                 </div>
             </div>
         </li>
         <li class="nav-item">
             <div class="dropdown-content shadow-sm">
-                <a href="{%url '' %}" class="dropdown-item"></a>
-            <a class="nav-link mr-3" href="{% url '' %}"><i class="fas fa-shopping-bag"></i></a>
+                <a href="" class="dropdown-item"></a>
+            <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
             </div>
         </li>
     </ul>
