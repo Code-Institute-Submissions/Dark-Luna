@@ -1,0 +1,10 @@
+.intro-text {
+    font-size: 2rem;
+    color: #15020a;
+    background-color: #fff;
+}
+#intro {
+    position: absolute;
+    bottom: 1rem;
+    width: 100vw;
+}

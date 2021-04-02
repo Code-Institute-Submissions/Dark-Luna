@@ -11,7 +11,19 @@ body {
     color: #f8f8ff;
     overflow-x: hidden;
 }
-
+/* Navbar styling*/
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 5rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+a {
+    font-size: 3rem;
+}
 .navbar-toggler {
     background-color: #79113F;
     margin-top: 1.5rem;
@@ -34,4 +46,5 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
