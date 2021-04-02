@@ -1,0 +1,37 @@
+html {
+    font-size: 62.5%;
+    position: relative;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-size: 2rem;
+    font-family: "Raleway", sans-serif; */
+    color: #f8f8ff;
+    overflow-x: hidden;
+}
+
+.navbar-toggler {
+    background-color: #79113F;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+}
+
+/* Hero header styling */
+.hero.is-info,
+.hero.is-info a.navbar-item.is-active,
+.hero.is-info a.navbar-item:hover,
+.hero.is-info .navbar-item   {
+    background-color: transparent;
+}
+
+.hero.is-info {
+    background-image: url("../../../media/backgrounds/hero-home.jpg");
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

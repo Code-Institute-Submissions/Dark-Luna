@@ -1,65 +1,67 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- <div class="container-fluid"> -->
-    <a class="navbar-brand" href="#">
-      <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96" class="d-inline-block align-text-top">
-      Dark Luna
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Coaching
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a href="" class="dropdown-item">Shadow Work</a></li>
-            <li><a href="" class="dropdown-item ">Life Coaching</a></li>
-            <li><a href="" class="dropdown-item ">Sex Coaching</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Massage</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Workshops</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Shop</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Blog</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Therapists</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link mr-3" href="">Contact</a>
-        </li>
-        <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <!-- <a href="" class="dropdown-item">Site Management</a> -->
-                    <li><a href="" class="dropdown-item">My Profile</a></li>
-                    <li><a href="" class="dropdown-item">Logout</a></li>
-                    <li><a href="" class="dropdown-item">Register</a></li>
-                    <li><a href="" class="dropdown-item">Login</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
-                <div class="dropdown-content shadow-sm">
-                </div>
-            </div>
-        </li>
-      </ul>
-    </div>
-  <!-- </div> -->
-</nav>
+<div class="hero is-info is-large">
+    <div class="hero-head">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96" class="d-inline-block">
+            Dark Luna
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Coaching
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a href="" class="dropdown-item">Shadow Work</a></li>
+                        <li><a href="" class="dropdown-item ">Life Coaching</a></li>
+                        <li><a href="" class="dropdown-item ">Sex Coaching</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Massage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Workshops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Therapists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <!-- <a href="" class="dropdown-item">Site Management</a> -->
+                            <li><a href="" class="dropdown-item">My Profile</a></li>
+                            <li><a href="" class="dropdown-item">Logout</a></li>
+                            <li><a href="" class="dropdown-item">Register</a></li>
+                            <li><a href="" class="dropdown-item">Login</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
+                        <div class="dropdown-content shadow-sm">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</div>

@@ -41,7 +41,7 @@
         type="text/css" /> -->
 
     <!-- Main CSS Files -->
-    <!-- <link rel="stylesheet" href="{% static 'css/base.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% endblock %}
 
@@ -53,13 +53,14 @@
 </head>
 <body>
     <header class="container-fluid">
-            {% include 'layout/main-navbar.html' %}
+        {% include 'layout/main-navbar.html' %}
     </header>
 
-        <!-- Messages container -->
+   <!-- Messages container -->
     {% if messages %}
-    <div class="messages-container">
-    </div>
+        <div class="messages-container">
+            
+        </div>
     {% endif %}
 
     {% block page_header %}
