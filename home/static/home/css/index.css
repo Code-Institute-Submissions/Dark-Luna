@@ -1,15 +1,16 @@
-#intro {
+/* let text flow partial over hero image*/
+/* #intro {
     position: absolute;
     bottom: 1rem;
     width: 100vw;
-}
+} */
 .intro-text {
     font-size: 2rem;
     color: #15020a;
     background-color: #fff;
 }
 #about {
-    position: absolute;
+    /* position: absolute; */
     margin-top: 4rem;
 }
 #why {
@@ -46,4 +47,25 @@ a:hover {
     transform: scale(1.1);
     transition-timing-function: ease-in-out;
     transition-duration: 1.2s;
+}
+.card-title {
+    color: #580c2d;
+    font-size: 2rem;
+}
+.card-body {
+    color: #15020a;
+    font-size: 1rem;
+}
+#index-blog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    width: 30vw;
+    height: auto;
+}
+.section-titles {
+    color: #580c2d;
+    font-size: 3rem;
 }
