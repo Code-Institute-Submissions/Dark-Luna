@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'embed_video',
     'videos',
+    'about',
     # 'products',
     # 'bag',
     # 'checkout',
