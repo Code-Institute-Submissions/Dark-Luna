@@ -15,6 +15,13 @@
     color: #15020a;
     background-color: #fff;
 }
+p {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
 /* for moon phase calendar */
 /* taken from and adjusted to project needs: http://www.wdisseny.com/lluna/?lang=en */
 #ex3{    

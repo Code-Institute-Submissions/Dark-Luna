@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load pinax_testimonials_tags %}
 {% load static %}
 
 {% block extra_css %}
@@ -77,6 +77,25 @@
                 </p>
     <div id="ex3"></div>
     </div>
+    </div>
+</section>
+<section class="container-fluid" id="testimonials">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <p class="title text-center">
+                Testimonials
+            </p>
+            <div class="col-12">
+            {% random_testimonials 1 as quotes %}
+                {% for quote in quotes %}
+            <p class="testimonial-text text-center">
+                {{quote.text}}
+                {{quote.author}}
+            </p>
+                {% endfor %}
+        
+            </div>
+        </div>
     </div>
 </section>
 {% block postloadjs %}

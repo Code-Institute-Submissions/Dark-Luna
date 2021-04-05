@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'about',
+    'pinax.testimonials',
     # 'products',
     # 'bag',
     # 'checkout',
