@@ -1,7 +1,4 @@
 {% extends 'base.html' %}
-{% load embed_video_tags %}
-
-
 {% load static %}
 
 {% block extra_css %}
@@ -99,16 +96,11 @@
             <p class="title text-center">
                 Are You Ready?
             </p>
-            <!-- <div class="container-fluid">
+            <div class="container-fluid">
                 <div class="row justify-content-center">
-                    {% for item in videos %}
-                        <div class="col-7">
-                            {% video item.url '800x600' %}
-                            {{ item.title }}
-                            </div>
-                    {% endfor %}    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tL36jjF6-DI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
