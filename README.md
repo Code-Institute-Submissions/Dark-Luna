@@ -457,11 +457,11 @@ All of the mentioned above are already installed in this project in the requirem
 |MAILCHIMP_API_KEY     |  Your API Key|
 |MAILCHIMP_AUDIENCE_ID | Your audience Key|
 
-* Copy DATABASE_URL's value(Postrgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
+* Copy DATABASE_URL's value(Postgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
 
 You can temporary comment out the current database settings code and just paste the following in the settings.py: 
 ```DATABASES = {     
-        'default': dj_database_url.parse("<your Postrgres database URL here>")
+        'default': dj_database_url.parse("<your Postgres database URL here>")
     }
 ```
 Important Note:
