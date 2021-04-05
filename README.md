@@ -258,6 +258,8 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 - Contact site owner
 - Have a profile page
 - Testimonials
+- Embedded videos
+- Moon Calendar
 - Blog (with comments section)
 
 - CRUD Functions:
@@ -423,31 +425,7 @@ Read more about how to set up the Stripe keys in the Stripe Documentation.
 
 ``` python3 manage.py makemigrations ```
 
-``` python3 manage.py migrate ```
-
-* Load the data fixtures(list of fixtures) in that order into the database using the following command:
-
-``` python3 manage.py loaddata <fixture_name> ```
-
-* Create a superuser to have an access to the admin panel(you need to follow the instructions then and insert username, email and password):
-
-``` python3 manage.py createsuperuser ```
-
-* You will now be able to run the application using the following command:
-
-``` python3 manage.py runserver ```
-
-* To access the admin panel, you can add the /admin path at the end of the url link and login using your superuser credentials.
-
-## Heroku Deployment
-
-To start Heroku Deployment process, you need to clone the project as described in the Local deployment section above.
-
-To deploy the project to Heroku the following steps need to be completed:
-
-* Create a requirement.txt file, which contains a list of the dependencies, using the following command in the terminal:
-
-``` pip3 freeze > requirements.txt ```
+``` python3 manage.py migrate ```http://www.wdisseny.com/lluna/?lang=en
 
 * Create a Procfile, in order to tell Heroku how to run the project, using the following command in the terminal:
 
@@ -565,6 +543,9 @@ MailChimp
 
 Credits
     • Texts are all created by myself or the client who wrote the testimonials.
+
+### Source credits ###
+[Moon Calendar](http://www.wdisseny.com/lluna/?lang=en)
 
 ### Image credits ###
 
