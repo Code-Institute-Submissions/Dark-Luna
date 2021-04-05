@@ -48,3 +48,9 @@ a {
     background-size: cover;
     position: relative;
 }
+
+#mc_embed_signup .button {
+    background-color: #79113F!important;
+    color: #f8f8ff!important;
+
+}
