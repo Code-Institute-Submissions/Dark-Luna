@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load pinax_testimonials_tags %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'why/css/why.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="why">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                    Why choose a more sexual approach?
+                </p>
+                <p class="why-text">
+                    Choosing for a more sensual, sexual and shadow-wy approach for dealing with or resolving symptoms is something that is still not done in our society.
+                    Many therapies aimed at healing aim to ignore, suppress or hide these aspects. It is still in a dark corner, while there is so much potential for healing and freedom for women!
+                    This is not about learning tricks to satisfy a partner, it is about reconnecting with your own sensuality, your own sexuality.
+                    I teach you through simple exercises to reconnect with those parts that have been repressed by social conditioning and upbringing.
+                    Many women experience problems in sexuality due to trauma to body awareness, sensuality and sexuality.
+                    I would like to invite you to watch the video at the end of this text and consider whether and how you were 'intimidated' as a young,
+                    growing girl or perhaps when you were older and how you were taught to be ashamed of yourself and your body. Think about wearing a bikini top while you didn't have breasts yet.
+                    This alone, however well-intentioned, can make you hide, feel ashamed and feel insecure about your own body. With all its consequences.
+                    From about 8 minutes in, she tells about 'first offenses' about how shame is instilled into girls at a young age. Sexual energy does not mean energy from sex or energy that you only use for sex.
+                    Sexuality means a much greater thing to women. The womb creates, it houses and grows life. The best-known example is the carrying of a child. What a powerhouse!
+                    But you can also use sexual energy to create a whole host of other creative things.
+                </p>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Lrdn4lazVBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid" id="testimonials">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <p class="title text-center">
+                    Testimonials
+                </p>
+                <div class="col-12">
+                {% random_testimonials 1 as quotes %}
+                    {% for quote in quotes %}
+                <p class="lead text-center">
+                    {{quote.text}}
+                    {{quote.author}}
+                </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+            
