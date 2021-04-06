@@ -98,7 +98,7 @@
                 Are You Ready?
             </p>
             {% for item in videos %}
-              {% video item.url '426x240' %}
+              {% video item.url '426x240' query="rel=0&wmode=transparent" is_secure=True %}
                     {{ item.title }}
             {% endfor %} 
    

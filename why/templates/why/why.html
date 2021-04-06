@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load pinax_testimonials_tags %}
 {% load static %}
+{% load embed_video_tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'why/css/why.css' %}">
@@ -29,7 +30,10 @@
             </div>
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Lrdn4lazVBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {% for item in videos %}
+                        {% video item.url '426x240' query="rel=0&wmode=transparent" is_secure=True %}
+                        {{ item.title }}
+                    {% endfor %} 
                 </div>
             </div>
         </div>

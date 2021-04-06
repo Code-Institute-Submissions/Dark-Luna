@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from videos.models import Video
 
 
-def why(request):
+def index(request):
     """ A view to return index page """
-
-    return render(request, 'why/why.html')
+    videos = Video.objects.all().filter(title="Let's Get Naked")
+    context = {
+        'videos': videos,
+    }
+    return render(request, 'why/why.html', context)

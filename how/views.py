@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def about(request):
+def index(request):
     """ A view to return index page """
 
     return render(request, 'how/how.html')

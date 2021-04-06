@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Video
+from videos.models import Video
 
 
 def index(request):
     """ A view to return index page """
-    videos = Video.objects.all()
+    videos = Video.objects.all().filter(title="My Revolution Lives In This Body")
     context = {
         'videos': videos,
     }
