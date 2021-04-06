@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'why',
     'how',
     'pinax.testimonials',
+    'videos',
+    'embed_video',
     # 'products',
     # 'bag',
     # 'checkout',

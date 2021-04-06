@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load embed_video_tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
@@ -96,11 +97,11 @@
             <p class="title text-center">
                 Are You Ready?
             </p>
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tL36jjF6-DI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+            {% for item in videos %}
+              {% video item.url '426x240' %}
+                    {{ item.title }}
+            {% endfor %} 
+   
         </div>
     </div>
 </section>
