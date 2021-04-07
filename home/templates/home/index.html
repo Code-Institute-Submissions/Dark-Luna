@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load embed_video_tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
@@ -97,10 +96,6 @@
             <p class="title text-center">
                 Are You Ready?
             </p>
-            {% for item in videos %}
-              {% video item.url '426x240' query="rel=0&wmode=transparent" is_secure=True %}
-                    {{ item.title }}
-            {% endfor %} 
    
         </div>
     </div>

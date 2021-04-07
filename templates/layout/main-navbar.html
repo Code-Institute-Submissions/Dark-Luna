@@ -10,11 +10,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Coaching
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -41,15 +38,35 @@
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="">Contact</a>
                 </li>
+                <!-- if admin -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a href="" class="dropdown-item">Home</a></li>
+                        <li><a href="" class="dropdown-item ">Why</a></li>
+                        <li><a href="" class="dropdown-item ">How</a></li>
+                        <li><a href="" class="dropdown-item ">Coaching</a></li>
+                        <li><a href="" class="dropdown-item ">Massage</a></li>
+                        <li><a href="" class="dropdown-item ">Workshops</a></li>
+                        <li><a href="" class="dropdown-item ">Shop</a></li>
+                        <li><a href="" class="dropdown-item ">Blog</a></li>
+                        <li><a href="" class="dropdown-item ">Massage</a></li>
+                        <li><a href="" class="dropdown-item ">Therapists</a></li>
+                        <li><a href="" class="dropdown-item ">Contact</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link dropdown-toggle mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+                        <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <!-- <a href="" class="dropdown-item">Site Management</a> -->
+                        <!-- when user logged in -->
                             <li><a href="" class="dropdown-item">My Profile</a></li>
                             <li><a href="" class="dropdown-item">Logout</a></li>
+                        <!-- when user anon -->    
                             <li><a href="" class="dropdown-item">Register</a></li>
-                            <li><a href="" class="dropdown-item">Login</a></li>
+                            <li><a href="" class="dropdown-item">Login</a></li>  
                         </ul>
                     </div>
                 </li>
