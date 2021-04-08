@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load pinax_testimonials_tags %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="shop">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                Shop
+                </p>
+                <p class="shop-text">
+                Product details   
+                </p>
+            </div>
+        </div>   
+    </section>
+    <section class="container-fluid" id="product-cards">
+        <div class="row justify-content-center">
+            <div class="col-6">
+              
+            </div>
+        </div>
+    </section>
+{% endblock %}
