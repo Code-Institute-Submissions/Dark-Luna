@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'workshops',
     'shop',
     'blog',
+    'therapists',
     # 'products',
     # 'bag',
     # 'checkout',

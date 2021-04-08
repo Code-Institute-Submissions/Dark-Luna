@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'therapists/css/therapists.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="therapists">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                Meet Dark Luna
+                </p>
+                <p class="therapists-text">
+                Meet the therapists that drive Dark Luna.    
+                </p>
+            </div>
+        </div>   
+    </section>
+    <section class="container-fluid" id="therapist-cards">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Therapist name</h5>
+              <p class="card-text">Therapist bio</p>
+              <a href="#" class="btn btn-primary">Send message</a>
+            </div>
+          </div>
+    </section>
+{% endblock %}
