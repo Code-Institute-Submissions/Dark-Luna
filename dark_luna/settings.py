@@ -55,13 +55,14 @@ INSTALLED_APPS = [
     'shop',
     'blog',
     'therapists',
+    'contact',
     # 'products',
     # 'bag',
     # 'checkout',
     # 'profiles',
 
-    # # Other
-    # 'crispy_forms',
+    # Other
+    'crispy_forms',
     # 'storages',
 ]
 

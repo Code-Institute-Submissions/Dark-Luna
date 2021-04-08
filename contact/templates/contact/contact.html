@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="contact">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                Get In Touch
+                </p>
+            </div>
+        </div>   
+    </section>
+    <section class="container-fluid" id="contact-form">
+        {% include 'forms/contact-form.html' %}
+    </section>
+{% endblock %}

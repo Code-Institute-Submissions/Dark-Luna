@@ -1,0 +1,28 @@
+<form method="POST" id="form-contact" class="shadow">
+    <!-- Contact form title and promo text -->
+    <h2 class="page-title">Get in touch!</h2>
+    <!-- POST message -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <p {% if message.tags %} class="message alert-{{ message.tags }}" {% endif %}> {{ message }}
+        </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <p class="promo-text-contact"><i>If you have any questions or need help, please fill out the form
+            below.</i></p>
+    <!-- Contact form fields -->
+    <div class="form-group">
+        {% csrf_token %}
+        {{ contact_form.name | as_crispy_field }}
+        {{ contact_form.from_email | as_crispy_field }}
+        {{ contact_form.subject | as_crispy_field }}
+        {{ contact_form.message | as_crispy_field }}
+    </div>
+    <!-- Form buttons -->
+    <div class="form-actions buttons d-flex justify-content-between mt-0">
+        <button type="reset" class="btn hvr-bounce-to-right">Clear</button>
+        <button type="submit" class="btn hvr-bounce-to-right btn-blue">Send</button>
+    </div>
+</form>
