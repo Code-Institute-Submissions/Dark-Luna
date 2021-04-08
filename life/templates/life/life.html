@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load pinax_testimonials_tags %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'life/css/life.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="life">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                    Life Coaching
+                </p>
+                <p class="life-text">
+                Coaching at Dark Luna is a different kind of coaching than you may be used to. In coaching, many people often mistakenly mean digging for hours into someone's past.
+                As a result, you feel even worse about things that you were already uncomfortable with. Dark Luna has come up with a unique concept where you only speak briefly about the past.
+                What happened in the past can contain a lot of information, but no more than that. It is nice to know where you come from and to use this as a kind of springboard.
+                This is information that can help you avoid falling into the same pattern again. Coaching at Dark Luna can help you in a variety of areas.
+                We master several forms of therapy and decide what form(s) would benefit you best, depending on what you bring to the table. 
+                We work with Somatic Therapy, energy healing and shadow work.    
+                </p>
+            </div>
+        </div>   
+    </section>
+    <section class="container-fluid" id="testimonials">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <p class="title text-center">
+                    Testimonials
+                </p>
+                <div class="col-12">
+                {% random_testimonials 1 as quotes %}
+                    {% for quote in quotes %}
+                <p class="lead text-center">
+                    {{quote.text}}
+                    {{quote.author}}
+                </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid" id="enquire-form">
+        <div class="row justify-content-center">
+            <div class="col-6">
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+            

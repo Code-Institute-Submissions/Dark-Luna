@@ -1,7 +1,7 @@
 <div class="hero is-info is-large">
     <div class="hero-head">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96" class="d-inline-block align-text-top">
             Dark Luna
         </a>
@@ -15,9 +15,9 @@
                         Coaching
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a href="" class="dropdown-item">Shadow Work</a></li>
-                        <li><a href="" class="dropdown-item ">Life Coaching</a></li>
-                        <li><a href="" class="dropdown-item ">Sex Coaching</a></li>
+                        <li><a href="{% url 'shadow' %}" class="dropdown-item">Shadow Work</a></li>
+                        <li><a href="{% url 'life' %}" class="dropdown-item ">Life Coaching</a></li>
+                        <li><a href="{% url 'sex' %}" class="dropdown-item ">Sex Coaching</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
