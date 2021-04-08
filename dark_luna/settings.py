@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'shadow',
     'sex',
     'massage',
+    'workshops',
     # 'products',
     # 'bag',
     # 'checkout',
