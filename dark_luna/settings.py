@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'therapists',
     'contact',
     'crispy_forms',
+    'account',
     # 'storages',
 ]
 
