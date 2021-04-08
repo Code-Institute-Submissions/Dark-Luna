@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'life',
     'shadow',
     'sex',
+    'massage',
     # 'products',
     # 'bag',
     # 'checkout',
