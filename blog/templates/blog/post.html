@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid mb-4" id="blog">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <p class="title text-center">
+                Name blog post
+                </p>
+                <p class="blog-post-text">
+                Blog posts with comment section    
+                </p>
+            </div>
+        </div>   
+    </section>
+    <section class="container-fluid" id="comments">
+       
+    </section>
+{% endblock %}
