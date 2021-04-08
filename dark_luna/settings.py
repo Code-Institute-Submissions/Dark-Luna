@@ -56,12 +56,6 @@ INSTALLED_APPS = [
     'blog',
     'therapists',
     'contact',
-    # 'products',
-    # 'bag',
-    # 'checkout',
-    # 'profiles',
-
-    # Other
     'crispy_forms',
     # 'storages',
 ]
@@ -77,6 +71,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dark_luna.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -94,6 +90,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
