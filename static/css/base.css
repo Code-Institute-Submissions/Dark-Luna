@@ -20,9 +20,14 @@ body {
     font-size: 5rem;
     line-height: inherit;
     white-space: nowrap;
+    color: #79113f;
 }
 a {
     font-size: 3rem;
+    color: #79113f;
+}
+a:hover {
+    color: #580c2d;
 }
 .navbar-toggler {
     background-color: #79113F;
@@ -46,7 +51,6 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
 }
 
 #mc_embed_signup .button {
