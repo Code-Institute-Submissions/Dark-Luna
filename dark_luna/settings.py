@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'therapists',
     'contact',
     'crispy_forms',
-    'account',
+    'profiles',
+    'django_countries',
     # 'storages',
 ]
 

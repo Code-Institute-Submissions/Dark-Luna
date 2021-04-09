@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from profiles.forms import UserDetailsForm
-from checkout.models import Order
+# from checkout.models import Order
 from .models import UserProfile
 
 
