@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="font-size: 1.25rem; color:#000;font-family: sans-serif;">
+    <!-- Hello line -->
+    <p>Hello
+        <span style="color: #059cd9;">
+            <strong>Dark Luna</strong>
+        </span>,
+    </p>
+    <!-- Message body -->
+    <div style="background-color: #f2f2f2;
+    border: 1px solid #cbcbcb;
+    border-radius: 15px;
+    padding: 1rem; height: auto; ">
+        <p style="color: #535353; font-weight: 400;">
+            <i>
+                <span><strong>Subject:</strong></span> {{ subject }}<br><br>
+                <span><strong>Message:</strong></span> {{ message }}
+            </i>
+        </p>
+    </div>
+    <!-- Signature -->
+    <p>Kind Regards,<br>
+        {{ name|title }}</p>
+</body>
+
+</html>
