@@ -21,7 +21,7 @@ def user_account(request):
         form = UserDetailsForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile detailes updated successfully!')
+            messages.success(request, 'Profile details updated successfully!')
 
     details_form = UserDetailsForm(instance=profile)
     orders = profile.orders.all().order_by('-id')[:10]
