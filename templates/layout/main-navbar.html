@@ -44,7 +44,15 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <!-- when user logged in -->
                             <li><a href="{% url 'user_account' %}" class="dropdown-item">My Profile</a></li>
-                            <li><a href="" class="dropdown-item">Logout</a></li>
+                            <div class="dropdown-item">
+                                <form method="post" action="{% url 'account_logout' %}">
+                                    {% csrf_token %}
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                    {% endif %}
+                                    <button type="submit">Logout</button>
+                                </form>
+                            </div>
                         <!-- when user anon -->    
                             <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
                             <li><a href="{% url 'account_login' %}"
