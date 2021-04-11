@@ -2,12 +2,23 @@ from django import forms
 from .models import Testimonial
 
 
+Category = [
+    ('massage', 'Massage'),
+    ('sex-coaching', 'Sex Coaching'),
+    ('life-coaching', 'Life Coaching'),
+    ('shadow-coaching', 'Shadow Coaching'),
+    ('workshops', 'Workshops'),
+    ]
+
+
 class TestimonialForm(forms.ModelForm):
     """ Testimonials form """
     class Meta:
         model = Testimonial
-        fields = ('text', 'author',
+        fields = ('text', 'author', 'category',
                   )
+    Category = forms.CharField(label='Category',
+                               widget=forms.Select(choices=Category))
 
     def __init__(self, *args, **kwargs):
         """ Add placeholders and classes, remove auto-generated lables,

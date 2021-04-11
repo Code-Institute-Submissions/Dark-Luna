@@ -7,9 +7,10 @@ class TestimonialsAdmin(admin.ModelAdmin):
     """ Lessons Card admin list display and ordering """
 
     list_display = (
-        'text',
         'author',
+        'text',
         'added',
+        'category'
     )
 
     ordering = ('author',)
