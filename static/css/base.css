@@ -23,10 +23,10 @@ body {
 }
 a {
     font-size: 2.4rem;
-    color: #79113f;
+    color: #580c2d;
 }
 a:hover {
-    color: #580c2d;
+    color: #79113f;
 }
 .navbar-toggler {
     background-color: #79113F;
@@ -45,10 +45,10 @@ a:hover {
 }
 
 .hero.is-info {
-    background-image: url("../../../media/backgrounds/hero-home.jpg");
-    height: 55vh;
+    background-image: url("../../../media/backgrounds/hero2.jpg");
+    height: 45vh;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:top;
     background-size: cover;
 }
 
