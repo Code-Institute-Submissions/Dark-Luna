@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    """ User Profile model to maintain current bookings, history of bookings """
+    """ User Profile model to maintain
+    current bookings, history of bookings """
 
     class Meta:
         verbose_name_plural = 'Users Profiles'

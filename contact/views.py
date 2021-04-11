@@ -33,7 +33,8 @@ def index(request):
             subject = contact_form.cleaned_data['subject']
             message = contact_form.cleaned_data['message']
             html_msg = render_to_string(
-                'emails/email.html', {'name': name, 'subject': subject, 'message': message})
+                'emails/email.html',
+                {'name': name, 'subject': subject, 'message': message})
             try:
                 send_mail(subject, message, settings.EMAIL_HOST_USER, [
                           from_email, settings.EMAIL_HOST_USER],
@@ -46,4 +47,5 @@ def index(request):
                                              + name.title() + ', thanks for reaching out! \
                                     We will answer in lightning speed.'))
 
-    return render(request, "contact/contact.html", {'contact_form': contact_form})
+    return render(request, "contact/contact.html",
+                  {'contact_form': contact_form})

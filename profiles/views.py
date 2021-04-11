@@ -37,7 +37,7 @@ def user_account(request):
 
 # @login_required(login_url='/accounts/login/')
 # def booking_review(request, order_number):
-#     """ A view to return booking infomration """
+#     """ A view to return booking information """
 #     # order = get_object_or_404(Order, order_number=order_number)
 #     lessons_count = order.lineitems.count()
 
