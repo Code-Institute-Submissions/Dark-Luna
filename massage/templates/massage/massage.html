@@ -30,7 +30,11 @@
                 <p class="title text-center">
                     Testimonials
                 </p>
-                <div class="col-12">
+                <div class="col-12 testimonial-content">
+                    {% for testimonial in testimonials %}
+                        {{ testimonial.text }}
+                        {{ testimonial.author }}
+                    {% endfor %}
                 </div>
             </div>
         </div>
