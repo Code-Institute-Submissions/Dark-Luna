@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load pinax_testimonials_tags %}
 {% load static %}
 
 {% block extra_css %}
@@ -31,13 +30,6 @@
                     Testimonials
                 </p>
                 <div class="col-12">
-                {% random_testimonials 1 as quotes %}
-                    {% for quote in quotes %}
-                <p class="lead text-center">
-                    {{quote.text}}
-                    {{quote.author}}
-                </p>
-                    {% endfor %}
                 </div>
             </div>
         </div>

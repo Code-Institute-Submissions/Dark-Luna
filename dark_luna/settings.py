@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'home',
     'why',
     'how',
-    'pinax.testimonials',
     'life',
     'shadow',
     'sex',

@@ -8,8 +8,10 @@ django-crispy-forms==1.11.2
 django-excel-base==1.0.4
 django-excel-response2==3.0.2
 django-six==1.0.4
+flake8==3.9.0
 oauthlib==3.1.0
-pinax-testimonials==3.0.0
+pycodestyle==2.7.0
+pyflakes==2.3.1
 PyJWT==2.0.1
 pylint==2.7.4
 python3-openid==3.2.0
