@@ -51,7 +51,24 @@ a:hover {
     background-position:top;
     background-size: cover;
 }
-
+/* Forms styling */
+.card {
+    margin-top: 6rem;
+    height:auto;
+    width: 40vh;
+}
+h1 {
+    color: #79113f;
+}
+label {
+    color: #79113f;
+}
+.btn {
+    color: #79113f;
+}
+p {
+    color: #79113f;
+}
 #mc_embed_signup .button {
     background-color: #79113F!important;
     color: #f8f8ff!important;
