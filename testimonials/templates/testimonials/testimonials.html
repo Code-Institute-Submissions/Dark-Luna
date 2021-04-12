@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+    
+{% block content %}
+    <section class="container-fluid" id="testimonials">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <p class="title text-center">
+                    Testimonials
+                </p>
+                <div class="col-12 testimonial-content">
+                    {% for testimonial in testimonials %}
+                        {{ testimonial.text }}
+                        {{ testimonial.author }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Testimonial
+from testimonials.models import Testimonial
 # from django.contrib.admin.views.decorators import staff_member_required
 # from massage.forms import TestimonialForm
 
