@@ -26,7 +26,13 @@
                 <p class="title text-center">
                     Testimonials
                 </p>
-                <div class="col-12">
+                <div class="col-12 testimonial-content">
+                    {% for testimonial in testimonials %}
+                        {% if testimonial.page == 'Shadow Work' %}
+                            {{ testimonial.text }}
+                            {{ testimonial.author }}
+                        {% endif %}    
+                    {% endfor %}
                 </div>
             </div>
         </div>

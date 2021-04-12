@@ -2,8 +2,8 @@
 This module will render user account page with
 all necessary user information and forms
 """
-from datetime import date, timedelta
-from django.shortcuts import get_object_or_404, render
+# from datetime import date, timedelta
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from profiles.forms import UserDetailsForm
@@ -38,15 +38,7 @@ def user_account(request):
 # @login_required(login_url='/accounts/login/')
 # def booking_review(request, order_number):
 #     """ A view to return booking information """
-#     # order = get_object_or_404(Order, order_number=order_number)
-#     lessons_count = order.lineitems.count()
-
-#     template = 'account/bookings-review.html'
-#     context = {
-#         'order': order,
-#         'lessons_count':lessons_count,
-#     }
-
+#     # order = get_object_or_404(Order, order_number=order_number)/workspace/.pip-modules/lib/python3.8/site-packages/crispy_forms/templatetags/crispy_forms_filters.py
 #     return render(request, template, context)
 
 
@@ -114,4 +106,4 @@ def user_account(request):
 #         'active_booking_count': active_booking_count,
 #     }
 
-    return render(request, template, context)
+    # return render(request, template, context)
