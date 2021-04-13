@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from testimonials.models import Testimonial
 
 
 def index(request):
     """ A view to return index page """
-    
-    return render(request, 'why/why.html')
+    testimonial = Testimonial.objects.all()
+
+    context = {
+        'testimonials': testimonial,
+    }
+
+    return render(request, 'why/why.html', context)

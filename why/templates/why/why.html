@@ -37,10 +37,26 @@
                 <p class="title text-center">
                     Testimonials
                 </p>
-                <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        {% for testimonial in testimonials %}
+                        <div class="col-md-offset-2 col-md-8">
+                            <div id="testimonial-slider" class="owl-carousel">
+                                <div class="testimonial">
+                                    <p class="description">
+                                        {{ testimonial.text }}
+                                    </p>
+                                    <h3 class="title">
+                                        {{ testimonial.author }}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    {% endfor %}
                 </div>
-            </div>
-        </div>
+                </div>
+                </div>
     </section>
 {% endblock %}
             
