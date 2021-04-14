@@ -5,7 +5,7 @@ from django.utils import timezone
 class Testimonial(models.Model):
     """ Level Cards Model - for users """
     class RelatedPage(models.TextChoices):
-        """ Choices for dropdown list in Level Cards """
+        """ Choices for dropdown list in page """
         Massage = 'Massage'
         Sex_Coaching = 'Sex Coaching'
         Life_Coaching = 'Life Coaching'
