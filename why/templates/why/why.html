@@ -31,32 +31,37 @@
             </div>
         </div>   
     </section>
-    <section class="container-fluid" id="testimonials">
+    <div class="container-fluid" id="testimonials">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <p class="title text-center">
-                    Testimonials
-                </p>
-                <div class="container">
-                    <div class="row">
+            <div class="col-md-12">
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        
+                    <div class="carousel-inner text-center">
                         {% for testimonial in testimonials %}
-                        <div class="col-md-offset-2 col-md-8">
-                            <div id="testimonial-slider" class="owl-carousel">
-                                <div class="testimonial">
-                                    <p class="description">
-                                        {{ testimonial.text }}
-                                    </p>
-                                    <h3 class="title">
-                                        {{ testimonial.author }}
-                                    </h3>
+                        <div {% if forloop.first %} class="item active" {% else %} class="item" {% endif %}>
+                            <blockquote>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p> {{ testimonial.text }}</p>
+                                        <small>{{ testimonial.author }}</small>
+                                    </div>
                                 </div>
-                            </div>
+                            </blockquote>
                         </div>
-                    </div> 
-                    {% endfor %}
+                        {% endfor %}
+                    <ol class="carousel-indicators">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="{{MEDIA_URL}}logo/logo.png" alt="">
+                        </li>
+                    </ol>
+
+                    <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                    <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
                 </div>
-                </div>
-                </div>
-    </section>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
 {% endblock %}
             
