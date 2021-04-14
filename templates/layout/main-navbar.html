@@ -44,6 +44,7 @@
                     <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a href="{% url 'user_account' %}" class="dropdown-item">My Profile</a></li>
+                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add a blog post</a></li>
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}
                                     {% if redirect_field_value %}

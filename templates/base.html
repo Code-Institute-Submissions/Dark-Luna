@@ -53,9 +53,12 @@
 
     {% block extra_css %}
     {% endblock %}
-
     
-<title>Dark Luna {% block extra_title %}{% endblock %}</title>
+    <title>
+        {% block title%}
+            Dark Luna 
+        {% endblock %}
+    </title>
 </head>
 <body>
     <header class="container-fluid">
