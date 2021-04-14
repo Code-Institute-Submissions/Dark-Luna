@@ -31,12 +31,8 @@
     background-size: cover;
 }
 .title {
-    display: flex;
-    align-items: center;
     padding: 1rem 1rem;
-    justify-content: center;
-    height: 40vh;
-    width: auto;
+    margin-top: 10rem;
     font-size: 6rem;
     color: #580c2d;
     background: rgba(255, 255, 255, 0.2);
