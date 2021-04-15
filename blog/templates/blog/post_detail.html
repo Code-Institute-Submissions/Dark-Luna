@@ -17,7 +17,8 @@
                 {{ post.title }}
                 </p>
                 <p class="blog-post-author">
-                    By: {{ post.author.first_name }}
+                    By: {{ post.author.first_name }} - <a href="{%url 'update-blog-post' post.pk %}">(Edit)</a>
+                    - <a href="{%url 'delete_post' post.pk %}">(Delete)</a>
                 </p>
                 <p class="blog-post-text">
                     {{ post.body }}
