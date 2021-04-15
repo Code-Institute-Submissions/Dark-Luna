@@ -7,18 +7,11 @@ class TestimonialForm(forms.ModelForm):
     class Meta:
         model = Testimonial
         fields = (
-            'text', 'page',
+            'text', 'page', 'author',
         )
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control'}),
+            'page': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'})
+        }
 
-    def __init__(self, *args, **kwargs):
-        """ Add placeholders and classes, remove auto-generated lables,
-            set focus on the first field in form """
-
-        super().__init__(*args, **kwargs)
-        self.fields['text'].widget.attrs = {'rows': 3}
-        for field in self.fields:
-            if field == 'page':
-                self.fields[field].widget.attrs['placeholder'] = False
-            else:
-                self.fields[field].widget.attrs['placeholder'] = '...'
-                self.fields[field].widget.attrs['class'] = 'add-form-input'
