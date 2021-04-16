@@ -18,39 +18,51 @@ body {
     display: inline-block;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
+    margin-left: -1.9rem;
     font-size: 2.5rem;
     line-height: inherit;
     white-space: nowrap;
-    color: #79113f;
     margin-right: 0;
+    -webkit-text-fill-color: #bb236c;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 1.2px;
+}
+.img {
+    margin-right: -1rem;
 }
 a {
-    font-size: 1.3rem;
-    color: #580c2d;
+    font-size: 1.4rem;
+    -webkit-text-fill-color: #bb236c;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 1.2px;
+    font-weight: bold;
 }
+
 a:hover {
     color: #79113f;
 }
+
 .navbar-toggler {
-    background-color: #79113F;
+    background-color: #bb236c;
     margin-top: 1rem;
     margin-right: 1rem;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 2rem;
+    border-color: #580c2d;
     font-size: 2rem;
 }
 .navbar .dropdown-menu {
     background-color: transparent;
-    border: none;
-    width: 60px;
+    border: 0;
   }
-  .navbar .dropdown.show a,
-  .navbar .dropdown-item {
+
+.navbar .dropdown.show a,
+ .navbar .dropdown-item {
     background: rgba(255, 255, 255, 0.2);
     color:  #580c2d;
   }
-  .navbar .dropdown-item:hover {
+ .navbar .dropdown-item:hover {
     color: #79113f;
   }
 
@@ -59,7 +71,7 @@ a:hover {
 .hero.is-info a.navbar-item.is-active,
 .hero.is-info a.navbar-item:hover,
 .hero.is-info .navbar-item {
-    background-color: transparent;
+    background-color: #fff;
 }
 
 .hero.is-info {
