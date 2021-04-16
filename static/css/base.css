@@ -1,28 +1,31 @@
 html {
-    font-size: 62.5%;
     position: relative;
     min-height: 100vh;
     scroll-behavior: smooth;
 }
 
 body {
-    /* font-size: 2rem;
-    font-family: "Raleway", sans-serif; */
+    font-size: 2rem;
+    /* font-family: "Raleway", sans-serif; */
+    font-size: 62.5%;
     color: #f8f8ff;
     overflow-x: hidden;
 }
 /* Navbar styling*/
-.navbar-brand {
+
+.navbar-brand,
+.navbar-extend-xl {
     display: inline-block;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     line-height: inherit;
     white-space: nowrap;
     color: #79113f;
+    margin-right: 0;
 }
 a {
-    font-size: 2.4rem;
+    font-size: 1.3rem;
     color: #580c2d;
 }
 a:hover {
@@ -30,11 +33,26 @@ a:hover {
 }
 .navbar-toggler {
     background-color: #79113F;
-    margin-top: 1.5rem;
-    margin-right: 1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 2rem;
     font-size: 2rem;
 }
+.navbar .dropdown-menu {
+    background-color: transparent;
+    border: none;
+    width: 60px;
+  }
+  .navbar .dropdown.show a,
+  .navbar .dropdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    color:  #580c2d;
+  }
+  .navbar .dropdown-item:hover {
+    color: #79113f;
+  }
 
 /* Hero header styling */
 .hero.is-info,

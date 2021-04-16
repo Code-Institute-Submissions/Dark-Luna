@@ -8,6 +8,7 @@ from .forms import PostForm
 class BlogHomeView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
+    ordering = ['-post_date']
 
 
 class BlogDetailView(DetailView):
