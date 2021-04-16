@@ -31,6 +31,10 @@
                     <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
+                    
+                </li>
+                <li class="nav-item">
                     <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
                 </li>
                 <li class="nav-item">
@@ -42,28 +46,28 @@
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a href="{% url 'user_account' %}" class="dropdown-item">My Profile</a></li>
-                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
-                            <li><a href="{% url 'add-testimonial' %}" class="dropdown-item">Add testimonial</a></li>
-                            <form method="post" action="{% url 'account_logout' %}">
-                                {% csrf_token %}
-                                    {% if redirect_field_value %}
-                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                                    {% endif %}
-                                    <button type="submit">Logout</button>
-                                </form>
-                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li><a href="{% url 'account_login' %}"
-                                class="dropdown-item">Login</a></li>  
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        {% if request.user.is_superuser %}
+                        <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'user_account' %}" class="dropdown-item">My Profile</a></li>
+                        <li><a href="{% url 'add-testimonial' %}" class="dropdown-item">Add testimonial</a></li>
+                        <form method="post" action="{% url 'account_logout' %}">
+                            {% csrf_token %}
+                            {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                            <button class="logout" type="submit">Logout</button>
+                        </form>
+                        {% else %}
+                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                        <li><a href="{% url 'account_login' %}"
+                            class="dropdown-item">Login</a></li>  
                         </ul>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    {% endif %}
+                </ul>
         </div>
     </nav>
 </div>

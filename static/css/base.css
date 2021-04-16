@@ -11,8 +11,8 @@ body {
     color: #f8f8ff;
     overflow-x: hidden;
 }
-/* Navbar styling*/
 
+/* Navbar styling*/
 .navbar-brand,
 .navbar-extend-xl {
     display: inline-block;
@@ -27,9 +27,11 @@ body {
     -webkit-text-stroke-color: #580c2d;
     -webkit-text-stroke-width: 1.2px;
 }
+
 .img {
     margin-right: -1rem;
 }
+
 a {
     font-size: 1.4rem;
     -webkit-text-fill-color: #bb236c;
@@ -52,19 +54,21 @@ a:hover {
     border-color: #580c2d;
     font-size: 2rem;
 }
+
 .navbar .dropdown-menu {
     background-color: transparent;
     border: 0;
-  }
+}
 
 .navbar .dropdown.show a,
- .navbar .dropdown-item {
+.navbar .dropdown-item {
     background: rgba(255, 255, 255, 0.2);
     color:  #580c2d;
-  }
+}
+
  .navbar .dropdown-item:hover {
     color: #79113f;
-  }
+}
 
 /* Hero header styling */
 .hero.is-info,
@@ -81,26 +85,26 @@ a:hover {
     background-position:top;
     background-size: cover;
 }
+.logout {
+    background-color: #79113F!important;
+    color: #f8f8ff!important;
+    width: 13rem;
+}
 /* Forms styling */
 .card {
     margin-top: 6rem;
     height:auto;
     width: 40vh;
 }
-h1 {
-    color: #79113f;
-}
-label {
-    color: #79113f;
-}
-.btn {
-    color: #79113f;
-}
+
+h1,
+label,
+.btn,
 p {
     color: #79113f;
 }
+
 #mc_embed_signup .button {
     background-color: #79113F!important;
     color: #f8f8ff!important;
-
 }
