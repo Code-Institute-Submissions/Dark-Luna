@@ -48,46 +48,18 @@
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for post in object_list %}
         <div class="col">
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
+                    <h5 class="card-title">{{ post.title }} - {{ post.author.first_name }} - {{ post.post_date }}</h5>
+                    <p class="card-text">{{ post.body|slice:"200" }}</p>
+                    <a href="{% url 'blog-post-detail' post.pk %}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-                <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <section class="container-fluid" id="ready">
