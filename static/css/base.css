@@ -85,7 +85,7 @@ a:hover {
     background-position:top;
     background-size: cover;
 }
-.logout {
+.custom-btn {
     background-color: #79113F!important;
     color: #f8f8ff!important;
     width: 13rem;

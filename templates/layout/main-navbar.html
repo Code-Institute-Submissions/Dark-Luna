@@ -58,7 +58,7 @@
                             {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                             {% endif %}
-                            <button class="logout" type="submit">Logout</button>
+                            <button class="custom-btn" type="submit">Logout</button>
                         </form>
                         {% else %}
                         <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>

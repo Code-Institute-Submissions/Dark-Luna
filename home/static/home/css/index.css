@@ -50,7 +50,7 @@ a:hover {
 }
 .card-title {
     color: #580c2d;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .card-body {
     color: #15020a;
@@ -69,3 +69,20 @@ a:hover {
     color: #580c2d;
     font-size: 3rem;
 }
+a#custom-btn {
+    background-color: #bb236c;
+    color: #fff;
+    width: 7rem;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 0.5px;
+    border-radius: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+/* .row-cards {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 0;
+} */
