@@ -17,8 +17,11 @@
                 {{ post.title }}
                 </p>
                 <p class="blog-post-author">
-                    By: {{ post.author.first_name }} - {{ post.post_date }} - <a href="{%url 'update-blog-post' post.pk %}">(Edit)</a>
+                    By: {{ post.author.first_name }} - {{ post.post_date }} - 
+                    {% if request.user.is_superuser %}
+                    <a href="{%url 'update-blog-post' post.pk %}">(Edit)</a>
                     - <a href="{%url 'delete_post' post.pk %}">(Delete)</a>
+                    {% endif %}
                 </p>
                 <p class="blog-post-text">
                     {{ post.body }}
