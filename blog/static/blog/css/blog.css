@@ -31,3 +31,16 @@ p {
     color: #580c2d;
     background-color: #fff;
 }
+a:hover {
+    text-decoration: none;
+}
+.crud-links {
+    font-size: 0.6rem;
+    color: #580c2d!important;
+    font-weight: lighter;
+}
+.title-links {
+    font-size: 1.4rem;
+    color: #580c2d!important;
+    font-weight: 300;
+}
