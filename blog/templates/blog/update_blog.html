@@ -8,8 +8,8 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
-    
 {% block content %}
+{% if request.user.is_superuser %}
     <section class="container-fluid mb-4" id="blog">
         <div class="row justify-content-center">
             <p class="title text-center">
@@ -26,5 +26,14 @@
             </div>
         </div>
     </section>
-        
+{% else %}
+<div class="error">
+    <p class="title text-center"> Admin only area!
+    </p>
+    <div class="col-12 text-center">    
+    <a href="{% url 'home' %}" class="btn-md" id="custom-btn">Home </a>
+    </div>
+    </div>
+{% endif %}
 {% endblock %}
+

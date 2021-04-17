@@ -10,31 +10,30 @@
 {% endblock %}
     
 {% block content %}
-    <section class="container-fluid mb-4" id="blog">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <p class="title text-center">
-                {{ post.title }}
-                </p>
-                <p class="blog-post-author">
-                    By: {{ post.author.first_name }} - {{ post.post_date }} - 
-                    {% if request.user.is_superuser %}
-                    <a href="{%url 'update-blog-post' post.pk %}">(Edit)</a>
-                    - <a href="{%url 'delete_post' post.pk %}">(Delete)</a>
-                    {% endif %}
-                </p>
-                <p class="blog-post-text">
-                    {{ post.body }}
-                </p>
+<section class="container-fluid mb-4" id="blog">
+    <div class="row">
+        <p class="title text-center">
+            {{ post.title }}
+            {% if request.user.is_superuser %}
+            <a href="{%url 'update-blog-post' post.pk %}">(Edit)</a>
+            - <a href="{%url 'delete_post' post.pk %}">(Delete)</a>
+            {% endif %}
+        </p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
+        <div class="col">
+            <div class="card" style="width: 40rem;">
+                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }}
+                    </h5>
+                    <p class="card-text blog-text">{{ post.body|safe }}</p>
+                    <a href="{% url 'blog' %}" class="btn-md" id="custom-btn">Back</a>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-6">
-        <a href="{% url 'blog' %}" class="btn btn-outline-dark btn-lg">Back to Blog main page</a>
-        </div>
-    </div>   
-    </section>
-    <section class="container-fluid" id="comments">
-       
-    </section>
+    </div>
+</section>
 {% endblock %}
+              
+             
