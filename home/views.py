@@ -5,4 +5,4 @@ from blog.models import Post
 class BlogHomeView(ListView):
     model = Post
     template_name = 'home/index.html'
-    ordering = ['-post_date']
+    ordering = ('-post_date')

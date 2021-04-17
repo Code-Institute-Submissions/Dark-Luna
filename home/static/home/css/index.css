@@ -50,11 +50,11 @@ a:hover {
 }
 .card-title {
     color: #580c2d;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
-.card-body {
+.card-text {
     color: #15020a;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 #index-blog {
     display: flex;
@@ -65,10 +65,7 @@ a:hover {
     width: 30vw;
     height: auto;
 }
-.section-titles {
-    color: #580c2d;
-    font-size: 3rem;
-}
+
 a#custom-btn {
     background-color: #bb236c;
     color: #fff;

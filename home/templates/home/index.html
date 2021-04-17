@@ -42,23 +42,25 @@
     </div>
 </section>
 <div class="row justify-content-center">
-    <div class="col-12">
-        <h2 class="section-titles">Latest blog items</h2>
+    <div class="col-12 text-center">
+        <p class="title">Latest blog items</p>
     </div>
 </div>
 <section class="container-fluid mt-6" id="index-blog">
     <div class="row row-cols-1 row-cols-md-4 g-4 row-cards">
         {% for post in object_list %}
+            {% if post.pk < 5 %}
         <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card" style="width: 20rem;">
                 <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.title }} - {{ post.author.first_name }} - {{ post.post_date }}</h5>
+                    <h5 class="card-title">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }}</h5>
                     <p class="card-text">{{ post.body|slice:"200" }}</p>
                     <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
                 </div>
             </div>
         </div>
+            {% endif %}
         {% endfor %}
     </div>
 </section>
@@ -74,5 +76,6 @@
         </div>
     </div>
 </section>
-
 {% endblock %}
+        
+       

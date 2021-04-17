@@ -11,6 +11,9 @@ class Post(models.Model):
     body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
 
+    class Meta:
+        get_latest_by = '-post_date'
+
     def __str__(self):
         return self.title + ' | ' + str(self.author)
 
