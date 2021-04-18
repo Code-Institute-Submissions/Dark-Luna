@@ -28,12 +28,13 @@
     </section>
 {% else %}
 <div class="error">
-    <p class="title text-center"> Admin only area!
+    <p class="title text-center">
+        Admin only area!
     </p>
     <div class="col-12 text-center">    
-    <a href="{% url 'home' %}" class="btn-md" id="custom-btn">Home </a>
+        <a href="{% url 'home' %}" class="btn-md" id="custom-btn">Home</a>
     </div>
-    </div>
+</div>
 {% endif %}
 {% endblock %}
 
