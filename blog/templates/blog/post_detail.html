@@ -18,7 +18,7 @@
                 {% if user.id == post.author.id %}
             - <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
             <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2 mt-1">(Delete)</a>
-            {% endif %}
+                {% endif %}
             {% endif %}
     
         </p>
@@ -29,16 +29,25 @@
                 <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
-                        <br/> <p class="card-title mb-2"> {{ total_likes }}
-                        likes
+                        <br/> <p class="card-title mb-2"> Likes: {{ total_likes }}
                         </p>
                     </h5>
                     <p class="card-text blog-text">{{ post.body|safe }}</p>
                     <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
 
                     <form action="{%url 'like_post' post.pk %}" method="POST">
+                        <p class="card-title mb-2">
+                            <a href="{% url 'account_login' %}"
+                            class="card-title">Log In</a> to like
+                            </p>
                         {% csrf_token %}
-                        <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button> - 
+                        {% if user.is_authenticated %}
+                            {% if liked %}
+                                <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
+                            {% else %}
+                                <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
+                            {% endif %}
+                        {% endif %}    
                     </form>
                 </div>
             </div>
