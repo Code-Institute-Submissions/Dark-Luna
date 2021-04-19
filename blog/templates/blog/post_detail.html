@@ -13,11 +13,14 @@
 <section class="container-fluid mb-4" id="blog">
     <div class="row justify-content-center">
         <p class="title text-center">
-            {{ post.title }} -
+            {{ post.title }}
             {% if request.user.is_superuser %}
-            <a href="{%url 'update-blog-post' post.pk %}" class="crud-links">(Edit)</a>
-            <a href="{%url 'delete_post' post.pk %}" class="crud-links">(Delete)</a>
+                {% if user.id == post.author.id %}
+            - <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
+            <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2 mt-1">(Delete)</a>
             {% endif %}
+            {% endif %}
+    
         </p>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
@@ -34,6 +37,6 @@
         </div>
     </div>
 </section>
+
 {% endblock %}
-              
              

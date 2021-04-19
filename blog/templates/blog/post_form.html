@@ -12,7 +12,7 @@
 {% block content %}
 
 {% if request.user.is_superuser %}
-    <section class="container-fluid mb-4" id="blog">
+ <section class="container-fluid mb-4" id="blog">
         <div class="row justify-content-center">
             <p class="title text-center">
             Add a blog post
@@ -28,5 +28,6 @@
             </div>
         </div>
     </section>
-{% endif %}        
+    {% endif %}
+
 {% endblock %}
