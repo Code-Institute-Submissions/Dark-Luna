@@ -33,6 +33,7 @@
                         </p>
                     </h5>
                     <p class="card-text blog-text">{{ post.body|safe }}</p>
+                    <p class="card-text">{{post.snippet}}</p>
                     <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
 
                     <form action="{%url 'like_post' post.pk %}" method="POST">

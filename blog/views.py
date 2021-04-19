@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView)
 from .models import Post, Category
-from .forms import PostForm
+from .forms import PostForm, EditForm
 from django.http import HttpResponseRedirect
 
 
@@ -11,6 +11,12 @@ class BlogHomeView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
     ordering = ['-post_date']
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(BlogHomeView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
 
 
 class BlogDetailView(DetailView):
@@ -56,8 +62,8 @@ class AddCategoryView(CreateView):
 
 class UpdatePostView(UpdateView):
     model = Post
+    form_class = EditForm
     template_name = 'blog/update_blog.html'
-    fields = ['title', 'tag', 'body', 'category']
 
 
 class DeletePostView(DeleteView):
