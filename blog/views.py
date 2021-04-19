@@ -46,7 +46,7 @@ class AddCategoryView(CreateView):
 class UpdatePostView(UpdateView):
     model = Post
     template_name = 'blog/update_blog.html'
-    fields = ['title', 'tag', 'body']
+    fields = ['title', 'tag', 'body', 'category']
 
 
 class DeletePostView(DeleteView):
