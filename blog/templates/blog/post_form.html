@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add a Blog Post
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+    
+{% block content %}
+
+{% if user.is_authenticated %}
+ <section class="container-fluid mb-4" id="blog">
+        <div class="row justify-content-center">
+            <p class="title text-center">
+            Add a blog post
+            </p>
+        </div>
+        <div class="form-group">
+            <div class="col-3">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <button class="btn btn-outline-dark btn-lg">Post</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% endblock %}

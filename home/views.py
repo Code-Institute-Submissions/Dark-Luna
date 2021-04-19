@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from blog.models import Post
 
-def index(request):
-    """ A view to return index page """
 
-    return render(request, 'home/index.html')
+class BlogHomeView(ListView):
+    model = Post
+    template_name = 'home/index.html'
+    ordering = ('-post_date')

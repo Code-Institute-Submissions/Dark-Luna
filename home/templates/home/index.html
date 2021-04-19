@@ -6,21 +6,21 @@
 {% endblock %}
 
 {% block content %}
-<section class="container-fluid mb-4" id="intro">
+<section class="container-fluid" id="intro">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-md-6">
                 <p class="intro-text">
-                    Beloved woman (or partner of woman),<br>
+                    Beloved woman (or partner of woman),<br/><br/>
                     In a world where porn still seems to be the prime example, more and more women are feeling lost. Sex seems to follow a fixed pattern, telling your partner what you like and what you dislike seems an impossible task,
                     since we have never learned that we also have a voice. Having the right to tailor our sexual relationships, with others, but also with ourselves, as it nourishes ourselves. 
                     It is easy to blame men for this, but they too live by examples presented to them. If you pay attention, you will see that our society is full of texts, images and statements that are more harmful than helpful.
-                    If we, as women, want to receive and give pleasure, it is our task to provide the examples that are more in line with the image we envision with the word ‘sex’.
+                    If we, as women, want to receive and give pleasure, it is our task to provide the examples that are more in line with the image we envision with the word ‘sex’.<br/><br/>
                     In sexual union, women are the host. She receives the man (in a heterosexual relationship, although this describes a physical process, this actually happens in homosexual relationships as well,
-                    I am by no means saying here that only a straight relationship is the "right" way).
+                    I am by no means saying here that only a straight relationship is the "right" way).<br/><br/>
                     In order to receive, a degree of security and self-knowledge is necessary. Something that many women lack. Knowledge of the unique qualities of one's own body, which the body needs to fully open up, is something that few women have mastered. Luna wants to help women to reconnect with their own body in order to discover what it takes to be able to fully open yourself up for sex, in all its beautiful facets.
                     The lack of knowledge in this regard does not only manifest itself in the sexual field. 
                     Luna is convinced that many problems that women experience in life in general (who am I actually, what do I need in this life, why do I get stuck in specific areas or a general sense of meaninglessness),
-                    menstruation and / or fertility problems, stems from having no or little connection and awareness of the body.
+                    menstruation and / or fertility problems, stems from having no or little connection and awareness of the body.<br/><br/>
                     Luna offers a unique perspective on how to deal with these problems. In a more gentle, intuitive way, I want to help you, dear woman, to get in touch with your body, identify the messages it is giving,
                     in order to learn how to work with your body again, instead of against your body. Your body is a beautiful being, able to guide you on this path that is life.
                 </p>
@@ -41,53 +41,31 @@
         </a>
     </div>
 </section>
-<section class="container-fluid mt-6" id="index-blog">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="section-titles">Latest blog items</h2>
-        </div>
+<div class="row justify-content-center">
+    <div class="col-12 text-center">
+        <p class="title">Latest blog items</p>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+</div>
+<section class="container-fluid mt-6" id="index-blog">
+    <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
+        {% for post in object_list %}
+            {% if post.pk < 5 %}
         <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 20rem;">
+                {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                        {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
+                    <h5 class="card-title">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5>
+                    <p class="card-text">{{ post.body|slice:"200" }}</p>
+                    <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-                <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Blog title</h5>
-                    <p class="card-text">Blog snippet</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </section>
 <section class="container-fluid" id="ready">
@@ -102,5 +80,6 @@
         </div>
     </div>
 </section>
-
 {% endblock %}
+        
+       

@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <p class="title text-center">
-                    You can update your personal details by using from below
+                    Update Personal Details
                 </p>
         <!-- Display user account info/details -->
                 <form action="{% url 'user_account' %}" method="POST" id="profile-update-form" class="mt-3 account-text">
@@ -30,8 +30,8 @@
                     {{ form.country | as_crispy_field }}
 
                     <div class="d-flex justify-content-between buttons mt-4">
-                        <button type="reset" class="btn hvr-bounce-to-right red-button">Reset Form</button>
-                        <button type="submit" class="btn hvr-bounce-to-right">Update Information</button>
+                        <button type="reset" class="btn custom-btn">Reset Form</button>
+                        <button type="submit" class="btn custom-btn">Update Information</button>
                     </div>
                 </form>
             </div>
@@ -39,7 +39,7 @@
         <!-- Display user active booking and history list -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <h5>Recently Booked</h5>
-                <p class="mb-2 promo-text-personal">View your last 10 Bookings
+                <p class="mb-2 promo-text-personal">Booked Workshops
                 </p>
                 <!-- Lesson container -->
                 {% for order in orders %}

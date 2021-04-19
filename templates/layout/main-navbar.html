@@ -1,68 +1,72 @@
 <div class="hero is-info is-large">
     <div class="hero-head">
-    <nav class="navbar navbar-expand-xl">
-        <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96" class="d-inline-block align-text-top">
-            Dark Luna
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Coaching
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a href="{% url 'shadow' %}" class="dropdown-item">Shadow Work</a></li>
-                        <li><a href="{% url 'life' %}" class="dropdown-item ">Life Coaching</a></li>
-                        <li><a href="{% url 'sex' %}" class="dropdown-item ">Sex Coaching</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'massage' %}">Massage</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'workshops' %}">Workshops</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'therapists' %}">Therapists</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3" href="{% url 'contact' %}">Contact</a>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+        <nav class="navbar navbar-expand-xl">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96"
+                class="d-inline-block img">Dark Luna
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav w-auto mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Coaching
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a href="{% url 'user_account' %}" class="dropdown-item">My Profile</a></li>
+                            <li><a href="{% url 'shadow' %}" class="dropdown-item">Shadow Work</a></li>
+                            <li><a href="{% url 'life' %}" class="dropdown-item ">Life Coaching</a></li>
+                            <li><a href="{% url 'sex' %}" class="dropdown-item ">Sex Coaching</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'massage' %}">Massage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'workshops' %}">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'therapists' %}">Therapists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a></li>
+                            <li><a href="{% url 'add-testimonial' %}" class="dropdown-item">Add testimonial</a></li>
+                            {% if request.user.is_superuser %}
+                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
+                            <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Add blog category</a></li>
+                            {% endif %}
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}
-                                    {% if redirect_field_value %}
-                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                                    {% endif %}
-                                    <button type="submit">Logout</button>
-                                </form>
-                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li><a href="{% url 'account_login' %}"
+                                {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                {% endif %}
+                                <button class="custom-btn" type="submit">Logout</button>
+                            </form>
+                                {% else %}
+                                <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                                <li><a href="{% url 'account_login' %}"
                                 class="dropdown-item">Login</a></li>  
                         </ul>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+                    </li>
+                                {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
 </div>

@@ -3,20 +3,80 @@
     align-items: center;
     padding: 1rem 1rem;
     justify-content: center;
-    width: auto;
-    font-size: 6rem;
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    height: 10vh;
+    font-size: 2.4rem;
     color: #580c2d;
     background: rgba(255, 255, 255, 0.2);
 }
+
 .blog-text,
-.blog-post-text {
-    font-size: 2rem;
+.blog-post-text,
+.card-text {
+    font-size: 0.9rem;
     color: #15020a;
     background-color: #fff;
 }
+
 p {
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 1rem;
     color: #000;
+}
+.blog-post-author,
+.card-title {
+    font-size: 0.8rem;
+    color: #580c2d;
+    background-color: #fff;
+}
+a:hover {
+    text-decoration: none;
+}
+.crud-links {
+    font-size: 0.8rem;
+    color: #580c2d!important;
+    font-weight: lighter;
+}
+.title-links {
+    font-size: 1.1rem;
+    color: #580c2d!important;
+    font-weight: 300;
+}
+#custom-btn,
+#custom-btn-home {
+    background-color: #bb236c;
+    color: #fff;
+    width: 7rem;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 0.5px;
+    border-radius: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.custom-btn-blog {
+    margin-right: 2rem;
+    background-color: #fff;
+    color: #79113f;
+    font-weight: normal;
+    -webkit-text-fill-color: #79113f;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+.category-title,
+.category-links {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: #79113f;
+    -webkit-text-fill-color: #79113f;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 0;
 }

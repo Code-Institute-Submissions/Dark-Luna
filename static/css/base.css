@@ -1,39 +1,73 @@
 html {
-    font-size: 62.5%;
-    /* position: relative; */
+    position: relative;
     min-height: 100vh;
     scroll-behavior: smooth;
 }
 
 body {
-    /* font-size: 2rem;
-    font-family: "Raleway", sans-serif; */
+    font-size: 2rem;
+    /* font-family: "Raleway", sans-serif; */
+    font-size: 62.5%;
     color: #f8f8ff;
     overflow-x: hidden;
 }
+
 /* Navbar styling*/
-.navbar-brand {
+.navbar-brand,
+.navbar-extend-xl {
     display: inline-block;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    font-size: 3.2rem;
+    margin-left: -1.9rem;
+    font-size: 2.5rem;
     line-height: inherit;
     white-space: nowrap;
-    color: #79113f;
+    margin-right: 0;
+    -webkit-text-fill-color: #bb236c;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 1.2px;
 }
+
+.img {
+    margin-right: -1rem;
+}
+
 a {
-    font-size: 2.4rem;
-    color: #580c2d;
+    font-size: 1.4rem;
+    -webkit-text-fill-color: #bb236c;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 1.2px;
+    font-weight: bold;
 }
+
 a:hover {
     color: #79113f;
 }
+
 .navbar-toggler {
-    background-color: #79113F;
-    margin-top: 1.5rem;
-    margin-right: 1.5rem;
+    background-color: #bb236c;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 2rem;
+    border-color: #580c2d;
     font-size: 2rem;
+}
+
+.navbar .dropdown-menu {
+    background-color: transparent;
+    border: 0;
+}
+
+.navbar .dropdown.show a,
+.navbar .dropdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    color:  #580c2d;
+}
+
+ .navbar .dropdown-item:hover {
+    color: #79113f;
 }
 
 /* Hero header styling */
@@ -41,7 +75,7 @@ a:hover {
 .hero.is-info a.navbar-item.is-active,
 .hero.is-info a.navbar-item:hover,
 .hero.is-info .navbar-item {
-    background-color: transparent;
+    background-color: #fff;
 }
 
 .hero.is-info {
@@ -51,26 +85,26 @@ a:hover {
     background-position:top;
     background-size: cover;
 }
+.custom-btn {
+    background-color: #79113F!important;
+    color: #f8f8ff!important;
+    width: 13rem;
+}
 /* Forms styling */
 .card {
     margin-top: 6rem;
     height:auto;
     width: 40vh;
 }
-h1 {
-    color: #79113f;
-}
-label {
-    color: #79113f;
-}
-.btn {
-    color: #79113f;
-}
+
+h1,
+label,
+.btn,
 p {
     color: #79113f;
 }
+
 #mc_embed_signup .button {
     background-color: #79113F!important;
     color: #f8f8ff!important;
-
 }

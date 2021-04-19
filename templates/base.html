@@ -42,19 +42,27 @@
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+    <!-- Hover.css  -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+        type="text/css" /> -->
+        
+        {% block extra_css %}
+        
+        {% endblock %}
     <!-- Main CSS Files -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
-
     
-<title>Dark Luna {% block extra_title %}{% endblock %}</title>
+    <title>
+        {% block title%}
+            Dark Luna 
+        {% endblock %}
+    </title>
 </head>
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid pl-0 pr-0">
         {% include 'layout/main-navbar.html' %}
     </header>
 

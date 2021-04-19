@@ -1,32 +1,63 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
     
 {% block content %}
-    <section class="container-fluid mb-4" id="blog">
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <p class="title text-center">
-                {{ post.title }}
-                </p>
-                <p class="blog-post-author">
-                    By: {{ post.author.first_name }}
-                </p>
-                <p class="blog-post-text">
-                    {{ post.body }}
-                </p>
+<section class="container-fluid mb-4" id="blog">
+    <div class="row justify-content-center">
+        <p class="title text-center">
+            {{ post.title }}
+            {% if request.user.is_superuser %}
+                {% if user.id == post.author.id %}
+            - <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
+            <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2 mt-1">(Delete)</a>
+                {% endif %}
+            {% endif %}
+    
+        </p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
+        <div class="col">
+            <div class="card" style="width: 40rem;">
+                {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                        {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
+                        <br/> <p class="card-title mb-2"> Likes: {{ total_likes }}
+                        </p>
+                    </h5>
+                    <p class="card-text blog-text">{{ post.body|safe }}</p>
+                    <p class="card-text">{{post.snippet}}</p>
+                    <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
+                    <form action="{%url 'like_post' post.pk %}" method="POST">
+                        <p class="card-title mb-2">
+                            {% csrf_token %}
+                            <a href="{% url 'account_login' %}"
+                            class="card-title">Log In</a> to like
+                            </p>
+                            {% if user.is_authenticated %}
+                            {% if liked %}
+                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
+                            {% else %}
+                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
+                            {% endif %}
+                            {% endif %}    
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-6">
-        <a href="{% url 'blog' %}">Back to Blog main page.</a>
-        </div>
-    </div>   
-    </section>
-    <section class="container-fluid" id="comments">
-       
-    </section>
+    </div>
+</section>
+
 {% endblock %}
+             

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add a category
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+    
+{% block content %}
+
+{% if request.user.is_superuser %}
+    <section class="container-fluid mb-4" id="add_category">
+        <div class="row justify-content-center">
+            <p class="title text-center">
+            Add a category
+            </p>
+        </div>
+        <div class="form-group">
+            <div class="col-3">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-outline-dark btn-lg">Add</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endif %}        
+{% endblock %}

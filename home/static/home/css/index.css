@@ -1,13 +1,10 @@
-/* let text flow partial over hero image*/
-/* #intro {
-    position: absolute;
-    bottom: 1rem;
-    width: 100vw;
-} */
+#intro {
+    padding-left: 0;
+    padding-right: 0;
+}
 .intro-text {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #15020a;
-    background-color: #fff;
 }
 #about {
     /* position: absolute; */
@@ -16,16 +13,16 @@
 }
 #why {
     background-image: url("../../../media/backgrounds/why.jpg");
-    height: 40vh;
-    width: auto;
+    height: 25vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 #how {
     background-image: url("../../../media/backgrounds/how.jpg");
-    height: 40vh;
-    width: auto;
+    height: 25vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -47,11 +44,11 @@ a:hover {
 }
 .card-title {
     color: #580c2d;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
-.card-body {
+.card-text {
     color: #15020a;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 #index-blog {
     display: flex;
@@ -62,7 +59,21 @@ a:hover {
     width: 30vw;
     height: auto;
 }
-.section-titles {
-    color: #580c2d;
-    font-size: 3rem;
+
+a#custom-btn {
+    background-color: #bb236c;
+    color: #fff;
+    width: 7rem;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 0.5px;
+    border-radius: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
 }
+/* .row-cards {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 0;
+} */

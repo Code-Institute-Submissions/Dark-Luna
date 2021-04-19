@@ -245,13 +245,12 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Email id  | email_id     | models.EmailField    | null=True,blank=True |
 | Timestamp | timestamp    | models.DateTimeField | default=timezone.now |
 
-
 ## Features ##
 
 ### Features that are implemented ###
 
 - Registration functionality
-- Log In and Out functionality 
+- Log In and Out functionality
 - Shop (products)
 - Booking (sessions, massages and/or workshops)
 - Sign Up for newsletter (MailChimp)
@@ -263,11 +262,11 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 - Blog (with comments section)
 
 - CRUD Functions:
-  * Create:
-    * Account(profile)
-    * Testimonials
-    * Comment to blog
-    * Contact form content
+- Create:
+  - Account(profile)
+  - Testimonials
+  - Comment to blog
+  - Contact form content
 
   * Read:
     * Account(profile)
@@ -276,20 +275,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
   * Update:
     * Account(profile)
-    * Bookings
-    * Purchases(shop, before checkout)
-    * Testimonials
-    * Comment to blog
-
-  * Delete:
-    * Account(profile)
-    * Bookings
-    * Purchases(shop, before checkout)
-    * Testimonials
-    * Comment to blog
-
-### Features to be implemented ###
-
+    * BookingsReverse for 'blog-post-detail' with arguments '('2', '6')' not found. 1 pattern(s) tried: ['blog/article/(?P<pk>[0-9]+)$']
 WIP
 
 ### Known issues ###
@@ -324,17 +310,6 @@ WIP
 - [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 - [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
-- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
-- [Github](https://github.com/)
-- [Firefox](https://www.mozilla.org/nl/firefox/all/)
-- [Tables generator](https://www.tablesgenerator.com/)
-
-## Testing ##
-
-### Testing user stories ###
-
-## Manual testing ##
-
 Home
 
 Register
@@ -352,21 +327,24 @@ Log In
 
 ### In development ###
 
-Name
+Name Add blog post not working
 
-- Bug description:
+- Bug description: When adding a blog post from the front end, the add button returns an error ```Reverse for 'blog-post-detail' with arguments '('2', '6')' not found. 1 pattern(s) tried: ['blog/article/(?P<pk>[0-9]+)$']```
+It did however post the addition. It turns out I was only one comma away :)
 
-- Fix:
+- Fix: in models.py ```return reverse('blog-post-detail', args=(str(self.id),))``` added a comma between the closing parenthesis and it worked.
 
-- Verdict:
+- Verdict: All good!
 
 ### From peer code review ###
 
 ### From friends and family testing ###
 
 ## Deployment ##
+
 Dark Luna was developed using the GitPod online IDE and using Git & GitHub for version control.
 It is hosted on the Heroku platform, with static files and images being hosted in AWS S3 Basket.
+
 ### Local Deployment ###
 
 To be able to run this project, the following tools have to be installed:
