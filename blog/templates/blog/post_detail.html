@@ -28,10 +28,18 @@
             <div class="card" style="width: 40rem;">
                 <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }}
+                    <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
+                        <br/> <p class="card-title mb-2"> {{ total_likes }}
+                        likes
+                        </p>
                     </h5>
                     <p class="card-text blog-text">{{ post.body|safe }}</p>
-                    <a href="{% url 'blog' %}" class="btn-md" id="custom-btn">Back</a>
+                    <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
+
+                    <form action="{%url 'like_post' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button> - 
+                    </form>
                 </div>
             </div>
         </div>
