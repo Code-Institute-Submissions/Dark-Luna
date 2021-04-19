@@ -52,7 +52,11 @@
             {% if post.pk < 5 %}
         <div class="col">
             <div class="card" style="width: 20rem;">
-                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                        {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5>
                     <p class="card-text">{{ post.body|slice:"200" }}</p>

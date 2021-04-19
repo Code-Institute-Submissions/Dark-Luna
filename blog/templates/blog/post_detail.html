@@ -26,7 +26,11 @@
     <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
         <div class="col">
             <div class="card" style="width: 40rem;">
-                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                        {% endif %}
                 <div class="card-body">
                     <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
                         <br/> <p class="card-title mb-2"> Likes: {{ total_likes }}
@@ -35,10 +39,12 @@
                     <p class="card-text blog-text">{{ post.body|safe }}</p>
                     <p class="card-text">{{post.snippet}}</p>
                     <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
-
                     <form action="{%url 'like_post' post.pk %}" method="POST">
                         <p class="card-title mb-2">
                             {% csrf_token %}
+                            <a href="{% url 'account_login' %}"
+                            class="card-title">Log In</a> to like
+                            </p>
                             {% if user.is_authenticated %}
                             {% if liked %}
                             <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
@@ -46,9 +52,6 @@
                             <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
                             {% endif %}
                             {% endif %}    
-                            <a href="{% url 'account_login' %}"
-                            class="card-title">Log In</a> to like
-                            </p>
                     </form>
                 </div>
             </div>

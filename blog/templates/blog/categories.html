@@ -19,7 +19,11 @@
             {% for post in category_posts %}
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                    {% if post.header_image %}
+                    <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                {% else %}
+                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                {% endif %}
                         <div class="card-body">
                             <li><a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a> <h5 class="card-title">- {{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5></li>               
                             <p class="card-text blog-text">{{ post.body|slice:"200"|safe }}</p>
