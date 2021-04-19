@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'profiles',
     'django_countries',
     'testimonials',
+    'ckeditor',
     # 'storages',
 ]
 

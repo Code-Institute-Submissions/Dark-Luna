@@ -22,7 +22,7 @@
                     <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <li><a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a> <h5 class="card-title">- {{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5></li>               
-                            <p class="card-text blog-text">{{ post.body|slice:"200" }}</p>
+                            <p class="card-text blog-text">{{ post.body|slice:"200"|safe }}</p>
                             <a href="{% url 'blog' %}" class="btn-md" id="custom-btn">Back</a>
                         </div>
                 </div>

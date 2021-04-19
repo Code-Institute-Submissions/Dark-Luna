@@ -22,6 +22,7 @@
             <div class="col-3">
                 <form method="POST">
                     {% csrf_token %}
+                    {{ form.media }}
                     {{ form.as_p }}
                     <button class="btn btn-outline-dark btn-lg">Post</button>
                 </form>
