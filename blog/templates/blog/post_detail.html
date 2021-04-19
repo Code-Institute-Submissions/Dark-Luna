@@ -38,17 +38,17 @@
 
                     <form action="{%url 'like_post' post.pk %}" method="POST">
                         <p class="card-title mb-2">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                            {% if liked %}
+                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
+                            {% else %}
+                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
+                            {% endif %}
+                            {% endif %}    
                             <a href="{% url 'account_login' %}"
                             class="card-title">Log In</a> to like
                             </p>
-                        {% csrf_token %}
-                        {% if user.is_authenticated %}
-                            {% if liked %}
-                                <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
-                            {% else %}
-                                <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
-                            {% endif %}
-                        {% endif %}    
                     </form>
                 </div>
             </div>
