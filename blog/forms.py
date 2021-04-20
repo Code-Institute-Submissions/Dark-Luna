@@ -49,20 +49,3 @@ class CommentForm(forms.ModelForm):
             'name': forms.Select(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
-
-
-class CategoriesForm(forms.ModelForm):
-    """ Categories form """
-    class Meta:
-        model = Category
-        fields = ('name', 'friendly_name',)
-
-    def __init__(self, *args, **kwargs):
-        """ Add placeholders and classes, remove auto-generated lables,
-            set focus on the first field in form """
-
-        super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
-            self.fields[field].widget.attrs['placeholder'] = '...'
-            self.fields[field].widget.attrs['class'] = 'add-form-input'

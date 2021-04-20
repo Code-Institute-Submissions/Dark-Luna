@@ -5,14 +5,10 @@ from ckeditor.fields import RichTextField
 
 
 class Category(models.Model):
-    class Meta:
-        verbose_name_plural = 'Categories'
-
     name = models.CharField(max_length=255)
-    friendly_name = models.CharField(max_length=254, null=True, blank=False)
 
     def __str__(self):
-        return self.friendly_name
+        return self.name
 
     def get_absolute_url(self):
         return reverse('home')
@@ -26,8 +22,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
-    category = models.ForeignKey(
-        'Category', null=True, blank=False, on_delete=models.PROTECT)
+    category = models.CharField(max_length=255, default='uncategorized')
     snippet = models.CharField(max_length=255)
     likes = models.ManyToManyField(User, related_name='blog_posts')
 
