@@ -15,6 +15,7 @@
             {% if category_posts %}
             {{ cats }} Category
         </p>
+          
         <div class="row row-cols-1 row-cols-md-4 g-3 row-cards justify-content-space-around">
             {% for post in category_posts %}
             <div class="col">
@@ -23,7 +24,7 @@
                     <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
                 {% else %}
                     <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                {% endif %}
+                    {% endif %}
                         <div class="card-body">
                             <li><a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a> <h5 class="card-title">- {{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5></li>               
                             <p class="card-text blog-text">{{ post.body|slice:"200"|safe }}</p>

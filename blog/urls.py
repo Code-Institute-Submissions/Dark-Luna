@@ -1,7 +1,8 @@
 from django.urls import path
+from . import views
 from .views import (
      BlogHomeView, BlogDetailView, AddBlogPost, UpdatePostView,
-     DeletePostView, CategoryView, AddCategoryView, LikeView, AddCommentView)
+     DeletePostView, LikeView, AddCommentView)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -21,10 +22,14 @@ urlpatterns = [
      path('article/delete/<int:pk>', DeletePostView.as_view(),
           name='delete_post'),
 
-     path('add_category/', AddCategoryView.as_view(),
-          name='add-blog-category'),
+     path('add_category',
+          views.categories, name='categories_management'),
 
-     path('category/<str:cats>/', CategoryView, name='category'),
+     path('category/edit/<int:category_id>',
+          views.edit_categories, name='edit_category'),
+
+     path('management/lessons-page/categories/remove/<int:category_id>',
+          views.remove_categories, name='remove_category'),
 
      path('like/<int:pk>', LikeView, name='like_post'),
 
