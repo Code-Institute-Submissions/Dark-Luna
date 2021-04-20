@@ -38,23 +38,39 @@
                     </h5>
                     <p class="card-text blog-text">{{ post.body|safe }}</p>
                     <p class="card-text">{{post.snippet}}</p>
-                    <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
                     <form action="{%url 'like_post' post.pk %}" method="POST">
-                        <p class="card-title mb-2">
                             {% csrf_token %}
+                        {% if user.is_authenticated %}
+                        {% if liked %}
+                        <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
+                        {% else %}
+                        <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
+                        {% endif %}
+                        {% else %}
+                        <p class="card-title mb-2">
                             <a href="{% url 'account_login' %}"
-                            class="card-title">Log In</a> to like
-                            </p>
-                            {% if user.is_authenticated %}
-                            {% if liked %}
-                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
-                            {% else %}
-                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
-                            {% endif %}
-                            {% endif %}    
+                                class="card-title">Log In</a> to like
+                        </p>
+                        {% endif %}    
                     </form>
                 </div>
+                <p class="card-title mb-2"> Comments </p>
+                {% if not post.comments.all %}
+                <p class="card-title mb-2"> No comments yet <a href="#" class="card-title">Add one </a></p>
+                {% else %}
+                {% for comment in post.comments.all %}
+                <p class="card-text">
+                    {{ comment.name }} - {{ comment.date_added }} <br/>
+                    {{ comment.body }}
+                </p>
+                {% endfor %}    
+                {% endif %}
             </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
         </div>
     </div>
 </section>
