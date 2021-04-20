@@ -25,6 +25,8 @@ class BlogDetailView(DetailView):
     template_name = 'blog/post_detail.html'
 
     def get_context_data(self, *args, **kwargs):
+        post = get_object_or_404(Post, id=self.kwargs['pk'], )
+        comments = post.comments.filter()
         cat_menu = Category.objects.all()
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
 
@@ -38,6 +40,7 @@ class BlogDetailView(DetailView):
         context["cat_menu"] = cat_menu
         context["total_likes"] = total_likes
         context["liked"] = liked
+        context["comments"] = comments
         return context
 
 

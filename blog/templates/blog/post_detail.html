@@ -33,7 +33,7 @@
                         {% endif %}
                 <div class="card-body">
                     <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
-                        <br/> <p class="card-title mb-2"> Likes: {{ total_likes }} </p>
+                        <br/> <p class="card-title mb-2"> Likes: {{ total_likes }} <br/> Comments: {{ comments.count }}</p>
                             <form action="{%url 'like_post' post.pk %}" method="POST">
                                 {% csrf_token %}
                             {% if user.is_authenticated %}

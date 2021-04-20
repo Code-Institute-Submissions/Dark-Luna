@@ -25,7 +25,7 @@ class Post(models.Model):
     category = models.CharField(max_length=255, default='uncategorized')
     snippet = models.CharField(max_length=255)
     likes = models.ManyToManyField(User, related_name='blog_posts')
-
+    
     def total_likes(self):
         return self.likes.count()
 
@@ -45,6 +45,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.post.title, self.name)
-
-    # def get_absolute_url(self):
-    #     return reverse('blog-post-detail', args=(str(self.id),))
