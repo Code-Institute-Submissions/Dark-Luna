@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
      BlogHomeView, BlogDetailView, AddBlogPost, UpdatePostView,
      DeletePostView, CategoryView, AddCategoryView, LikeView, AddCommentView,
-     UpdateCommentView)
+     UpdateCommentView, DeleteCommentView)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -34,6 +34,9 @@ urlpatterns = [
 
      path('article/comment/update/<int:pk>/', UpdateCommentView.as_view(),
           name='update-comment'),
+
+     path('article/comment/delete/<int:pk>', DeleteCommentView.as_view(),
+          name='delete-comment'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

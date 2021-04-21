@@ -108,10 +108,16 @@ class UpdateCommentView(UpdateView):
     form_class = EditCommentForm
     template_name = 'blog/update_comment.html'
 
-    def form_valid(self, form):
-        form.instance.post_id = self.kwargs['pk']
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.instance.post_id = self.kwargs['pk']
+    #     return super().form_valid(form)
 
-    def get_success_url(self):
-        return reverse_lazy('blog-post-detail',
-                            kwargs={'pk': self.kwargs['pk']})
+    # def get_success_url(self):
+    #     return reverse_lazy('blog-post-detail',
+    #                         kwargs={'pk': self.kwargs['pk']})
+
+
+class DeleteCommentView(DeleteView):
+    model = Comment
+    template_name = 'blog/delete_comment.html'
+    success_url = reverse_lazy('blog')
