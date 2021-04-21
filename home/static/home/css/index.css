@@ -5,6 +5,7 @@
 .intro-text {
     font-size: 1rem;
     color: #15020a;
+    padding:inherit;
 }
 #about {
     /* position: absolute; */
@@ -18,6 +19,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-bottom: 1rem;
 }
 #how {
     background-image: url("../../../media/backgrounds/how.jpg");
@@ -29,8 +31,8 @@
 }
 .title {
     padding: 1rem 1rem;
-    margin-top: 10rem;
-    font-size: 6rem;
+    margin-top: 4rem;
+    font-size: 1.5rem;
     color: #580c2d;
     background: rgba(255, 255, 255, 0.2);
 }

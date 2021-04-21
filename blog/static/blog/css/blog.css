@@ -56,6 +56,20 @@ a:hover {
     font-size: 1.1rem;
     color: #580c2d!important;
     font-weight: 300;
+    text-decoration: underline;
+}
+.title-links:hover {
+    text-decoration: none;
+}
+.category-title-links {
+    font-size: 2rem;
+    color: #580c2d!important;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-right: 1rem;
+}
+.category-title-links:hover {
+    text-decoration: none;
 }
 #custom-btn,
 #custom-btn-home {

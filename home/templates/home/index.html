@@ -50,8 +50,8 @@
     <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
         {% for post in object_list %}
             {% if post.pk < 5 %}
-        <div class="col">
-            <div class="card" style="width: 20rem;">
+        <div class="col-sm-6">
+            <div class="card" style="width: 15rem;">
                 {% if post.header_image %}
                             <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
                         {% else %}
