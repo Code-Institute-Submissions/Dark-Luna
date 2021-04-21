@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from massage.models import Testimonial
+# from massage.models import Testimonial
 
 
 def index(request):
     """ A view to return index page """
-    testimonial = Testimonial.objects.all()
+    # testimonial = Testimonial.objects.all()
 
-    context = {
-        'testimonials': testimonial,
-    }
+    # context = {
+    #     'testimonials': testimonial,
+    # }
 
-    return render(request, 'life/life.html', context)
+    return render(request, 'life/life.html')

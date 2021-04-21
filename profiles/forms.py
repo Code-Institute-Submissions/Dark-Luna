@@ -1,13 +1,8 @@
-"""
-This is a User Profile Details form which will be
-displayed in Account page - details section
-"""
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Testimonial
 
 
 class UserDetailsForm(forms.ModelForm):
-    """ User Details Form """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -41,17 +36,26 @@ class UserDetailsForm(forms.ModelForm):
 
 
 class TestimonialForm(forms.ModelForm):
+    """ Testimonials Form """
     class Meta:
-        model = Post
-        fields = ('title', 'tag', 'body',
-                  'snippet', 'author', 'category', 'header_image',)
-
+        model = Testimonial
+        fields = (
+            'text', 'page',
+        )
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'tag': forms.TextInput(attrs={'class': 'form-control'}),
-            'body': forms.Textarea(attrs={'class': 'form-control'}),
-            'snippet': forms.Textarea(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=choice_list,
-                                     attrs={'class': 'form-control'})
+            'text': forms.Textarea(attrs={'class': 'form-control'}),
+            'page': forms.Select(attrs={'class': 'form-control'})
+        }
+
+
+class TestimonialEditForm(forms.ModelForm):
+    """ Testimonials Form """
+    class Meta:
+        model = Testimonial
+        fields = (
+            'text', 'page',
+        )
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control'}),
+            'page': forms.Select(attrs={'class': 'form-control'})
         }

@@ -46,7 +46,6 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             {% if request.user.is_authenticated %}
                             <li><a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a></li>
-                            <li><a href="{% url 'add-testimonial' %}" class="dropdown-item">Add testimonial</a></li>
                             {% if request.user.is_superuser %}
                             <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
                             <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Add blog category</a></li>

@@ -2,13 +2,18 @@
 This module will render user account page with
 all necessary user information and forms
 """
-# from datetime import date, timedelta
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from profiles.forms import UserDetailsForm
+from django.views.generic import (
+    ListView, CreateView, UpdateView, DeleteView)
+from profiles.forms import (
+                            UserDetailsForm,
+                            TestimonialForm,
+                            TestimonialEditForm)
 # from checkout.models import Order
-from .models import UserProfile
+from .models import UserProfile, Testimonial
 
 
 @login_required(login_url='/accounts/login/')
@@ -33,6 +38,28 @@ def user_account(request):
         'no_bag': True,
     }
     return render(request, template, context)
+
+
+class TestimonialHomeView(ListView):
+    model = Testimonial
+    template_name = 'account/testimonial_list.html'
+
+
+class AddTestimonialView(CreateView):
+    model = Testimonial
+    form_class = TestimonialForm
+    template_name = 'account/testimonial_form.html'
+
+
+class UpdateTestimonialView(UpdateView):
+    model = Testimonial
+    form_class = TestimonialEditForm
+    template_name = 'account/update_testimonial.html'
+
+
+class DeleteTestimonialView(DeleteView):
+    model = Testimonial
+    success_url = reverse_lazy('user_account')
 
 
 # @login_required(login_url='/accounts/login/')
