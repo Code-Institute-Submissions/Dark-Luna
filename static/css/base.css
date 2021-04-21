@@ -97,10 +97,15 @@ a:hover {
     width: 40vh;
 }
 
+p {
+    color: #000;
+    font-size: 1.1rem;
+}
+
 h1,
 label,
-.btn,
-p {
+.btn
+ {
     color: #79113f;
 }
 

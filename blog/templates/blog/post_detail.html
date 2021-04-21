@@ -16,64 +16,67 @@
             {{ post.title }}
             {% if request.user.is_superuser %}
                 {% if user.id == post.author.id %}
-            - <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
-            <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2 mt-1">(Delete)</a>
+                - <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
+                <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2 mt-1">(Delete)</a>
                 {% endif %}
             {% endif %}
-    
         </p>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
-        <div class="col">
-            <div class="card" style="width: 40rem;">
-                {% if post.header_image %}
-                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
-                        {% else %}
-                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                        {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title blog-post-author">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.tag }} 
-                        <br/> <p class="card-title mb-2"> Likes: {{ total_likes }} <br/> Comments: {{ comments.count }}</p>
+    <div class="row justify-content-center">
+        <div class="col-md-6 blog">
+            {% if post.header_image %}
+                <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+            {% else %}
+                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+            {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title blog-post-author">{{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }} 
+                            <p class="card-sub-title mb-2"> Likes: {{ total_likes }} <br/><br/> Comments: {{ comments.count }}</p><br/>
                             <form action="{%url 'like_post' post.pk %}" method="POST">
                                 {% csrf_token %}
-                            {% if user.is_authenticated %}
-                            {% if liked %}
-                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
-                            {% else %}
-                            <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
-                            {% endif %}
-                            {% else %}
-                            <p class="card-title mb-2">
-                                <a href="{% url 'account_login' %}"
-                                    class="card-title">Log In</a> to like
-                            </p>
-                            {% endif %}
-                        </form>
-                    </h5>
-                    <p class="card-text blog-text">{{ post.body|safe }}</p>
-                    <p class="card-text">{{post.snippet}}</p>
-                </div>
-                <p class="category-title mb-2"> Comments </p>
-                {% if not post.comments.all %}
-                <p class="card-title mb-2"> No comments yet <a href="{% url 'add-comment' post.pk %}" class="title-links">Add one </a></p>
-                {% else %}
-                <a href="{% url 'add-comment' post.pk %}" class="title-links">Add Comment</a>
-                {% for comment in post.comments.all %}
-                <p class="card-text">
-                    {{ comment.body }} <br/>
-                    {{ comment.name }} - {{ comment.date_added }}
-                </p>
-                {% endfor %}    
-                {% endif %}
-            </div>
+                                {% if user.is_authenticated %}
+                                    {% if liked %}
+                                    <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Unlike</button>
+                                    {% else %}
+                                    <button type="submit" name="post_id" value="{{post.id}}" class="btn-md custom-btn-blog mb-2">Like</button>
+                                    {% endif %}
+                                {% else %}
+                                    <p class="card-title mb-2">
+                                        <a href="{% url 'account_login' %}"
+                                        class="card-title">Log In</a> to like
+                                    </p>
+                                {% endif %}
+                            </form>
+                        </h5>
+                        {{ post.body|safe }}
+                    </div>
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col text-center">
+        <div class="col-md-6 comment-section">
+            <p class="category-title mb-2"> Comments </p>
+            {% if not post.comments.all %}
+            <p class="card-title mb-2"> No comments yet <a href="{% url 'add-comment' post.pk %}" class="title-links">Add one </a></p>
+            {% else %}
+            <a href="{% url 'add-comment' post.pk %}" class="title-links">Add Comment</a>
+            {% for comment in post.comments.all %}
+            <div class="comment-box">
+                <p class="card-text">
+                    {{ comment.body }} <br/>
+                </p>
+                <p class="blog-comment-author">    
+                    {{ comment.name }} - {{ comment.date_added }}
+                </p>
+            </div>
+            {% endfor %}    
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
             <a href="{% url 'blog' %}" class="btn-md mb-2" id="custom-btn">Back</a>
         </div>
     </div>
 </section>
-
 {% endblock %}
              
