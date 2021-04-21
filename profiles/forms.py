@@ -40,9 +40,10 @@ class TestimonialForm(forms.ModelForm):
     class Meta:
         model = Testimonial
         fields = (
-            'text', 'page',
+            'author', 'text', 'page',
         )
         widgets = {
+            'author': forms.Select(attrs={'class': 'form-control'}),
             'text': forms.Textarea(attrs={'class': 'form-control'}),
             'page': forms.Select(attrs={'class': 'form-control'})
         }

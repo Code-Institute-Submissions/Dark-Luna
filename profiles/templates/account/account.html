@@ -64,6 +64,14 @@
                     Add, edit and/or delete your testimonials <a href="{% url 'testimonial'%}">here!</a>
                 </p>
             </div>
+            {% for testimonial in object_list.all %}
+            <div class="col-4">
+              
+                <p> Testimonials?? </p>
+                {{ testimonial.text }}
+              
+            </div>
+            {% endfor %}
             </div>
     </div>
 </section>

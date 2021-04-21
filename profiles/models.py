@@ -61,13 +61,14 @@ class Testimonial(models.Model):
         Workshops = 'Workshops'
 
     text = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='testimonial')
     added = models.DateTimeField(default=timezone.now)
     page = models.CharField(choices=RelatedPage.choices,
                             default=RelatedPage.Massage, max_length=13)
 
     def __str__(self):
-        return self.author
+        return str(self.text)
 
     def get_absolute_url(self):
         return reverse('user_account')
