@@ -49,6 +49,18 @@ class AddBlogPost(CreateView):
     template_name = 'blog/post_form.html'
 
 
+class UpdatePostView(UpdateView):
+    model = Post
+    form_class = EditForm
+    template_name = 'blog/update_blog.html'
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'blog/delete_blog.html'
+    success_url = reverse_lazy('blog')
+
+
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(
         category__iexact=cats.replace('-', ' '))
@@ -61,18 +73,6 @@ class AddCategoryView(CreateView):
     model = Category
     template_name = 'blog/category_form.html'
     fields = '__all__'
-
-
-class UpdatePostView(UpdateView):
-    model = Post
-    form_class = EditForm
-    template_name = 'blog/update_blog.html'
-
-
-class DeletePostView(DeleteView):
-    model = Post
-    template_name = 'blog/delete_blog.html'
-    success_url = reverse_lazy('blog')
 
 
 def LikeView(request, pk):
@@ -107,14 +107,6 @@ class UpdateCommentView(UpdateView):
     model = Comment
     form_class = EditCommentForm
     template_name = 'blog/update_comment.html'
-
-    # def form_valid(self, form):
-    #     form.instance.post_id = self.kwargs['pk']
-    #     return super().form_valid(form)
-
-    # def get_success_url(self):
-    #     return reverse_lazy('blog-post-detail',
-    #                         kwargs={'pk': self.kwargs['pk']})
 
 
 class DeleteCommentView(DeleteView):

@@ -38,3 +38,20 @@ class UserDetailsForm(forms.ModelForm):
             else:
                 self.fields[field].widget.attrs['placeholder'] = '...'
             self.fields[field].widget.attrs['class'] = 'user-details-fields'
+
+
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'tag', 'body',
+                  'snippet', 'author', 'category', 'header_image',)
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'tag': forms.TextInput(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'snippet': forms.Textarea(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(choices=choice_list,
+                                     attrs={'class': 'form-control'})
+        }

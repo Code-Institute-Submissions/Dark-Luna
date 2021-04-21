@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from testimonials.models import Testimonial
+from massage.models import Testimonial
 
 
 def index(request):
@@ -11,3 +11,8 @@ def index(request):
     }
 
     return render(request, 'why/why.html', context)
+
+# class AddTestimonial(CreateView):
+#     model = Testimonial
+#     form_class = TestimonialForm
+#     template_name = 'blog/post_form.html'
