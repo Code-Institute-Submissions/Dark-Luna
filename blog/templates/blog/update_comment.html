@@ -2,31 +2,36 @@
 {% load static %}
 
 {% block title %}
-    Edit category
+    Update Comment
 {% endblock %}
-
+<!--needs authentication!-->
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
-    
 {% block content %}
-
-{% if request.user.is_superuser %}
-    <section class="container-fluid mb-4" id="add_category">
+    <section class="container-fluid mb-4" id="blog">
         <div class="row justify-content-center">
             <p class="title text-center">
-            Edit category
+            Update comment
             </p>
         </div>
         <div class="form-group">
-            <div class="col-3">
+            <div class="col-3"> 
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-outline-dark btn-lg">Add</button>
+                    <button class="btn btn-outline-dark btn-lg">Update</button>
                 </form>
             </div>
         </div>
     </section>
-{% endif %}        
+
+<!-- <div class="error">
+    <p class="title text-center">
+        Admin only area!
+    </p>
+    <div class="col-12 text-center">    
+        <a href="{% url 'home' %}" class="btn-md" id="custom-btn">Home</a>
+    </div>
+</div> -->
 {% endblock %}

@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (
      BlogHomeView, BlogDetailView, AddBlogPost, UpdatePostView,
-     DeletePostView, CategoryView, AddCategoryView, LikeView, AddCommentView)
+     DeletePostView, CategoryView, AddCategoryView, LikeView, AddCommentView,
+     UpdateCommentView)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,6 +31,9 @@ urlpatterns = [
 
      path('article/comment/<int:pk>/', AddCommentView.as_view(),
           name='add-comment'),
+
+     path('article/comment/update/<int:pk>/', UpdateCommentView.as_view(),
+          name='update-comment'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

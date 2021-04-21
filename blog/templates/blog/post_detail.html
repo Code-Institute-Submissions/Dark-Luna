@@ -66,6 +66,10 @@
                 </p>
                 <p class="blog-comment-author">    
                     {{ comment.name }} - {{ comment.date_added }}
+                    {% if user.id == post.author.id %}
+                    - <a href="{% url 'update-comment' comment.pk %}" class="crud-links ml-2 mt-1">(Edit)</a>
+                    <a href="" class="crud-links ml-2 mt-1">(Delete)</a>
+                    {% endif %}
                 </p>
             </div>
             {% endfor %}    
