@@ -23,6 +23,7 @@ body {
     line-height: inherit;
     white-space: nowrap;
     margin-right: 0;
+    margin-top: 0;
     -webkit-text-fill-color: #bb236c;
     -webkit-text-stroke-color: #580c2d;
     -webkit-text-stroke-width: 1.2px;
@@ -33,7 +34,7 @@ body {
 }
 
 a {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     -webkit-text-fill-color: #bb236c;
     -webkit-text-stroke-color: #580c2d;
     -webkit-text-stroke-width: 1.2px;
@@ -53,6 +54,10 @@ a:hover {
     border-radius: 2rem;
     border-color: #580c2d;
     font-size: 2rem;
+}
+.navbar-toggler:hover {
+    background-color: #580c2d;
+   
 }
 
 .navbar .dropdown-menu {
@@ -80,7 +85,7 @@ a:hover {
 
 .hero.is-info {
     background-image: url("../../../media/backgrounds/hero2.jpg");
-    height: 45vh;
+    height: 50vh;
     background-repeat: no-repeat;
     background-position:top;
     background-size: cover;
