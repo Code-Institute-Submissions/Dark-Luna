@@ -7,7 +7,7 @@
 
 {% block content %}
 <section class="account-main my-3">
-    {% if request.user.is_authenticated %}
+    <!-- {% if request.user.is_authenticated %} -->
     <div class="container-fluid mb-4" id="testimonials">
         <div class="row justify-content-center">
             <div class="col-4">
@@ -15,9 +15,18 @@
                     Add, edit and/or delete your testimonials here!
                 </p>
             </div>
+            {% for testimonial in testimonials %}
+            <div class="col-4">
+              
+                <p> Testimonials?? </p>
+                {{ testimonial.text }}
+              
+            </div>
+            {% endfor %}
+        
             <a href="{% url 'add-testimonial' %}">Add testimonial</a>
         </div>
     </div>
 </section>
-{% endif %}
+<!-- {% endif %} -->
 {% endblock %}
