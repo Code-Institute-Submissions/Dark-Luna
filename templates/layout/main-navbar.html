@@ -24,7 +24,8 @@
                         <a class="nav-link mr-3" href="{% url 'massage' %}">Massage</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'workshops' %}">Workshops</a>
+                        <a class="nav-link mr-3 {% if request.get_full_path == '/workshops/' %}nav-link-active{% else %}hvr-bounce-to-top{% endif %}"
+                        href="{% url 'workshops' %}">Workshops</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
@@ -49,6 +50,8 @@
                             {% if request.user.is_superuser %}
                             <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
                             <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Add blog category</a></li>
+                            <li><a href="{% url 'categories_management' %}" class="dropdown-item">Categories</a></li>
+                            <li><a href="{% url 'workshops_management' %}" class="dropdown-item">Workshops</a></li>
                             {% endif %}
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}

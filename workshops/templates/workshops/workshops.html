@@ -18,12 +18,114 @@
             </div>
         </div>   
     </section>
-    <section class="container-fluid" id="workshop-cards">
+    <section class="container-fluid mb-4" id="workshops-cards">
+        <p class="title text-center">
+            Workshops
+        </p>
+        <p class="category-title text-center">Categories:</p>
         <div class="row justify-content-center">
-            <div class="col-6">
-              
+            <form method="GET" action="{% url 'workshops' %}">
+                <input type="text" name="q" placeholder="Search" aria-label="Search">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <p class="text-success query-text m-0 mt-1">
+                    {% if query_text != None %}
+                    {{ workshops|length }} Workshop{% if workshops|length != 1 %}s{% endif %}
+                    {% if query_text %} found for<span class="text-dark">
+                        <strong>"{{ query_text|truncatechars:24 }}"</strong></span>
+                    {% endif %}
+                    {% endif %}
+                </p>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div class="filter-container">
+                <!-- Code used from Code Institute learning materials -->
+                <select class="sort-selector custom-select custom-select-sm selector-border
+                {% if current_sorting == 'None_None' %}selector-border-none{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort
+                        by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
+                        Price (low to high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
+                        Price (high to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>
+                        Name (A-Z)</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
+                        Name (Z-A)</option>
+                </select>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <div class="category-li">
+                        <a class="category-link shadow-sm {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
+                            href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
+                    </div>
+                </div>
+                {% for category in categories_list %}
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <div class="category-li">
+                        <a class="category-link shadow-sm {{category.name}}"
+                            href="{% url 'workshops' %}?category={{ category.name }}">
+                            {{ category.name }} ({{ category.workshop__count }})
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+  
+        <div class="row row-cols-1 row-cols-md-4 g-3 row-cards justify-content-space-around">
+            {% for workshop in workshops %}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        {% if workshop.image %}
+                            <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                        {% endif %}
+                        <div class="card-body">
+                            <h1>{{ workshop.name }}</h1>
+                            <p>Participants:
+                                <span>{{ workshop.participants }}</span>
+                            </p>
+                            <p>Price:
+                                <span>€ {{ workshop.price }}</span>
+                            </p>
+                            <p>Therapist:
+                                <span>{{ workshop.therapist }}</span>
+                            </p>
+                            <div class="buttons">
+                                <a href="{% url 'workshop' workshop.id %}"
+                                    class="btn hvr-bounce-to-right">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% if workshops.count %}
+                <div class="show-more">
+                    <p>
+                        <a href="#" id="loadMore"><i class="fas fa-angle-double-down"></i>Load More (<span
+                                class="visible-cards-count"></span>)</a>
+                    </p>
+                    <p class="page-results"><span class="cards-count">
+                            {% if workshops.count <= 12 %} {{ workshops.count }} {% else %}12 {% endif %}</span>
+                                from <span class="total-count">{{ workshops.count }}</span> workshops</p>
+                </div>
+                {% else %}
+                <div class="text-center">
+                    <p class="no-results">No results found</p>
+                </div>
+                {% endif %}
+            </div>
     </section>
     <section class="container-fluid" id="testimonials">
         <div class="row justify-content-center">
