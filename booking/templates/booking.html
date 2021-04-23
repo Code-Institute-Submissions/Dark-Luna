@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}| Booking{% endblock %}
+
+{% block content %}
+
+<!-- Main container -->
+<div id="booking-page" role="main">
+    <!-- Top banner -->
+    <div class="container booking-banner">
+        <h2>Booking..</h2>
+        <hr>
+    </div>
+    <!-- Booking container -->
+    <div class="booking-container">
+        {% if bag %}
+        <div class="container">
+            <!-- Finalise your booking -->
+            <h2>Finalise your booking</h2>
+            <hr>
+            <!-- When any workshop is booked show booked in this container -->
+            {% if booked_workshops %}
+            <!-- Booked workshops present in table on page -->
+            {% include 'booking/booking-table.html' %}
+            <hr>
+            <!-- Totals -->
+            {% include 'booking/booking-totals.html' %}
+            <!-- Buttons -->
+            {% include 'booking/booking-buttons.html' %}
+            {% endif %}
+        </div>        
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    /**
+    * This function will remove item from booked workshops bag and update the 'bag' and reload page
+    */
+    $('.remove-workshop').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        let workshopId = $(this).attr('id').split('remove_')[1];
+        let url = `/booking/remove/${workshopId}`;
+        let data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
+{% endblock %}
