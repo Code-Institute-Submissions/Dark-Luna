@@ -50,8 +50,8 @@
                             {% if request.user.is_superuser %}
                             <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
                             <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Add blog category</a></li>
-                            <li><a href="{% url 'categories_management' %}" class="dropdown-item">Categories</a></li>
-                            <li><a href="{% url 'workshops_management' %}" class="dropdown-item">Workshops</a></li>
+                            <li><a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a></li>
+                            <li><a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a></li>
                             {% endif %}
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}

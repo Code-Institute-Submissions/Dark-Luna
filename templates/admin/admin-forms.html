@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} Admin forms {% endblock %}
+{% block content %}
+
+<!-- Forms main container -->
+<div class="admin-forms" role="main">
+    <div class="container py-4">
+        <!-- Page title -->
+        <h1 class="mt-1 mb-4 text-left">Admin</h1>
+        <div class="card shadow-sm">
+            <p class="info-text">
+                
+                Remember to fill as many fields as possible.<br>
+                Required fields are must.
+       
+            </p>
+            <hr>
+            <!-- Edit container -->
+            <div class="forms-container">
+                <!-- Form -->
+                {% if '/edit' in request.path %}
+                <!-- Include edit forms -->
+                <div class="edit-forms">
+                    {% include 'admin/forms/edit-forms.html' %}
+                </div>
+                {% else %}
+                <!-- Include add forms -->
+                <div class="add-forms">
+                    {% include 'admin/forms/add-forms.html' %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
