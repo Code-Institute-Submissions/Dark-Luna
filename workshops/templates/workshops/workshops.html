@@ -109,51 +109,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="row">
-                {% if workshops.count %}
-                <div class="show-more">
-                    <p>
-                        <a href="#" id="loadMore"><i class="fas fa-angle-double-down"></i>Load More (<span
-                                class="visible-cards-count"></span>)</a>
-                    </p>
-                    <p class="page-results"><span class="cards-count">
-                            {% if workshops.count <= 12 %} {{ workshops.count }} {% else %}12 {% endif %}</span>
-                                from <span class="total-count">{{ workshops.count }}</span> workshops</p>
-                </div>
-                {% else %}
-                <div class="text-center">
-                    <p class="no-results">No results found</p>
-                </div>
-                {% endif %}
-            </div>
+            
     </section>
-    <section class="container-fluid" id="testimonials">
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <p class="title text-center">
-                    Testimonials
-                </p>
-                <div class="container">
-                    <div class="row">
-                        {% for testimonial in testimonials %}
-                            {% if testimonial.page == 'Workshops' %}
-                        <div class="col-md-offset-2 col-md-8">
-                            <div id="testimonial-slider" class="owl-carousel">
-                                <div class="testimonial">
-                                    <p class="description">
-                                        {{ testimonial.text }}
-                                    </p>
-                                    <h3 class="title">
-                                        {{ testimonial.author }}
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    {% endfor %}
-                </div>
-                </div>
-                </div>
-    </section>
+   
 {% endblock %}
