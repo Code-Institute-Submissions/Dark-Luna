@@ -1,4 +1,4 @@
-""" Views Lessons App """
+""" Views Workshops App """
 import random
 from django.db.models.aggregates import Count
 from django.db.models import Q
@@ -6,7 +6,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from django.db.models.functions import Lower
-# from home.models import LevelCard
 from .models import Category, Workshop
 from .forms import CategoriesForm, WorkshopsForm
 
@@ -73,7 +72,7 @@ def workshops(request):
 
 
 def workshop(request, workshop_id):
-    """ A view to return lesson detail with resort detail """
+    """ A view to return workshop details """
 
     all_workshops = list(Workshop.objects.all())
     selected_workshop = get_object_or_404(Workshop, pk=workshop_id)
@@ -95,14 +94,14 @@ def workshop(request, workshop_id):
     return render(request, 'workshops/workshop.html', context)
 
 
-# Categories Management
+# Categories admin
 @staff_member_required
-def categories_management(request):
+def categories_admin(request):
     """ A view to manage workshop categories """
 
     categories = Category.objects.all()
 
-    template = "lessons/mgmt-categories.html"
+    template = "workshops/admin-categories.html"
     context = {
         'categories': categories,
     }
@@ -111,22 +110,22 @@ def categories_management(request):
 
 
 @staff_member_required
-def add_categories_management(request):
-    """ Management view to add workshop category """
+def add_categories_admin(request):
+    """ Admin view to add workshop category """
 
     if request.method == 'POST':
         form = CategoriesForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Category added successfully!')
-            return redirect(reverse('categories_management'))
+            return redirect(reverse('categories_admin'))
         else:
             messages.error(
                 request, 'Adding new category failed. Please ensure the form is valid.')
     else:
         form = CategoriesForm()
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
     }
@@ -135,8 +134,8 @@ def add_categories_management(request):
 
 
 @staff_member_required
-def edit_categories_management(request, category_id):
-    """ Management view to edit workshop category """
+def edit_categories_admin(request, category_id):
+    """ Admin view to edit workshop category """
 
     category = get_object_or_404(Category, pk=category_id)
     if request.method == 'POST':
@@ -145,7 +144,7 @@ def edit_categories_management(request, category_id):
             form.save()
             messages.success(
                 request, 'Category edited successfully!')
-            return redirect(reverse('categories_management'))
+            return redirect(reverse('categories_admin'))
         else:
             messages.error(
                 request, 'Editing category failed. \
@@ -153,7 +152,7 @@ def edit_categories_management(request, category_id):
     else:
         form = CategoriesForm(instance=category)
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
         'category': category,
@@ -163,24 +162,24 @@ def edit_categories_management(request, category_id):
 
 
 @staff_member_required
-def remove_categories_management(request, category_id):
-    """ Management view to remove workshop category """
+def remove_categories_admin(request, category_id):
+    """ Admin view to remove workshop category """
 
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category removed successfully!')
 
-    return redirect(reverse('categories_management'))
+    return redirect(reverse('categories_admin'))
 
 
-# Workshops Management
+# Workshops Admin
 @staff_member_required
-def workshops_management(request):
+def workshops_admin(request):
     """ A view to manage workshops """
 
     all_workshops = Workshop.objects.all()
 
-    template = "lessons/mgmt-lessons.html"
+    template = "workshops/admin-workshops.html"
     context = {
         'all_workshops': all_workshops,
     }
@@ -189,7 +188,7 @@ def workshops_management(request):
 
 
 @staff_member_required
-def add_workshops_management(request):
+def add_workshops_admin(request):
     """ Management view to add workshops """
 
     if request.method == 'POST':
@@ -197,14 +196,14 @@ def add_workshops_management(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Workshop added successfully!')
-            return redirect(reverse('workshops_management'))
+            return redirect(reverse('workshops_admin'))
         else:
             messages.error(
                 request, 'Adding new workshop failed. Please ensure the form is valid.')
     else:
         form = WorkshopsForm()
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
     }
@@ -213,8 +212,8 @@ def add_workshops_management(request):
 
 
 @staff_member_required
-def edit_workshops_management(request, workshop_id):
-    """ Management view to edit workshops """
+def edit_workshops_admin(request, workshop_id):
+    """ Admin view to edit workshops """
 
     edit_workshop = get_object_or_404(Workshop, pk=workshop_id)
     if request.method == 'POST':
@@ -223,7 +222,7 @@ def edit_workshops_management(request, workshop_id):
             form.save()
             messages.success(
                 request, 'Workshop edited successfully!')
-            return redirect(reverse('workshops_management'))
+            return redirect(reverse('workshops_admin'))
         else:
             messages.error(
                 request, 'Editing workshop failed. \
@@ -231,7 +230,7 @@ def edit_workshops_management(request, workshop_id):
     else:
         form = WorkshopsForm(instance=workshop)
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
         'workshop': workshop,
@@ -241,8 +240,8 @@ def edit_workshops_management(request, workshop_id):
 
 
 @staff_member_required
-def remove_workshops_management(request, workshop_id):
-    """ Management view to remove lessons """
+def remove_workshops_admin(request, workshop_id):
+    """ Admin view to remove workshops """
 
     removed_workshop = get_object_or_404(Workshop, pk=workshop_id)
     if removed_workshop.image:
@@ -252,4 +251,4 @@ def remove_workshops_management(request, workshop_id):
         removed_workshop.delete()
     messages.success(request, 'Workshop removed successfully!')
 
-    return redirect(reverse('lessons_management'))
+    return redirect(reverse('workshops_admin'))
