@@ -1,62 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
+{% endblock %}
+
 {% block extra_title %}| Categories Admin {% endblock %}
 
 {% block content %}
 
 <!-- Cateogries main container -->
-<div class="social-media-container" role="main">
-    <div class="container py-4">
-        <!-- Page title, promo text, 'Add +' button -->
-        <h1 class="mt-1 mb-4 text-left">Admin - Workshops</h1>
-        <div class="card shadow-sm">
-            <h2 class="text-left">Categories</h2>
-            <p class="info-text">Add, Edit or Remove Workshop Categories. Be careful when removing categories as they're
-                connected to all Workshops.</p>
-            <!-- Table headers container -->
-            <div class="row table-headers mt-4">
-                <!-- Add new element button-->
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <a href="{% url 'add_categories_admin' %}" class="btn hvr-bounce-to-right add-new-button">Add
-                        +</a>
-                </div>
+
+<div class="container-fluid">
+    <!-- Page title, promo text, 'Add +' button -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="mt-1 mb-4 text-left">Admin - Workshops Categories</h1>
+            <div class="categories-admin">
+                <p class="info-text">Add, Edit or Remove Workshop Categories. Be careful when removing categories as they're
+                    connected to all Workshops. Deleting a category that is bound to a workshop, will remove that workshop
+                    as well!
+                </p>
             </div>
-            <hr>
-            <!-- Table results container -->
-            <div class="row table-results">
-                {% for category in categories %}
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="row table-line">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    <p class="title">{{ category.friendly_name }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex justify-content-between buttons-space flex-column">
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-2">
-                                    <a href="{% url 'edit_categories_admin' category.id %}"
-                                        class="btn hvr-bounce-to-right btn-wide">Edit</a>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-2">
-                                    <a href="{% url 'remove_categories_admin' category.id %}"
-                                        class="btn hvr-bounce-to-right red-button btn-wide">Remove</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Don't display separate line after last lessons displayed -->
-                    {% if forloop.last != True %}
-                    <hr>
-                    {% endif %}
-                </div>
-                {% endfor %}
+            <div class="col-md-6">
+                <a href="{% url 'add_categories_admin' %}" class="btn ">Add +</a>
             </div>
         </div>
     </div>
+    {% for category in categories %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <p class="title">Categories</p>
+            <p class="title">{{ category.friendly_name }}</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <a href="{% url 'edit_categories_admin' category.id %}"
+            class="btn btn-wide">Edit</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a href="{% url 'remove_categories_admin' category.id %}"
+            class="btn btn-wide">Remove</a>
+        </div>
+    </div>
 </div>
+{%endfor%}
 {% endblock %}

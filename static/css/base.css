@@ -14,17 +14,15 @@ body {
 
 /* Navbar styling*/
 .navbar-brand,
-.navbar-extend-xl {
-    display: inline-block;
+.navbar-expand-xl {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    margin-left: -1.9rem;
     font-size: 2.5rem;
     line-height: inherit;
     white-space: nowrap;
-    margin-right: 0;
-    margin-top: 0;
     color: #79113F;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
 
 }
 
@@ -33,30 +31,16 @@ body {
 }
 
 a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #79113F;
-    font-weight: bold;
-    margin-right: 1.5rem;
+}
+.logo-text {
+    font-size: 1.7rem;
+    color: #79113F;
 }
 
 a:hover {
     color: #580c2d;
-}
-
-.navbar-toggler {
-    background-color: #580c2d;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    border-color: #79113f;
-    font-size: 2rem;
-
-}
-.navbar-toggler:hover {
-    background-color: #79113f;
-   
 }
 
 .navbar .dropdown-menu {
@@ -66,8 +50,18 @@ a:hover {
 
 .navbar .dropdown.show a,
 .navbar .dropdown-item {
+    display: block;
+    width: 80%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 300;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
     background: rgba(255, 255, 255, 0.2);
     color:  #580c2d;
+    font-size: 1rem;
 }
 
  .navbar .dropdown-item:hover {
@@ -81,7 +75,27 @@ a:hover {
 .hero.is-info .navbar-item {
     background-color: #fff;
 }
-
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #79113f;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+.navbar-toggler-icon {
+    display: inline-block;
+    color: #580c2d;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: 50%/100% 100% no-repeat;
+    border-radius: 1rem;
+    border-block-style: groove;
+}
 .hero.is-info {
     background-image: url("../../../media/backgrounds/header.jpg");
     height: 100vh;
@@ -92,7 +106,7 @@ a:hover {
 .custom-btn {
     background-color: #79113F!important;
     color: #f8f8ff!important;
-    width: 13rem;
+    width: 5rem;
 }
 .header-quote {
     padding: 1rem 1rem;

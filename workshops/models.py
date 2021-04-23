@@ -21,7 +21,7 @@ class Workshop(models.Model):
     """ Workshop Model """
     name = models.CharField(max_length=254)
     category = models.ForeignKey(
-        'Category', null=True, blank=False, on_delete=models.PROTECT)
+        'Category', null=True, blank=False, on_delete=models.CASCADE)
     description = models.TextField(null=True, blank=True)
     start_date = models.DateField(null=True, blank=False)
     end_date = models.DateField(null=True, blank=False)

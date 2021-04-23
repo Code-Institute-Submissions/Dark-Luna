@@ -3,13 +3,14 @@
         <nav class="navbar navbar-expand-xl">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96"
-                class="d-inline-block img">Dark Luna
+                class="d-inline-block img">
+                <div class="container-fluid text-center logo-text">Dark Luna</div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav w-auto mx-auto">
+                <ul class="navbar-nav ml-1 mx-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Coaching
@@ -27,12 +28,6 @@
                         <a class="nav-link mr-3 {% if request.get_full_path == '/workshops/' %}nav-link-active{% else %}hvr-bounce-to-top{% endif %}"
                         href="{% url 'workshops' %}">Workshops</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
                     </li>
@@ -42,14 +37,15 @@
                     <li class="nav-item">
                         <a class="nav-link mr-3" href="{% url 'contact' %}">Contact</a>
                     </li>
+                    <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-shopping-bag"></i></a>
                     <li class="nav-item dropdown">
                         <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu text-left" aria-labelledby="navbarDropdownMenuLink">
                             {% if request.user.is_authenticated %}
                             <li><a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a></li>
                             {% if request.user.is_superuser %}
-                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Add blog post</a></li>
-                            <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Add blog category</a></li>
+                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Blog</a></li>
+                            <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Blog cat</a></li>
                             <li><a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a></li>
                             <li><a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a></li>
                             {% endif %}
@@ -60,12 +56,13 @@
                                 {% endif %}
                                 <button class="custom-btn" type="submit">Logout</button>
                             </form>
-                                {% else %}
-                                <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                <li><a href="{% url 'account_login' %}"  class="dropdown-item">Login</a></li>  
+                            {% else %}
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                            <li><a href="{% url 'account_login' %}"  class="dropdown-item">Login</a></li>  
                         </ul>
+                        {% endif %}
+                      
                     </li>
-                                {% endif %}
                 </ul>
             </div>
         </nav>
