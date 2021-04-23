@@ -29,7 +29,6 @@ urlpatterns = [
     path('shadow/', include('shadow.urls')),
     path('massage/', include('massage.urls')),
     path('workshops/', include('workshops.urls')),
-    path('shop/', include('shop.urls')),
     path('blog/', include('blog.urls')),
     path('therapists/', include('therapists.urls')),
     path('contact/', include('contact.urls')),

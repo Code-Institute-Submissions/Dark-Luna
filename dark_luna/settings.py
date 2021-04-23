@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'sex',
     'massage',
     'workshops',
-    'shop',
     'blog',
     'therapists',
     'contact',
