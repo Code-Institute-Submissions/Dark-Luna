@@ -27,9 +27,9 @@
                         <a class="nav-link mr-3 {% if request.get_full_path == '/workshops/' %}nav-link-active{% else %}hvr-bounce-to-top{% endif %}"
                         href="{% url 'workshops' %}">Workshops</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link mr-3" href="{% url 'shop' %}">Shop</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link mr-3" href=""><i class="fas fa-shopping-bag"></i></a>
                     </li>
@@ -62,13 +62,28 @@
                             </form>
                                 {% else %}
                                 <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                <li><a href="{% url 'account_login' %}"
-                                class="dropdown-item">Login</a></li>  
+                                <li><a href="{% url 'account_login' %}"  class="dropdown-item">Login</a></li>  
                         </ul>
                     </li>
                                 {% endif %}
                 </ul>
             </div>
         </nav>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 header-quote text-center">
+            “Today I celebrate women who are:<br/>
+            Vulnerable but strong.
+            Sensitive but assertive.
+            Always learning but intelligent.
+            Scared but brave.
+            Victims but survivors.
+            Helpless but selfless.
+            Heartbroken but healers.
+
+            Women who break glass-ceilings & barriers.
+            I see you. I am with you. I am you.”
+            ― Mitta Xinindlu 
+        </div>
     </div>
 </div>
