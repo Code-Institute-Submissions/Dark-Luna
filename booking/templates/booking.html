@@ -22,12 +22,10 @@
             <!-- When any workshop is booked show booked in this container -->
             {% if booked_workshops %}
             <!-- Booked workshops present in table on page -->
-            {% include 'booking/booking-table.html' %}
+            {% include 'booking/booking-general.html' %}
             <hr>
             <!-- Totals -->
-            {% include 'booking/booking-totals.html' %}
-            <!-- Buttons -->
-            {% include 'booking/booking-buttons.html' %}
+            {% include 'booking/booking-finalize.html' %}
             {% endif %}
         </div>        
     </div>
