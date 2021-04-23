@@ -32,7 +32,7 @@ class Workshop(models.Model):
         max_digits=6, decimal_places=2, null=True, blank=False)
     image = models.ImageField(blank=True, null=True,
                               upload_to="user_uploads/")
-    therapist = models.ForeignKey(User, on_delete=models.CASCADE)
+    therapist = models.CharField(max_length=254)
 
     def __str__(self):
         return self.name

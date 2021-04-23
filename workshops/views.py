@@ -217,7 +217,8 @@ def edit_workshops_admin(request, workshop_id):
 
     edit_workshop = get_object_or_404(Workshop, pk=workshop_id)
     if request.method == 'POST':
-        form = WorkshopsForm(request.POST, request.FILES, instance=edit_workshop)
+        form = WorkshopsForm(request.POST, request.FILES,
+                             instance=edit_workshop)
         if form.is_valid():
             form.save()
             messages.success(
