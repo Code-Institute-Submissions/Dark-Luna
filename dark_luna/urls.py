@@ -33,4 +33,5 @@ urlpatterns = [
     path('therapists/', include('therapists.urls')),
     path('contact/', include('contact.urls')),
     path('account/', include('profiles.urls')),
+    path('booking/', include('booking.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

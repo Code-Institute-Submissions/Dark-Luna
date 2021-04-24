@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'massage',
     'workshops',
     'blog',
+    'booking',
     'therapists',
     'contact',
     'crispy_forms',

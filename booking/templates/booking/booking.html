@@ -27,7 +27,20 @@
             <!-- Totals -->
             {% include 'booking/booking-finalize.html' %}
             {% endif %}
-        </div>        
+            
+        </div>  
+        {% else %}
+        <!-- Link for booking -->
+        <div class="container">
+            <h3>Nothing booked ?<br>
+                <span>Have a quick look on randomly selected lessons for you.</span>
+            </h3>
+            <!-- Separating line -->
+            <hr>
+        </div>
+        <!-- Include "You may like" container -->
+        {% include 'includes/you-might-like.html' %}
+        {% endif %}      
     </div>
 </div>
 
