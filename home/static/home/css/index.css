@@ -8,7 +8,6 @@
     padding:inherit;
 }
 #about {
-    /* position: absolute; */
     margin-top: 3rem;
     margin-bottom: 6rem;
 }
@@ -53,13 +52,13 @@ a:hover {
     font-size: 0.9rem;
 }
 #index-blog {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 .card {
     width: 30vw;
     height: auto;
+    margin-top: 0;
 }
 
 a#custom-btn {

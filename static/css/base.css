@@ -10,6 +10,7 @@ body {
     font-size: 62.5%;
     color: #f8f8ff;
     overflow-x: hidden;
+    height: 100%;
 }
 
 /* Navbar styling*/
@@ -102,7 +103,7 @@ a:hover {
 }
 .hero.is-info {
     background-image: url("../../../media/backgrounds/header.jpg");
-    height: 100vh;
+    height: 80vh;
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
@@ -123,7 +124,6 @@ a:hover {
 }
 /* Forms styling */
 .card {
-    margin-top: 40rem;
     height:auto;
     width: 40vh;
 }

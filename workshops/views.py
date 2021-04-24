@@ -215,10 +215,10 @@ def add_workshops_admin(request):
 def edit_workshops_admin(request, workshop_id):
     """ Admin view to edit workshops """
 
-    edit_workshop = get_object_or_404(Workshop, pk=workshop_id)
+    workshop = get_object_or_404(Workshop, pk=workshop_id)
     if request.method == 'POST':
         form = WorkshopsForm(request.POST, request.FILES,
-                             instance=edit_workshop)
+                             instance=workshop)
         if form.is_valid():
             form.save()
             messages.success(
