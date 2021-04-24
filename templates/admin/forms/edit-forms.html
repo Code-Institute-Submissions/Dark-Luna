@@ -68,20 +68,5 @@
         </div>
     </div>
 </form>
-{% elif 'workshops-cards/edit' in request.path %}
-<!-- Workshops Cards Form -->
-<form action="{% url 'edit_workshops_cards_admin' card.id %}" method="POST">
-    {% csrf_token %}
-    {{ form.title | as_crispy_field }}
-    {{ form.description | as_crispy_field }}
-    <!-- Buttons -->
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn hvr-bounce-to-right red-button">Reset</button>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn hvr-bounce-to-right">Update</button>
-        </div>
-    </div>
-</form>
+
 {% endif %}

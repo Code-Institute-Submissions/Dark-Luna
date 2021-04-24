@@ -229,12 +229,12 @@ def edit_workshops_admin(request, workshop_id):
                 request, 'Editing workshop failed. \
                 Please ensure the form is valid.')
     else:
-        form = WorkshopsForm(instance=workshop)
+        form = WorkshopsForm(instance=edit_workshop)
 
     template = "./admin/admin-forms.html"
     context = {
         'form': form,
-        'workshop': workshop,
+        'edit_workshop': edit_workshop,
     }
 
     return render(request, template, context)

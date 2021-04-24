@@ -20,9 +20,9 @@ body {
     font-size: 2.5rem;
     line-height: inherit;
     white-space: nowrap;
-    color: #79113F;
     justify-content: flex-start;
     flex-flow: row nowrap;
+    background: rgba(255, 255, 255, 0.4);
 
 }
 
@@ -33,8 +33,6 @@ body {
 a {
     font-size: 1.6rem;
     color: #15020A;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.4);
     border-radius: 1rem;
     margin-right: 1rem;
 }
@@ -116,7 +114,7 @@ a:hover {
 }
 .header-quote {
     padding: 1rem 1rem;
-    margin-top: 18rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
     color: #15020A;
     background: rgba(255, 255, 255, 0.5);
@@ -125,7 +123,7 @@ a:hover {
 }
 /* Forms styling */
 .card {
-    margin-top: 6rem;
+    margin-top: 40rem;
     height:auto;
     width: 40vh;
 }
