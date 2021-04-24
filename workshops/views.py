@@ -177,11 +177,11 @@ def remove_categories_admin(request, category_id):
 def workshops_admin(request):
     """ A view to manage workshops """
 
-    all_workshops = Workshop.objects.all()
+    workshops = Workshop.objects.all()
 
     template = "workshops/admin-workshops.html"
     context = {
-        'all_workshops': all_workshops,
+        'workshops': workshops,
     }
 
     return render(request, template, context)
@@ -229,12 +229,12 @@ def edit_workshops_admin(request, workshop_id):
                 request, 'Editing workshop failed. \
                 Please ensure the form is valid.')
     else:
-        form = WorkshopsForm(instance=edit_workshop)
+        form = WorkshopsForm(instance=workshop)
 
     template = "./admin/admin-forms.html"
     context = {
         'form': form,
-        'edit_workshop': edit_workshop,
+        'workshop': workshop,
     }
 
     return render(request, template, context)
