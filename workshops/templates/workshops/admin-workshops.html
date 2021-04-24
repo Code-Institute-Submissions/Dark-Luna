@@ -8,73 +8,66 @@
 {% block content %}
 
 <!-- Workshops main container -->
-<section class="workshop-admin">
-    <div class="container-fluid">
-        <!-- Page title, promo text, 'Add +' button -->
-        <div class="row justify-content-center">
-            <h1 class="mt-1 mb-4 text-left">Admin - Workshops</h1>
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <p class="text-left title">Workshops</p>
-                    <p class="info-text"></p>
-                    <!-- Table headers container -->
-                    <div class="row table-headers mt-4">
-                    <!-- Add new element button-->
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                            <a href="{% url 'add_workshops_admin' %}" class="btn hvr-bounce-to-right add-new-button">Add
-                                +</a>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </div>
-        <div class="row row-cols-1 row-cols-md-4 g-3 row-cards justify-content-center">
-            {% for workshop in workshops %}
-                <div class="col-md-4 ml-2">
-                    <div class="card" style="width: 18rem;">
-                        {% if workshop.image %}
-                            <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                        {% else %}
-                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                        {% endif %}
-                        <div class="card-body">
-                            <h1>{{ workshop.name }}</h1>
-                            <p>Participants:
-                                <span>{{ workshop.participants }}</span>
-                            </p>
-                            <p>Price:
-                                <span>€ {{ workshop.price }}</span>
-                            </p>
-                            <p>Therapist:
-                                <span>{{ workshop.therapist }}</span>
-                            </p>
-                            <div class="buttons">
-                                <a href="{% url 'workshop' workshop.id %}"
-                                class="btn hvr-bounce-to-right">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 d-flex justify-content-between buttons-space flex-column">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-12 mb-2">
-                            <a href="{% url 'edit_workshops_admin' workshop.id %}"
-                                class="btn hvr-bounce-to-right btn-wide">Edit</a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-12 mb-2">
-                            <a href="{% url 'remove_workshops_admin' workshop.id %}"
-                                class="btn hvr-bounce-to-right red-button btn-wide">Remove</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+<div class="container-fluid">
+    <!-- Page title, promo text, 'Add +' button -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="mt-4 mb-4 text-left">Admin - Workshops Categories</h1>
+            <div class="worklshops-admin">
+                <p class="info-text">Add, Edit or Remove Workshop Categories. Be careful when removing categories as they're
+                    connected to all Workshops. Deleting a category that is bound to a workshop, will remove that workshop
+                    as well!
+                </p>
             </div>
+            <div class="col-md-6">
+                <a href="{% url 'add_workshops_admin' %}" class="btn">Add
+                +</a>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-md-4 g-3 justify-content-center">
+        {% for workshop in workshops %}
+        <div class="col-md-4 col-lg-3 ml-2">
+            <div class="add-workshop-card">
+                {% if workshop.image %}
+                    <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                {% else %}
+                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                {% endif %}
+                <div class="card-body">
+                    <h1>{{ workshop.name }}</h1>
+                    <p>Participants:
+                        <span>{{ workshop.participants }}</span>
+                    </p>
+                    <p>Price:
+                        <span>€ {{ workshop.price }}</span>
+                    </p>
+                    <p>Therapist:
+                        <span>{{ workshop.therapist }}</span>
+                    </p>
+                    <div class="buttons">
+                        <a href="{% url 'workshop' workshop.id %}"
+                        class="btn hvr-bounce-to-right">Details</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="{% url 'edit_workshops_admin' workshop.id %}"
+                            class="btn hvr-bounce-to-right btn-wide">Edit</a>
+                            <div class="col-md-4">
+                                <a href="{% url 'remove_workshops_admin' workshop.id %}"
+                                    class="btn hvr-bounce-to-right red-button btn-wide">Remove</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
                         
                             <!-- Don't display separate line after last lessons displayed -->
                             {% if forloop.last != True %}
                             <hr>
                             {% endif %}
         {% endblock%}
-    </div>
-</section>
-<!-- Table results container -->

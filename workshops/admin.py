@@ -13,7 +13,7 @@ class CategoriesAdmin(admin.ModelAdmin):
 
 
 class WorkshopsAdmin(admin.ModelAdmin):
-    """ Lessons list display and order """
+    """ Workshops list display and order """
     list_display = (
         'name',
         'category',

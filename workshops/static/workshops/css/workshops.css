@@ -65,3 +65,8 @@ p {
     border-radius: 1rem;
     box-shadow: 1rem 1rem 20px #79113f;
 }
+.add-workshop-card {
+    margin-top: 5rem;
+    height: auto;
+    width: 20vh;
+}

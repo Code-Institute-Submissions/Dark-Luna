@@ -20,7 +20,7 @@ class CategoriesForm(forms.ModelForm):
 
 
 class WorkshopsForm(forms.ModelForm):
-    """ Lessons form """
+    """ Workshops form """
     class Meta:
         model = Workshop
         fields = (
