@@ -17,7 +17,6 @@ class UserDetailsForm(forms.ModelForm):
             'town_or_city': 'Town or City',
             'country': 'Country',
             'county': 'County, Shire or State',
-            'receiving_newsletter': 'Subscribe Newsletter',
         }
 
     def __init__(self, *args, **kwargs):

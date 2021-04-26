@@ -73,18 +73,12 @@
                             <hr>
                             <div class="summary-totals">
                                 <p>Total:
-                                    <span>£ {{ total|floatformat:2 }}</span>
+                                    <span>€ {{ total|floatformat:2 }}</span>
                                 </p>
-                                <p>Discount:
-                                    {% if discount > 0 %}
-                                    <span>- £ {{ discount|floatformat:2 }}</span>
-                                    {% else %}
-                                    <span>£0</span>
-                                    {% endif %}
-                                </p>
+                                
                                 <hr>
                                 <h6 class="grand-total">Grand Total:
-                                    <span>£ {{ grand_total|floatformat:2 }}</span>
+                                    <span>€ {{ grand_total|floatformat:2 }}</span>
                                 </h6>
                             </div>
                         </div>

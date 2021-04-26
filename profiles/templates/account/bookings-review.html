@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}| My Booking | Review{% endblock %}
+
+{% block content %}
+
+<!-- Checkout main container -->
+<div role="main" class="container py-4 review-container">
+    <h1 class="page-title mt-1 mb-4 text-left">Order Review</h1>
+
+    {% if 'active' in request.META.HTTP_REFERER %}
+    <a href="{{ request.META.HTTP_REFERER }}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i>
+        Back to Active Bookings</a>
+    {% elif 'archived' in request.META.HTTP_REFERER %}
+    <a href="{{ request.META.HTTP_REFERER }}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i>
+        Back to Archived Bookings</a>
+    {% elif 'account' in request.META.HTTP_REFERER %}
+    <a href="{{ request.META.HTTP_REFERER }}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i>
+        Back to Account Page</a>
+    {% else %}
+    <a href="{{ request.META.HTTP_REFERER }}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i>
+        Go Back</a>
+    {% endif %}
+
+    <!-- Main container -->
+    <div class="row my-3">
+        <!-- Personal and Order Information -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+            <div class="card shadow-sm">
+                <!-- Order details -->
+                <h4>Order Details</h4>
+                <p>Order Number:<span> {{ order.order_number }}</span></p>
+                <p>Full Name: <span> {{ order.full_name|title }}</span></p>
+                <p>Email Address: <span> {{ order.email }}</span></p>
+                <p>Phone Number: <span> {{ order.phone_number }}</span></p>
+                <p>Street Addres 1: <span> {{ order.street_address1 }}</span></p>
+                <p>Street Addres 2: <span> {{ order.street_address2 }}</span></p>
+                <p>Postcode: <span> {{order.postcode|upper }}</span></p>
+                <p>County: <span> {{order.county|title }}</span></p>
+                <p>Country: <span> {{order.country.name|title }}</span></p>
+                <hr>
+                <p>Payment: <span> € {{order.grand_total }}</span></p>
+                {% if from_profile %}
+                <p>Date: <span> {{ order.date|date:"d-m-Y (D)" }} | {{ order.date|time:"H:i "}}</span></p>
+                {% endif %}
+            </div>
+        </div>
+        <!-- Booked Workshops from Order -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+            <div class="card shadow-sm">
+                <h4>Workshop{% if workshops_count != 1 %}s{% endif %} you booked</h4>
+                {% for item in order.lineitems.all %}
+                <div class="workshops-container mt-2">
+                    <div class="row">
+                        <!-- Workshop Info -->
+                        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 col-xl-9 mb-2">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-between flex-column">
+                                    <h5>{{ item.workshop.name }}</h5>
+                                    <span class="workshop-price">Price € {{ item.workshop.price }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Link to view workshop details -->
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3 button-display">
+                            <a href="{% url 'workshop' item.workshop.id %}" class="btn hvr-bounce-to-right">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Don't display separate line after last lessons displayed -->
+                {% if forloop.last != True %}
+                <hr>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

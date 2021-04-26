@@ -56,7 +56,20 @@
                     Booked Workshops
                 </p>
                 <div class="card card-body ml-3 mt-4">
-                    Here a list of all booked workshops will appear
+                    {% for order in orders %}
+                    <div class="booked-lesson">
+                        <!-- Order Number -->
+                        <a href="{% url 'booking_review' order.order_number %}" title="{{ order.order_number }}"
+                            class="last-10-orders"><strong>Order Number: {{ order.order_number|truncatechars:20 }}
+                            </strong><br>
+                            <p>Booked: {{ order.date|date:"d-m-Y (D)" }} | {{ order.date|time:"H:i "}}</p>
+                        </a>
+                        {% if forloop.last %}
+                        {% else %}
+                        <hr class="separate-line">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

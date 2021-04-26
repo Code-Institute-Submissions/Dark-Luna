@@ -11,7 +11,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.user_account, name='user_account'),
-    path('testimonial/', TestimonialHomeView.as_view(), name='testimonial'),
+
+    path('booking/review/<order_number>',
+         views.booking_review, name='booking_review'),
+    path('bookings/active', views.bookings_active, name='bookings_active'),
+    path('bookings/archived', views.bookings_archived,
+         name='bookings_archived'),
+
+    path('testimonial/', TestimonialHomeView.as_view(),
+         name='testimonial'),
     path('add_testimonial/', AddTestimonialView.as_view(),
          name='add-testimonial'),
     path('testimonial/update/<int:pk>',

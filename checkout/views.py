@@ -172,7 +172,6 @@ def checkout_success(request, order_number):
                 'town_or_city': order.town_or_city,
                 'county': order.county,
                 'country': order.country,
-                'receiving_newsletter': profile.receiving_newsletter,
             }
             form = UserDetailsForm(user_info, instance=profile)
             if form.is_valid():
