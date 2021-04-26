@@ -1,7 +1,5 @@
 """ Booking Bag Contexts """
-from decimal import Decimal
 from django.shortcuts import get_object_or_404
-from django.conf import settings
 from workshops.models import Workshop
 
 
