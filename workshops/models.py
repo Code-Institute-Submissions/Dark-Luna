@@ -1,12 +1,9 @@
 """ Models for Workshops App """
 from django.db import models
-from django.contrib.auth.models import User
-# from home.models import LevelCard
-# from resorts.models import Resort
 
 
 class Category(models.Model):
-    """ Lessons Category Model """
+    """ Workshops Category Model """
     class Meta:
         verbose_name_plural = 'Categories'
 

@@ -33,7 +33,7 @@
                         <p class="title text-center">
                             {{ post.title }}
                             </p>
-                        <h5 class="card-title blog-post-author">{{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }} 
+                        <h5 class="card-title blog-post-author">{{ post.author.username}} - {{ post.post_date }} - {{ post.category }} 
                             <p class="card-sub-title mb-2"> Likes: {{ total_likes }} <br/><br/> Comments: {{ comments.count }}</p><br/>
                             <form action="{%url 'like_post' post.pk %}" method="POST">
                                 {% csrf_token %}

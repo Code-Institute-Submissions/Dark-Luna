@@ -58,7 +58,7 @@
                             <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
                         {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}<br/>{{ post.author.first_name }} - {{ post.post_date }} - {{ post.category }}</h5>
+                    <h5 class="card-title">{{ post.title }}<br/>{{ post.author.username }} - {{ post.post_date }} - {{ post.category }}</h5>
                     <p class="card-text">{{ post.body|slice:"200"|safe }}</p>
                     <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
                 </div>

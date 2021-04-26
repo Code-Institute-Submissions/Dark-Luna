@@ -11,7 +11,7 @@
 {% block content %}
 
 <section class="container-fluid">
-    <div class="row workshop-container justify-content-center">
+    <div class="row workshop-container">
         <div class="col-md-4">
             {% if workshop.image %}
             <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
@@ -19,10 +19,8 @@
             <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
             {% endif %}
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="section-title"> {{ workshop.name }}</div>
-        </div>
-        <div class="col-md-4">
             <div class="card-body">
                 <div class="title">This workshop is for: {{ workshop.category }}</div>
                 <p class="title">We've got space for: {{ workshop.participants }}
@@ -30,34 +28,25 @@
                 <p class= "title">Therapist: {{ workshop.therapist }}</p>
                 <p class= "title">Price: € {{ workshop.price }}</p>
             </div>
-        </div>
-    </div>
-</section>
-<div class="row justify-content-center">
-    <div class="card-body">
-        <div class="col-md-6">
-        <!-- Start Date & Start Time -->
-            <div class="title">Description</div>
-                <p class="workshops-text"><span>{{ workshop.description }}</span></p>
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="card">
-        <!-- Start Date & Start Time -->
+            <div class="col">
+            <!-- Start Date & Start Time -->
+                <div class="title">Description</div>
+                    <p class="workshops-text"><span>{{ workshop.description }}</span></p>
+            </div>
             <div class="title">Workshop Starts</div>
             <p class="workshops-text">Date - <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
             <p class="workshops-text">Time - <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="card">
-            <!-- End Date & En Time -->
             <div class="title">Workshop Ends</div>
             <p class="workshops-text">Date - <span>{{ workshop.end_date|date:"d/M/Y (l)" }}</span></p>
             <p class="workshops-text">Time - <span>{{ workshop.end_time|time:"H:i:s" }}</span></p>
         </div>
     </div>
-</div>
+
+
+</section>
+
+
+
   
     <!-- Bottom Section -->
 <div class="row justify-content-center">

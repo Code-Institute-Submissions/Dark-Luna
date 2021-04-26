@@ -36,7 +36,7 @@
                         <div class="card-body">
                             <a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }} -</a>
                             <a href="{% url 'category' post.category|slugify %} " class="title-links"> {{ post.category }}</a>
-                            <h5 class="card-title">- {{ post.author.first_name }} - {{ post.post_date }}</h5>
+                            <h5 class="card-title">{{ post.author.username }} - {{ post.post_date }}</h5>
                             <p class="card-text">{{post.snippet}}</p>
                         </div>
                     </div>
