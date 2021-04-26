@@ -26,7 +26,7 @@
   - [Wireframes](#wireframes)
   - [Data Models](#data-models)
 - [Features](#features)
-  - [Features that are implemented](#features-that-are-implemented) 
+  - [Features that are implemented](#features-that-are-implemented)
   - [Features to be implemented](#features-to-be-implemented)
   - [Known issues](#known-issues)
 - [Technologies used](#technologies-used)
@@ -45,9 +45,8 @@
   - [Local Deployment](#local-deployment)
 - [Credit](#credit)
   - [Image credits](#image-credits)
-  - [Special thanks](#special-thanks) 
+  - [Special thanks](#special-thanks)
   
-
 ## Project goals ##
 
 Supply a website that woman who have hormonal related issues, like problems with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointments for sessions so they can start getting healthier again.
@@ -121,11 +120,6 @@ WIP
 
 I have chosen the following colours I have taken from the logo to support the connection between the logo and the site itself:
 
-#580c2d for headers and titles
-#15020a for the company name and body texts
-#79113F for section backgrounds
-#ffffff for body background
-
 I have used [Coolors](https://coolors.co/) for creating a color scheme.
 
 ![Color scheme](/wireframes/darklunacolours.png)
@@ -171,7 +165,7 @@ View my wireframes:
 
 During the development, I worked with sqlite3 databases, installed with Django. For production I have used [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql).
 
-* The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
+- The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
 
 #### Profile app ####
 
@@ -268,14 +262,14 @@ During the development, I worked with sqlite3 databases, installed with Django. 
   - Comment to blog
   - Contact form content
 
-  * Read:
-    * Account(profile)
-    * Testimonials
-    * General info (sessions, massage, workshops, therapists, blog, testimonials)
+  - Read:
+    - Account(profile)
+    - Testimonials
+    - General info (sessions, massage, workshops, therapists, blog, testimonials)
 
-  * Update:
-    * Account(profile)
-    * BookingsReverse for 'blog-post-detail' with arguments '('2', '6')' not found. 1 pattern(s) tried: ['blog/article/(?P<pk>[0-9]+)$']
+  - Update:
+    - Account(profile)
+    - Bookings
 WIP
 
 ### Known issues ###
@@ -349,21 +343,21 @@ It is hosted on the Heroku platform, with static files and images being hosted i
 
 To be able to run this project, the following tools have to be installed:
 
-* An IDE of your choice (I used GitPod for creating this project)
-* Git
-* PIP
-* Python3
+- An IDE of your choice (I used GitPod for creating this project)
+- Git
+- PIP
+- Python3
 
 Apart from that, you also need to create accounts with the following services:
 
-* Stripe
-* AWS to setup the S3 basket
-* Gmail
-* MailChimp
+- Stripe
+- AWS to setup the S3 basket
+- Gmail
+- MailChimp
 
 To clone the project:
 
-* You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
+- You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
 
 ``` git clone https://github.com/byIlsa/Dark-Luna ```
 
@@ -373,56 +367,72 @@ In the terminal window of your local IDE change the directory (CD) to the correc
 
 Note: You can read more information about the cloning process on the GitHub Help page.
 
-* Set up environment variables.
+- Set up environment variables.
 
 Note, that this process will be different depending on IDE you use.
 
 In this it was done using the following way:
 
-* Create .env file in the root directory. 
-* Add .env to the .gitignore file in your project's root directory 
-* In .env file set environment variables with the following syntax:
+- pip install python-dotenv
+- Add .env to the .gitignore file in your project's root directory
+- In .env file set environment variables with the following syntax:
 
         import os  
-        os.environ["DEVELOPMENT"] = "True"    
-        os.environ["SECRET_KEY"] = "<Your Secret key>"    
-        os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"    
-        os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"    
-        os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"
-        os.environ["MAILCHIMP_API_KEY"] = "<Your API Key>"
-        os.environ["MAILCHIMP_AUDIENCE_ID"] = "<Your audience Key>"
+           
+        SECRET_KEY = <Your Secret key>    
+        STRIPE_PUBLIC_KEY = Your Stripe Public key  
+        STRIPE_SECRET_KEY = Your Stripe Secret key
+        STRIPE_WH_SECRET = Your Stripe WH_Secret key
+        MAILCHIMP_API_KEY = Your API Key
+        MAILCHIMP_AUDIENCE_ID = Your audience Key
 
- 
-Read more about how to set up the Stripe keys in the Stripe Documentation.
+- Add the following to your settings.py
 
-* Install all requirements from the requirements.txt file putting this command into your terminal:
+```from dotenv import load_dotenv```
+```load_dotenv()```
+
+- Read more about how to set up the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys).
+
+Call your variables either with os.getenv() or os.environ.get()
+In settings.py:
+import os
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = "DEVELOPMENT" in os.environ
+
+Note that DEBUG will be True if there's a DEVELOPMENT key/value pair in your .env file, regardless of
+its value (i.e. if it has any value it will be True).
+This means that DEBUG will be False in production, unless the DEVELOPMENT variable is added to the
+production host's environment variables.
+Don't forget to add .env to your .gitignore and never track it with version control!
+
+- Install all requirements from the requirements.txt file putting this command into your terminal:
 
 ``` pip3 install -r requirements.txt ```
 
-* In the terminal in your IDE migrate the models to crete a database using the following commands:
+- In the terminal in your IDE migrate the models to crete a database using the following commands:
 
 ``` python3 manage.py makemigrations ```
 
-``` python3 manage.py migrate ```http://www.wdisseny.com/lluna/?lang=en
+``` python3 manage.py migrate ```
 
-* Create a Procfile, in order to tell Heroku how to run the project, using the following command in the terminal:
+- Create a Procfile, in order to tell Heroku how to run the project, using the following command in the terminal:
 
-``` web: gunicorn dark_luna.wsgi:application```
+```web: gunicorn dark_luna.wsgi:application```
 
-* git add, git commit and git push these files to GitHub repository.
+- git add, git commit and git push these files to GitHub repository.
 
 NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illustrated here as they are required for the successful deployment to Heroku.
 As well as that, other things that are required for the Heroku deployment and have to be installed: gunicorn (WSGI HTTP Server), dj-database-url for database connection and Psycopg (PostgreSQL driver for Python).
 All of the mentioned above are already installed in this project in the requirements.txt file.
 
-* On the Heroku website you need to create a new app, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click Create app. 
-* Go to Resources tab in Heroku, then in the Add-ons search bar look for Heroku Postgres(you can type postgres), select Hobby Dev — Free and click Provision button to add it to your project. 
-* In Heroku Settings click on Reveal Config Vars. 
-* Set the following config variables there: 
+- On the Heroku website you need to create a new app, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click Create app.
+- Go to Resources tab in Heroku, then in the Add-ons search bar look for Heroku Postgres(you can type postgres), select Hobby Dev — Free and click Provision button to add it to your project.
+- In Heroku Settings click on Reveal Config Vars.
+- Set the following config variables there:
 
-| KEY                  | Value    | 
-| :-------------       | :---------- | 
-|AWS_ACCESS_KEY_ID     | your aws access key  | 
+| KEY                  | Value    |
+| :-------------       | :---------- |
+|AWS_ACCESS_KEY_ID     | your aws access key  |
 |AWS_SECRET_ACCESS_KEY | your aws secret access key |
 |DATABASE_URL          |  your postgres database url|
 |EMAIL_HOST_PASS       |  your email password(generated by Gmail)|
@@ -435,56 +445,58 @@ All of the mentioned above are already installed in this project in the requirem
 |MAILCHIMP_API_KEY     |  Your API Key|
 |MAILCHIMP_AUDIENCE_ID | Your audience Key|
 
-* Copy DATABASE_URL's value(Postgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
+- Copy DATABASE_URL's value(Postgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
 
-You can temporary comment out the current database settings code and just paste the following in the settings.py: 
-```DATABASES = {     
-        'default': dj_database_url.parse("<your Postgres database URL here>")
+You can temporary comment out the current database settings code and just paste the following in the settings.py:
+
+``` DATABASES = {
+    'default': dj_database_url.parse("<your Postgres database URL here>")
     }
 ```
+
 Important Note:
 
 That's just temporary set up, this URL should not be committed and published to GitHub for security reasons, so make sure not to commit your changes to Git while the URL is in the settings.py.
 
-* Migrate the database models to the Postgres database using the following commands in the terminal:
+- Migrate the database models to the Postgres database using the following commands in the terminal:
 
 ``` python3 manage.py makemigrations ```
 
 ``` python3 manage.py migrate ```
 
-* Load the data fixtures(list fixtures) into the Postgres database using the following command:
+- Load the data fixtures(list fixtures) into the Postgres database using the following command:
 
 ``` python3 manage.py loaddata <fixture_name> ```
 
-* Create a superuser for the Postgres database by running the following command(you need to follow the instructions and inserting username, email and password):
+- Create a superuser for the Postgres database by running the following command(you need to follow the instructions and inserting username, email and password):
 
 ``` python3 manage.py createsuperuser ```
 
-* You need to remove your Postgres URL database from the settings and uncomment the default DATABASE settings code in the settings.py file.
+- You need to remove your Postgres URL database from the settings and uncomment the default DATABASE settings code in the settings.py file.
 
 Note: for production you get the environment variable 'DATABASE_URL' from the Heroku Config Vars and use Postgress database, while for development you use the SQLite as a default database.
 
-* Add your Heroku app URL to ALLOWED_HOSTS in the settings.py file.
+- Add your Heroku app URL to ALLOWED_HOSTS in the settings.py file.
 
-* You can connect Heroku to GitHub to automatically deploy each time you push to GitHub.
+- You can connect Heroku to GitHub to automatically deploy each time you push to GitHub.
 
 To do so, from the Heroku dashboard follow the steps:
 
-* Deploy section -> Deployment method -> select GitHub 
-* Link the Heroku app to your GitHub repository for this project 
-* Click Enable Automatic Deploys in the Automatic Deployment section 
-* Run git push command in the terminal, that would now push your code to both Github and Heroku, and perform the deployment.
+- Deploy section -> Deployment method -> select GitHub
+- Link the Heroku app to your GitHub repository for this project
+- Click Enable Automatic Deploys in the Automatic Deployment section
+- Run git push command in the terminal, that would now push your code to both Github and Heroku, and perform the deployment.
 
 Alternatively, in the terminal you can run:
 
 ``` heroku login -i ```
 
-* After adding and committing to Git, run the following command:
+- After adding and committing to Git, run the following command:
 
 ``` git push heroku master ```
 
-* After successful deployment, you can view your app bu clicking Open App on Heroku platform. 
-* You will also need to verify your email address, so you need to login with your superuser credentials and verify your email address in the admin panel. Now you will be able to view the app running!
+- After successful deployment, you can view your app bu clicking Open App on Heroku platform.
+- You will also need to verify your email address, so you need to login with your superuser credentials and verify your email address in the admin panel. Now you will be able to view the app running!
 
 Hosting media files with AWS
 
@@ -496,26 +508,26 @@ In order to send real emails from the application, you need to connect it to you
 
 MailChimp
 
-* First, of all you need to Sign up and create your account at MailChimp. Go to the MailChimp website to register your website.
+- First, of all you need to Sign up and create your account at MailChimp. Go to the MailChimp website to register your website.
 
-    * Fill up your details or credentials of your and your website and finally activate your account from the mail they sent you.
+  - Fill up your details or credentials of your and your website and finally activate your account from the mail they sent you.
 
-* Create an Audience
+- Create an Audience
 
-    * After complete registration with MailChimp, you will land to the Dashboard of MailChimp.
+  - After complete registration with MailChimp, you will land to the Dashboard of MailChimp.
 
-    * Now we have to create an Audience. So click on the Audience button in the right hand side menu bar. Then click signup forms in the yellow bar, then click Embedded Forms.
+  - Now we have to create an Audience. So click on the Audience button in the right hand side menu bar. Then click signup forms in the yellow bar, then click Embedded Forms.
 
-    * Now fill up your all necessary details in the Embedded Forms section. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
+  - Now fill up your all necessary details in the Embedded Forms section. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
 
-* Get Your Audience and API KEY
+- Get Your Audience and API KEY
 
-    * After creating your List, get your List Key and API key.
+  - After creating your List, get your List Key and API key.
 
-    * You can get your Audience Key from audience > settings
-    * Scroll down the page, you fill find a field of Unique id for <your audience name>. Copy your audience id from there.
+  - You can get your Audience Key from audience > settings
+  - Scroll down the page, you fill find a field of Unique id for ```<your audience name>```. Copy your audience id from there.
 
-    * After that, get your API key from Account > Extras > API Keys. Then click on Create a Key button to get your API key.
+  - After that, get your API key from Account > Extras > API Keys. Then click on Create a Key button to get your API key.
 
 ## Credit ##
 
@@ -523,6 +535,7 @@ Credits
     • Texts are all created by myself or the client who wrote the testimonials.
 
 ### Source credits ###
+
 [Moon Calendar](http://www.wdisseny.com/lluna/?lang=en)
 
 ### Image credits ###
