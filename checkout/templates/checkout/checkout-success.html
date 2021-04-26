@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_title %}| Checkout Success!{% endblock %}
+{% block content %}
+
+<!-- Checkout main container -->
+<div id="checkout-success">
+    <!-- Main container -->
+    <div class="container py-4">
+        {% if from_profile %}
+        <h1 class="page-title mt-1 mb-4 text-left">Order Review</h1>
+        <!-- Back to Profile Button -->
+        <a href="{% url 'user_account' %}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i> Back to
+            Account</a>
+        {% else %}
+        <h1 class="page-title mt-1 mb-4">Payment Success!</h1>
+        {% endif %}
+        <!-- Main container -->
+        <div class="row">
+            <!-- Personal and Order Information -->
+            <div class="col-md-4">
+                <div class="card">
+                    <!-- Order details -->
+                    <h4>Order Details</h4>
+                    <p>Order Number:
+                        <span>
+                            {% if from_profile %}
+                            {{ order.order_number }}
+                            {% else %}
+                            <a href="{% url 'booking_review' order.order_number %}" title="{{ order.order_number }}"
+                                class="order-number-active">{{ order.order_number }}</a>
+                            {% endif %}
+                        </span>
+                    </p>
+                    <p>Full Name: <span> {{ order.full_name|title }}</span></p>
+                    <p>Email Address: <span> {{ order.email }}</span></p>
+                    <p>Phone Number: <span> {{ order.phone_number }}</span></p>
+                    <p>Street Addres 1: <span> {{ order.street_address1 }}</span></p>
+                    <p>Street Addres 2: <span> {{ order.street_address2 }}</span></p>
+                    <p>Postcode: <span> {{order.postcode|upper }}</span></p>
+                    <p>County: <span> {{order.county|title }}</span></p>
+                    <p>Country: <span> {{order.country.name|title }}</span></p>
+                    <hr>
+                    <p>Payment: <span> €{{order.grand_total }}</span></p>
+                    {% if from_profile %}
+                    <p>Date: <span> {{ order.date|date:"d-m-Y (D)" }} | {{ order.date|time:"H:i "}}</span></p>
+                    {% endif %}
+                </div>
+            </div>
+            {% if from_profile %}
+            <!-- Booked Lessons from Order -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4>You have booked this workshop/s</h4>
+                    {% for item in order.lineitems.all %}
+                    <div class="lesson-container blue-text">
+                        <img src="{{ item.workshop.image.url }}" alt="{{ item.workshop.name }}-image" width="100%"
+                            height="100%">
+                        : {{ item.workshop.name }}
+                        Category: {{ item.workshop.category }}
+                        Participant/s: {{ item.workshop.participants }}
+                        Resort: {{ item.workshop.resort }}
+                        Price: € {{ item.workshop.price }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+            <!-- Personal and Order Information -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <!-- If something went wrong -->
+                    <p>If you do not recognise details above or you think any of these is/are incorrect.<br>
+                        Please contact us by using
+                        <a href="{% url 'contact' %}" class="contact-form">Contact Form</a><br>
+                        Our team is here to help you with all type of queries.
+                    </p>
+                </div>
+            </div>
+            <!-- Personal and Order Information -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4>Email notification sent succesffuly!</h4>
+                    <p>All transaction details, inclding order details, payment, and booking information can be
+                        found on email provide when purchasing lessons.
+                        <br>Please check your mailbox <span class="email"> {{ order.email }}</span>
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
