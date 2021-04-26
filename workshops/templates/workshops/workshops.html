@@ -70,30 +70,55 @@
 <section class="container-fluid">
     <div class="row row-cols-1 row-cols-md-4 g-3 mt-5 row-cards justify-content-center">
         {% for workshop in workshops %}
-                <div class="card mr-1" style="width: 15rem;">
-                    {% if workshop.image %}
-                        <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                    {% else %}
-                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                    {% endif %}
-                    <div class="card-body">
-                        <p class="title text-left">{{workshop.name }}</p>
-                        <p class="text-body text-left">Participants:
-                            <span>{{ workshop.participants }}</span>
-                        </p>
-                        <p class="text-body text-left">Price:
-                            <span>€ {{ workshop.price }}</span>
-                        </p>
-                        <p class="text-body text-left">Therapist:
-                            <span>{{ workshop.therapist }}</span>
-                        </p>
-                        <div class="button">
-                            <a href="{% url 'workshop' workshop.id %}"
-                            class="btn">Details</a>
-                        </div>
+            <div class="card mr-1" style="width: 15rem;">
+            {% if workshop.image %}
+                <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+            {% else %}
+                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+            {% endif %}
+                <div class="card-body">
+                    <p class="title text-left">{{workshop.name }}</p>
+                    <p class="text-body text-left">Participants:
+                        <span>{{ workshop.participants }}</span>
+                    </p>
+                    <p class="text-body text-left">Price:
+                        <span>€ {{ workshop.price }}</span>
+                    </p>
+                    <p class="text-body text-left">Therapist:
+                        <span>{{ workshop.therapist }}</span>
+                    </p>
+                    <div class="button">
+                        <a href="{% url 'workshop' workshop.id %}"
+                        class="btn">Details</a>
+                        <form class="form" action="{% url 'add_to_booking' lesson.id %}" method="POST">
+                            {% csrf_token %}
+                            <input class="form-control qty_input" type="hidden" name="quantity"
+                                value="1" data-item_id="{{ lesson.id }}" id="id_qty_{{ lesson.id }}">
+                            <input type="hidden" name="redirect_url"
+                                value="{{ request.get_full_path }}">
+                            <button type="submit" class="btn hvr-bounce-to-right">Book Now</button>
+                        </form>
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+            </div>
+            <div class="row">
+                {% if workshops.count %}
+                <div class="show-more">
+                    <p>
+                        <a href="#" id="loadMore"><i class="fas fa-angle-double-down"></i>Load More (<span
+                                class="visible-cards-count"></span>)</a>
+                    </p>
+                    <p class="page-results"><span class="cards-count">
+                            {% if workshops.count <= 12 %} {{ workshops.count }} {% else %}12 {% endif %}</span>
+                                from <span class="total-count">{{ workshops.count }}</span> workshops</p>
+                </div>
+                {% else %}
+                <div class="text-center">
+                    <p class="no-results">No results found</p>
+                </div>
+                {% endif %}
             </div>
 </section>
 {% endblock %}

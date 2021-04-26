@@ -37,11 +37,11 @@ def add_to_booking(request, workshop_id):
     return redirect(redirect_url)
 
 
-def remove_from_booking(request, lesson_id):
+def remove_from_booking(request, workshop_id):
     """ A view to remove workshop(s) from the booking 'bag' """
 
     try:
-        workshop = Workshop.objects.get(pk=lesson_id)
+        workshop = Workshop.objects.get(pk=workshop_id)
         bag = request.session.get('bag', {})
         bag.pop(workshop_id)
 
