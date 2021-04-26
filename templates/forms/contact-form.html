@@ -1,6 +1,6 @@
 <form method="POST" id="form-contact" class="shadow">
     <!-- Contact form title and promo text -->
-    <h2 class="page-title">Get in touch!</h2>
+    <p class="title">Get in touch!</p>
     <!-- POST message -->
     {% if messages %}
     <div class="messages">
@@ -10,8 +10,8 @@
         {% endfor %}
     </div>
     {% endif %}
-    <p class="promo-text-contact"><i>If you have any questions or need help, please fill out the form
-            below.</i></p>
+    <p> If you have any questions or need help, please fill out the form
+            below.</p>
     <!-- Contact form fields -->
     <div class="form-group">
         {% csrf_token %}

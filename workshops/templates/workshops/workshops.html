@@ -19,7 +19,6 @@
     </div>   
 </section>
 <section class="container-fluid mb-4" id="workshops-cards">
-    <p class="category-title text-center">Categories:</p>
     <div class="row justify-content-center">
         <form method="GET" action="{% url 'workshops' %}">
             <input type="text" name="q" placeholder="Search" aria-label="Search">
@@ -30,75 +29,75 @@
                 {% if query_text != None %}
                 {{ workshops|length }} Workshop{% if workshops|length != 1 %}s{% endif %}
                 {% if query_text %} found for
-                    <p class="query-text">"{{ query_text|truncatechars:24 }}"</p>
+                <p class="query-text">"{{ query_text|truncatechars:24 }}"</p>
                 {% endif %}
                 {% endif %}
             </p>
         </form>
-        <div class="col-md-3">
-            <div class="filter-container">
-                <!-- Code used from Code Institute walkthrough project (Boutique Ado) -->
-                <select class="sort-selector custom-select custom-select-sm selector-border
-                {% if current_sorting == 'None_None' %}selector-border-none{% endif %}">
-                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort
-                        by...</option>
-                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
-                        Price (low to high)</option>
-                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
-                        Price (high to low)</option>
-                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>
-                        Name (A-Z)</option>
-                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
-                        Name (Z-A)</option>
-                </select>
-            </div>
+    </div>
+</section>
+    
+<div class="row justify-content-center">  
+    <div class="col-md-4">
+        <p class="category-title text-center">Categories:</p>
+        <div class="filter-container">
+            <!-- Code used from Code Institute walkthrough project (Boutique Ado) -->
+            <select class="sort-selector custom-select custom-select-sm selector-border
+            {% if current_sorting == 'None_None' %}selector-border-none{% endif %}">
+            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}> Name (A-Z)</option>
+            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}> Name (Z-A)</option>
+            </select>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-                <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
-                    href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
-            
-        </div>
-        {% for category in categories_list %}
-        <div class="col-md-4">
-                <a class="category-link {{category.name}}"
-                    href="{% url 'workshops' %}?category={{ category.name }}">
-                    {{ category.name }} ({{ category.workshop__count }})
-                </a>
-            </div>
-        </div>
+</div>
+<div class="row justify-content-center">  
+    <div class="col-md-3">
+        <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
+            href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
+    </div>
+    {% for category in categories_list %}
+    <div class="col-md-2">
+        <a class="category-link {{category.name}}"
+        href="{% url 'workshops' %}?category={{ category.name }}">
+        {{ category.name }} ({{ category.workshop__count }})
+        </a>
+    </div>
     {% endfor %}
-</section>
+</div>
 <section class="container-fluid">
-    <div class="row row-cols-1 row-cols-md-4 g-3 row-cards justify-content-center">
-    {% for workshop in workshops %}
-        <div class="col-md-4 ml-2">
-            <div class="card" style="width: 18rem;">
-                {% if workshop.image %}
-                    <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                {% else %}
-                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                {% endif %}
-                <div class="card-body">
-                    <h1>{{ workshop.name }}</h1>
-                    <p>Participants:
-                        <span>{{ workshop.participants }}</span>
-                    </p>
-                    <p>Price:
-                        <span>€ {{ workshop.price }}</span>
-                    </p>
-                    <p>Therapist:
-                        <span>{{ workshop.therapist }}</span>
-                    </p>
-                    <div class="buttons">
-                        <a href="{% url 'workshop' workshop.id %}"
-                        class="btn hvr-bounce-to-right">Details</a>
+    <div class="row row-cols-1 row-cols-md-4 g-3 mt-5 row-cards justify-content-center">
+        {% for workshop in workshops %}
+                <div class="card mr-1" style="width: 15rem;">
+                    {% if workshop.image %}
+                        <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                    {% else %}
+                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                    {% endif %}
+                    <div class="card-body">
+                        <p class="title text-left">{{workshop.name }}</p>
+                        <p class="text-body text-left">Participants:
+                            <span>{{ workshop.participants }}</span>
+                        </p>
+                        <p class="text-body text-left">Price:
+                            <span>€ {{ workshop.price }}</span>
+                        </p>
+                        <p class="text-body text-left">Therapist:
+                            <span>{{ workshop.therapist }}</span>
+                        </p>
+                        <div class="button">
+                            <a href="{% url 'workshop' workshop.id %}"
+                            class="btn">Details</a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-        </div>
-        {% endfor %}
-    </div>
 </section>
 {% endblock %}
+                    
+               
+                
+

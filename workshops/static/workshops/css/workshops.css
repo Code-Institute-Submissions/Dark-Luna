@@ -5,19 +5,18 @@
 }
 
 .title {
-    display: flex;
-    align-items: center;
     padding: 1rem 1rem;
-    justify-content: center;
     width: auto;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #580c2d;
 }
 
-.workshops-text {
+.workshops-text
+.text-body {
     font-size: 1rem;
     color: #15020a;
     background-color: #fff;
+    margin-left: 1rem;
 }
 
 p {
@@ -33,7 +32,7 @@ p {
     padding: 1rem 1rem;
     justify-content: center;
     width: auto;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #580c2d;
 }
 .text-success {
@@ -58,7 +57,7 @@ p {
     margin-bottom: -2rem;
 }
 .workshop-admin-card {
-    margin-top: 1rem;
+    margin-top: 4rem;
     height: auto;
     width: 20vh;
     border: 1px solid #79113f;
@@ -69,4 +68,7 @@ p {
     margin-top: 5rem;
     height: auto;
     width: 20vh;
+}
+.workshop-container {
+    margin-top: 5rem;
 }
