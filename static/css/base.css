@@ -119,3 +119,7 @@ label,
     background-color: #79113F!important;
     color: #f8f8ff!important;
 }
+.toast {
+    font-size: 1rem;
+    color: #15020A;
+}

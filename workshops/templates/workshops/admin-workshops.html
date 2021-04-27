@@ -6,7 +6,28 @@
 {% block extra_title %}| Admin - Workshops {% endblock %}
 
 {% block content %}
-
+    <!-- Messages container -->
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        <!-- Error Message -->
+        {% include 'includes/toasts/toast-error.html'%}
+        {% elif level == 30 %}
+        <!-- Warning Message -->
+        {% include 'includes/toasts/toast-warning.html'%}
+        {% elif level == 25 %}
+        <!-- Success Message -->
+        {% include 'includes/toasts/toast-success.html'%}
+        {% else %}
+        <!-- Info Message -->
+        {% include 'includes/toasts/toast-info.html'%}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 <!-- Workshops main container -->
 <div class="container-fluid">
     <!-- Page title, promo text, 'Add +' button -->

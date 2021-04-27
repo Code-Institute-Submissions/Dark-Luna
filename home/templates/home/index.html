@@ -6,7 +6,46 @@
 {% endblock %}
 
 {% block content %}
-<section class="container-fluid" id="background"></section>
+<section class="container-fluid" id="background">
+        <div class="row justify-content-center">
+            <div class="col-md-6 header-quote text-center">
+                “Today I celebrate women who are:<br/>
+                Vulnerable but strong.
+                Sensitive but assertive.
+                Always learning but intelligent.
+                Scared but brave.
+                Victims but survivors.
+                Helpless but selfless.
+                Heartbroken but healers.
+    
+                Women who break glass-ceilings & barriers.
+                I see you. I am with you. I am you.”
+                ― Mitta Xinindlu 
+            </div>
+        </div>
+</section>
+    <!-- Messages container -->
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        <!-- Error Message -->
+        {% include 'includes/toasts/toast-error.html'%}
+        {% elif level == 30 %}
+        <!-- Warning Message -->
+        {% include 'includes/toasts/toast-warning.html'%}
+        {% elif level == 25 %}
+        <!-- Success Message -->
+        {% include 'includes/toasts/toast-success.html'%}
+        {% else %}
+        <!-- Info Message -->
+        {% include 'includes/toasts/toast-info.html'%}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 <section class="container-fluid" id="intro">
     <div class="row justify-content-center">
         <div class="col-md-6">

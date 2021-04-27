@@ -1,0 +1,52 @@
+<div class="toast toast-success" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+    <div class="toast-header">
+        <strong class="mr-auto toast-main-text">Success!</strong>
+        <button type="button" class="close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <hr>
+    <div class="toast-body message-text">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                {% if grand_total %}
+                <hr class="mt-1 mb-3">
+                {% endif %}
+            </div>
+        </div>
+        {% if grand_total and not no_bag %}
+        <div>
+            {% for item in booked_workshops %}
+            <div class="row">
+                <div class="col-3 my-1">
+                    {% if item.workshop.image %}
+                    <img class="w-100 rounded" src="{{ item.workshop.image.url }}" alt="image-{{ item.workshop.name }}" width="auto" height="20vh">
+                    {% else %}
+                    <img class="w-100 rounded" src="{{MEDIA_URL}}graphics/no_image.png" alt="no-image" width="auto" height="20vh">
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    <p class="my-0"><strong>{{ item.workshop.name }}</strong></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                {% if grand_total %}
+                    <p class="m-0 text-black font-weight-bold">Total:
+                        <span class="float-right">€ {{ grand_total|floatformat:2 }}</span>
+                    </p>
+                {% endif %}
+                    <a href="{% url 'checkout' %}" class="btn hvr-bounce-to-right">
+                        <span class="text-uppercase">Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
