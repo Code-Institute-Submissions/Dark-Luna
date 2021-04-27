@@ -449,16 +449,31 @@ All of the mentioned above are already installed in this project in the requirem
 
 You can temporary comment out the current database settings code and just paste the following in the settings.py:
 
-``` DATABASES = {
-    'default': dj_database_url.parse("<your Postgres database URL here>")
-    }
-```
+```python
+  DATABASES = {
+    'default': dj_database_url.parse("your Postgres database URL here")
+  }
+  ```
 
 Important Note:
 
 That's just temporary set up, this URL should not be committed and published to GitHub for security reasons, so make sure not to commit your changes to Git while the URL is in the settings.py.
 
 - Migrate the database models to the Postgres database using the following commands in the terminal:
+IMPORTANT!
+  - Before migrating, the loop that is in the forms.py file (the first and last lines, the ones with the asterikses from below code) from the blog app should be commented out like this:
+
+```python
+choices = Category.objects.all(). values_list('name', 'name') *
+
+choice_list = []
+
+for item in choices: *
+    choice_list.append(item) *
+```
+
+This is because it will look for this, in a model that does not exist (yet).
+So to avoid migration issues, I would recommend to comment this out and uncomment it when migrations are done.
 
 ``` python3 manage.py makemigrations ```
 
@@ -468,7 +483,7 @@ That's just temporary set up, this URL should not be committed and published to 
 
 ``` python3 manage.py loaddata <fixture_name> ```
 
-- Create a superuser for the Postgres database by running the following command(you need to follow the instructions and inserting username, email and password):
+- Create a superuser for the Postgres database by running the following command (you need to follow the instructions and inserting username, email and password):
 
 ``` python3 manage.py createsuperuser ```
 
@@ -500,7 +515,7 @@ Alternatively, in the terminal you can run:
 
 Hosting media files with AWS
 
-The static files and media files (that will be uploaded by superuser - product/service images) are hosted in the AWS S3 Bucket. To host them, you need to create an account in AWS and create your S3 basket with public access. More about setting it up you can read in Amazon S3 documentation and this tutorial.
+The static files and media files (that will be uploaded by superuser - product/service images) are hosted in the AWS S3 Bucket. To host them, you need to create an account in AWS and create your S3 basket with public access. More about setting it up you can read in [Amazon S3 documentation](https://docs.aws.amazon.com/s3/index.html) and [this](https://www.youtube.com/watch?v=e6w9LwZJFIA) tutorial.
 
 Sending email via Gmail
 
