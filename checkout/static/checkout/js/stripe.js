@@ -1,3 +1,4 @@
+//jshint esversion: 6
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
@@ -15,12 +16,12 @@ let style = {
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#ced4da'
+            color: '#000'
         }
     },
     invalid: {
-        color: '#dc3545',
-        iconColor: '#dc3545'
+        color: '#000',
+        iconColor: '#000'
     }
 };
 let card = elements.create('card', { style: style });

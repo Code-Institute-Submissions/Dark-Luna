@@ -1,36 +1,53 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+{% endblock %}
 {% block extra_title %}| Booking{% endblock %}
 
 {% block content %}
 
 <!-- Main container -->
-<div id="booking-page" role="main">
+<div id="booking-page">
     <!-- Top banner -->
-    <div class="container booking-banner">
-        <h2>Booking..</h2>
-        <hr>
-    </div>
-    <!-- Booking container -->
-    <div class="booking-container">
-        {% if bag %}
-        <div class="container">
-            <!-- Finalise your booking -->
-            <h2>Finalise your booking</h2>
-            <hr>
-            <!-- When any workshop is booked show booked in this container -->
-            {% if booked_workshops %}
-            <!-- Booked workshops present in table on page -->
-            {% include './booking-general.html' %}
-            <hr>
-            <!-- Totals -->
-            {% include './booking-finalize.html' %}
-            {% endif %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <p class= "section-title text-center">Booking:</p>
+                <hr>
+            </div>
         </div>
-            {% endif %}
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+            <!-- Booking container -->
+                {% if bag %}
+                    <!-- Finalise your booking -->
+                    <p class="title text-center">Finalise your booking</p>
+                    <!-- When any workshop is booked show booked in this container -->
+                    {% if booked_workshops %}
+                    <!-- Booked workshops present in table on page -->
+                    {% include './booking-general.html' %}
+                    <!-- Totals -->
+                    {% include './booking-finalize.html' %}
+                    {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <!-- Link for booking -->
+        <div class="row">
+            <div class="col-md-8 ml-2">
+                <p class="title ml-4">Nothing booked ?</p>
+                <p class="title ml-4">This workshop might be something for you!</p>
+            </div>
+        </div>
+    <!-- Include "Random Workshop" container -->
+    {% include 'includes/random-workshop.html' %}
+    {% endif %}
     </div>  
 </div>
+
 
 {% endblock %}
 

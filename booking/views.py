@@ -9,9 +9,10 @@ def booking(request):
     """ A view to return booking page """
 
     workshops = list(Workshop.objects.all())
-    # random_workshops = random.sample(workshops, 2)
+    random_workshops = random.sample(workshops, 1)
     context = {
         'workshops': workshops,
+        'random_workshops': random_workshops,
     }
 
     return render(request, 'booking/booking.html', context)

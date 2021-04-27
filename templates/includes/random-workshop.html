@@ -1,0 +1,35 @@
+<!-- Main container -->
+<div class="container-fluid">
+            <div class="row">
+                <!-- Workshops for loop -->
+                {% for workshop in workshops %}
+                    <!-- Whole card as link to workshop detail -->
+                    <div class="card">
+                        <!-- Image -->
+                        {% if workshop.image %}
+                        <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                        {% else %}
+                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                        {% endif %}
+                        <!-- Workshop basic info -->
+                        <div class="col">
+                            <a href="{% url 'workshop' workshop.id %}" class="title"> <br/>{{ workshop.name }}</a><hr>
+                            <p class="title">Price: <br/>€ {{ workshop.price }}</p><hr>
+                            <p class="title">Therapist: <br/>{{ workshop.therapist }}</p><hr>
+                            <div class="title">Workshop category:<br/> {{ workshop.category }}</div><hr>
+                        </div>
+                        <!-- Book now button -->
+                        <div class="buttons">
+                            <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
+                                {% csrf_token %}
+                                <input class="form-control qty_input" type="hidden" name="quantity" value="1"
+                                    data-item_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <button type="submit" class="btn hvr-bounce-to-right">Book Now</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+ 

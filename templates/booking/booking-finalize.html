@@ -1,11 +1,11 @@
-<div class="row my-4 totals-text">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
+<div class="row">
+    <div class="col">
         <h5><strong>Booking Total: €{{ total|floatformat:2 }}</strong></h5>
         <h5 class="mt-5 big-text"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h5>
     </div>
 </div>
 <div class="row mb-4">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <div class="col">
         <div class="card">
             <a href="{% url 'workshops' %}" class="btn">
                 <span class="icon">
@@ -15,8 +15,8 @@
             </a>
         </div>
         <!-- Secure checkout button -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="card shadow-sm border-0">
+        <div class="col">
+            <div class="card ">
                 <a href="{% url 'checkout' %}" class="btn">
                     <span class="text-uppercase">Secure Checkout</span>
                     <span class="icon">

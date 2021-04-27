@@ -1,35 +1,33 @@
 <div id="booking-table">
     {% for item in booked_workshops %}
-    <div id="{{ item.workshop.id }}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 extra-padding">
+    <div id="{{ item.workshop.id }}" class="col">
             <div class="row">
                 <!-- Image -->
-                <div class="col-xs-3 col-sm-12 col-md-3 col-lg-3 col-xl-3 my-auto">
-                    <!-- Magic Padding Container -->
-                    <div class="p-1">
-                        {% if item.workshop.image %}
-                        <img src="{{ item.workshop.image.url }}" alt="image-{{ item.workshop.name }}" class="">
+                    <div class="col-md-4">
+                        {% if workshop.image %}
+                        <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
                         {% else %}
-                        <img src="{{MEDIA_URL}}graphics/no_image.png" alt="no-image" class="">
+                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
                         {% endif %}
                     </div>
                     <!-- Magic Padding Container End -->
                 </div>
                 <!-- Card Body -->
                 <!-- Workshop Info -->
-                <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col">
                     <!-- Magic Padding Container -->
                     <div class="p-1">
                         <!-- Workshop Info Container -->
                         <div class="row">
-                            <div class="col-xl-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col">
                                 <!-- Lesson Title -->
                                 <h1 class="mb-3">{{ item.workshop.name }}</h1>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 pr-1">
+                            <div class="col">
                                 <!-- Lesson Participants -->
                                 <p>Participants: <span>{{ item.workshop.participants }}</span></p>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div class="col">
                                 <!-- Lesson Price -->
                                 <p class="price">Price: <span>€{{ item.workshop.price }}</span></p>
                             </div>
@@ -39,7 +37,7 @@
                     <!-- Magic Padding Container End -->
                 </div>
                 <!-- Buttons -->
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 my-auto">
+                <div class="col my-auto">
                     <!-- Magic Padding Container -->
                     <div class="p-1">
                         <a href="{% url 'workshop' item.workshop.id %}"
@@ -53,10 +51,9 @@
             </div>
         </div>
         <!-- Card End -->
-    </div>
     {% endfor %}
     <!-- Clear whole bag - button -->
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-1">
+    <div class="col">
         <form class="form" action="{% url 'clear_booking' %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
