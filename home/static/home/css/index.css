@@ -10,13 +10,19 @@
 }
 #background {
     background-image: url("../../../media/backgrounds/hero2.jpg");
-    height: 50vh;
+    height: 65vh;
     width: 100vw;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover;
+    position: relative;
+    opacity: 0.70;
+    background-attachment: fixed;
 }
 
+#about {
+    background-color: #bb236c88;
+}
 #why {
     background-image: url("../../../media/backgrounds/why.jpg");
     height: 25vh;
@@ -78,4 +84,26 @@ a#custom-btn {
     font-size: 1rem;
     display: flex;
     justify-content: center;
+}
+#section-bg-light {
+    background-image: url("../../../media/backgrounds/hans-vivek-UiMkBvDQSAA-unsplash.jpg");
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    opacity: 0.70;
+    background-attachment: fixed;
+}
+#section-bg-dark {
+    background-image: url("../../../media/backgrounds/jared-rice-NTyBbu66_SI-unsplash.jpg");
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    opacity: 0.70;
+    background-attachment: fixed;
 }

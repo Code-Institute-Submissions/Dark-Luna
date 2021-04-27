@@ -1,7 +1,8 @@
 html {
-    position: relative;
+    /* position: relative; */
     min-height: 100vh;
     scroll-behavior: smooth;
+    margin: 0;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     color: #f8f8ff;
     overflow-x: hidden;
     height: 100%;
+    margin: 0;
 }
 
 /* Navbar styling*/
@@ -18,15 +20,21 @@ body {
 .img {
     margin-right: -1rem;
 }
-
-.navbar-light .navbar-nav .nav-link,
-.nav-link {
+.navbar-expand-lg {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    background-color: #bb236c3f;
+}
+.navbar-nav,
+.nav-link{
     font-size: 1.6rem;
     color: #15020A;
     border-radius: 1rem;
     margin-right: 1rem;
 }
-.navbar-light .navbar-nav .nav-link:hover,
+.navbar-nav:hover,
 .nav-link:hover {
     color: #580c2d;
 }
@@ -47,7 +55,6 @@ body {
     white-space: nowrap;
     background-color: transparent;
     border: 0;
-    background: rgba(255, 255, 255, 0.2);
     border-radius: 1rem;
     color:  #580c2d;
     font-size: 1rem;
@@ -88,15 +95,6 @@ body {
     width: 5rem;
 }
 
-.header-quote {
-    padding: 1rem 1rem;
-    margin-top: 8rem;
-    font-size: 1rem;
-    color: #15020A;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 1rem;
-    font-weight: 450;
-}
 
 /* Blog cards */
 .card {
