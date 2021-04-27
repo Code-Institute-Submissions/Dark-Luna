@@ -4,7 +4,9 @@ import json
 import time
 
 from django.http import HttpResponse
-
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from checkout.models import Order, OrderLineItem
 from workshops.models import Workshop
 
@@ -14,6 +16,22 @@ class StripeWhHandler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+    )
 
     def handle_event(self, event):
         """
@@ -30,7 +48,7 @@ class StripeWhHandler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
-        # save_info = intent.metadata.save_info
+        save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)

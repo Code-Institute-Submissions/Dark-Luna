@@ -24,28 +24,7 @@
             </div>
         </div>
 </section>
-    <!-- Messages container -->
-    {% if messages %}
-    <div class="messages-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        <!-- Error Message -->
-        {% include 'includes/toasts/toast-error.html'%}
-        {% elif level == 30 %}
-        <!-- Warning Message -->
-        {% include 'includes/toasts/toast-warning.html'%}
-        {% elif level == 25 %}
-        <!-- Success Message -->
-        {% include 'includes/toasts/toast-success.html'%}
-        {% else %}
-        <!-- Info Message -->
-        {% include 'includes/toasts/toast-info.html'%}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
-    </div>
-    {% endif %}
+
 <section class="container-fluid" id="intro">
     <div class="row justify-content-center">
         <div class="col-md-6">
