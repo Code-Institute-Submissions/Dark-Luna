@@ -14,36 +14,20 @@ body {
 }
 
 /* Navbar styling*/
-.navbar-brand,
-.navbar-expand-xl {
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    font-size: 2.5rem;
-    line-height: inherit;
-    white-space: nowrap;
-    justify-content: flex-start;
-    flex-flow: row nowrap;
-    background: rgba(255, 255, 255, 0.4);
-
-}
 
 .img {
     margin-right: -1rem;
 }
 
-a {
+.navbar-light .navbar-nav .nav-link,
+.nav-link {
     font-size: 1.6rem;
     color: #15020A;
     border-radius: 1rem;
     margin-right: 1rem;
 }
-.logo-text {
-    font-size: 1.7rem;
-    color: #580c2d;
-    padding-left: 0;
-}
-
-a:hover {
+.navbar-light .navbar-nav .nav-link:hover,
+.nav-link:hover {
     color: #580c2d;
 }
 
@@ -73,13 +57,8 @@ a:hover {
     color: #79113f;
 }
 
-/* Hero header styling */
-.hero.is-info,
-.hero.is-info a.navbar-item.is-active,
-.hero.is-info a.navbar-item:hover,
-.hero.is-info .navbar-item {
-    background-color: #fff;
-}
+
+
 .navbar-toggler {
     padding: .25rem .75rem;
     font-size: 1.25rem;
@@ -90,6 +69,7 @@ a:hover {
     margin-left: auto;
     margin-right: 1rem;
 }
+
 .navbar-toggler-icon {
     display: inline-block;
     color: #580c2d;
@@ -101,18 +81,13 @@ a:hover {
     border-radius: 1rem;
     border-block-style: groove;
 }
-.hero.is-info {
-    background-image: url("../../../media/backgrounds/header.jpg");
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-position:center;
-    background-size: cover;
-}
+
 .custom-btn {
     background-color: #79113F!important;
     color: #f8f8ff!important;
     width: 5rem;
 }
+
 .header-quote {
     padding: 1rem 1rem;
     margin-top: 8rem;
@@ -122,7 +97,8 @@ a:hover {
     border-radius: 1rem;
     font-weight: 450;
 }
-/* Forms styling */
+
+/* Blog cards */
 .card {
     height:auto;
     width: 40vh;
@@ -133,6 +109,7 @@ p {
     font-size: 1.1rem;
 }
 
+/* Forms styling */
 h1,
 label,
 .btn

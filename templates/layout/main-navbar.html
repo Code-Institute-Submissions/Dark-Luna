@@ -1,87 +1,55 @@
-<div class="hero is-info is-large">
-    <div class="hero-head">
-        <nav class="navbar navbar-expand-xl">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{{MEDIA_URL}}logo/logo.png" alt="dark-luna-logo" width="120" height="96"
-                class="d-inline-block img">
-                <div class="container-fluid text-center logo-text">Dark Luna</div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-1 mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Coaching
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a href="{% url 'shadow' %}" class="dropdown-item">Shadow Work</a></li>
-                            <li><a href="{% url 'life' %}" class="dropdown-item ">Life Coaching</a></li>
-                            <li><a href="{% url 'sex' %}" class="dropdown-item ">Sex Coaching</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'massage' %}">Massage</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3 {% if request.get_full_path == '/workshops/' %}nav-link-active{% else %}hvr-bounce-to-top{% endif %}"
-                        href="{% url 'workshops' %}">Workshops</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'therapists' %}">Therapists</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    <a class="nav-link mr-3" href="{% url 'booking' %}"><i class="fas fa-shopping-bag"></i></a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link mr-3" href="" id="dropDownIcon" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
-                        <ul class="dropdown-menu text-left" aria-labelledby="navbarDropdownMenuLink">
-                            {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a></li>
-                            {% if request.user.is_superuser %}
-                            <li><a href="{% url 'add-blog-post' %}" class="dropdown-item">Blog</a></li>
-                            <li><a href="{% url 'add-blog-category'%}" class="dropdown-item">Blog cat</a></li>
-                            <li><a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a></li>
-                            <li><a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a></li>
-                            {% endif %}
-                            <form method="post" action="{% url 'account_logout' %}">
-                                {% csrf_token %}
-                                {% if redirect_field_value %}
-                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                                {% endif %}
-                                <button class="custom-btn" type="submit">Logout</button>
-                            </form>
-                            {% else %}
-                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li><a href="{% url 'account_login' %}"  class="dropdown-item">Login</a></li>  
-                        </ul>
-                        {% endif %}
-                      
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<nav class="navbar navbar-expand-lg">
+    <a href="{% url 'home' %}">
+        <img src="{{MEDIA_URL}}backgrounds/navbar-brand-dl.png" width="160" height="120" alt="dark-luna-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'massage' %}">Massage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'workshops' %}">Workshops</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'therapists' %}">Therapists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'contact' %}">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url 'booking' %}"><i class="fas fa-shopping-bag"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'add-blog-post' %}" class="dropdown-item">Blog</a>
+                <a href="{% url 'add-blog-category'%}" class="dropdown-item">Blog cat</a>
+                <a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a>
+                <a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a>
+                {% endif %}
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="custom-btn" type="submit">Logout</button>
+                </form>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}"  class="dropdown-item">Login</a>
+                {% endif %}
+                </div>
+            </li>
+        </ul>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-6 header-quote text-center">
-            “Today I celebrate women who are:<br/>
-            Vulnerable but strong.
-            Sensitive but assertive.
-            Always learning but intelligent.
-            Scared but brave.
-            Victims but survivors.
-            Helpless but selfless.
-            Heartbroken but healers.
-
-            Women who break glass-ceilings & barriers.
-            I see you. I am with you. I am you.”
-            ― Mitta Xinindlu 
-        </div>
-    </div>
- 
-</div>
+</nav>

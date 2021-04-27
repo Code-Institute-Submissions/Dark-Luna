@@ -1,20 +1,26 @@
 #intro {
     padding-left: 0;
     padding-right: 0;
+    background-color: #bb236c3f;
 }
 .intro-text {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #15020a;
     padding:inherit;
 }
-#about {
-    margin-top: 3rem;
-    margin-bottom: 6rem;
+#background {
+    background-image: url("../../../media/backgrounds/hero2.jpg");
+    height: 50vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
+
 #why {
     background-image: url("../../../media/backgrounds/why.jpg");
     height: 25vh;
-    width: 100vw;
+    width: 90vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -23,7 +29,7 @@
 #how {
     background-image: url("../../../media/backgrounds/how.jpg");
     height: 25vh;
-    width: 100vw;
+    width: 90vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

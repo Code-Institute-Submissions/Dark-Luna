@@ -67,11 +67,11 @@
     </header>
 
    <!-- Messages container -->
-    {% if messages %}
+    <!-- {% if messages %}
         <div class="messages-container">
             
         </div>
-    {% endif %}
+    {% endif %} -->
 
     {% block page_header %}
     {% endblock %}
@@ -85,7 +85,10 @@
     
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- JavaScript Bundle with Popper -->
+
+    <!-- JavaScript Bundle with Popper 1st for dropdown toggle and for some strange reason, the second one for the collapse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Stripe -->
