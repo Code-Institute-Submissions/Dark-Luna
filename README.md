@@ -330,6 +330,22 @@ It did however post the addition. It turns out I was only one comma away :)
 
 - Verdict: All good!
 
+Name order comfirmation emails not being printed to the console
+
+- Bug description: When going through the secure checkout procedure, I discovered that there wasnt any indication that an order comfirmation was send upon successfull checkout. Further investigation revealed that there wasnt any data send back from the webhook, at all. With the help of Igor from tutor support I discovered that I had a type in my url handling (/webhook instead of /wh).
+
+- Fix: Fixing that, (and subsequent some additional errors in the field handling between the webhook_handlers and the fields in stripe.js), fix the problem.
+
+- Verdict: All good!
+
+Name grand_total not being showed in order review
+
+- Bug description: In the order review that is generated after a successfull checkout, the grand_order_total is not displayed.
+
+- Fix: Forgot to put ```default_app_config = 'checkout.apps.CheckoutConfig'``` in the _init_.py of the checkout app. So there was nothing listening to the signals.
+
+- Verdict: All good!
+
 ### From peer code review ###
 
 ### From friends and family testing ###
