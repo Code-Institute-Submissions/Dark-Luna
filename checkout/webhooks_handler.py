@@ -61,8 +61,10 @@ class StripeWhHandler:
                     full_name__iexact=billing_details.full_name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone_number,
-                    street_address1__iexact=billing_details.address.street_address1,
-                    street_address2__iexact=billing_details.address.street_address1,
+                    street_address1__iexact=(
+                        billing_details.address.street_address1),
+                    street_address2__iexact=(
+                        billing_details.address.street_address1),
                     town_or_city__iexact=billing_details.address.town_or_city,
                     postcode__iexact=billing_details.address.postcode,
                     county__iexact=billing_details.address.county,
@@ -115,7 +117,7 @@ class StripeWhHandler:
                     status=500)
 
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received:{event["type"]} | SUCCESS: Created order in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

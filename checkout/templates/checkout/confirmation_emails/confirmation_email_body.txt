@@ -1,0 +1,22 @@
+
+Hello {{ order.full_name }}!
+
+This is a confirmation of your workshop booking at Dark Luna. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+Grand Total: ${{ order.grand_total }}
+
+This confirmation email is also your entrance ticket, so keep it save!
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you and well see you soon!
+
+Warm regards,
+
+Us at Dark Luna
