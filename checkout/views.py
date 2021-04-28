@@ -39,7 +39,6 @@ def checkout(request):
 
     public_key = settings.STRIPE_PUBLIC_KEY
     secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -140,9 +139,7 @@ def checkout_success(request, order_number):
     """ A view to render succesfull checkouts """
 
     save_info = request.session.get('save_info')
-    print(save_info, 'save info from session')
     order = get_object_or_404(Order, order_number=order_number)
-
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
@@ -183,7 +180,6 @@ def checkout_success(request, order_number):
         request, f'Your order successfully has been processed. \
             Order number: {order_number} \
             Check your email and confirmation we have sent to {order.email}.')
-
     if 'bag' in request.session:
         del request.session['bag']
 
