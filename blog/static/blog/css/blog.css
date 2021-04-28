@@ -15,11 +15,8 @@
 .blog-text,
 .blog-post-text,
 .card-text {
-    font-size: 1rem;
-    color: #15020a;
-    background-color: #fff;
-    margin-top: 1rem;
-    margin-left: 0;
+        color: #15020a;
+        font-size: 0.8rem
 }
 
 

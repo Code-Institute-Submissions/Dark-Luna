@@ -1,30 +1,50 @@
 #intro {
     padding-left: 0;
     padding-right: 0;
+    background-color: #bb236c3f;
 }
 .intro-text {
     font-size: 1rem;
     color: #15020a;
     padding:inherit;
 }
-#about {
-    /* position: absolute; */
-    margin-top: 3rem;
-    margin-bottom: 6rem;
-}
-#why {
-    background-image: url("../../../media/backgrounds/why.jpg");
-    height: 25vh;
+#background {
+    background-image: url("../../../media/backgrounds/hero2.jpg");
+    height: 65vh;
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-bottom: 1rem;
+    position: relative;
+    opacity: 0.80;
+    background-attachment: fixed;
+}
+
+.header-quote {
+    padding: 1rem 1rem;
+    margin-top: 4rem;
+    font-size: 1.3rem;
+    color:#580c2d;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    font-weight: 600;
+    }
+
+#about {
+    background-color: #bb236c88;
+}
+#why {
+    background-image: url("../../../media/backgrounds/why.jpg");
+    height: 25vh;
+    width: 90vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 #how {
     background-image: url("../../../media/backgrounds/how.jpg");
     height: 25vh;
-    width: 100vw;
+    width: 90vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -32,34 +52,19 @@
 .title {
     padding: 1rem 1rem;
     margin-top: 4rem;
-    font-size: 1.5rem;
-    color: #580c2d;
-    background: rgba(255, 255, 255, 0.2);
-}
-a:hover {
-    text-decoration: none;
-}
-.hover:hover {
-    transform: scale(1.1);
-    transition-timing-function: ease-in-out;
-    transition-duration: 1.2s;
+    font-size: 0.9rem;
 }
 .card-title {
+    font-size: 1rem;
     color: #580c2d;
-    font-size: 1.2rem;
 }
 .card-text {
     color: #15020a;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 #index-blog {
-    display: flex;
     align-items: center;
     justify-content: center;
-}
-.card {
-    width: 30vw;
-    height: auto;
 }
 
 a#custom-btn {
@@ -74,8 +79,25 @@ a#custom-btn {
     display: flex;
     justify-content: center;
 }
-/* .row-cards {
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 0;
-} */
+#section-bg-light {
+    background-image: url("../../../media/backgrounds/hans-vivek-UiMkBvDQSAA-unsplash.jpg");
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    opacity: 0.50;
+    background-attachment: fixed;
+}
+#section-bg-dark {
+    background-image: url("../../../media/backgrounds/jared-rice-NTyBbu66_SI-unsplash.jpg");
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    opacity: 0.50;
+    background-attachment: fixed;
+}

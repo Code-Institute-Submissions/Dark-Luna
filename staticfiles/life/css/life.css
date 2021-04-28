@@ -10,11 +10,11 @@
     padding: 1rem 1rem;
     justify-content: center;
     padding: 1rem 1rem;
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #580c2d;
 }
 .life-text {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 0;
     margin-bottom: 1rem;
     color: #000;
@@ -22,12 +22,12 @@
 
 #life-image {
     background-image: url("../../../media/backgrounds/life-image.jpg");
-    height: 50vh;
+    height: 45vh;
     width: auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-size:contain;
-    /* margin-left: 1rem; */
+    background-size: cover;
+    margin-left: 1rem;
 }
 .hover:hover {
     transform: scale(1.1);
@@ -36,10 +36,11 @@
 }
 .life-quote {
     display: flex;
-    align-items: center;
+    align-items:center;
+    padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 54rem;
-    font-size: 1.75rem;
+    margin-top: 15rem;
+    font-size: 1rem;
     color: #671a36;
     background: rgba(255, 255, 255, 0.404);
 }

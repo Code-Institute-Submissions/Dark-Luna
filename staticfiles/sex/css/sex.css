@@ -13,11 +13,12 @@
     padding: 1rem 1rem;
     justify-content: center;
     padding: 1rem 1rem;
-    font-size: 6rem;
+    font-size: 2rem;
     color: #580c2d;
 }
+}
 .sex-text {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 0;
     margin-bottom: 1rem;
     color: #000;
@@ -30,7 +31,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-left: 6rem;
+    margin-left: 1rem;
 }
 .hover:hover {
     transform: scale(1.1);
@@ -39,13 +40,13 @@
 }
 .sex-quote {
     display: flex;
-    align-items: center;
+    align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 2rem;
-    font-size: 2rem;
-    color: #580c2d;
-    background: rgba(255, 255, 255, 0.226);
+    margin-top: 15rem;
+    font-size: 1rem;
+    color: #671a36;
+    background: rgba(255, 255, 255, 0.404);
 }
 /* Testimonial Slider */
 .testimonial{

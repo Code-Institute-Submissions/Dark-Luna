@@ -23,7 +23,7 @@
         </p>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-6 blog">
+        <div class="col-md-4 blog">
             {% if post.header_image %}
                 <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
             {% else %}
@@ -51,7 +51,9 @@
                                 {% endif %}
                             </form>
                         </h5>
+                        <p class="card-text">
                         {{ post.body|safe }}
+                        </p>
                     </div>
         </div>
     </div>
