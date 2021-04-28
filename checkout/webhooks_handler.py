@@ -18,7 +18,6 @@ class StripeWhHandler:
         self.request = request
 
     def _send_confirmation_email(self, order):
-        print(order)
         """Send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
@@ -47,9 +46,7 @@ class StripeWhHandler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        print(intent)
         pid = intent.id
-        print(pid)
         bag = intent.metadata.bag
 
         billing_details = intent.charges.data[0].billing_details
@@ -60,17 +57,16 @@ class StripeWhHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=billing_details.full_name,
+                    full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
-                    phone_number__iexact=billing_details.phone_number,
+                    phone_number__iexact=billing_details.phone,
                     street_address1__iexact=(
-                        billing_details.address.street_address1),
+                        billing_details.address.line1),
                     street_address2__iexact=(
-                        billing_details.address.street_address1),
-                    town_or_city__iexact=billing_details.address.town_or_city,
-                    postcode__iexact=billing_details.address.postcode,
-                    county__iexact=billing_details.address.county,
-                    country__iexact__iexact=billing_details.address.country,
+                        billing_details.address.line2),
+                    town_or_city__iexact=billing_details.address.city,
+                    county__iexact=billing_details.address.state,
+                    country__iexact=billing_details.address.country,
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -83,6 +79,7 @@ class StripeWhHandler:
 
         if order_exists:
             self._send_confirmation_email(order)
+            print("email should send")
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -90,14 +87,13 @@ class StripeWhHandler:
             order = None
             try:
                 order = Order.objects.create(
-                    full_name=billing_details.full_name,
+                    full_name=billing_details.name,
                     email=billing_details.email,
-                    phone_number=billing_details.phone_number,
-                    street_address1=billing_details.street_address1,
-                    street_address2=billing_details.street_address1,
-                    town_or_city=billing_details.town_or_city,
-                    postcode=billing_details.postcode,
-                    county=billing_details.county,
+                    phone_number=billing_details.phone,
+                    street_address1=billing_details.address.line1,
+                    street_address2=billing_details.address.line2,
+                    town_or_city=billing_details.address.city,
+                    county=billing_details.state,
                     country=billing_details.country,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -117,6 +113,7 @@ class StripeWhHandler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        print("email should send")
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
