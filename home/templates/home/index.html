@@ -67,27 +67,30 @@
         <p class="title">Latest blog items</p>
     </div>
 </div>
-<section class="container-fluid" id="index-blog">
-    <div class="row row-cols-1 row-cols-md-4 g-4 row-cards justify-content-center">
+<section class="container" id="index-blog">
+    <div class="row justify-content-center align-items-center">
+            <div class="card-deck">
         {% for post in object_list %}
             {% if post.pk < 5 %}
-        <div class="col-sm-6">
-            <div class="card" style="width: 15rem;">
-                {% if post.header_image %}
-                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+            <div class="col-10 col-lg-4 col-md-4 col-sm-6 col-xl-3 mt-5 mb-5">
+                <div class="card">
+                    {% if post.header_image %}
+                            <img src="{{post.header_image.url}}" class="card-img-top d-block w-100" alt="...">
                         {% else %}
-                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top d-block w-100" alt="..."> 
                         {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}<br/>{{ post.author.username }} - {{ post.post_date }} - {{ post.category }}</h5>
-                    <p class="card-text">{{ post.body|slice:"200"|safe }}</p>
-                    <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
-                </div>
+                    <div class="card-body">
+                        <p class="card-title">{{ post.title }}</p><br/>
+                        <p class="card-text">{{post.author.username }} - {{ post.post_date }} - {{ post.category }}</p>
+                        <!-- <p class="card-text">{{ post.body|slice:"200"|safe }}</p> -->
+                        <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
+                    </div>
+                    </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
             </div>
-        </div>
-            {% endif %}
-        {% endfor %}
-    </div>
+            </div>
 </section>
 <section class="container-fluid" id="ready">
     <div class="row justify-content-center">
