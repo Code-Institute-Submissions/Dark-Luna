@@ -1,3 +1,4 @@
+
 """ Stripe Webhooks """
 from django.conf import settings
 from django.http import HttpResponse
@@ -28,9 +29,11 @@ def webhook(request):
         )
     except ValueError as e:
         # Invalid payload
+        print("Payload")
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
+        print("Signature")
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)

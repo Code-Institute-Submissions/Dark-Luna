@@ -8,6 +8,8 @@
 }
 .section-title{
     padding: 1rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     font-size: 2rem;
     color: #580c2d;
 }
@@ -15,23 +17,24 @@
 .blog-text,
 .blog-post-text,
 .card-text {
-        color: #15020a;
-        font-size: 0.8rem
+    color: #15020a;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
 }
 
 
 .blog-post-author,
 .card-title {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #580c2d;
     background-color: #fff;
-    margin-top: 1rem;
+    margin: 3rem 1rem 2rem 2rem;
 }
 .card-sub-title {
     font-size: 0.9rem;
     color: #580c2d;
     background-color: #fff;
-    margin-top: 1rem;
+    margin: 1rem 1rem 2rem 2rem;
 }
 .blog-comment-author {
     font-size: 0.9rem;
@@ -44,9 +47,9 @@ a:hover {
     text-decoration: none;
 }
 .crud-links {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #580c2d!important;
-    font-weight: lighter;
+    font-weight: normal;
 }
 .title-links {
     font-size: 1.1rem;
@@ -81,7 +84,7 @@ a:hover {
     justify-content: center;
 }
 .custom-btn-blog {
-    margin-right: 2rem;
+    margin-left: 2rem;
     background-color: #fff;
     color: #79113f;
     font-weight: normal;
@@ -107,6 +110,9 @@ a:hover {
     margin-top: 1rem;
     margin-bottom: 3rem;
 
+}
+.comment-section {
+    margin-left: 3rem; 
 }
 .blog {
     border: 1px solid #79113f;
