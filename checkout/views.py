@@ -61,6 +61,7 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+            # print("Order saved in view")
             for workshop_id, quantity in bag.items():
                 try:
                     workshop = Workshop.objects.get(id=workshop_id)

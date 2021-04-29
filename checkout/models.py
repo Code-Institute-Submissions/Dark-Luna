@@ -3,6 +3,7 @@
 import uuid
 
 from datetime import datetime
+
 from django.db import models
 from django.db.models import Sum
 # from django.conf import settings
@@ -29,7 +30,7 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     country = CountryField(blank_label='Select Country *',
                            null=False, blank=False)
-    date = models.DateTimeField(default=datetime.now)
+    date = models.DateField(default=datetime.now)
     order_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(
