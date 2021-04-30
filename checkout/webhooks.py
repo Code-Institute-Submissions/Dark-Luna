@@ -1,4 +1,3 @@
-
 """ Stripe Webhooks """
 from django.conf import settings
 from django.http import HttpResponse
@@ -16,7 +15,6 @@ def webhook(request):
     """Listen for webhooks from Stripe"""
     # Setup
     wh_secret = settings.STRIPE_WH_SECRET
-    print(wh_secret)
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # Get the webhook data and verify its signature
@@ -28,12 +26,8 @@ def webhook(request):
         event = stripe.Webhook.construct_event(payload, sig_header, wh_secret)
         print(event)
     except ValueError as e:
-        # Invalid payload
-        print("Payload")
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        print("Signature")
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
