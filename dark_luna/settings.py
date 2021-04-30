@@ -28,12 +28,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.getenv('SECRET_KEY', ' ')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "DEVELOPMENT" in os.getenv
-
-if os.getenv('DEVELOPMENT'):
-    development = True
-else:
-    development = False
+DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = ['dark-luna.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -141,7 +136,7 @@ WSGI_APPLICATION = 'dark_luna.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.getenv:
+if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
@@ -195,7 +190,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if 'BUCKET_S3' in os.getenv:
+if 'BUCKET_S3' in os.environ:
 
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
@@ -221,7 +216,7 @@ if 'BUCKET_S3' in os.getenv:
 
 
 # Gmail sending real e-mail settings
-if 'DEVELOPMENT' in os.getenv:
+if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = "darkluna@example.com"
 else:
