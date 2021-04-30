@@ -2,5 +2,12 @@
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": false,
     "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false
+    "python.linting.flake8Enabled": false,
+    "cSpell.words": [
+        "boto",
+        "dotenv",
+        "load",
+        "s",
+        "storage"
+    ]
 }
