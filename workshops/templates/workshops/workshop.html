@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
 {% endblock %}
-
 
 {% block extra_title %}| Workshop | {{ workshop.name }}{% endblock %}
 
@@ -29,10 +29,10 @@
                 <p class= "title">Price: € {{ workshop.price }}</p>
             </div>
             <div class="col">
-            <!-- Start Date & Start Time -->
                 <div class="title">Description</div>
-                    <p class="workshops-text"><span>{{ workshop.description }}</span></p>
+                <p class="workshops-text"><span>{{ workshop.description }}</span></p>
             </div>
+            <!-- Start Date & Start Time -->
             <div class="title">Workshop Starts</div>
             <p class="workshops-text">Date - <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
             <p class="workshops-text">Time - <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
@@ -41,20 +41,13 @@
             <p class="workshops-text">Time - <span>{{ workshop.end_time|time:"H:i:s" }}</span></p>
         </div>
     </div>
-
-
 </section>
-
-
-
-  
-    <!-- Bottom Section -->
+<!-- Bottom Section -->
 <div class="row justify-content-center">
     <!-- Contact button  -->
     <div class="col">
         <div class="card">
-            <a href="{% url 'contact' %}" class="btn">Need more information
-                ?</a>
+            <a href="{% url 'contact' %}" class="btn">Need more information?</a>
         </div>
     </div>
     <!-- Booking Button -->
@@ -70,5 +63,4 @@
         </div>
     </div>
  </div>
-
 {% endblock %}
