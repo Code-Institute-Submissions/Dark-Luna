@@ -18,7 +18,7 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# Static Root added to collect all static files.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = os.getenv('SECRET_KEY', ' ')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "DEVELOPMENT" in os.environ
+DEBUG = "DEVELOPMENT" in os.getenv
 
 ALLOWED_HOSTS = ['dark-luna.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -138,7 +138,7 @@ WSGI_APPLICATION = 'dark_luna.wsgi.application'
 
 if 'DATABASE_URL' in os.getenv:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
 else:
     DATABASES = {
@@ -216,7 +216,7 @@ if 'BUCKET_S3' in os.getenv:
 
 
 # Gmail sending real e-mail settings
-if 'DEVELOPMENT' in os.environ:
+if 'DEVELOPMENT' in os.getenv:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = "darkluna@example.com"
 else:
