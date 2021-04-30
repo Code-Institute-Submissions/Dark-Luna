@@ -30,6 +30,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', ' ')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEVELOPMENT" in os.getenv
 
+if os.getenv('DEVELOPMENT'):
+    development = True
+else:
+    development = False
+
 ALLOWED_HOSTS = ['dark-luna.herokuapp.com', 'localhost', '127.0.0.1']
 
 
@@ -119,7 +124,7 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # allauth settings
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
