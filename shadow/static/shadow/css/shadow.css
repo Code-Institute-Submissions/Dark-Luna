@@ -24,7 +24,7 @@
 }
 
 #shadow-image {
-    background-image: url("../../../media/backgrounds/shadow-image.jpg");
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/shadow-image.jpg");
     height: 35vh;
     width: auto;
     background-repeat: no-repeat;

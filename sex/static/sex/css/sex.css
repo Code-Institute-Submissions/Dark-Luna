@@ -16,7 +16,7 @@
     font-size: 2rem;
     color: #580c2d;
 }
-}
+
 .sex-text {
     font-size: 1rem;
     margin-top: 0;
@@ -25,7 +25,7 @@
 }
 
 #sex-image {
-    background-image: url("../../../media/backgrounds/sex-image.jpg");
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/sex-image.jpg");
     height: 45vh;
     width: auto;
     background-repeat: no-repeat;

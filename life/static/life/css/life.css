@@ -21,7 +21,7 @@
 }
 
 #life-image {
-    background-image: url("../../../media/backgrounds/life-image.jpg");
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/life-image.jpg");
     height: 45vh;
     width: auto;
     background-repeat: no-repeat;
