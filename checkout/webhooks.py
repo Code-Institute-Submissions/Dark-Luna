@@ -14,7 +14,7 @@ import stripe
 def webhook(request):
     """Listen for webhooks from Stripe"""
     # Setup
-    wh_secret = settings.STRIPE_WH_SECRET
+    # wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # Get the webhook data and verify its signature
@@ -23,7 +23,7 @@ def webhook(request):
     event = None
 
     try:
-        event = stripe.Webhook.construct_event(payload, sig_header, wh_secret)
+        event = stripe.Webhook.construct_event(payload, sig_header)
         print(event)
     except ValueError as e:
         return HttpResponse(status=400)
