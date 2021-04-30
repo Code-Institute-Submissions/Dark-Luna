@@ -2,18 +2,17 @@
     padding: 1rem 1rem;
     font-size: 2rem;
     color: #580c2d;
+    margin-top: 1.5rem;
 }
 
 .title {
-    padding: 1rem 1rem;
-    width: auto;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #580c2d;
 }
 
 .workshops-text
 .text-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #15020a;
     background-color: #fff;
     margin-left: 1rem;
@@ -28,12 +27,24 @@ p {
 
 .category-link {
     display: flex;
-    align-items: center;
     padding: 1rem 1rem;
-    justify-content: center;
     width: auto;
     font-size: 1rem;
     color: #580c2d;
+}
+.category-link-item {
+    display: flex;
+    padding: 1rem 1rem;
+    width: auto;
+    font-size: 0.7rem;
+    color: #580c2d;
+}
+.category-link-item:hover {
+    display: flex;
+    padding: 1rem 1rem;
+    width: auto;
+    font-size: 1rem;
+    color: #79113f;
 }
 .text-success {
     color: #580c2d!important;

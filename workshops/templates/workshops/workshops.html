@@ -6,31 +6,10 @@
 {% endblock %}
     
 {% block content %}
-    <!-- Messages container -->
-    {% if messages %}
-    <div class="messages-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        <!-- Error Message -->
-        {% include 'includes/toasts/toast-error.html'%}
-        {% elif level == 30 %}
-        <!-- Warning Message -->
-        {% include 'includes/toasts/toast-warning.html'%}
-        {% elif level == 25 %}
-        <!-- Success Message -->
-        {% include 'includes/toasts/toast-success.html'%}
-        {% else %}
-        <!-- Info Message -->
-        {% include 'includes/toasts/toast-info.html'%}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
-    </div>
-    {% endif %}
+    
 <section class="container-fluid mb-4" id="workshops">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-10 col-md-6">
             <p class="section-title text-center">
             Workshops
             </p>
@@ -60,7 +39,7 @@
 </section>
     
 <div class="row justify-content-center">  
-    <div class="col-md-4">
+    <div class="col-6 col-md-4">
         <p class="category-title text-center">Categories:</p>
         <div class="filter-container">
             <!-- Code used from Code Institute walkthrough project (Boutique Ado) -->
@@ -75,14 +54,14 @@
         </div>
     </div>
 </div>
-<div class="row justify-content-center">  
-    <div class="col-md-3">
+<div class="row">  
+    <div class="col-10 col-md-6">
         <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
             href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
     </div>
     {% for category in categories_list %}
-    <div class="col-md-2">
-        <a class="category-link {{category.name}}"
+    <div class="col-6">
+        <a class="category-link-item {{category.name}}"
         href="{% url 'workshops' %}?category={{ category.name }}">
         {{ category.name }} ({{ category.workshop__count }})
         </a>
@@ -90,8 +69,9 @@
     {% endfor %}
 </div>
 <section class="container-fluid">
-    <div class="row row-cols-1 row-cols-md-4 g-3 mt-5 row-cards justify-content-center">
+    <div class="row justify-content-center">
         {% for workshop in workshops %}
+        <div class="col-9 col-md-6 col-lg-3 mt-5 mb-5">
             <div class="card mr-1" style="width: 15rem;">
             {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
@@ -99,16 +79,20 @@
                 <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
             {% endif %}
                 <div class="card-body">
-                    <p class="title text-left">{{workshop.name }}</p>
-                    <p class="text-body text-left">Participants:
-                        <span>{{ workshop.participants }}</span>
-                    </p>
-                    <p class="text-body text-left">Price:
+                    <div class="col-11 col-md-6">
+                        <div class="title">{{workshop.name }}</div>
+                    </div>
+                    <div class="col-10 col-md-6">
+                        <div class="text-body">Participants:
+                            <span>{{ workshop.participants }}</span>
+                    </div>
+                    <div class="text-body">Price:
                         <span>€ {{ workshop.price }}</span>
-                    </p>
-                    <p class="text-body text-left">Therapist:
+                    </div>
+                    <div class="text-body">Therapist:
                         <span>{{ workshop.therapist }}</span>
-                    </p>
+                    </div>
+                    </div>
                     <div class="button">
                         <a href="{% url 'workshop' workshop.id %}"
                         class="btn">Details</a>
@@ -123,6 +107,7 @@
                     </div>
                 </div>
                 {% endfor %}
+                </div>
             </div>
             </div>
             <div class="row">

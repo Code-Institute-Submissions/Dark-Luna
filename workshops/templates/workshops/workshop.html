@@ -12,7 +12,7 @@
 
 <section class="container-fluid">
     <div class="row workshop-container">
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3 mt-5 mb-5">
             {% if workshop.image %}
             <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
             {% else %}
@@ -23,10 +23,10 @@
             <div class="section-title"> {{ workshop.name }}</div>
             <div class="card-body">
                 <div class="title">This workshop is for: {{ workshop.category }}</div>
-                <p class="title">We've got space for: {{ workshop.participants }}
-                    Participant{% if workshop.participants > 1 %}s{% endif %}</p>
-                <p class= "title">Therapist: {{ workshop.therapist }}</p>
-                <p class= "title">Price: € {{ workshop.price }}</p>
+                <div class="title">We've got space for: {{ workshop.participants }}
+                    Participant{% if workshop.participants > 1 %}s{% endif %}</div>
+                <div class= "title">Therapist: {{ workshop.therapist }}</div>
+                <div class= "title">Price: € {{ workshop.price }}</div>
             </div>
             <div class="col">
                 <div class="title">Description</div>
