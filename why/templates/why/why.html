@@ -8,10 +8,10 @@
 {% block content %}
     <section class="container-fluid mb-4" id="why">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <p class="title text-center">
+            <div class="col-10 col-md-9 col-lg-8">
+                <div class="why-title text-center">
                     Why choose a more sexual approach?
-                </p>
+                </div>
                 <p class="why-text">
                     Choosing for a more sensual, sexual and shadow-wy approach for dealing with or resolving symptoms is something that is still not done in our society.
                     Many therapies aimed at healing aim to ignore, suppress or hide these aspects. It is still in a dark corner, while there is so much potential for healing and freedom for women!
@@ -25,49 +25,14 @@
                     Sexuality means a much greater thing to women. The womb creates, it houses and grows life. The best-known example is the carrying of a child. What a powerhouse!
                     But you can also use sexual energy to create a whole host of other creative things.
                 </p>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Lrdn4lazVBc" allowfullscreen></iframe>
-                </div>
             </div>
+            <div class="col-md-6 mb-4">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Lrdn4lazVBc" allowfullscreen></iframe>
+            </div>
+        </div>
         </div>   
     </section>
-<section class="container-fluid mt-6">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-        </ol>
-        
-    <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            {% for testimonial in testimonials %}
-            {% if forloop.counter == 1 %}
-            <div class="item active">
-            {% else %}
-            <div class="item">
-            {% endif %}
-            <div class="carousel-caption">
-                <p class="title">{{ testimonial.author }}</p>
-                <p class="testimonial-text">{{ testimonial.text }}</p>
-            </div>
-        </div>
-            {% endfor %}
-        </div>
-    <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        </div>
-</section>
+    {% include 'layout/footer.html' %}
 {% endblock %}
             

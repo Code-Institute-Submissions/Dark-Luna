@@ -21,18 +21,17 @@ body {
     margin-right: -1rem;
 }
 .navbar-expand-lg {
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
     -ms-flex-pack: start;
     justify-content: flex-start;
     background-color: #bb236c3f;
 }
 .navbar-nav,
 .nav-link{
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     color: #15020A;
     border-radius: 1rem;
-    margin-right: 1rem;
+    margin-left: 1rem;
+    font-weight: 300;
 }
 .navbar-nav:hover,
 .nav-link:hover {
@@ -40,8 +39,8 @@ body {
 }
 
 .navbar .dropdown-menu {
-    background-color: transparent;
     border: 0;
+    background-color: #eec8db;
 }
 
 .navbar .dropdown.show a,
@@ -53,7 +52,6 @@ body {
     font-weight: 300;
     text-align: inherit;
     white-space: nowrap;
-    background-color: transparent;
     border: 0;
     border-radius: 1rem;
     color:  #580c2d;
@@ -93,6 +91,8 @@ body {
     background-color: #79113F!important;
     color: #f8f8ff!important;
     width: 5rem;
+    margin-left: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -115,4 +115,12 @@ label,
 .toast {
     font-size: 1rem;
     color: #15020A;
+}
+
+@media (min-width: 992px) {
+    .nav-link {
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        font-weight: 400;
+    }
 }

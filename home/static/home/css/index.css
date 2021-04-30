@@ -1,13 +1,4 @@
-#intro {
-    padding-left: 0;
-    padding-right: 0;
-    background-color: #bb236c3f;
-}
-.intro-text {
-    font-size: 1rem;
-    color: #15020a;
-    padding:inherit;
-}
+/* Header section background */
 #background {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/hero2.jpg");
     height: 65vh;
@@ -20,16 +11,51 @@
     background-attachment: fixed;
 }
 
+/* Header quote */
 .header-quote {
     padding: 1rem 1rem;
-    margin-top: 4rem;
-    font-size: 1.3rem;
-    color:#580c2d;
+    margin-top: 5rem;
+    font-size: 1rem;
+    color: #580c2d;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
-    font-weight: 600;
-    }
+    font-weight: 400;
+}
+    
+/* Intro section */    
+#intro {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #bb236c3f;
+}
+.intro-text-1 {
+    font-size: 1rem;
+    color: #15020a;
+    padding:inherit;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+.intro-text-2 {
+    font-size: 1rem;
+    color: #15020a;
+    padding:inherit;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+}
+.intro-title {
+    font-size: 1.2rem;
+    color: #15020a;
+    padding:inherit;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-bottom: -4rem;
+    font-weight: 450;
+}
 
+/* About section */
 #about {
     background-color: #bb236c88;
 }
@@ -40,6 +66,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin: 3rem 3rem 3rem 2rem;
 }
 #how {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/how.jpg");
@@ -48,14 +75,26 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin: 3rem 3rem 3rem 2rem;
 }
 .title {
     padding: 1rem 1rem;
-    margin-top: 4rem;
-    font-size: 0.9rem;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: #580c2d;
+    background: rgba(255, 255, 255, 0.308);
+    font-weight: bold;
 }
+a:hover {
+    text-decoration: none;
+}
+.hover:hover {
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+    transition-duration: 1.2s;
+}
+
 .card-title {
-    font-size: 1rem;
     color: #580c2d;
 }
 .card-text {
@@ -70,15 +109,16 @@
 a#custom-btn {
     background-color: #bb236c;
     color: #fff;
-    width: 7rem;
+    width: 5rem;
     -webkit-text-fill-color: #fff;
     -webkit-text-stroke-color: #580c2d;
     -webkit-text-stroke-width: 0.5px;
     border-radius: 3rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
 }
+
 #section-bg-light {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/hans-vivek-UiMkBvDQSAA-unsplash.jpg");
     height: 40vh;
@@ -101,3 +141,57 @@ a#custom-btn {
     opacity: 0.50;
     background-attachment: fixed;
 }
+/* Ready? */
+#ready {
+    margin-bottom: 3rem;
+}
+.video-title {
+    padding: 1rem 1rem;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    color: #580c2d;
+    font-weight: bold;
+}
+/* Media Breakpoints */
+
+@media (min-width: 576px) {
+.title {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+}
+.header-quote {
+    margin-top: 8rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    }
+a#custom-btn {
+    background-color: #bb236c;
+    color: #fff;
+    width: 7rem;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #580c2d;
+    -webkit-text-stroke-width: 0.5px;
+    border-radius: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    }
+}
+@media (min-width: 768px) {
+    .title {
+        margin-top: 6rem;
+        font-size: 1.4rem;
+    }
+    .header-quote {
+        margin-top: 11rem;
+        font-size: 1.1rem;
+        font-weight: 450;
+    }
+}
+@media (min-width: 1400px) {
+    .header-quote {
+        margin-top: 11rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+ }

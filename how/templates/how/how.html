@@ -7,18 +7,17 @@
 {% block content %}    
 <section class="container-fluid mb-4" id="how">
     <div class="row justify-content-center">
-        <div class="col-4">
-            <p class="title text-center">
+        <div class="col-12 col-md-9 col-lg-8">
+            <div class="how-title text-center">
             How can Dark Luna help?
-            </p>
+            </div>
             <p class="how-text">
             Luna offers a revolutionary new concept in the development of your female sexuality. Due to all the hustle and bustle of our life, work, children, hobbies, our sex life often falls short.
             But did you know that the power of women is linked to this sexual energy? 
             This energy, our life energy, is our birthright. Sexual energy can heal if it is properly managed. Holistic sexuality involves generating and controlling this energy,
             as well as being sensual in life, by taking good care of yourself. 
-            Through exercises and enlightening conversations I will help you on your way to your sensual, playful self and you will find that your whole being benefits from this, including your sex life!
-
-            Luna can help if: 
+            Through exercises and enlightening conversations I will help you on your way to your sensual, playful self and you will find that your whole being benefits from this, including your sex life!<br/>
+            Luna can help if:
                 <ul class="how-text">
                     <li>You want to reconnect with your indomitable, free, dark, sexual, seductive and creative power</li>
                     <li>You no longer can or dare to be intimate, but would like to change this</li>
@@ -37,8 +36,8 @@
 </section>
 <section class="container-fluid" id="mooncalendar">
     <div class="row justify-content-center">
-        <div class="col-4">
-            <p class="title text-center">
+        <div class="col-10 col-md-9 col-lg-8">
+            <p class="how-title text-center">
                 Moon Calendar
             </p>
             <p class="calendar-text">
@@ -50,6 +49,7 @@
         </div>
     </div>
 </section>
+{% include 'layout/footer.html' %}
 {% block postloadjs %}
     <script src="{% static 'how/js/how.js' %}"></script>
 {% endblock %}

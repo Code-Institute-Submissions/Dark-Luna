@@ -1,24 +1,19 @@
-.title {
+.why-title {
     display: flex;
     align-items: center;
     padding: 1rem 1rem;
     justify-content: center;
     width: auto;
-    font-size: 6rem;
+    font-size: 1.6rem;
     color: #580c2d;
     background: rgba(255, 255, 255, 0.2);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
-.why-text,
-.how-text,
-.testimonial-text {
-    font-size: 2rem;
+.why-text {
+    font-size: 1rem;
     color: #15020a;
     background-color: #fff;
-}
-p {
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #000;
+    margin-bottom: 4rem;
 }
 

@@ -8,7 +8,7 @@
 {% block content %}
 <section class="container-fluid" id="background">
         <div class="row justify-content-center">
-            <div class="col-md-6 header-quote text-center">
+            <div class="col-md-10 col-10 header-quote text-center">
                 “Today I celebrate women who are:<br/>
                 Vulnerable but strong.
                 Sensitive but assertive.
@@ -27,15 +27,19 @@
 
 <section class="container-fluid" id="intro">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <p class="intro-text">
-                Beloved woman (or partner of woman),<br/><br/>
+        <div class="col-md-6 col-sm-8">
+            <p class="intro-title">Beloved woman (or partner of woman),</p><br/><br/>
+            <p class="intro-text-1">
                 In a world where porn still seems to be the prime example, more and more women are feeling lost. Sex seems to follow a fixed pattern, telling your partner what you like and what you dislike seems an impossible task,
                 since we have never learned that we also have a voice. Having the right to tailor our sexual relationships, with others, but also with ourselves, as it nourishes ourselves. 
                 It is easy to blame men for this, but they too live by examples presented to them. If you pay attention, you will see that our society is full of texts, images and statements that are more harmful than helpful.
                 If we, as women, want to receive and give pleasure, it is our task to provide the examples that are more in line with the image we envision with the word ‘sex’.<br/><br/>
                 In sexual union, women are the host. She receives the man (in a heterosexual relationship, although this describes a physical process, this actually happens in homosexual relationships as well,
-                I am by no means saying here that only a straight relationship is the "right" way).<br/><br/>
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-8">
+            <p class="intro-text-2">
+                I am by no means saying here that only a straight relationship is the "right" way).
                 In order to receive, a degree of security and self-knowledge is necessary. Something that many women lack. Knowledge of the unique qualities of one's own body, which the body needs to fully open up, is something that few women have mastered. Luna wants to help women to reconnect with their own body in order to discover what it takes to be able to fully open yourself up for sex, in all its beautiful facets.
                 The lack of knowledge in this regard does not only manifest itself in the sexual field. 
                 Luna is convinced that many problems that women experience in life in general (who am I actually, what do I need in this life, why do I get stuck in specific areas or a general sense of meaninglessness),
@@ -49,12 +53,12 @@
 <section class="container-fluid" id="section-bg-dark"></section>
 <section class="container-fluid" id="about">
     <div class="row justify-content-center">
-        <a href="{% url 'why' %}"  class="col-md-5 img-fluid hover mt-3 mb-3 mr-1 ml-1" id="why">
+        <a href="{% url 'why' %}"  class="col-xl-5 col-md-8 col-xs-6 img-fluid hover" id="why">
             <p class="title text-center">
                 Why choose a more sexual approach?
             </p>
         </a>
-        <a href="{% url 'how' %}" class="col-md-5 img-fluid hover mt-3 mb-3 mr-1 ml-1" id="how">
+        <a href="{% url 'how' %}" class="col-xl-5 col-md-8 col-xs-6 img-fluid hover" id="how">
             <p class="title text-center">
                 How can Dark Luna help?
             </p>
@@ -69,10 +73,9 @@
 </div>
 <section class="container" id="index-blog">
     <div class="row justify-content-center align-items-center">
-            <div class="card-deck">
         {% for post in object_list %}
             {% if post.pk < 5 %}
-            <div class="col-10 col-lg-4 col-md-4 col-sm-6 col-xl-3 mt-5 mb-5">
+            <div class="col-md-6 col-lg-3 mt-5 mb-5">
                 <div class="card">
                     {% if post.header_image %}
                             <img src="{{post.header_image.url}}" class="card-img-top d-block w-100" alt="...">
@@ -90,12 +93,11 @@
                 {% endif %}
                 {% endfor %}
             </div>
-            </div>
 </section>
 <section class="container-fluid" id="ready">
     <div class="row justify-content-center">
         <div class="col-6">
-            <p class="title text-center">
+            <p class="video-title text-center">
                 Are You Ready?
             </p>
             <div class="embed-responsive embed-responsive-16by9">
@@ -104,6 +106,7 @@
         </div>
     </div>
 </section>
+{% include 'layout/footer.html' %}
 {% endblock %}
         
        
