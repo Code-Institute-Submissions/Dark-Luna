@@ -1,4 +1,5 @@
 .title {
+    font-family: 'Oregano', cursive;
     display: flex;
     align-items: center;
     padding: 1rem 1rem;
@@ -26,6 +27,7 @@ p {
     font-size: 0.7rem;
 }
 .account-btn {
+    font-family: 'Oregano', cursive;
     background-color: #580c2d;
     color: #f8f8ff!important;
     width: 13rem;
@@ -33,6 +35,7 @@ p {
     margin-left: 2rem;
 }
 .workshops-btn {
+    font-family: 'Oregano', cursive;
     background-color: #580c2d;
     color: #f8f8ff!important;
     width: 13rem;

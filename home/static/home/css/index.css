@@ -60,6 +60,7 @@
 }
 
 .about-title {
+    font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     margin-top: 3rem;
     font-size: 1.1rem;
@@ -94,6 +95,7 @@
 
 /* Blog section */
 .blog-section-title {
+    font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     margin-top: 3rem;
     font-size: 1.4rem;
@@ -160,6 +162,7 @@ a#custom-btn {
 }
 
 .video-title {
+    font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     margin-top: 3rem;
     font-size: 1.4rem;

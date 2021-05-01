@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oregano:ital@0;1&display=swap');
+
 /* General styling */
 html {
     position: relative;
@@ -8,6 +10,7 @@ html {
 body {
     font-size: 2rem;
     font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
     color: #f8f8ff;
     height: 100vh;
     overflow-x: hidden;
@@ -33,6 +36,7 @@ a {
 }
 .navbar-nav,
 .nav-link{
+    font-family: 'Oregano', cursive;
     font-size: 1.1rem;
     color: #15020A;
     border-radius: 1rem;
@@ -180,9 +184,10 @@ label,
 }
 @media (min-width: 992px) {
     .nav-link {
-        font-size: 1.4rem;
+        font-family: 'Oregano', cursive;
+        font-size: 1.6rem;
         margin-left: 1rem;
-        font-weight: 400;
+       
     }
     .sign-in {
         width: 30vw;

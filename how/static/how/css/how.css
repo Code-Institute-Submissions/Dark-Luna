@@ -1,4 +1,5 @@
 .how-title {
+    font-family: 'Oregano', cursive;
     display: flex;
     align-items: center;
     padding: 1rem 1rem;
@@ -17,6 +18,7 @@
     margin-bottom: 1rem;
 }
 .calendar-text {
+    font-family: 'Oregano', cursive;
     font-size: 1rem;
     color: #15020a;
     background-color: #fff;
