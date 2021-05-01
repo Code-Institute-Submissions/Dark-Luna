@@ -21,44 +21,52 @@
     border-radius: 1rem;
     font-weight: 400;
 }
-    
-/* Intro section */    
+
+/* Intro section */
 #intro {
     padding-left: 0;
     padding-right: 0;
     background-color: #bb236c3f;
 }
+
 .intro-text-1 {
     font-size: 1rem;
     color: #15020a;
-    padding:inherit;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    padding: inherit;
     margin-left: 3rem;
 }
+
 .intro-text-2 {
     font-size: 1rem;
     color: #15020a;
-    padding:inherit;
-    margin-top: 2rem;
+    padding: inherit;
     margin-right: 1rem;
     margin-bottom: 3rem;
     margin-left: 3rem;
 }
+
 .intro-title {
     font-size: 1.2rem;
     color: #15020a;
-    padding:inherit;
+    padding: inherit;
     margin-left: 3rem;
     margin-top: 2rem;
-    margin-bottom: -4rem;
     font-weight: 450;
 }
 
 /* About section */
 #about {
-    background-color: #bb236c88;
+    background-color: #bb236c3f;
 }
+
+.about-title {
+    padding: 1rem 1rem;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
 #why {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg");
     height: 25vh;
@@ -68,6 +76,7 @@
     background-size: cover;
     margin: 3rem 3rem 3rem 2rem;
 }
+
 #how {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/how.jpg");
     height: 25vh;
@@ -77,44 +86,46 @@
     background-size: cover;
     margin: 3rem 3rem 3rem 2rem;
 }
-.title {
-    padding: 1rem 1rem;
-    margin-top: 3rem;
-    font-size: 1.1rem;
-    color: #580c2d;
-    background: rgba(255, 255, 255, 0.308);
-    font-weight: bold;
-}
-a:hover {
-    text-decoration: none;
-}
 .hover:hover {
     transform: scale(1.1);
     transition-timing-function: ease-in-out;
     transition-duration: 1.2s;
 }
 
+/* Blog section */
+.blog-section-title {
+    padding: 1rem 1rem;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    color: #580c2d;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .card-title {
     color: #580c2d;
-}
-.card-text {
-    color: #15020a;
     font-size: 0.8rem;
 }
+
+.card-text {
+    color: #15020a;
+    font-size: 0.5rem;
+}
+
 #index-blog {
     align-items: center;
     justify-content: center;
+    background-color: #bb236c3f;
 }
 
 a#custom-btn {
-    background-color: #bb236c;
+    background-color: #79113f;
     color: #fff;
-    width: 5rem;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-color: #580c2d;
-    -webkit-text-stroke-width: 0.5px;
     border-radius: 3rem;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     display: flex;
     justify-content: center;
 }
@@ -130,6 +141,7 @@ a#custom-btn {
     opacity: 0.50;
     background-attachment: fixed;
 }
+
 #section-bg-dark {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/jared-rice-NTyBbu66_SI-unsplash.jpg");
     height: 40vh;
@@ -141,10 +153,12 @@ a#custom-btn {
     opacity: 0.50;
     background-attachment: fixed;
 }
+
 /* Ready? */
 #ready {
     margin-bottom: 3rem;
 }
+
 .video-title {
     padding: 1rem 1rem;
     margin-top: 3rem;
@@ -152,46 +166,60 @@ a#custom-btn {
     color: #580c2d;
     font-weight: bold;
 }
-/* Media Breakpoints */
 
+/* Media Breakpoints */
 @media (min-width: 576px) {
-.title {
-    margin-top: 4rem;
-    font-size: 1.4rem;
-}
-.header-quote {
-    margin-top: 8rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    }
-a#custom-btn {
-    background-color: #79113f;
-    color: #fff;
-    width: 7rem;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-color: #580c2d;
-    -webkit-text-stroke-width: 0.5px;
-    border-radius: 3rem;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    }
-}
-@media (min-width: 768px) {
-    .title {
+    .about-title {
         margin-top: 6rem;
         font-size: 1.4rem;
     }
+
+    .header-quote {
+        margin-top: 8rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    a#custom-btn {
+        background-color: #79113f;
+        color: #fff;
+        width: 7rem;
+        border-radius: 3rem;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .intro-title {
+        margin-bottom: 1rem;
+    }
+
+    .intro-text-1 {
+        margin-bottom: 2rem;
+    }
+
+    .intro-text-2 {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-title {
+        margin-top: 5rem;
+        font-size: 1.4rem;
+    }
+
     .header-quote {
         margin-top: 11rem;
         font-size: 1.1rem;
         font-weight: 450;
     }
 }
+
 @media (min-width: 1400px) {
     .header-quote {
         margin-top: 11rem;
         font-size: 1.4rem;
         font-weight: 400;
     }
- }
+}
