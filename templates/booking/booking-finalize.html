@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-12 mt-4 mb-4 text-center">
-        <div class="total-title">Booking Total: € {{ total|floatformat:2 }}</div>
+        <div class="total-title mb-1">Booking Total: € {{ total|floatformat:2 }}</div>
         <div class="total-title">Grand Total: € {{ grand_total|floatformat:2 }}</div>
     </div>
 </div>
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card mb-2">
+<div class="row jsutify-content-center mb-4">
+    <div class="col-12 text-center">
+        <div class="mb-2">
             <a href="{% url 'workshops' %}" class="btn">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
@@ -15,8 +15,7 @@
             </a>
         </div>
         <!-- Secure checkout button -->
-        <div class="col">
-            <div class="card ">
+        <div class="col-12">
                 <a href="{% url 'checkout' %}" class="btn">
                     <span class="text-uppercase">Secure Checkout</span>
                     <span class="icon">
@@ -26,4 +25,3 @@
             </div>
         </div>
     </div>
-</div>
