@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy, reverse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView)
-from .models import Post, Category, Comment
+from .models import Post, Comment
 from .forms import PostForm, EditForm, CommentForm, EditCommentForm
 from django.http import HttpResponseRedirect
 
@@ -13,9 +13,7 @@ class BlogHomeView(ListView):
     ordering = ['-post_date']
 
     def get_context_data(self, *args, **kwargs):
-        cat_menu = Category.objects.all()
         context = super(BlogHomeView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
         return context
 
 
@@ -26,17 +24,13 @@ class BlogDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         post = get_object_or_404(Post, id=self.kwargs['pk'], )
         comments = post.comments.filter()
-        cat_menu = Category.objects.all()
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
-
         likes = get_object_or_404(Post, id=self.kwargs['pk'], )
         total_likes = likes.total_likes()
 
         liked = False
         if likes.likes.filter(id=self.request.user.id):
             liked = True
-
-        context["cat_menu"] = cat_menu
         context["total_likes"] = total_likes
         context["liked"] = liked
         context["comments"] = comments
@@ -59,20 +53,6 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = 'blog/delete_blog.html'
     success_url = reverse_lazy('blog')
-
-
-def CategoryView(request, cats):
-    category_posts = Post.objects.filter(
-        category__iexact=cats.replace('-', ' '))
-    return render(request, 'blog/categories.html',
-                  {'cats': cats.title().replace('-', ' '),
-                   'category_posts': category_posts})
-
-
-class AddCategoryView(CreateView):
-    model = Category
-    template_name = 'blog/category_form.html'
-    fields = '__all__'
 
 
 def LikeView(request, pk):

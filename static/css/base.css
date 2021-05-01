@@ -172,7 +172,7 @@ label,
 /* Media breakpoints */
 @media (min-width: 576px) {
     .sign-in {
-        width: 60vw;
+        width: 40vw;
     }
 }
 @media (min-width: 992px) {
@@ -182,6 +182,6 @@ label,
         font-weight: 400;
     }
     .sign-in {
-        width: 40vw;
+        width: 30vw;
     }
 }

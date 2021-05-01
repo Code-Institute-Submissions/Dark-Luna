@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-9">
             <hr>
-            <p class="card-title blog-post-author">{{ post.author.username}} - {{ post.post_date }} - {{ post.category }} 
+            <p class="card-title blog-post-author">{{ post.author.username}} - {{ post.post_date }}
                 <p class="card-sub-title mb-2"> Likes: {{ total_likes }} <br/><br/> Comments: {{ comments.count }}</p><br/>
                 <form action="{%url 'like_post' post.pk %}" method="POST">
                     {% csrf_token %}
@@ -61,10 +61,10 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-6 col-sm-9 comment-section mb-4">
             <p class="category-title text-center mb-2"> Comments </p> 
-            {% if not post.comments.all %}
+         
                 {% if user.is_authenticated %}
                 <div class="col-12">
-                <p class="card-title text-center mb-2"> No comments... yet! <a href="{% url 'add-comment' post.pk %}" class="title-links">Add one </a></p>
+                <p class="card-title text-center mb-2"> Want to comment? <a href="{% url 'add-comment' post.pk %}" class="title-links">Add one </a></p>
                 </div>
                 {% for comment in post.comments.all %}
                 <div class="comment-box">
@@ -85,7 +85,6 @@
                     <a href="{% url 'account_login' %}"
                     class="card-title">Log In</a> to comment</p>
                     {% endif %}
-            {% endif %}
         </div>
     </div>
 </section>

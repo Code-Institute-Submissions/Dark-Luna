@@ -40,7 +40,6 @@
                 <a href="{% url 'user_account' %}" class="dropdown-item">{{ request.user.username }}</a>
                 {% if request.user.is_superuser %}
                 <a href="{% url 'add-blog-post' %}" class="dropdown-item">Blog</a>
-                <a href="{% url 'add-blog-category'%}" class="dropdown-item">Blog cat</a>
                 <a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a>
                 <a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a>
                 {% endif %}
