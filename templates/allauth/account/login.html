@@ -6,33 +6,11 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-      <div class="card">
-        <h1>{% trans "Sign In" %}</h1>
-
-        {% get_providers as socialaccount_providers %}
-
-        {% if socialaccount_providers %}
-        <p>{% blocktrans with site.name as site_name %}Please sign in with one
-          of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-          for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-        <div class="socialaccount_ballot">
-
-          <ul class="socialaccount_providers">
-            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-          </ul>
-
-          <div class="login-or">{% trans 'or' %}</div>
-
-        </div>
-
-        {% include "socialaccount/snippets/login_extra.html" %}
-
-        {% else %}
-        {% endif %}
+<div class="container-fluid sign-in-body">
+  <div class="row">
+    <div class="col-4 col-lg-4 col-md-4">
+      <div class="card sign-in">
+        <h1 class="ml-3 mt-3">{% trans "Sign In" %}</h1>
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
           {{ form|crispy }}
@@ -42,11 +20,11 @@
           <div class="text-right">
             <a class="button secondaryAction forgot-button" href="{% url 'account_reset_password' %}">
               {% trans "Forgot Password?" %}</a>
-            <button class="btn hvr-bounce-to-right" type="submit">{% trans "Sign In" %}</button>
+            <button class="custom-btn mr-3" type="submit">{% trans "Sign In" %}</button>
           </div>
         </form>
       </div>
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}
