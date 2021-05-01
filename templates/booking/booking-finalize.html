@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="col">
-        <h5><strong>Booking Total: €{{ total|floatformat:2 }}</strong></h5>
-        <h5 class="mt-5 big-text"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h5>
+    <div class="col-12 mt-4 mb-4 text-center">
+        <div class="total-title">Booking Total: € {{ total|floatformat:2 }}</div>
+        <div class="total-title">Grand Total: € {{ grand_total|floatformat:2 }}</div>
     </div>
 </div>
 <div class="row mb-4">
-    <div class="col">
-        <div class="card">
+    <div class="col-12">
+        <div class="card mb-2">
             <a href="{% url 'workshops' %}" class="btn">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>

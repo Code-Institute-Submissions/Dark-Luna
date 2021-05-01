@@ -1,13 +1,27 @@
 .section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #580c2d;
 }
 
-.title {
+.card-title {
+    font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     width: auto;
     font-size: 1.3rem;
+    color: #580c2d;
+}
+.card-sub-title {
+    font-size: 0.8rem;
+    color: #580c2d;
+}
+.btn {
+    text-decoration: underline;
+    font-size: 0.6rem;;
+}
+.total-title {
+    margin-left: 1rem;
+    font-size: 0.9rem;
     color: #580c2d;
 }

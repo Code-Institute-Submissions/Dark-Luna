@@ -21,11 +21,10 @@ p {
 }
 a {
     color:#15020A;
-    text-decoration: underline;
     background-color: transparent;
 }
-/* Navbar styling*/
 
+/* Navbar styling*/
 .img {
     margin-right: -1rem;
 }
@@ -96,7 +95,6 @@ a {
     margin-left: 1.4rem;
     margin-bottom: 1rem;
 }
-
 
 /* Mailchimp footer styling */
 h1,

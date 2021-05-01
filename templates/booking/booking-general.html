@@ -1,62 +1,61 @@
-<div id="booking-table">
+
     {% for item in booked_workshops %}
     <div id="{{ item.workshop.id }}" class="col">
-            <div class="row">
-                <!-- Image -->
-                    <div class="col-md-4">
-                        {% if workshop.image %}
-                        <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                        {% else %}
-                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
-                        {% endif %}
-                    </div>
-                    <!-- Magic Padding Container End -->
+        <div class="row">
+            <!-- Image -->
+                <div class="col-md-4">
+                    {% if workshop.image %}
+                    <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                    {% else %}
+                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                    {% endif %}
                 </div>
-                <!-- Card Body -->
-                <!-- Workshop Info -->
-                <div class="col">
-                    <!-- Magic Padding Container -->
-                    <div class="p-1">
-                        <!-- Workshop Info Container -->
-                        <div class="row">
-                            <div class="col">
-                                <!-- Lesson Title -->
-                                <h1 class="mb-3">{{ item.workshop.name }}</h1>
-                            </div>
-                            <div class="col">
-                                <!-- Lesson Participants -->
-                                <p>Participants: <span>{{ item.workshop.participants }}</span></p>
-                            </div>
-                            <div class="col">
-                                <!-- Lesson Price -->
-                                <p class="price">Price: <span>€{{ item.workshop.price }}</span></p>
-                            </div>
-                        </div>
-                        <!-- Lesson Info Container End -->
+        </div>
+        <!-- Card Body -->
+        <!-- Workshop Info -->
+        <div class="col">
+            <!-- Magic Padding Container -->
+            <div class="p-1">
+                <!-- Workshop Info Container -->
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Workshop Title -->
+                        <div class="card-title mb-3">{{ item.workshop.name }}</div>
                     </div>
-                    <!-- Magic Padding Container End -->
-                </div>
-                <!-- Buttons -->
-                <div class="col my-auto">
-                    <!-- Magic Padding Container -->
-                    <div class="p-1">
-                        <a href="{% url 'workshop' item.workshop.id %}"
-                            class="remove-workshop btn mb-2">Details</a>
-                        <a class="remove-workshop btn " data-workshop_id="{{ workshop.id }}"
-                            id="remove_{{ item.workshop_id }}">Remove</a>
+                    <div class="col-6 text-center">
+                        <!-- Workshop Participants -->
+                        <div class="card-sub-title">Participants: {{ item.workshop.participants }}</div>
                     </div>
-                    <!-- Magic Padding Container End -->
+                    <div class="col-6 text-center">
+                        <!-- Workshop Price -->
+                        <div class="card-sub-title">Price: € {{ item.workshop.price }}</div>
+                    </div>
                 </div>
-                <!-- Card Body End -->
             </div>
         </div>
-        <!-- Card End -->
-    {% endfor %}
-    <!-- Clear whole bag - button -->
-    <div class="col">
-        <form class="form" action="{% url 'clear_booking' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            <button type="submit" class="btn hvr-bounce-to-right" id="clear-booking">Clear Booking</button>
-        </form>
+        <!-- Buttons -->
+        <div class="col-12">
+            <!-- Magic Padding Container -->
+            <div class="p-1">
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <a href="{% url 'workshop' item.workshop.id %}"
+                        class="btn">Details</a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a class="btn" data-workshop_id="{{ workshop.id }}"
+                        id="remove_{{ item.workshop_id }}">Remove</a>
+                    </div>
+                </div> 
+            </div>
+        </div> 
     </div>
+{% endfor %}
+<!-- Clear whole bag - button -->
+<div class="col-12 text-center">
+    <form class="form" action="{% url 'clear_booking' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        <button type="submit" class="btn" id="clear-booking">Clear Booking</button>
+    </form>
+</div>
