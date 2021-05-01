@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    Coaching
+{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'coaching/css/coaching.css' %}">
 {% endblock %}
-    
 {% block content %}
-    <section class="container-fluid" id="life">
+<section class="container-fluid">
+        <div class="page-title text-center">
+            Coaching
+        </div>
         <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-5" id="life-content">
-                <p class="title text-center">
+            <div class="col-12 col-md-5">
+                <p class="section-title text-center">
                     Life Coaching
                 </p>
                 <p class="life-text text-center">
@@ -21,7 +27,7 @@
                 We work with Somatic Therapy, energy healing and shadow work. 
                 </p>
             </div>
-            <div class="col-12 col-md-6 img-fluid" id="life-image">
+            <div class="col-10 col-md-6 img-fluid" id="life-image">
                 <p class="life-quote text-center">
                     One day or day one? You decide.
                     ~ Paulo Coelho
@@ -31,14 +37,14 @@
     </section>
     <section class="container" id="sex">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 img-fluid" id="sex-image">
+            <div class="col-10 col-md-6 img-fluid" id="sex-image">
                 <p class="sex-quote">
                     "Sexuality is completely natural, however mainstream culture and society have falsely turned it into something considered to be controversial and perverse.
                     We should not ever condem, fear or distort any of the beautiful and sacred properties of Nature."" ~Damien Carrion
                 </p>
             </div>
-            <div class="col-12 col-md-5" id="sex-content">
-                <p class="title text-center">
+            <div class="col-10 col-md-5" id="sex-content">
+                <p class="section-title text-center">
                     Sex Coaching
                 </p>
                 <p class="sex-text text-center">
@@ -59,7 +65,7 @@
     <section class="container-fluid" id="shadow">
         <div class="row justify-content-center">
             <div class="col-md-5" id="shadow-content">
-                <p class="title text-center">
+                <p class="section-title text-center">
                     Shadow Work
                 </p>
                 <p class="shadow-text text-center">
@@ -73,7 +79,7 @@
                     Our shadow self blocks us from acting for our own greatest good and can prevent us from reaching our true potential in life.
                     </p>
             </div>
-            <div class="col-md-6 img-fluid" id="shadow-image">
+            <div class="col-md-6 col-10 img-fluid" id="shadow-image">
                 <p class="shadow-quote">
                     "Learn who you are. Unlearn who they told you to be."
                     ~ S. McNutt

@@ -1,39 +1,35 @@
-#life {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    max-width: 95vw;
-}
-
-.title {
-    display: flex;
-    align-items: center;
+.page-title{
+    font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    justify-content: center;
-    padding: 1rem 1rem;
+    margin-top: 1rem;
     font-size: 2rem;
     color: #580c2d;
 }
+.section-title{
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    color: #580c2d;
+}
+
+
+
 .life-text {
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    font-size: 0.7rem;
     color: #000;
 }
 
 #life-image {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/life-image.jpg");
-    height: 45vh;
-    width: auto;
+    height: auto;
+    width: 40vw;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     margin-left: 1rem;
+    margin-right: 1rem;
 }
-.hover:hover {
-    transform: scale(1.1);
-    transition-timing-function: ease-in-out;
-    transition-duration: 1.2s;
-}
+
 .life-quote {
     display: flex;
     align-items:center;
@@ -44,27 +40,13 @@
     color: #671a36;
     background: rgba(255, 255, 255, 0.404);
 }
-#sex {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    max-width: 95vw;
-}
+
 #sex-content {
-    margin-top: 3rem;
-    margin-left: 5rem;
-}
-.title {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1rem;
-    justify-content: center;
-    padding: 1rem 1rem;
-    font-size: 2rem;
-    color: #580c2d;
+    margin-top: 1rem;
 }
 
 .sex-text {
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin-top: 0;
     margin-bottom: 1rem;
     color: #000;
@@ -72,48 +54,29 @@
 
 #sex-image {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/sex-image.jpg");
-    height: 45vh;
+    height: 30vh;
     width: auto;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     margin-left: 1rem;
 }
-.hover:hover {
-    transform: scale(1.1);
-    transition-timing-function: ease-in-out;
-    transition-duration: 1.2s;
-}
+
 .sex-quote {
     display: flex;
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 15rem;
-    font-size: 1rem;
+    margin-top: 3rem;
+    font-size: 0.6rem;
     color: #671a36;
     background: rgba(255, 255, 255, 0.404);
 }
-#shadow {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    max-width: 95vw;
-}
-#shadow-content {
-    margin-top: 3rem;
-    margin-left: 2rem;
-}
-.title {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1rem;
-    justify-content: center;
-    padding: 1rem 1rem;
-    font-size: 2rem;
-    color: #580c2d;
-}
+
+
+
 .shadow-text {
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin-top: 0;
     margin-bottom: 1rem;
     color: #000;
@@ -121,25 +84,20 @@
 
 #shadow-image {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/shadow-image.jpg");
-    height: 35vh;
+    height: 50vw;
     width: auto;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
-    margin-left: 1rem;
 }
-.hover:hover {
-    transform: scale(1.1);
-    transition-timing-function: ease-in-out;
-    transition-duration: 1.2s;
-}
+
 .shadow-quote {
     display: flex;
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 15rem;
-    font-size: 1rem;
+    margin-top: 6rem;
+    font-size: 0.8rem;
     color: #671a36;
     background: rgba(255, 255, 255, 0.404);
 }
