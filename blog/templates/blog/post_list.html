@@ -25,7 +25,7 @@
                         {% endif %}
                         <div class="card-body">
                             <a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a>
-                            <h5 class="card-title">{{ post.author.username }} - {{ post.post_date }}</h5>
+                            <div class="card-title">{{ post.author.username }} - {{ post.post_date }}</div>
                             <p class="card-text">{{post.snippet}}</p>
                         </div>
                     </div>
@@ -33,4 +33,5 @@
                 {% endfor %}
             </div>
     </section>
+{% include 'layout/footer.html' %}
 {% endblock %}
