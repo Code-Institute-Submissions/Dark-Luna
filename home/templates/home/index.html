@@ -75,13 +75,12 @@
 <section class="container-fluid" id="section-bg-light"></section>
 <section class="container" id="index-blog">
     <div class="row justify-content-center">
-        <div class="col-12 text-center">
-            <p class="blog-section-title">Latest blog items</p>
+        <div class="col-12 col-lg-12">
+            <p class="blog-section-title text-center">Latest blog items</p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
         {% for post in object_list %}
-        {% if post.pk < 5 %}
         <div class="col-7 col-md-4 col-lg-3 mt-3 mb-3">
             <div class="card">
                 {% if post.header_image %}
@@ -91,12 +90,11 @@
                 {% endif %}
                 <div class="card-body">
                     <p class="card-title">{{ post.title }}</p>
-                    <p class="card-text">{{post.author.username }} - {{ post.post_date }} - {{ post.category }}</p>
+                    <p class="card-text">{{post.author.username }} - {{ post.post_date }} - {{ post.tag }}</p>
                     <a href="{% url 'blog-post-detail' post.pk %}" class="btn-md" id="custom-btn">Read More</a>
                 </div>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
     </div>
 </section>
@@ -113,5 +111,5 @@
         </div>
     </div>
 </section>
-{% include 'layout/footer.html' %}
+
 {% endblock %}

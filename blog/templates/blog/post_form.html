@@ -14,15 +14,14 @@
 {% if user.is_authenticated %}
  <section class="container-fluid mb-4" id="blog">
         <div class="row justify-content-center">
-            <p class="title text-center">
+            <p class="section-title text-center">
             Add a blog post
             </p>
         </div>
         <div class="form-group">
-            <div class="col-3">
+            <div class="col-12 col-md-10 col-lg-8">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.media }}
                     {{ form.as_p }}
                     <button class="btn btn-outline-dark btn-lg">Post</button>
                 </form>

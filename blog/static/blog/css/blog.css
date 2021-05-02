@@ -1,9 +1,7 @@
 .section-title{
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #580c2d;
 }
 .blog-post-author,
@@ -28,11 +26,9 @@
     font-weight: 300;
 }
 .title-links:hover {
-    text-decoration: none;
+    color:  #79113f;
 }
-.card-img-top {
-    margin-top: 1rem;
-}
+
 #custom-btn,
 #custom-btn-home {
     background-color: #79113f;
@@ -87,7 +83,16 @@
     color: #580c2d!important;
     font-weight: normal;
 }
-
+.delete-btn {
+    background-color: #79113F!important;
+    color: #f8f8ff!important;
+    width: 5rem;
+    margin-left: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;    
+}
 /* Media breakpoints */
 @media (min-width: 576px) {
     .card-title {
@@ -117,6 +122,7 @@
     }
     .section-title{
         font-size: 1.5rem;
+        margin-top: 3rem;
     }
 }
 @media (min-width: 992px) {
@@ -130,6 +136,9 @@
     }
     .custom-btn-blog {
         align-self: center;
+    }
+    .card-text {
+        text-align: center;
     }
    
 }

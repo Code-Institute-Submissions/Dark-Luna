@@ -5,14 +5,15 @@ from .models import Post, Comment
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'tag', 'body', 'author',
+        fields = ('title', 'tag', 'body', 'source',
                   'snippet', 'header_image',)
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'tag': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
-            'snippet': forms.Textarea(attrs={'class': 'form-control'})
+            'snippet': forms.Textarea(attrs={'class': 'form-control'}),
+            'source': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 

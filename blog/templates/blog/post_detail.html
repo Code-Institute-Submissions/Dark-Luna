@@ -33,7 +33,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-8 col-sm-9 mt-4 text-center">
             <p class="card-title blog-post-author">{{ post.author.username}} - {{ post.post_date }}
-                <p class="card-sub-title mb-2"> Likes: {{ total_likes }} <br /><br /> Comments: {{ comments.count }}</p>
+                <p class="card-sub-title mb-2"> Likes: {{ total_likes }} - Comments: {{ comments.count }}</p>
             </p>
             <form action="{%url 'like_post' post.pk %}" method="POST">
                 {% csrf_token %}
@@ -54,8 +54,13 @@
         </div>
         <br />   
       
-        <div class="col-11 col-md-8 col-lg-9 mt-4 ml-4">
-            {{ post.body|safe }}
+        <div class="col-11 col-md-8 col-lg-6 mt-4 ml-4">
+            <div class="card-text">
+            {{ post.body|linebreaks}}
+            </div>
+            {% if post.source %}
+            <p class="card-sub-title">Source: {{ post.source }}</p>
+            {% endif %}
         </div>
     </div>
     <div class="row justify-content-center">

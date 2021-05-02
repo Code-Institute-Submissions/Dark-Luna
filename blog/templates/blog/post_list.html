@@ -14,24 +14,23 @@
         <p class="section-title text-center">
             Blog
         </p>
-        <div class="row row-cols-1 row-cols-md-4 g-3 row-cards justify-content-space-around">
-            {% for post in object_list %}
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        {% if post.header_image %}
-                            <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
-                        {% else %}
-                            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                        {% endif %}
-                        <div class="card-body">
-                            <a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a>
-                            <div class="card-title">{{ post.author.username }} - {{ post.post_date }}</div>
-                            <p class="card-text">{{post.snippet}}</p>
-                        </div>
-                    </div>
+        <div class="row justify-content-center">
+        {% for post in object_list %}
+        <div class="col-9 col-md-6 col-lg-3 mb-5">
+            <div class="card" style="width: 18rem;">
+                {% if post.header_image %}
+                <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                {% else %}
+                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                {% endif %}
+                <div class="card-body">
+                    <a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a>
+                    <div class="card-title">{{ post.author }} - {{ post.post_date }}</div>
+                    <p class="card-text">{{post.snippet}}</p>
                 </div>
-                {% endfor %}
             </div>
+        </div>
+        {% endfor %}
+        </div>
     </section>
-{% include 'layout/footer.html' %}
 {% endblock %}

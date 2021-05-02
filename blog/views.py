@@ -42,9 +42,11 @@ class AddBlogPost(CreateView):
     form_class = PostForm
     template_name = 'blog/post_form.html'
 
-    def get_success_url(self):
-        return reverse_lazy("blog",
-                            kwargs={"author": self.request.user.username})
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.author = self.request.user
+        post.save()
+        return HttpResponseRedirect(reverse('blog'))
 
 
 class UpdatePostView(UpdateView):
@@ -80,6 +82,8 @@ class AddCommentView(CreateView):
 
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
+        comment = form.save(commit=False)
+        comment.name = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):

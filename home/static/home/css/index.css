@@ -186,9 +186,9 @@ a#custom-btn {
     a#custom-btn {
         background-color: #79113f;
         color: #fff;
-        width: 7rem;
+        width: 3rem;
         border-radius: 3rem;
-        font-size: 1rem;
+        font-size: 0.5rem;
         display: flex;
         justify-content: center;
     }
