@@ -1,9 +1,8 @@
-
-    {% for item in booked_workshops %}
+{% for item in booked_workshops %}
     <div id="{{ item.workshop.id }}" class="col">
         <div class="row">
             <!-- Image -->
-                <div class="col-md-4">
+                <div class="col-md-5 justify-content-center">
                     {% if workshop.image %}
                     <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
                     {% else %}
@@ -22,11 +21,11 @@
                         <!-- Workshop Title -->
                         <div class="card-title mb-3">{{ item.workshop.name }}</div>
                     </div>
-                    <div class="col-6 text-center">
+                    <div class="col-6 col-md-5 text-center">
                         <!-- Workshop Participants -->
                         <div class="card-sub-title">Participants: {{ item.workshop.participants }}</div>
                     </div>
-                    <div class="col-6 text-center">
+                    <div class="col-6 col-md-5 text-center">
                         <!-- Workshop Price -->
                         <div class="card-sub-title">Price: € {{ item.workshop.price }}</div>
                     </div>

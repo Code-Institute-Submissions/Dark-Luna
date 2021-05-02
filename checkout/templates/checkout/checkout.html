@@ -13,7 +13,7 @@
         <div class="section-title">Checkout</div>
         <!-- Breadcrumbs -->
         <div class="row">
-            <div class="breadcrumbs">
+            <div class="breadcrumbs mx-auto mb-4">
                 <a href="{% url 'booking' %}"><i class="fas fa-chevron-left"></i> Back to Booking</a>
             </div>
         </div>
@@ -21,19 +21,19 @@
             {% csrf_token %}
             <div class="row">
                 <!-- Checkout Form & Payment Form -->
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <!-- Wrapped with card style -->
                     <div id="form-checkout" class="card">
                         <!-- Basic info -->
                         <fieldset>
-                            <div class="section-title">Personal Information:</div>
+                            <div class="info-title">Personal Information:</div>
                             <hr>
                             {{ order_form.full_name | as_crispy_field}}
                             {{ order_form.email | as_crispy_field}}
                             {{ order_form.phone_number | as_crispy_field}}
                         </fieldset>
                         <fieldset class="mt-3">
-                            <div class="section-title">Address Information:</div>
+                            <div class="info-title">Address Information:</div>
                             <hr>
                             {{ order_form.street_address1 | as_crispy_field}}
                             {{ order_form.street_address2 | as_crispy_field}}
@@ -46,9 +46,9 @@
                             {{ order_form.country | as_crispy_field}}
                         </fieldset>
                         {% if user.is_authenticated %}
-                        <h4 class="mt-4">Your personal information could be saved for future orders..</h4>
+                        <div class="info-title mx-auto">Your personal information could be saved for future orders..</div>
                         <hr>
-                        <label for="save-info" class="mt-3"><input type="checkbox" name="save-info" class="mr-1 "
+                        <label for="save-info" class="mt-3"><input type="checkbox" name="save-info" class="mr-1 ml-1"
                                 id="save-info" checked>Save personal information
                         </label>
                         {% else %}
@@ -56,9 +56,9 @@
                             <span>If you want to save your information, please</span>
                             <label class="buttons" for="save-info">
                                 <a href="{% url 'account_login' %}?next={{ request.path }}"
-                                    class="btn hvr-bounce-to-right">Login</a>
+                                    class="btn">Login</a>
                                 <a href="{% url 'account_signup' %}?next={{ request.path }}"
-                                    class="btn hvr-bounce-to-right">Register</a>
+                                    class="btn">Register</a>
                             </label>
                         </div>
                         {% endif %}
@@ -70,14 +70,14 @@
                     <div class="card  mb-3">
                         <div class="booking-summary">
                             <div class="section-title">Summary</div>
-                            <p class="summary-text">Your booking summary includes all deductions & discount (if
+                            <p class="title text-center">Your booking summary includes all deductions & discount (if
                                 applied)
                             </p>
                             <hr>
-                            <div class="summary-totals">
-                                <p>Total:
-                                    <span>€ {{ total|floatformat:2 }}</span>
-                                </p>
+                            <div class="info-title">
+                                Total:
+                                    € {{ total|floatformat:2 }}
+                                
                                 
                                 <hr>
                                 <h6 class="grand-total">Grand Total:
@@ -108,7 +108,7 @@
                                 <button type="submit" id="submit-button" class="btn"
                                     disabled="disabled">Make a Payment</button>
                             </div>
-                            <p class="small m-0 mt-1">Your card will be charged € {{ grand_total|floatformat:2 }}</p>
+                            <p class="medium ml-1 mt-1">Your card will be charged € {{ grand_total|floatformat:2 }}</p>
                         </div>
                     </div>
                 </div>

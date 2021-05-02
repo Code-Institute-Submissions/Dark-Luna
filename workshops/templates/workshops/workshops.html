@@ -54,13 +54,13 @@
         </div>
     </div>
 </div>
-<div class="row">  
-    <div class="col-10 col-md-6">
+<div class="row mt-4 mb-4">  
+    <div class="col-10 col-md-3 ml-auto">
         <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
             href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
     </div>
     {% for category in categories_list %}
-    <div class="col-6">
+    <div class="col-6 col-md-2">
         <a class="category-link-item {{category.name}}"
         href="{% url 'workshops' %}?category={{ category.name }}">
         {{ category.name }} ({{ category.workshop__count }})
@@ -68,10 +68,10 @@
     </div>
     {% endfor %}
 </div>
-<section class="container-fluid">
-    <div class="row justify-content-center">
+<section class="container">
+    <div class="row">
         {% for workshop in workshops %}
-        <div class="col-9 col-md-6 col-lg-3 mt-5 mb-5">
+        <div class="col-10 col-md-3 col-lg-3 mx-auto">
             <div class="card mr-1" style="width: 15rem;">
             {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
@@ -79,53 +79,36 @@
                 <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
             {% endif %}
                 <div class="card-body">
-                    <div class="col-11 col-md-6">
+                    <div class="col-12 col-md-12">
                         <div class="title">{{workshop.name }}</div>
                     </div>
-                    <div class="col-10 col-md-6">
-                        <div class="text-body">Participants:
+                    <div class="col-10 col-md-12">
+                        <div class="text-body mb-1">Participants:
                             <span>{{ workshop.participants }}</span>
                     </div>
-                    <div class="text-body">Price:
+                    <div class="text-body mb-1">Price:
                         <span>€ {{ workshop.price }}</span>
                     </div>
-                    <div class="text-body">Therapist:
+                    <div class="text-body mb-1">Therapist:
                         <span>{{ workshop.therapist }}</span>
                     </div>
                     </div>
                     <div class="button">
                         <a href="{% url 'workshop' workshop.id %}"
-                        class="btn">Details</a>
+                        class="btn workshop-btn">Details</a>
                         <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
                             {% csrf_token %}
                             <input class="form-control qty_input" type="hidden" name="quantity"
                                 value="1" data-item_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
                             <input type="hidden" name="redirect_url"
                                 value="{{ request.get_full_path }}">
-                            <button type="submit" class="btn hvr-bounce-to-right">Book Now</button>
+                            <button type="submit" class="book-btn ">Book Now!</button>
                         </form>
                     </div>
                 </div>
                 {% endfor %}
                 </div>
             </div>
-            </div>
-            <div class="row">
-                {% if workshops.count %}
-                <div class="show-more">
-                    <p>
-                        <a href="#" id="loadMore"><i class="fas fa-angle-double-down"></i>Load More (<span
-                                class="visible-cards-count"></span>)</a>
-                    </p>
-                    <p class="page-results"><span class="cards-count">
-                            {% if workshops.count <= 12 %} {{ workshops.count }} {% else %}12 {% endif %}</span>
-                                from <span class="total-count">{{ workshops.count }}</span> workshops</p>
-                </div>
-                {% else %}
-                <div class="text-center">
-                    <p class="no-results">No results found</p>
-                </div>
-                {% endif %}
             </div>
 </section>
 {% endblock %}

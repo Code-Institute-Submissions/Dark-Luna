@@ -12,7 +12,10 @@
 
 <section class="container-fluid">
     <div class="row workshop-container">
-        <div class="col-md-6 col-lg-3 mt-5 mb-5">
+        <p class="workshop-section-title mx-auto mt-0">
+            {{ workshop.name }} details
+            </p>
+        <div class="col-md-6 col-lg-3 mt-3 mb-3">
             {% if workshop.image %}
             <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
             {% else %}
@@ -29,38 +32,38 @@
                 <div class= "title">Price: € {{ workshop.price }}</div>
             </div>
             <div class="col">
-                <div class="title">Description</div>
+                <div class="body-title">Description</div>
                 <p class="workshops-text"><span>{{ workshop.description }}</span></p>
             </div>
             <!-- Start Date & Start Time -->
-            <div class="title">Workshop Starts</div>
-            <p class="workshops-text">Date - <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
-            <p class="workshops-text">Time - <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
-            <div class="title">Workshop Ends</div>
-            <p class="workshops-text">Date - <span>{{ workshop.end_date|date:"d/M/Y (l)" }}</span></p>
-            <p class="workshops-text">Time - <span>{{ workshop.end_time|time:"H:i:s" }}</span></p>
+            <div class="col-7">
+            <div class="body-title">Workshop Starts</div>
+            <p class="workshops-text">Date: <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
+            <p class="workshops-text">Time: <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
+            </div>
+            <div class="col-7">
+            <div class="body-title">Workshop Ends</div>
+            <p class="workshops-text">Date: <span>{{ workshop.end_date|date:"d/M/Y (l)" }}</span></p>
+            <p class="workshops-text">Time: <span>{{ workshop.end_time|time:"H:i:s" }}</span></p>
+            </div>
         </div>
     </div>
 </section>
 <!-- Bottom Section -->
 <div class="row justify-content-center">
-    <!-- Contact button  -->
-    <div class="col">
-        <div class="card">
-            <a href="{% url 'contact' %}" class="btn">Need more information?</a>
-        </div>
-    </div>
     <!-- Booking Button -->
-    <div class="col-md-4">
-        <div class="card shadow-sm border-0">
-            <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
-                {% csrf_token %}
-                <input class="form-control qty_input" type="hidden" name="quantity" value="1"
-                    data-lesson_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="btn hvr-bounce-to-right">Book Now</button>
-            </form>
-        </div>
+    <div class="col-10 col-md-4">
+        <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
+            {% csrf_token %}
+            <input class="form-control qty_input" type="hidden" name="quantity" value="1"
+            data-lesson_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            <button type="submit" class="btn book-custom-btn">Book Now</button>
+        </form>
     </div>
- </div>
+    <!-- Contact button  -->
+    <div class="col-10">
+            <a href="{% url 'contact' %}" class="btn">Contact us</a>
+    </div>
+</div>
 {% endblock %}

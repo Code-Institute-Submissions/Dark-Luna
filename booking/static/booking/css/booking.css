@@ -4,7 +4,11 @@
     font-size: 1.5rem;
     color: #580c2d;
 }
-
+.title {
+    font-size: 0.7rem;
+    color: #580c2d;
+    margin-bottom: 1rem;
+}
 .card-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
@@ -24,4 +28,19 @@
     margin-left: 1rem;
     font-size: 0.9rem;
     color: #580c2d;
+}
+
+
+@media (min-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+}
+@media (min-width: 768px) {
+  
+}
+@media (min-width: 992px) {
+   
+   
 }

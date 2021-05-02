@@ -16,7 +16,7 @@
         </p>
         <div class="row justify-content-center">
         {% for post in object_list %}
-        <div class="col-9 col-md-6 col-lg-3 mb-5">
+        <div class="col-11 col-md-6 col-lg-5 mb-5">
             <div class="card" style="width: 18rem;">
                 {% if post.header_image %}
                 <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
@@ -26,6 +26,7 @@
                 <div class="card-body">
                     <a href="{% url 'blog-post-detail' post.pk %}" class="title-links">{{ post.title }}</a>
                     <div class="card-title">{{ post.author }} - {{ post.post_date }}</div>
+                    <hr>
                     <p class="card-text">{{post.snippet}}</p>
                 </div>
             </div>

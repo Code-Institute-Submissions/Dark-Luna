@@ -103,6 +103,13 @@ label,
  {
     color: #79113f;
 }
+.footer-section-title {
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1.3rem;
+    color: #580c2d;
+    margin-top: 3rem;
+    }
 
 #mc_embed_signup .button {
     background-color: #79113F!important;
@@ -179,6 +186,13 @@ label,
     p {
         font-size: 0.9rem;
     }
+    .footer-section-title {
+        font-family: 'Oregano', cursive;
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+        color: #580c2d;
+        margin-top: 3rem;
+        }
 }
 @media (min-width: 992px) {
     .nav-link {

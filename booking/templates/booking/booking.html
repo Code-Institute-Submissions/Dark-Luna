@@ -12,21 +12,21 @@
     <!-- Top banner -->
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class= "section-title text-center">Booking</div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col">
             <!-- Booking container -->
                 {% if bag %}
                     <!-- Finalise your booking -->
                     <div class="section-title text-center">Finalise your booking:</div>
                     <!-- When any workshop is booked show booked in this container -->
                     {% if booked_workshops %}
-                    <!-- Booked workshops present in table on page -->
+                    <!-- Booked workshops -->
                     {% include './booking-general.html' %}
                     <!-- Totals -->
                     {% include './booking-finalize.html' %}
