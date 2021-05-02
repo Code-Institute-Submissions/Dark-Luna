@@ -8,26 +8,32 @@
 .section-title{
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: #580c2d;
+}
+.contact-section-title{
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1rem;
     color: #580c2d;
 }
 
 
-
-.life-text {
+.life-text,
+.sex-text,
+.shadow-text {
     font-size: 0.7rem;
     color: #000;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 #life-image {
-    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/life-image.jpg");
-    height: auto;
-    width: 40vw;
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/jared-rice-NTyBbu66_SI-unsplash.jpg");
+    height: 40vh;
+    width: auto;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin-left: 1rem;
-    margin-right: 1rem;
 }
 
 .life-quote {
@@ -35,69 +41,8 @@
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 15rem;
-    font-size: 1rem;
-    color: #671a36;
-    background: rgba(255, 255, 255, 0.404);
-}
-
-#sex-content {
-    margin-top: 1rem;
-}
-
-.sex-text {
-    font-size: 0.7rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-#sex-image {
-    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/sex-image.jpg");
-    height: 30vh;
-    width: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin-left: 1rem;
-}
-
-.sex-quote {
-    display: flex;
-    align-items:center;
-    padding: 1rem 1rem;
-    justify-content: center;
-    margin-top: 3rem;
-    font-size: 0.6rem;
-    color: #671a36;
-    background: rgba(255, 255, 255, 0.404);
-}
-
-
-
-.shadow-text {
-    font-size: 0.7rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-#shadow-image {
-    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/shadow-image.jpg");
-    height: 50vw;
-    width: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-.shadow-quote {
-    display: flex;
-    align-items:center;
-    padding: 1rem 1rem;
-    justify-content: center;
-    margin-top: 6rem;
+    margin-top: 13rem;
     font-size: 0.8rem;
-    color: #671a36;
-    background: rgba(255, 255, 255, 0.404);
+    color: #fff;
+    background: rgba(134, 15, 70, 0.377);
 }
