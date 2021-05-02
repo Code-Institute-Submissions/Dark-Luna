@@ -42,6 +42,10 @@ class AddBlogPost(CreateView):
     form_class = PostForm
     template_name = 'blog/post_form.html'
 
+    def get_success_url(self):
+        return reverse_lazy("blog",
+                            kwargs={"author": self.request.user.username})
+
 
 class UpdatePostView(UpdateView):
     model = Post

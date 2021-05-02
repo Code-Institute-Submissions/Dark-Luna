@@ -34,8 +34,7 @@
     margin-top: 1rem;
 }
 #custom-btn,
-#custom-btn-home,
-.custom-btn-blog {
+#custom-btn-home {
     background-color: #79113f;
     color: #fff;
     width: 4rem;
@@ -44,7 +43,17 @@
     display: flex;
     justify-content: center;
 }
-
+.custom-btn-blog {
+    background-color: #79113f;
+    color: #fff;
+    width: 3rem;
+    border-radius: 3rem;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    font-weight: bold;
+}
 /* Comment section */
 .comment-box {
     border: 1px solid #79113f;
@@ -93,13 +102,18 @@
     .card-text {
         font-size: 0.9rem;
     }
+    .custom-btn-blog {
+        margin-left: 0;
+    }
 }
 @media (min-width: 768px) {
     .card-title {
         font-size: 1rem;
+        text-align: left;
     }
     .card-sub-title {
         font-size: 1rem;
+        text-align: left;
     }
     .section-title{
         font-size: 1.5rem;
@@ -108,6 +122,14 @@
 @media (min-width: 992px) {
     .card-title {
         font-size: 1.2rem;
+        text-align: center;
+    }
+    .card-sub-title {
+        font-size: 1rem;
+        text-align:center;
+    }
+    .custom-btn-blog {
+        align-self: center;
     }
    
 }

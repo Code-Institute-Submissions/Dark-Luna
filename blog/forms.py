@@ -12,8 +12,7 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'tag': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
-            'snippet': forms.Textarea(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            'snippet': forms.Textarea(attrs={'class': 'form-control'})
         }
 
 
@@ -33,10 +32,9 @@ class EditForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'body',)
+        fields = ('body',)
 
         widgets = {
-            'name': forms.Select(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
