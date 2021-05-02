@@ -58,10 +58,9 @@ INSTALLED_APPS = [
     'contact',
     'profiles',
     'django_countries',
-    'ckeditor',
     'checkout',
 
-    #Other
+    # Other
     'crispy_forms',
     'storages',
 ]
