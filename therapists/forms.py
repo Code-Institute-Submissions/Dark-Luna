@@ -3,13 +3,13 @@
 Forms for managing the Therapists Profiles
 """
 from django import forms
-from .models import TherapistsProfile
+from .models import TherapistProfile
 
 
-class InstructorProfileForm(forms.ModelForm):
+class TherapistForm(forms.ModelForm):
     """ Instructor profile form """
     class Meta:
-        model = TherapistsProfile
+        model = TherapistProfile
         fields = ('name', 'age', 'about', 'image',)
 
         labels = {

@@ -6,10 +6,10 @@ from therapists.forms import TherapistForm
 from .models import TherapistProfile
 
 
-def therapists(request):
+def index(request):
     """ A view to return team page """
 
-    therapistst = TherapistsProfile.objects.all()
+    therapists = TherapistProfile.objects.all()
 
     context = {
         'therapists': therapists,
@@ -23,7 +23,7 @@ def therapists(request):
 def therapists_admin(request):
     """ A view to manage therapists cards """
 
-    therapistst = TherapistsProfile.objects.all()
+    therapists = TherapistProfile.objects.all()
     #zoals workshops
     template = "team/mgmt-team.html"
     context = {
@@ -65,7 +65,7 @@ def edit_therapist_admin(request, therapist_id):
 
     therapist = get_object_or_404(TherapistProfile, pk=therapist_id)
     if request.method == 'POST':
-        form = TherapistProfileForm(
+        form = TherapistForm(
             request.POST, request.FILES, instance=therapist)
         if form.is_valid():
             form.save()
@@ -77,7 +77,7 @@ def edit_therapist_admin(request, therapist_id):
                 request, 'Editing Therapist failed. \
                 Please ensure the form is valid.')
     else:
-        form = TherapistProfileForm(instance=therapist)
+        form = TherapistForm(instance=therapist)
 
     template = "./management/management-forms.html"
     context = {
