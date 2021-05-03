@@ -10,7 +10,7 @@ class TherapistForm(forms.ModelForm):
     """ Instructor profile form """
     class Meta:
         model = TherapistProfile
-        fields = ('name', 'age', 'about', 'image',)
+        fields = ('name', 'about', 'image',)
 
         labels = {
             'image': 'Add Image',

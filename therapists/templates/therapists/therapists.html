@@ -8,25 +8,33 @@
 {% block content %}
     <section class="container-fluid mb-4" id="therapists">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <p class="title text-center">
-                Meet Dark Luna
+            <div class="col-12 col-md-10">
+                <p class="therapists-title text-center">
+                Dark Luna
                 </p>
-                <p class="therapists-text">
+                <p class="therapists-sub-title text-center">
                 Meet the therapists that drive Dark Luna.    
                 </p>
             </div>
         </div>   
     </section>
     <section class="container-fluid" id="therapist-cards">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Therapist name</h5>
-              <p class="card-text">Therapist bio</p>
-              <a href="#" class="btn btn-primary">Send message</a>
+        <div class="row justify-content-center">
+            {% for therapist in therapists %}
+            <div class="col-9 col-md-6 col-lg-4">
+            {% if therapist.image %}
+            <img src="{{therapist.image.url}}" class="card-img-top" alt="...">
+            {% else %}
+            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="col-12">
+              <p class="therapists-sub-title mb-0">{{therapist.name}}</p>
+              <p class="therapists-text">{{therapist.about}}</p>
             </div>
           </div>
+          </div>
+        
+          {%endfor%}
     </section>
     {% include 'layout/footer.html' %}
 {% endblock %}

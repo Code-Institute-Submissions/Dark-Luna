@@ -7,7 +7,6 @@ class TherapistProfileAdmin(admin.ModelAdmin):
     """ Therapists Profiles admin list display and ordering """
     list_display = (
         'name',
-        'age',
         'about',
     )
 
