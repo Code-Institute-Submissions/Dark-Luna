@@ -1,17 +1,26 @@
-.section-title{
+.section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     font-size: 2rem;
     color: #580c2d;
 }
-.info-title{
+.info-title {
     font-family: 'Oregano', cursive;
     font-size: 1rem;
     color: #580c2d;
     margin-left: 1rem;
     margin-top: 1rem;
 }
-
+.order-title {
+    font-size: 0.8rem;
+    color: #580c2d;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.email-section-title {
+    font-family: 'Oregano', cursive;
+    font-size: 1.5rem;
+    color: #580c2d;
+}
 /* Styling for stripe card element */
 .StripeElement,
 .stripe-style-input {

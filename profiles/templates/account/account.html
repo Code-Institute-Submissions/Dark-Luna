@@ -6,26 +6,38 @@
 {% endblock %}
 
 {% block content %}
+<section class="container-fluid mb-4" id="profile">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <p class="section-title text-center">
+            Profile
+            </p>
+            <p class="profile-text text-center">
+            Here you can change your personal details and see what workshops you have booked.   
+            </p>
+        </div>
+    </div>   
+</section>
 <div class="container-fluid">
-<div class="row">
-    <div class="col">
+<div class="row justify-content-center">
+    <div class="col-6">
         <button class="btn account-btn mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccount" aria-expanded="false" aria-controls="collapseExample">
             Account
         </button>
     </div>
-    <div class="col">
+    <div class="col-6">
         <button class="btn workshops-btn mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkshops" aria-expanded="false" aria-controls="collapseExample">
             Workshops
         </button>
     </div>
 </div>
 </div>
-<div class="container-fluid mt-4 mb-4" id="profile">
+<div class="container-fluid mt-4 mb-4" id="buttons">
     <div class="row">
         <div class="col">
             <!-- Display user account info/details -->
             <div class="collapse multi-collapse" id="collapseAccount">
-                <p class="title">
+                <p class="section-title">
                     Update Personal Details
                 </p>
                 <div class="card card-body ml-3 mt-4">
@@ -43,7 +55,7 @@
                         {{ form.county | as_crispy_field }}
                         {{ form.country | as_crispy_field }}
                         <div class="mt-4">
-                            <button type="reset" class="btn form-btn mr-2">Reset Form</button>
+                            <button type="reset" class="btn form-btn mr-2 mb-2">Reset Form</button>
                             <button type="submit" class="btn form-btn">Update Information</button>
                         </div>
                     </form>
@@ -52,12 +64,12 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="collapse multi-collapse" id="collapseWorkshops">
-                <p class="title">
+                <p class="section-title">
                     Booked Workshops
                 </p>
                 <div class="card card-body ml-3 mt-4">
                     {% for order in orders %}
-                    <div class="booked-lesson">
+                    <div class="booked-workshop">
                         <!-- Order Number -->
                         <a href="{% url 'booking_review' order.order_number %}" title="{{ order.order_number }}"
                             class="last-10-orders"><strong>Order Number: {{ order.order_number|truncatechars:20 }}

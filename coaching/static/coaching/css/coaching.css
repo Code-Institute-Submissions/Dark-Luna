@@ -17,6 +17,10 @@
     font-size: 1rem;
     color: #580c2d;
 }
+.bg {
+    background-color: #bb236c3f;
+    margin: 1rem 1rem 1rem 1rem;
+}
 
 
 .life-text,
@@ -41,8 +45,28 @@
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 13rem;
+    margin-top: 14rem;
     font-size: 0.8rem;
     color: #fff;
     background: rgba(134, 15, 70, 0.377);
+}
+@media (min-width: 576px) {
+    .life-quote {
+        margin-top: 18rem;
+    }
+}
+@media (min-width: 768px) {
+    .life-quote {
+        margin-top: 25rem;
+    }
+}
+@media (min-width: 992px) {
+    .life-quote {
+        margin-top: 15rem;
+    }
+}
+@media (min-width: 1400px) {
+    .life-quote {
+        margin-top: 18rem;
+    }
 }

@@ -92,17 +92,21 @@ a {
     background-color: #79113F!important;
     color: #f8f8ff!important;
     width: 5rem;
-    margin-left: 1.4rem;
+    margin-left: 1rem;
     margin-bottom: 1rem;
 }
-
+.title {
+    font-size: 0.5rem;
+}
 /* Mailchimp footer styling */
 h1,
 label,
 .btn
  {
-    color: #79113f;
+    color: #38051c;
+    margin-left: 1rem;
 }
+
 .footer-section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
@@ -137,16 +141,26 @@ label,
 /* Sign In */
 .sign-in-body,
 .register-body {
-    background: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/logo/logo.png");
+    background-color: #79113F;
     background-position: center;
     background-attachment: fixed; 
     background-size: cover;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
+    width: 100vw;
 }
-.sign-in,
+.sign-in {
+    width: 80vw;
+    height: auto;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    margin-top: 3rem;
+}
 .register {
     width: 80vw;
     height: auto;
@@ -156,6 +170,7 @@ label,
     z-index: 1;
     background: inherit;
     overflow: hidden;
+    margin-top: 3rem;
 }
 .sign-in:before,
 .register:before {
@@ -177,11 +192,16 @@ label,
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
+.sign-title {
+    font-weight: bold;
+}
 /* Media breakpoints */
 @media (min-width: 576px) {
-    .sign-in {
+    .register {
         width: 40vw;
+    }
+    .sign-in {
+        width: 60vw;
     }
     p {
         font-size: 0.9rem;
@@ -193,6 +213,12 @@ label,
         color: #580c2d;
         margin-top: 3rem;
         }
+    .title {
+        font-size: 0.8rem;
+    }
+    .register {
+        width: 80vw;
+    }
 }
 @media (min-width: 992px) {
     .nav-link {
@@ -201,7 +227,8 @@ label,
         margin-left: 1rem;
        
     }
-    .sign-in {
+    .sign-in,
+    .register {
         width: 30vw;
     }
     p {

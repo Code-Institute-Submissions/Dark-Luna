@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 {% block extra_title %}| Checkout Success!{% endblock %}
 {% block content %}
 
@@ -8,41 +11,40 @@
     <!-- Main container -->
     <div class="container py-4">
         {% if from_profile %}
-        <h1 class="page-title mt-1 mb-4 text-left">Order Review</h1>
+        <p class="section-title mt-1 mb-4 text-left">Order Review</p>
         <!-- Back to Profile Button -->
         <a href="{% url 'user_account' %}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i> Back to
             Account</a>
         {% else %}
-        <h1 class="page-title mt-1 mb-4">Payment Success!</h1>
+        <p class="section-title mt-1 mb-4">Payment Success!</p>
         {% endif %}
         <!-- Main container -->
         <div class="row justify-content-between">
             <!-- Personal and Order Information -->
-            <div class="col-md-4">
+            <div class="col-12 col-md-8">
                 <div class="card">
                     <!-- Order details -->
-                    <p class="title">Order Details</p>
-                    <p>Order Number:
+                    <p class="section-title mb-0 mt-0">Order Details</p>
+                    <p class="order-title mb-0 mt-0">Order Number:
                         <span>
                             {% if from_profile %}
                             {{ order.order_number }}
                             {% else %}
                             <a href="{% url 'booking_review' order.order_number %}" title="{{ order.order_number }}"
-                                class="order-number-active">{{ order.order_number }}</a>
+                                class="order-title ml-0">{{ order.order_number }}</a>
                             {% endif %}
                         </span>
                     </p>
-                    <p>Full Name: <span> {{ order.full_name|title }}</span></p>
-                    <p>Email Address: <span> {{ order.email }}</span></p>
-                    <p>Phone Number: <span> {{ order.phone_number }}</span></p>
-                    <p>Street Addres 1: <span> {{ order.street_address1 }}</span></p>
-                    <p>Street Addres 2: <span> {{ order.street_address2 }}</span></p>
-                    <p>Postcode: <span> {{order.postcode|upper }}</span></p>
-                    <p>County: <span> {{order.county|title }}</span></p>
-                    <p>Country: <span> {{order.country.name|title }}</span></p>
+                    <p class="order-title mb-0 mt-0">Full Name: <span> {{ order.full_name|title }}</span></p>
+                    <p class="order-title mb-0 mt-0">Email Address: <span> {{ order.email }}</span></p>
+                    <p class="order-title mb-0 mt-0">Phone Number: <span> {{ order.phone_number }}</span></p>
+                    <p class="order-title mb-0 mt-0">Street Addres 1: <span> {{ order.street_address1 }}</span></p>
+                    <p class="order-title mb-0 mt-0">Street Addres 2: <span> {{ order.street_address2 }}</span></p>
+                    <p class="order-title mb-0 mt-0">Postcode: <span> {{order.postcode|upper }}</span></p>
+                    <p class="order-title mb-0 mt-0">County: <span> {{order.county|title }}</span></p>
+                    <p class="order-title mb-0 mt-0">Country: <span> {{order.country.name|title }}</span></p>
                     <hr>
-                    <!-- Why not showing grand_total here?-->
-                    <p>Payment: <span> € {{order.grand_total }}</span></p>
+                    <p class="ml-3">Payment: <span> € {{order.grand_total }}</span></p>
                     {% if from_profile %}
                     <p>Date: <span> {{ order.date|date:"d-m-Y (D)" }} | {{ order.date|time:"H:i "}}</span></p>
                     {% endif %}
@@ -52,7 +54,7 @@
             <!-- Booked Workshop from Order -->
             <div class="col-md-6">
                 <div class="card">
-                    <h4>You have booked this workshop/s</h4>
+                    <div class="section-title">You have booked this workshop/s</div>
                     {% for item in order.lineitems.all %}
                     <div class="workshop-container">
                         <img src="{{ item.workshop.image.url }}" alt="{{ item.workshop.name }}-image" width="100%"
@@ -71,16 +73,16 @@
             <div class="col-md-4">
                 <div class="card">
                     <!-- If something went wrong -->
-                    <p>Please check this information carefully. If you feel that something isnt right, please contact us!<br>
-                        <a href="{% url 'contact' %}" class="contact-form">Contact Form</a><br>
+                    <p class="order-title text-center">Please check this information carefully. If you feel that something isn't right, please contact us!<br>
+                        <a href="{% url 'contact' %}" class="custom-btn">Contact Form</a><br>
                     </p>
                 </div>
             </div>
             <!-- Personal and Order Information -->
-            <div class="col-md-6">
+            <div class="col-12 col-md-8">
                 <div class="card">
-                    <h4>Email notification sent succesffuly!</h4>
-                    <p>All transaction details, including order details, payment, and booking information can be
+                    <div class="email-section-title mt-4 ml-3">Email notification sent successfully!</div>
+                    <p class="ml-3">All transaction details, including order details, payment, and booking information can be
                         found on email provide when booking a workshop. This confirmation email is also your ticket! So please keep it save.
                         <br>Please check your mailbox <span class="email"> {{ order.email }}</span>
                     </p>

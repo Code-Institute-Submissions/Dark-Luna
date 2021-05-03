@@ -1,6 +1,4 @@
 <form method="POST" id="form-contact" class="shadow">
-    <!-- Contact form title and promo text -->
-    <p class="title">Get in touch!</p>
     <!-- POST message -->
     {% if messages %}
     <div class="messages">
@@ -10,7 +8,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    <p> If you have any questions or need help, please fill out the form
+    <p class="title"> If you have any questions or need help, please fill out the form
             below.</p>
     <!-- Contact form fields -->
     <div class="form-group">
@@ -21,8 +19,8 @@
         {{ contact_form.message | as_crispy_field }}
     </div>
     <!-- Form buttons -->
-    <div class="form-actions buttons d-flex justify-content-between mt-0">
-        <button type="reset" class="btn hvr-bounce-to-right">Clear</button>
-        <button type="submit" class="btn hvr-bounce-to-right btn-blue">Send</button>
+    <div class="form-actions buttons d-flex justify-content-center mt-0">
+        <button type="reset" class="btn custom-btn">Clear</button>
+        <button type="submit" class="btn custom-btn">Send</button>
     </div>
 </form>

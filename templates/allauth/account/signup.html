@@ -7,12 +7,12 @@
 {% block content %}
 <div class="container-fluid register-body">
   <div class="row">
-    <div class="col-6 col-lg-6 col-md-4"></div>
+    <div class="col-12 col-lg-4 col-md-12">
     <div class="card register">
-      <h1 class="ml-4 mt-3">{% trans "Sign Up" %}</h1>
-      <p class="ml-4 mr-2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+      <h1 class="ml-3 mt-3">{% trans "Sign Up" %}</h1>
+      <p class="ml-3 mr-2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="sign-title">sign in</a>.{% endblocktrans %}
       </p>
-      <form class="signup ml-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
@@ -20,8 +20,11 @@
         {% endif %}
         <button class="custom-btn" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
+      {% block footer_legal %}
+          <p class="title mx-auto">Dark Luna &copy; {% now "Y" %}. All rights reserved.</p>
+      {% endblock footer_legal %}
+    </div>
     </div>
   </div>
 </div>
-
 {% endblock %}

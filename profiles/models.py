@@ -5,9 +5,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django_countries.fields import CountryField
 
-from django.utils import timezone
-from django.urls import reverse
-
 from django.contrib.auth.models import User
 
 
@@ -48,27 +45,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # if user exist - save the profile
     instance.userprofile.save()
-
-
-class Testimonial(models.Model):
-    """ Testimonial for users """
-    class RelatedPage(models.TextChoices):
-        """ Choices for dropdown list in page """
-        Massage = 'Massage'
-        Sex_Coaching = 'Sex Coaching'
-        Life_Coaching = 'Life Coaching'
-        Shadow_Work = 'Shadow Work'
-        Workshops = 'Workshops'
-
-    text = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE,
-                               related_name='testimonial')
-    added = models.DateTimeField(default=timezone.now)
-    page = models.CharField(choices=RelatedPage.choices,
-                            default=RelatedPage.Massage, max_length=13)
-
-    def __str__(self):
-        return str(self.text)
-
-    def get_absolute_url(self):
-        return reverse('user_account')

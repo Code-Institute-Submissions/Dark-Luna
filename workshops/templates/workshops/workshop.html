@@ -12,17 +12,19 @@
 
 <section class="container-fluid">
     <div class="row workshop-container">
+        <div class="col-12">
         <p class="workshop-section-title mx-auto mt-0">
             {{ workshop.name }} details
             </p>
-        <div class="col-md-6 col-lg-3 mt-3 mb-3">
+        </div>    
+        <div class="col-md-3 col-lg-3">
             {% if workshop.image %}
             <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
             {% else %}
             <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
             {% endif %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8 mx-auto">
             <div class="section-title"> {{ workshop.name }}</div>
             <div class="card-body">
                 <div class="title">This workshop is for: {{ workshop.category }}</div>
@@ -50,20 +52,21 @@
     </div>
 </section>
 <!-- Bottom Section -->
-<div class="row justify-content-center">
+<div class="row ">
     <!-- Booking Button -->
-    <div class="col-10 col-md-4">
+    <div class="col-10 col-md-8 mx-auto">
         <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
             {% csrf_token %}
             <input class="form-control qty_input" type="hidden" name="quantity" value="1"
             data-lesson_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            <button type="submit" class="btn book-custom-btn">Book Now</button>
+            <button type="submit" class="btn book-custom-btn ml-0">Book Now</button>
         </form>
     </div>
     <!-- Contact button  -->
-    <div class="col-10">
-            <a href="{% url 'contact' %}" class="btn">Contact us</a>
+    <div class="col-10 col-md-8 mx-auto">
+            <a href="{% url 'contact' %}" class="btn book-custom-btn ml-0">Contact us</a>
     </div>
 </div>
+{% include 'layout/footer.html' %}
 {% endblock %}
