@@ -199,7 +199,7 @@ if 'BUCKET_S3' in os.environ:
     AWS_S3_REGION_NAME = "eu-west-2"
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    # AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
