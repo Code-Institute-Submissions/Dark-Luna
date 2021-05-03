@@ -45,6 +45,7 @@
                 <a href="{% url 'add-blog-post' %}" class="dropdown-item">Blog</a>
                 <a href="{% url 'categories_admin' %}" class="dropdown-item">Categories</a>
                 <a href="{% url 'workshops_admin' %}" class="dropdown-item">Workshops</a>
+                <a href="{% url 'therapists_admin' %}" class="dropdown-item">Therapists</a>
                 {% endif %}
                 <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}

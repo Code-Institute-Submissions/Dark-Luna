@@ -4,20 +4,9 @@
 {% block extra_title %} Admin forms {% endblock %}
 {% block content %}
 
-<!-- Forms main container -->
-<div class="admin-forms" role="main">
-    <div class="container py-4">
-        <!-- Page title -->
-        <h1 class="mt-1 mb-4 text-left">Admin</h1>
-        <div class="card shadow-sm">
-            <p class="info-text">
-                
-                Remember to fill as many fields as possible.<br>
-                Required fields are must.
-       
-            </p>
-            <hr>
-            <!-- Edit container -->
+<div class="container">
+    <div class="row justify-content-center">
+        <p class="title">Admin</p>
             <div class="forms-container">
                 <!-- Form -->
                 {% if '/edit' in request.path %}
@@ -34,5 +23,4 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock%}

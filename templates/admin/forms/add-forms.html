@@ -7,10 +7,10 @@
     <!-- Buttons -->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn hvr-bounce-to-right red-button">Reset</button>
+            <button type="reset" class="btn">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn hvr-bounce-to-right">Add</button>
+            <button type="submit" class="btn">Add</button>
         </div>
     </div>
 </form>
@@ -44,10 +44,27 @@
     <!-- Buttons -->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn hvr-bounce-to-right red-button">Reset</button>
+            <button type="reset" class="btn">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn hvr-bounce-to-right">Add</button>
+            <button type="submit" class="btn">Add</button>
+        </div>
+    </div>
+</form>
+{% elif 'therapist/add' in request.path %}
+<!-- Therapists Form -->
+<form action="{% url 'add_therapist_admin' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.image | as_crispy_field }}
+    {{ form.name | as_crispy_field }}
+    {{ form.about | as_crispy_field }}
+    <!-- Buttons -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <button type="reset" class="btn">Reset</button>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <button type="submit" class="btn">Add</button>
         </div>
     </div>
 </form>

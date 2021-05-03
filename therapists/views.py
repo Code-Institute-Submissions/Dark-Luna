@@ -24,8 +24,7 @@ def therapists_admin(request):
     """ A view to manage therapists cards """
 
     therapists = TherapistProfile.objects.all()
-    #zoals workshops
-    template = "team/mgmt-team.html"
+    template = "therapists/admin-therapists.html"
     context = {
         'therapists': therapists,
     }
@@ -51,7 +50,7 @@ def add_therapist_admin(request):
     else:
         form = TherapistForm()
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
     }
@@ -79,7 +78,7 @@ def edit_therapist_admin(request, therapist_id):
     else:
         form = TherapistForm(instance=therapist)
 
-    template = "./management/management-forms.html"
+    template = "./admin/admin-forms.html"
     context = {
         'form': form,
         'therapist': therapist,
