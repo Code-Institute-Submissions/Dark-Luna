@@ -6,9 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
     opacity: 0.80;
-    background-attachment: fixed;
 }
 
 /* Header quote */
@@ -133,27 +131,23 @@ a#custom-btn {
 }
 
 #section-bg-light {
-    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/hans-vivek-UiMkBvDQSAA-unsplash.jpg");
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/bglight.jpg");
     height: 40vh;
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
     opacity: 0.50;
-    background-attachment: fixed;
 }
 
 #section-bg-dark {
-    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/jared-rice-NTyBbu66_SI-unsplash.jpg");
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/bgdark.jpg");
     height: 40vh;
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
     opacity: 0.50;
-    background-attachment: fixed;
 }
 
 /* Ready? */
@@ -211,11 +205,20 @@ a#custom-btn {
         margin-top: 5rem;
         font-size: 1.4rem;
     }
-
+    .card-text {
+        font-size: 0.8rem;
+    }
     .header-quote {
         margin-top: 11rem;
         font-size: 1.1rem;
         font-weight: 450;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    a#custom-btn {
+        width: 4rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -224,5 +227,8 @@ a#custom-btn {
         margin-top: 11rem;
         font-size: 1.4rem;
         font-weight: 400;
+    }
+    .card-title {
+        font-size: 1rem;
     }
 }

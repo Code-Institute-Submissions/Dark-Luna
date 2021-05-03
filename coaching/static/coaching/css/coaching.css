@@ -45,7 +45,7 @@
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 14rem;
+    margin-top: 12rem;
     font-size: 0.8rem;
     color: #fff;
     background: rgba(134, 15, 70, 0.377);
@@ -57,16 +57,26 @@
 }
 @media (min-width: 768px) {
     .life-quote {
-        margin-top: 25rem;
+        margin-top: 20rem;
     }
 }
 @media (min-width: 992px) {
     .life-quote {
         margin-top: 15rem;
     }
+    .life-text,
+    .sex-text,
+    .shadow-text {
+        font-size: 1rem;
+    }
 }
 @media (min-width: 1400px) {
     .life-quote {
         margin-top: 18rem;
+    }
+    .life-text,
+    .sex-text,
+    .shadow-text {
+        font-size: 1rem;
     }
 }
