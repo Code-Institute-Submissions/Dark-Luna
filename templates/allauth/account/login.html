@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-4 col-lg-4 col-md-4">
       <div class="card sign-in">
-        <h1 class="ml-3 mt-3">{% trans "Sign In" %}</h1>
+        <div class="ml-3 mt-3 signup-title">{% trans "Sign In" %}</div>
         <div class="col-12 col-md-8">
           <form class="login" method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
@@ -19,14 +19,11 @@
             {% endif %}
             <div class="text-left">
               <button class="custom-btn mr-3" type="submit">{% trans "Sign In" %}</button>
-              <a class="button secondaryAction forgot-button" href="{% url 'account_reset_password' %}">
+              <a class="button forgot-button" href="{% url 'account_reset_password' %}">
                 {% trans "Forgot Password?" %}</a>
             </div>
           </form>
         </div>
-        {% block footer_legal %}
-          <p class="title mx-auto">Dark Luna &copy; {% now "Y" %}. All rights reserved.</p>
-        {% endblock footer_legal %}
       </div>
     </div>
   </div>

@@ -9,8 +9,8 @@
   <div class="row">
     <div class="col-12 col-lg-4 col-md-12">
       <div class="card register">
-        <h1 class="ml-3 mt-3">{% trans "Sign Up" %}</h1>
-        <p class="ml-3 mr-2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="sign-title">sign in</a>.{% endblocktrans %}
+        <div class="ml-3 mt-3 signup-title">{% trans "Sign Up" %}</div>
+        <p class="ml-3 mr-2 signup-subtitle">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="sign-title">sign in</a>.{% endblocktrans %}
         </p>
         <div class="col-4">
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -22,9 +22,6 @@
             <button class="custom-btn" type="submit">{% trans "Sign Up" %} &raquo;</button>
           </form>
         </div>
-        {% block footer_legal %}
-            <p class="title mx-auto">Dark Luna &copy; {% now "Y" %}. All rights reserved.</p>
-        {% endblock footer_legal %}
       </div>
     </div>
   </div>

@@ -154,7 +154,7 @@ input {
     height: 2px;
 }
 
-/* Sign In */
+/* Sign In/Register */
 .sign-in-body,
 .register-body {
     background-color: #79113F;
@@ -198,7 +198,26 @@ input {
     margin-right: 1rem;
 }
 .sign-title {
-    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-decoration: underline;
+
+}
+.signup-title {
+    color: #fff;
+    font-size: 2rem;
+}
+.signup-subtitle {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+label {
+    color: #fff!important;
+}
+.forgot-button {
+    color: #fff;
 }
 .therapists-title {
     font-family: 'Oregano', cursive;
