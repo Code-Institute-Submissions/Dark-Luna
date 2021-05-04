@@ -37,18 +37,21 @@
         </div>
         {% else %}
         <!-- Link for booking -->
-        <div class="row">
-            <div class="col-12 col-md-8">
-                <p class="book-title">Nothing booked ?</p>
-                <p class="book-title">This workshop might be something for you!</p>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+                <p class="book-title text-center">Nothing booked ?</p>
+                <p class="book-title text-center">Check out our: <a href="{% url 'workshops' %}" class="section-title">Workshops!</a> </p>
             </div>
         </div>
-    <!-- Include "Random Workshop" container -->
-    {% include 'includes/random-workshop.html' %}
     {% endif %}
     </div>  
 </div>
-
+<section class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-8 col-md-6 col-lg-6" id="section-bg-dark">
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 

@@ -75,8 +75,15 @@
     font-size: 0.9rem;
     color: #580c2d;
 }
-
-
+#section-bg-dark {
+    background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/bgdark.jpg");
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.50;
+}
 @media (min-width: 576px) {
     .section-title {
         font-size: 2rem;

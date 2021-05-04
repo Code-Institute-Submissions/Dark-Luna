@@ -88,12 +88,13 @@
 <section class="container" id="index-blog">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-12">
-            <p class="blog-section-title text-center">Latest blog items</p>
+            <p class="blog-section-title text-center">Random blog item(s)</p>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
         {% for post in object_list %}
-        <div class="col-7 col-md-4 col-lg-3 mt-3 mb-3">
+            {% if post.tag == 'Explicit' %}
+        <div class="col-7 col-md-4 col-lg-3 mt-3 mb-3 mb-4">
             <div class="card">
                 {% if post.header_image %}
                 <img src="{{post.header_image.url}}" class="card-img-top d-block w-100" alt="...">
@@ -107,6 +108,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </section>

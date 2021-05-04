@@ -1,5 +1,4 @@
 """ Views for Booking App """
-import random
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from workshops.models import Workshop
@@ -8,14 +7,7 @@ from workshops.models import Workshop
 def booking(request):
     """ A view to return booking page """
 
-    workshops = list(Workshop.objects.all())
-    random_workshops = random.sample(workshops, 1)
-    context = {
-        'workshops': workshops,
-        'random_workshops': random_workshops,
-    }
-
-    return render(request, 'booking/booking.html', context)
+    return render(request, 'booking/booking.html')
 
 
 def add_to_booking(request, workshop_id):

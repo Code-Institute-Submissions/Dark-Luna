@@ -73,7 +73,7 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
     .contact-body {
-        height: 60vh;
+        height: 40vh;
     }
     .contact-sub-title {
         font-size: 1.8rem;
