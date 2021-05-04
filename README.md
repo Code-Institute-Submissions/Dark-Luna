@@ -63,28 +63,71 @@ Supply a website that woman who have hormonal related issues, like problems with
 
 ### Scope ###
 
-An easy to navigate and responsive website that is fun to use and allows users as well as site owners, to perform CRUD operations. Users can sign up and, once logged in, the can either buy products or book appointments. These users manage their purchases and bookings, meaning they can edit and delete them when they want.
-Also, they can update their password and username and even delete their account.
+An easy to navigate and responsive website that is fun to use and allows users as well as site owners, to perform CRUD operations. Users can sign up and, once logged in, the can book a workshop and add comments to the blogs. These users manage their comments and bookings, meaning they can edit and delete them when they want.
 
 ## Structure of the website ##
 
 ### View for a guest user ###
 
-A user that is not logged in and/or registered, will see a homepage with information about the various sessions that are offered, workshops that will be given and a shop where session related products can be bought. They will also see a sign in and sign up button.
-On all pages where services or products are offered, they are prompted to register/login to benefit from these futures. They can also subscribe to a newsletter.
+A user that is not logged in and/or registered, will see a homepage with information about the various sessions that are offered, workshops that will be given, a page where they can 'meet' the therapists and a blog. They will also see a sign in and sign up option in the navigation.
+On all pages where services  are offered, they are prompted to register/login to benefit from these futures. They can also subscribe to a newsletter in the footer.
 
 ### View for logged in user ###
 
 A logged in user will benefit from the full functionality of the site. The navigation will contain extra: 'Logout'.
-This user is able to book appointments, book workshops and buy products they might need for exercises given in sessions.
-In the profile there are also functions for changing once username, password and even delete their account.
+This user is able to book workshops and and add comments to blog posts.
+In the profile the can see and change their personal information and view the latest booked workshops.
 
 ### User Stories ###
 
 Because there are many user stories for this project, I have made a spreadsheet containing different levels of users (client and user) as well as the stories for the shop owner.
 This fill is by no means complete. During development there might be some added or removed, depending on functionality and usability.
 
-View the stories [here](https://github.com/byIlsa/luna/blob/master/wireframes/userandsiteownerstories.pdf).
+| as a/an…    | I want to be able to…                                       | So that I can…                                                                         |
+|-------------|-------------------------------------------------------------|----------------------------------------------------------------------------------------|
+|             | Viewing and navigation                                      |                                                                                        |
+| User        | General:                                                    |                                                                                        |
+|             | easily navigate the site on mobile, Desktop and tablet      | so I can quickly decide if this is something I would like to use                       |
+|             | Find information about what the mission Of this company is  | so I can see if this feels right for me                                                |
+|             | Sessions:                                                   |                                                                                        |
+|             | see what therapy options are offered                        | decide what kind of session I would like to book                                       |
+|             | Workshops:                                                  |                                                                                        |
+| user        | see what workshops are offered                              | decide if I would like to participate in a workshop                                    |
+| client      | book a workshop                                             | so i can participate                                                                   |
+| user        | see details about a workshop                                | so i can see what it is all about                                                      |
+|             | Blog:                                                       |                                                                                        |
+| user/client | read blog posts                                             | so I get informed about topics I’m interested in                                       |
+| client      | add/edit/delete comments                                    | so i can tell what I am thinking and feeling                                           |
+|             |                                                             | Sorting and Searching                                                                  |
+|             | Workshop general:                                           |                                                                                        |
+| User        | Sort the list of workshops                                  | See workshops by name or price                                                         |
+|             | Sort for specific category                                  | Find workshops in a specific category or sort The products in that category by  name   |
+|             | Search for workshops by name or description                 | Find a specific product I’d like to purchase                                           |
+|             | Easily see what I’ve searched for and the Number of results | Quickly decide whether the workshop I want is available                                |
+|             |                                                             | Bookings, purchase and checkout                                                        |
+| Client      | Workshop booking:                                           |                                                                                        |
+|             | Easy to follow payment procedure                            | So I can book without spending much time figuring out how                              |
+|             | View bookings in my bag                                     | So I can see what I’ve booked and what the total cost is                               |
+|             | Enter my payment info easily                                | Check out quickly without problems                                                     |
+|             | Have my information stored secure                           | Rest assured my personal info is safe                                                  |
+|             | Get an order confirmation after checkout                    | Keep a copy for future reference/waranty                                               |
+|             | Registration and User Accounts:                             |                                                                                        |
+| User        | Easily register for an account                              | Have a personal account                                                                |
+|             | Easily login or logout                                      | Access my personal account information                                                 |
+|             | Easily recover my password in case I forgot                 | Recover access to my account                                                           |
+|             | Receive an email confirmation after  Registering            | Verify that my account registration was successful                                     |
+| Client      | Have a personalized account page                            | View my personal order history and order confirmations and save My payment information |
+|             | See what bookings I’ve made                                 | get an overview of my bookings                                                         |
+|             |                                                             | Subscription                                                                           |
+| User        | easily register for a newsletter                            | so I can receive news when it becomes available                                        |
+|             |                                                             | Admin and Store management                                                             |
+| Store owner | Add a workshop                                              | Add new workshops to my store                                                          |
+|             | Edit a workshop                                             | Edit workshops                                                                         |
+|             | Delete a workshop                                           | Delete a workshop                                                                      |
+|             | delete/edit blog posts                                      | delete and/or edit blog posts                                                          |
+|             | Add blog posts                                              | add blog posts                                                                         |
+|             | add/edit/delete workshop categories                         | manage workshop categories                                                             |
+|             | add/edit/delete therapists                                  | manage new therapists arriving and/or therapists leaving the practice                  |
 
 ### Site owner goals ###
 
@@ -96,16 +139,15 @@ See ["User Stories"](#user-stories)
 
 - Easy to navigate by using buttons
 - Appealing account page with a functional overview
-- Easy way to book an appointment or workshop
-- Easy way to buy products
-- Ability to edit and delete a bookings
+- Easy way to book a workshop
+- Ability to edit and delete a booking
 - Ability to contact the site owner
 
 ### Expectations ###
 
-- When you have booked a session, it should be easy to change or reschedule this appointment.
+- Registering for an account should be no fuss.
 - To have a account page that has a clear overview of products I have bought and/or appointments I have made.
-- It should be easy to book an appointment and/or shop for products.
+- It should be easy to book a workshop.
 
 ## Design Choices ##
 
@@ -149,7 +191,7 @@ For the structure I have used [Bootstrap.](https://getbootstrap.com/)
 
 ## Wireframes and Data Models ##
 
-WIP
+Wireframes where created at the very beginning of this project and have been followed for as much as possible.
 
 ### Wireframes ###
 
@@ -167,7 +209,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 - The User model I have used in this project was provided by Django Allauth. It is a part of default django.contrib.auth.models.
 
-#### Profile app ####
+## Profiles app ##
 
 | Name                 | Database Key         | Field Type           | Validation                                                      |
 |----------------------|----------------------|----------------------|-----------------------------------------------------------------|
@@ -183,46 +225,37 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | Town or City         | town_or_city         | models.CharField     | max_length=40, null=True, blank=True                            |
 | County               | county               | models.CharField     | max_length=80, null=True, blank=True                            |
 | Country              | country              | CountryField         | blank_label='Select Country', null=True, blank=True             |
-| Receiving Newsletter | receiving_newsletter | models.CharField     | max_length=3, choices=newsletter_choices, blank=True, null=True |
 
-#### Workshops app ####
+## Workshops app ###
+
+### Category Model ###
+
+|      Name     |  Database Key | Field Type |               Validation               |
+|:-------------:|:-------------:|:----------:|:--------------------------------------:|
+| Name          | name          | CharField  | max_length=254                         |
+| Friendly Name | friendly_name | CharField  | max_length=254, null=True, blank=False |
+
+### Workshop Model ###
 
 | Name         | Database Key | Field Type                   | Validation                                             |
 |--------------|--------------|------------------------------|--------------------------------------------------------|
 | Name         | name         | models.CharField             | max_length=254                                         |
 | Description  | description  | models.TextField             | null=True, blank=True                                  |
+| category     | category     | models.ForeignKey 'Category' | null=True, blank=False, on_delete=models.CASCADE       |
 | Start Date   | start_date   | models.DateField             | null=True, blank=False                                 |
 | End Date     | end_date     | models.DateField             | null=True, blank=False                                 |
 | Start Time   | start_time   | models.TimeField             | auto_now=False, auto_now_add=False                     |
 | End Time     | end_time     | models.TimeField             | auto_now=False, auto_now_add=False                     |
 | Participants | participants | models.IntegerField          | null=True, blank=False                                 |
-| Location     | location     | models.ForeignKey 'Location' | null=True, blank=False, on_delete=models.PROTECT       |
 | Price        | price        | models.DecimalField          | max_digits=6, decimal_places=2, null=True, blank=False |
-| Image        | image        | models.ImageField            | upload_to="lessons", null=True, blank=True             |
-| Comments     | comments     | models.TextField             | null=True, blank=False                                 |
+| Image        | image        | models.ImageField            | upload_to="user_uploads", null=True, blank=True        |
+| therapist    | therapist    | models.CharField             | max_length=254                                         |
 
-#### Products app ####
+## Blog app ##
 
-| Name        | Database Key | Field Type          | Validation                                                   |
-|-------------|--------------|---------------------|--------------------------------------------------------------|
-| Category    | category     | models.ForeignKey   | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
-| sku         | sku          | models.CharField    | max_length=254, blank=True                                   |
-| Description | description  | models.TextField()  |                                                              |
-| Price       | price        | models.DecimalField | max_digits=6, decimal_places=2                               |
-| Image       | image        | models.ImageField   | blank=True                                                   |
+### Blog Model ###
 
-#### Blog app ####
-
-| Name              | Database Key      | Field Type                                  | Validation                                                                                               |
-|-------------------|-------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| Title             | title             | models.CharField(_("Title")                 | max_length=200                                                                                           |
-| Slug              | slug              | SlugPreviewField(_("Slug"))                 |                                                                                                          |
-| Author            | author            | models.ForeignKey                           | (settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, verbose_name=_('author'))               |
-| Creation date     | creation_date     | models.DateTimeField(_('creation date')     | editable=False, auto_now_add=True)                                                                       |
-| Modification date | modification_date | models.DateTimeField(_('last modification') | editable=False, auto_now=True                                                                            |
-| Publication date  | publication_date  | models.DateTimeField(_('publication date')  | null=True, db_index=True, help_text=_('''When the entry should go live, status must be "Published".''')) |
-| Status            | status            | models.CharField(_('status')                | max_length=1, choices=STATUSES, default=DRAFT, db_index=True)                                            |
-| Excerpt text      | excerpt_text      | PluginHtmlField(_("Excerpt text")           | help_text=_("This is the summary in the list of articles."))                                             |
+### Blog Commments ###
 
 #### Therapists app ####
 
@@ -232,49 +265,51 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 | About | about        | models.textField  | null=True, blank=False                       |
 | Image | image        | models.imageField | upload_to=”therapist”, null=True, blank=True |
 
-#### MailChimp integration ####
-
-| Name      | Database Key | Field Type           | Validation           |
-|-----------|--------------|----------------------|----------------------|
-| Email id  | email_id     | models.EmailField    | null=True,blank=True |
-| Timestamp | timestamp    | models.DateTimeField | default=timezone.now |
-
 ## Features ##
 
 ### Features that are implemented ###
 
 - Registration functionality
 - Log In and Out functionality
-- Shop (products)
-- Booking (sessions, massages and/or workshops)
+- Booking (workshops)
 - Sign Up for newsletter (MailChimp)
 - Contact site owner
 - Have a profile page
-- Testimonials
-- Embedded videos
 - Moon Calendar
 - Blog (with comments section)
 
 - CRUD Functions:
 - Create:
-  - Account(profile)
-  - Testimonials
+  - Account (profile)
   - Comment to blog
   - Contact form content
+  - Workshops
+  - Add therapist
 
-  - Read:
-    - Account(profile)
-    - Testimonials
-    - General info (sessions, massage, workshops, therapists, blog, testimonials)
+- Read:
+  - Account (profile)
+  - General info (sessions, massage, workshops, therapists, blog)
 
-  - Update:
-    - Account(profile)
-    - Bookings
-WIP
+- Update:
+  - Account(profile)
+  - Bookings
+  - Comments
+  - Blog Posts
+  - Therapists information
+
+### Features to be implemented ###
+
+I would like to add a testimonials app. I have been working with that, but time sadly did not permit me to make a fully CRUD funtioning app of it.
+There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it got confused with the workshop categories function. And as this project is ecommerce centered, I decided to abandon this function for a later date.
 
 ### Known issues ###
 
-WIP
+There have been many struggles concerning the back-end. Namly the function to get an email to send after a booking has been confirmed. I had that working, with the help of a tutor. I pushed the code and went to bed, feeling very relieved, because stripe webhooks have been known to cause a headache or two.
+I woke up the following morning and returned to the project, to find out the webhook had yet again failed. I asked tutor support again and spend no less that five hours with a different tutor, troubleshooting. Unfortunately we werent able to figure out what was wrong (code was valid).
+
+Unfortunately this particular problem has cause me to loose a lot of valuable time, forcing me to choose between other functionality or beauty, I choose the first. I was adament to get all functionality working as intended and I did (for the most part). But it took it's toll on the front end, something I still am gutted about.
+
+The project is not fully responsive and could use some major improvements on some area's. There is overflow coming from the body elemement. I did spend a considerable amount of time to try and find out where it was coming from, but the deadline prevented me from investigating any further.
 
 ## Technologies used ##
 
