@@ -14,10 +14,10 @@
         <p class="section-title text-center">
             Blog
         </p>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ml-auto">
         {% for post in object_list %}
-        <div class="col-11 col-md-5 col-lg-3 mb-5">
-            <div class="card" style="width: 18rem;">
+        <div class="col-8 col-md-5 col-lg-3 mb-4 d-flex justify-content-center">
+            <div class="blog-card" style="width: 18rem;">
                 {% if post.header_image %}
                 <img src="{{post.header_image.url}}" class="card-img-top" alt="...">
                 {% else %}

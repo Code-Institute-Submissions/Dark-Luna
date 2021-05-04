@@ -19,10 +19,10 @@
             </div>
         </div>
     </div>
-
+    <hr>
     <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-12">
-            <div class="body-title text-center">Edit or remove existing workshops.</div>
+            <div class="section-title text-center">Edit or remove existing workshops</div>
         </div>
         {% for workshop in workshops %}
         <div class="col-8 col-md-4 col-lg-2 ml-2 mt-4">
@@ -42,6 +42,10 @@
                     <div class="text-body-admin mb-1">Therapist:
                         <span>{{ workshop.therapist }}</span>
                     </div>
+                    <hr>
+                    <div class="text-body">Workshop Starts:</div>
+                    <p class="workshops-text">Date: <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
+                    <p class="workshops-text">Time: <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-12 mt-4">

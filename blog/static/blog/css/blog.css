@@ -1,8 +1,19 @@
 .section-title{
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #580c2d;
+}
+.blog-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
 }
 .blog-post-author,
 .card-title {
