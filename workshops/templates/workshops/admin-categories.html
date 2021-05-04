@@ -5,59 +5,33 @@
 <link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
 {% endblock %}
 
-{% block extra_title %}| Categories Admin {% endblock %}
-
 {% block content %}
-    <!-- Messages container -->
-    {% if messages %}
-    <div class="messages-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        <!-- Error Message -->
-        {% include 'includes/toasts/toast-error.html'%}
-        {% elif level == 30 %}
-        <!-- Warning Message -->
-        {% include 'includes/toasts/toast-warning.html'%}
-        {% elif level == 25 %}
-        <!-- Success Message -->
-        {% include 'includes/toasts/toast-success.html'%}
-        {% else %}
-        <!-- Info Message -->
-        {% include 'includes/toasts/toast-info.html'%}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
-    </div>
-    {% endif %}
-<!-- Cateogries main container -->
 
 <div class="container-fluid">
-    <!-- Page title, promo text, 'Add +' button -->
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="mt-4 mb-4 text-left">Admin - Workshops Categories</h1>
+        <div class="col-md-6 col-lg-4">
+            <div class="section-title">Admin - Workshops Categories</div>
             <div class="categories-admin">
-                <p class="info-text">Add, Edit or Remove Workshop Categories. Be careful when removing categories as they're
+                <div class="cat-sub-text">Add, Edit or Remove Workshop Categories. Be careful when removing categories as they're
                     connected to all Workshops. Deleting a category that is bound to a workshop, will remove that workshop
                     as well!
-                </p>
+                </div>
             </div>
             <div class="col-md-6">
-                <a href="{% url 'add_categories_admin' %}" class="btn ">Add </a>
+                <a href="{% url 'add_categories_admin' %}" class="btn workshop-btn ml-0">Add </a>
             </div>
         </div>
     </div>
-    <div class="row justify-content-center mb-3">
+    <div class="row justify-content-center categories mb-4">
         {% for category in categories %}
-        <div class="col-md-4">
+        <div class="col-6 col-md-4 col-lg-3 mr-2">
             <div class="workshop-admin-card">
                 <p class="section-title-cat">Category:</p>
                 <p class="cat-title text-left">{{ category.friendly_name }}</p>
                     <a href="{% url 'edit_categories_admin' category.id %}"
-                    class="btn btn-wide">Edit</a>
+                    class="btn workshop-btn">Edit</a>
                     <a href="{% url 'remove_categories_admin' category.id %}"
-                    class="btn btn-wide">Remove</a>
+                    class="btn workshop-btn">Remove</a>
             </div>
         </div>
         {%endfor%}

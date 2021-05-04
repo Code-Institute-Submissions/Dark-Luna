@@ -7,9 +7,11 @@
     margin-top: 1.5rem;
 }
 
-.title {
-    font-size: 0.7rem;
-    color: #580c2d;
+.cat-sub-text {
+    font-size: 1rem;
+    color: #15020a;
+    background-color: #fff;
+    margin-left: 1rem;
     margin-bottom: 1rem;
 }
 .body-title {
@@ -105,11 +107,25 @@ p {
     border-radius: 1rem;
     box-shadow: 1rem 1rem 20px #79113f;
 }
-.add-workshop-card {
-    margin-top: 5rem;
-    height: auto;
-    width: 20vh;
-}
 .workshop-container {
     margin-top: 5rem;
 }
+.text-body-admin {
+    font-size: 1rem;
+    color: #15020a;
+}
+.categories {
+    margin-bottom: 5rem!important;
+}
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+        }
+    .body-title {
+        font-size: 1.5rem;
+    }
+    .workshop-btn {
+        font-size: 1rem;
+        width: auto;
+        }
+    }

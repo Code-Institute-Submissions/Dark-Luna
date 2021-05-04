@@ -3,6 +3,8 @@ The `urlpatterns` list routes URLs to views.
 """
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.workshops, name='workshops'),
@@ -36,4 +38,4 @@ urlpatterns = [
     path('admin/workshops-page/workshops/remove/<int:workshop_id>',
          views.remove_workshops_admin,
          name='remove_workshops_admin'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

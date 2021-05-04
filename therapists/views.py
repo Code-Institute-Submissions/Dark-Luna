@@ -2,7 +2,7 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from therapists.forms import TherapistForm
+from .forms import TherapistForm
 from .models import TherapistProfile
 
 
@@ -34,18 +34,17 @@ def therapists_admin(request):
 
 @staff_member_required
 def add_therapist_admin(request):
-    """ Management view to add therapist card """
-
+    """ Management view to add a therapist """
     if request.method == 'POST':
         form = TherapistForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(
-                request, 'Therapist Profile card added successfully!')
+                request, 'Therapist added successfully!')
             return redirect(reverse('therapists_admin'))
         else:
             messages.error(
-                request, 'Adding new Therapist failed. \
+                request, 'Adding new therapist failed. \
                 Please ensure the form is valid.')
     else:
         form = TherapistForm()

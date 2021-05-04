@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_title %} Admin forms {% endblock %}
 {% block content %}
 
 <div class="container">
     <div class="row justify-content-center">
-        <p class="title">Admin</p>
+        <div class= "col-12">
+        <div class="therapists-title text-center">Admin page for adding, editing and deleting</div>
+        </div>
             <div class="forms-container">
                 <!-- Form -->
                 {% if '/edit' in request.path %}
                 <!-- Include edit forms -->
-                <div class="edit-forms">
+                <div class="col-12 edit-forms">
                     {% include 'admin/forms/edit-forms.html' %}
                 </div>
                 {% else %}
                 <!-- Include add forms -->
-                <div class="add-forms">
+                <div class="col-12 add-forms">
                     {% include 'admin/forms/add-forms.html' %}
+                </div>
                 </div>
                 {% endif %}
             </div>
         </div>
-    </div>
 {% endblock%}

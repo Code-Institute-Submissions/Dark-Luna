@@ -1,42 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'therapists/css/therapists.css' %}">
+{% endblock %}
 
 {% block content %}
-
 <!-- Therapists container -->
-<div class="container">
-        <div class="row justify-content-center">Admin - Therapists
-            <p class="text-left">Therapists</p>
-            <p class="info-text">Add information, edit or simply remove
-                Therapists.</p>
-                <div class="col-6">
-                    <a href="{% url 'add_therapist_admin' %}" class="btn">Add</a>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="therapists-title">Admin - Therapists</div>
+            <div class="tnerapists-admin">
+                <div class="therapists-sub-title">Add information, edit or remove therapists.
                 </div>
-        </div>
-        <div class="row justify-content-center">
-            {% for therapist in therapists %}
-            <div class="col-4">
-            {% if therapist.image %}
-            <img src="{{therapist.image.url}}" class="card-img-top" alt="...">
-            {% else %}
-            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
-            {% endif %}
-                <p class="title">{{ therapist.name }}</p>
-                <p class="title">{{ therapist.about }}</p>
+            </div>
+            <div class="col-12 col-md-12 text-center">
+                <a href="{% url 'add_therapist_admin' %}" class="btn custom-btn">Add</a>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-11">
-                <a href="{% url 'edit_therapist_admin' therapist.id %}"
-                class="btn">Edit</a>
+            <div class="col-12 col-md-12">
+                <div class="body-title text-center">Edit or remove therapists.</div>
             </div>
-            <div class="col-11">
-                <a href="{% url 'remove_therapist_admin' therapist.id %}"
-                class="btn">Remove</a>
+                {% for therapist in therapists %}
+                <div class="col-8 col-md-4 col-lg-2">
+                    {% if therapist.image %}
+                        <img src="{{therapist.image.url}}" class="card-img-top" alt="...">
+                    {% else %}
+                        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                    {% endif %}
+                        <div class="therapists-title">{{ therapist.name }}</div>
+                        <div class="therapists-text">{{ therapist.about }}</div>       
+                <div class="col-11">
+                    <a href="{% url 'edit_therapist_admin' therapist.id %}"
+                    class="btn custom-btn">Edit</a>
+                </div>
+                <div class="col-11">
+                    <a href="{% url 'remove_therapist_admin' therapist.id %}"
+                    class="btn custom-btn">Remove</a>
+                </div>
+            </div>
+            {% endfor %}
             </div>
         </div>
-        {% endfor %}
-</div>
+    </div>
+
+
 {% endblock %}

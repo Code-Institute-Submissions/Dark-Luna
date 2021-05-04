@@ -50,6 +50,13 @@
     margin-left: 1rem;
     font-weight: bold;
 }
+.blog-custom-btn {
+    background-color: #79113F !important;
+    color: #f8f8ff !important;
+    width: 10rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
 /* Comment section */
 .comment-box {
     border: 1px solid #79113f;

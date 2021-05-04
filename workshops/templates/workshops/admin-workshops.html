@@ -3,69 +3,64 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
 {% endblock %}
-{% block extra_title %}| Admin - Workshops {% endblock %}
 
 {% block content %}
 
-<!-- Workshops main container -->
 <div class="container-fluid">
-    <!-- Page title, promo text, 'Add +' button -->
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="mt-4 mb-4 text-left">Admin - Workshops </h1>
-            <div class="worklshops-admin">
-                <p class="info-text">Add, Edit or Remove Workshop 
-                </p>
+        <div class="col-12 col-md-6">
+            <div class="section-title text-center">Admin - Workshops </div>
+            <div class="workshops-admin">
+                <div class="body-title text-center">Add, Edit or Remove Workshop 
+                </div>
             </div>
-            <div class="col-md-6">
-                <a href="{% url 'add_workshops_admin' %}" class="btn">Add
-                +</a>
+            <div class="col-12 col-md-12 text-center">
+                <a href="{% url 'add_workshops_admin' %}" class="btn custom-btn">Add</a>
             </div>
         </div>
     </div>
-    <div class="row row-cols-md-4 g-3 justify-content-center">
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-12 col-md-12">
+            <div class="body-title text-center">Edit or remove existing workshops.</div>
+        </div>
         {% for workshop in workshops %}
-        <div class="col-md-4 col-lg-3 ml-2">
-            <div class="add-workshop-card">
-                {% if workshop.image %}
-                    <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                {% else %}
-                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
-                {% endif %}
-                <div class="card-body">
-                    <h1>{{ workshop.name }}</h1>
-                    <p>Participants:
+        <div class="col-8 col-md-4 col-lg-2 ml-2 mt-4">
+            {% if workshop.image %}
+                <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+            {% else %}
+                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+            {% endif %}
+                <div class="section-title">{{ workshop.name }}</div>
+                <div class="col-10 col-md-12">
+                    <div class="text-body-admin mb-1">Participants:
                         <span>{{ workshop.participants }}</span>
-                    </p>
-                    <p>Price:
+                    </div>
+                    <div class="text-body-admin mb-1">Price:
                         <span>€ {{ workshop.price }}</span>
-                    </p>
-                    <p>Therapist:
+                    </div>
+                    <div class="text-body-admin mb-1">Therapist:
                         <span>{{ workshop.therapist }}</span>
-                    </p>
-                    <div class="buttons">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 mt-4">
                         <a href="{% url 'workshop' workshop.id %}"
-                        class="btn hvr-bounce-to-right">Details</a>
+                        class="book-custom-btn btn">Details</a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12 col-md-4 ml-0">
                         <a href="{% url 'edit_workshops_admin' workshop.id %}"
-                            class="btn hvr-bounce-to-right btn-wide">Edit</a>
-                            <div class="col-md-4">
-                                <a href="{% url 'remove_workshops_admin' workshop.id %}"
-                                    class="btn hvr-bounce-to-right red-button btn-wide">Remove</a>
-                            </div>
+                            class="book-custom-btn btn ml-auto">Edit</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'remove_workshops_admin' workshop.id %}"
+                            class="book-custom-btn btn ml-auto">Remove</a>
                     </div>
                 </div>
-            </div>
+                {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
-                        
-                            <!-- Don't display separate line after last lessons displayed -->
-                            {% if forloop.last != True %}
-                            <hr>
-                            {% endif %}
-        {% endblock%}
+
+      
+{% endblock %}

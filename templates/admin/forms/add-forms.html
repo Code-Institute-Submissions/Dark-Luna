@@ -1,5 +1,6 @@
 {% if 'categories/add/' in request.path %}
 <!-- Categories Form -->
+<div class="col-12 therapists-title">Add a category here!</div>
 <form action="{% url 'add_categories_admin' %}" method="POST">
     {% csrf_token %}
     {{ form.name | as_crispy_field }}
@@ -7,15 +8,16 @@
     <!-- Buttons -->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn">Reset</button>
+            <button type="reset" class="btn custom-btn">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn custom-btn">Add</button>
         </div>
     </div>
 </form>
 {% elif 'workshops/add/' in request.path %}
 <!-- Workshops Form -->
+<div class="col-12 therapists-title">Add a workshop here!</div>
 <form action="{% url 'add_workshops_admin' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.image | as_crispy_field }}
@@ -44,15 +46,16 @@
     <!-- Buttons -->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn">Reset</button>
+            <button type="reset" class="btn custom-btn">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn custom-btn">Add</button>
         </div>
     </div>
 </form>
-{% elif 'therapist/add' in request.path %}
+{% elif 'therapists/add/' in request.path %}
 <!-- Therapists Form -->
+<div class="col-12 therapists-title">Add a therapist here!</div>
 <form action="{% url 'add_therapist_admin' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.image | as_crispy_field }}
@@ -61,13 +64,11 @@
     <!-- Buttons -->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="reset" class="btn">Reset</button>
+            <button type="reset" class="btn custom-btn">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn custom-btn">Add</button>
         </div>
     </div>
 </form>
-
-
 {% endif %}

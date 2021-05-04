@@ -96,7 +96,14 @@ a {
     margin-bottom: 1rem;
 }
 .title {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+}
+.book-custom-btn {
+    background-color: #79113F !important;
+    color: #f8f8ff !important;
+    width: 10rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 /* Mailchimp footer styling */
 h1,
@@ -104,6 +111,14 @@ label,
 .btn
  {
     color: #38051c;
+    margin-left: 1rem;
+}
+label {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-right: 5rem;
+}
+input {
     margin-left: 1rem;
 }
 
@@ -195,6 +210,20 @@ label,
 .sign-title {
     font-weight: bold;
 }
+.therapists-title {
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    color: #580c2d;
+    margin-top: 1.5rem;
+}
+
+/* CRUD forms */
+.edit-forms,
+.add-forms {
+    margin: 1rem 1rem 1rem 1rem;
+}
+
 /* Media breakpoints */
 @media (min-width: 576px) {
     .register {
