@@ -1,4 +1,4 @@
-<form method="POST" id="form-contact" class="shadow">
+<form method="POST" id="form-contact">
     <!-- POST message -->
     {% if messages %}
     <div class="messages">
@@ -8,10 +8,10 @@
         {% endfor %}
     </div>
     {% endif %}
-    <p class="title"> If you have any questions or need help, please fill out the form
+    <p class="contact-sub-title text-center"> If you have any questions or need help, please fill out the form
             below.</p>
     <!-- Contact form fields -->
-    <div class="form-group">
+    <div class="form-group-contact">
         {% csrf_token %}
         {{ contact_form.name | as_crispy_field }}
         {{ contact_form.from_email | as_crispy_field }}
@@ -19,7 +19,7 @@
         {{ contact_form.message | as_crispy_field }}
     </div>
     <!-- Form buttons -->
-    <div class="form-actions buttons d-flex justify-content-center mt-0">
+    <div class="d-flex justify-content-center mr-3">
         <button type="reset" class="btn custom-btn">Clear</button>
         <button type="submit" class="btn custom-btn">Send</button>
     </div>

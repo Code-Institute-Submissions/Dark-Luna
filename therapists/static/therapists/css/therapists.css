@@ -20,6 +20,7 @@
     margin: 2rem 2rem 2rem 2rem;
 }
 
+/* Media breakpoints */
 @media (min-width: 1400px) {
     .therapists-title {
         font-size: 3rem;

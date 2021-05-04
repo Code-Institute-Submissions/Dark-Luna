@@ -78,11 +78,11 @@
             {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
             {% else %}
-                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
+                <img src="https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg" class="card-img-top" alt="..."> 
             {% endif %}
                 <div class="card-body">
                     <div class="col-12 col-md-12">
-                        <div class="title">{{workshop.name }}</div>
+                        <div class="workshop-section-title mt-0">{{workshop.name }}</div>
                     </div>
                     <div class="col-10 col-md-12">
                         <div class="text-body mb-1">Participants:
@@ -104,7 +104,7 @@
                                 value="1" data-item_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
                             <input type="hidden" name="redirect_url"
                                 value="{{ request.get_full_path }}">
-                            <button type="submit" class="book-btn ">Book Now!</button>
+                            <button type="submit" class="book-btn btn">Book Now!</button>
                         </form>
                     </div>
                 </div>

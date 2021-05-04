@@ -40,8 +40,8 @@
     background-color: #f8f8ff !important;
     color:  #79113F !important;
     width: 5rem;
-    margin-left: 1rem;
     font-size: 0.7rem;
+    border: 1px solid #79113F;
 }
 .book-custom-btn {
     background-color: #79113F !important;
@@ -116,6 +116,13 @@ p {
 }
 .categories {
     margin-bottom: 5rem!important;
+}
+
+/* Media breakpoints */
+@media (min-width: 768px) {
+    .text-body {
+        font-size: 1rem;
+    }
 }
 @media (min-width: 992px) {
     .section-title {

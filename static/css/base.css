@@ -23,6 +23,16 @@ a {
     color:#15020A;
     background-color: transparent;
 }
+.title {
+    font-size: 0.8rem;
+}
+.book-custom-btn {
+    background-color: #79113F !important;
+    color: #f8f8ff !important;
+    width: 10rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
 
 /* Navbar styling*/
 .img {
@@ -95,16 +105,7 @@ a {
     margin-left: 1rem;
     margin-bottom: 1rem;
 }
-.title {
-    font-size: 0.8rem;
-}
-.book-custom-btn {
-    background-color: #79113F !important;
-    color: #f8f8ff !important;
-    width: 10rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
+
 /* Mailchimp footer styling */
 h1,
 label,
@@ -165,17 +166,7 @@ input {
     height: 100vh;
     width: 100vw;
 }
-.sign-in {
-    width: 80vw;
-    height: auto;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    background: inherit;
-    overflow: hidden;
-    margin-top: 3rem;
-}
+.sign-in,
 .register {
     width: 80vw;
     height: auto;
@@ -201,7 +192,6 @@ input {
     filter: blur(5px);
     margin: -20px;
 }
-
 .form-group {
     margin-bottom: 1rem;
     margin-left: 1rem;

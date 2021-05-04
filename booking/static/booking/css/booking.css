@@ -1,11 +1,11 @@
 .section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #580c2d;
 }
 .book-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #580c2d;
     margin-bottom: 1rem;
     margin-left: 1rem;
@@ -14,16 +14,16 @@
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
     width: auto;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #580c2d;
 }
 .card-text {
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: #580c2d;
     margin-bottom: 1rem;
 }
 .card-sub-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #580c2d;
 }
 .custom-btn {
@@ -32,6 +32,36 @@
     width: 3rem;
     border-radius: 3rem;
     font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.custom-btn-gen {
+    background-color: #79113f;
+    color: #fff;
+    width: 5rem;
+    border-radius: 3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.custom-btn-random {
+    background-color: #79113f;
+    color: #fff;
+    width: 6rem;
+    border-radius: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.custom-btn-gen-clear {
+    background-color: #79113f;
+    color: #fff;
+    width: 8rem;
+    border-radius: 3rem;
+    font-size: 0.8rem;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -54,6 +84,9 @@
     
 }
 @media (min-width: 768px) {
+    .book-title {
+        font-size: 1.8rem;
+    }
   
 }
 @media (min-width: 992px) {

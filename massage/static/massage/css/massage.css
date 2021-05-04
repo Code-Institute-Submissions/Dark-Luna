@@ -32,7 +32,7 @@ p {
     color: #000;
 }
 #massage-img {
-    background: url("../../../media/backgrounds/bglight.jpg");
+    background: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/bglight.jpg");
     height: 40vh;
     width: 100vw;
     background-repeat: no-repeat;

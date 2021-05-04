@@ -1,60 +1,49 @@
 {% for item in booked_workshops %}
     <div id="{{ item.workshop.id }}" class="col">
-        <div class="row">
-            <!-- Image -->
-                <div class="col-md-5 justify-content-center">
-                    {% if workshop.image %}
-                    <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                    {% else %}
-                    <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
-                    {% endif %}
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-5 justify-content-center">
+                {% if workshop.image %}
+                <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                {% else %}
+                <img src="https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                {% endif %}
+            </div>
         </div>
-        <!-- Card Body -->
-        <!-- Workshop Info -->
         <div class="col">
-            <!-- Magic Padding Container -->
             <div class="p-1">
-                <!-- Workshop Info Container -->
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Workshop Title -->
-                        <div class="card-title mb-3">{{ item.workshop.name }}</div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12">
+                        <div class="card-title mb-3 text-center">{{ item.workshop.name }}</div>
                     </div>
-                    <div class="col-6 col-md-5 text-center">
-                        <!-- Workshop Participants -->
+                    <div class="col-6 col-md-6 text-center">
                         <div class="card-sub-title">Participants: {{ item.workshop.participants }}</div>
                     </div>
-                    <div class="col-6 col-md-5 text-center">
-                        <!-- Workshop Price -->
+                    <div class="col-6 col-md-6 text-center">
                         <div class="card-sub-title">Price: € {{ item.workshop.price }}</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Buttons -->
-        <div class="col-12">
-            <!-- Magic Padding Container -->
+        <div class="col-12 col-md-12">
             <div class="p-1">
-                <div class="row">
-                    <div class="col-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-md-6 my-auto">
                         <a href="{% url 'workshop' item.workshop.id %}"
-                        class="btn">Details</a>
+                        class="custom-btn-gen">Details</a>
                     </div>
-                    <div class="col-6 text-center">
-                        <a class="btn" data-workshop_id="{{ workshop.id }}"
+                    <div class="col-6 col-md-6 my-auto">
+                        <a class="custom-btn-gen" data-workshop_id="{{ workshop.id }}"
                         id="remove_{{ item.workshop_id }}">Remove</a>
                     </div>
                 </div> 
             </div>
         </div> 
+        {% endfor %}
+        <div class="col-6 text-center">
+            <form class="form" action="{% url 'clear_booking' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <button type="submit" class="custom-btn-gen-clear ml-1" id="clear-booking">Clear Booking</button>
+            </form>
+        </div>
     </div>
-{% endfor %}
-<!-- Clear whole bag - button -->
-<div class="col-12 text-center">
-    <form class="form" action="{% url 'clear_booking' %}" method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-        <button type="submit" class="btn" id="clear-booking">Clear Booking</button>
-    </form>
-</div>

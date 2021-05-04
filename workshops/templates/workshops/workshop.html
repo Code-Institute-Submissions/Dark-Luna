@@ -14,25 +14,25 @@
 <section class="container-fluid">
     <div class="row workshop-container">
         <div class="col-12">
-        <p class="workshop-section-title mx-auto mt-0">
+        <p class="workshop-section-title text-center mx-auto mt-0">
             {{ workshop.name }} details
             </p>
         </div>    
         <div class="col-md-3 col-lg-3">
             {% if workshop.image %}
-            <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
+                <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
             {% else %}
-            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+                <img src="https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg" class="card-img-top" alt="...">
             {% endif %}
         </div>
         <div class="col-md-8 mx-auto">
-            <div class="section-title"> {{ workshop.name }}</div>
+            <div class="section-title text-center"> {{ workshop.name }}</div>
             <div class="card-body">
-                <div class="title">This workshop is for: {{ workshop.category }}</div>
-                <div class="title">We've got space for: {{ workshop.participants }}
+                <div class="body-title">This workshop is for: {{ workshop.category }}</div>
+                <div class="body-title">We've got space for: {{ workshop.participants }}
                     Participant{% if workshop.participants > 1 %}s{% endif %}</div>
-                <div class= "title">Therapist: {{ workshop.therapist }}</div>
-                <div class= "title">Price: € {{ workshop.price }}</div>
+                <div class= "body-title">Therapist: {{ workshop.therapist }}</div>
+                <div class= "body-title">Price: € {{ workshop.price }}</div>
             </div>
             <div class="col">
                 <div class="body-title">Description</div>

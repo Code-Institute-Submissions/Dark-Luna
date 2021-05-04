@@ -1,34 +1,31 @@
 <!-- Main container -->
-<div class="container-fluid">
+<div class="container-fluid mb-4">
     <div class="row">
-        <!-- Workshops for loop -->
         {% for workshop in workshops %}
-            <!-- Whole card as link to workshop detail -->
-                <!-- Image -->
-                {% if workshop.image %}
-                <div class="col-7 col-md-3">
+            {% if workshop.image %}
+            <div class="col-7 col-md-4">
                 <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                {% else %}
-                <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
-                {% endif %}
-                </div>
-                <!-- Workshop basic info -->
-                <div class="col-7 col-md-4">
-                    <a href="{% url 'workshop' workshop.id %}" class="card-title"> <br/>{{ workshop.name }}</a><hr>
-                    <p class="card-text">Price: <br/>€ {{ workshop.price }}</p><hr>
-                    <p class="card-text">Therapist: <br/>{{ workshop.therapist }}</p><hr>
-                    <p class="card-text">Workshop category:<br/> {{ workshop.category }}</p><hr>
-                </div>
+            {% else %}
+                <img src="https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg" class="card-img-top" alt="...">
+            {% endif %}
+            </div>
+            <!-- Workshop basic info -->
+            <div class="col-7 col-md-7 col-lg-2">
+                <a href="{% url 'workshop' workshop.id %}" class="card-title p-0"> <br/>{{ workshop.name }}</a><hr>
+                <p class="card-text">Price: <br/>€ {{ workshop.price }}</p><hr>
+                <p class="card-text">Therapist: <br/>{{ workshop.therapist }}</p><hr>
+                <p class="card-text">Workshop category:<br/> {{ workshop.category }}</p><hr>
                 <!-- Book now button -->
-                <div class="col-7 col-md-3">
+                <div class="col-7 col-md-12">
                     <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
                         {% csrf_token %}
                         <input class="form-control qty_input" type="hidden" name="quantity" value="1"
                             data-item_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        <button type="submit" class="btn custom-btn ml-0">Book Now</button>
+                        <button type="submit" class="custom-btn-random ml-0">Book Now</button>
                     </form>
-                    </div>
                 </div>
-                {% endfor %}
             </div>
+        {% endfor %}
+    </div>
+</div>
