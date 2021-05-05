@@ -114,83 +114,128 @@
   - One workshop displayed on Booking Page with all information such as price, name and therapist
   - Basic information is displayed for each workshop when more than one booked, Booking summary updated
   - When the details button clicked, the user is redirected to the selected workshop details page 'Workshop Page'
-        When the Remove button is clicked, the selected lesson is removed from the booking, and the booking summary is updated.
-        When the Clear Booking button is clicked. All lessons are removed from booking 'bag'. Booking - not booked page is displayed.
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+  - When the Remove button is clicked, the selected workshop is removed from the booking, and the booking summary is updated.
+  - When the Clear Booking button is clicked. All lessons are removed from booking 'bag'. Booking - not booked page is displayed.
+- Verdict: Tests passed, works as expected, bug on remove button found and solved. Functionality covered.
 
-Checkout Page
+### Checkout Page ###
 
-    User stories being tested: As a User, I expect to purchase lesson/s in a safe and secure way by using card method payments. As a User, I want to be able to make quick purchases for lesson/s by using previously saved personal information.
-    Owner story being tested: To be able to provide a secure payment method for my clients/website users
-    Test:
-        Add lesson to booking
-        Try to click on the 'Make a Payment' button
-        Try to submit the form with incorrect email address (missing @)
-        Try to submit the form without providing a card number
-        Add Stripe Test card information and click the 'Make a Payment' button
-    Results:
-        Button is blocked until the user will provide all required information
-        Form shows an error with wrong incorrect email address style
-        Error message displayed by Stripe
-        After successful test payment, the Payment Success Page / Checkout Success page is displayed
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+- User stories being tested: As a User, I expect to enter my payment info easily, have my information stored secure, get an order confirmation after checkout
+  - Test:
+    - Add workshop to booking
+    - Try to click on the 'Secure Checkout' button
+    - Try to submit the form with incorrect email address (missing @)
+    - Try to submit the form without providing a card number
+    - Add Stripe Test card information and click the 'Make a Payment' button
+  - Results:
+    - Button is blocked until the user will provide all required information
+    - Form shows an error with wrong incorrect email address style
+    - Error message displayed by Stripe
+    - After successful test payment, the Payment Success Page / Checkout Success page is displayed
+- Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-Checkout Success Page
+#### Checkout Success Page ####
 
-    User story being tested: As a User, I want to receive email confirmations after I successfully purchased my lesson/s.
-    Test:
-        Select one lesson to purchase
-        Book/add selected lesson to booking
-        Fulfill information if not logged in to account
-        Provide card details
-        Click the 'Make a Payment' button
-    Results:
-        After successful payment user is transferred to the Checkout Success page
-        Email is not sent. The view hasn't got a function to send an email to a user after successful payment
-    Verdict:
-        Email function added to the view
-        Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+- User story being tested: As a User, I want to Get an order confirmation after checkout
+  - Test:
+    - Select one workshop to purchase
+    - Book/add selected workshop to booking
+    - Fulfill information if not logged in to account
+    - Provide card details
+    - Click the 'Make a Payment' button
+  - Results:
+    - After successful payment user is transferred to the Checkout Success page
+    - Order confirmation is displayed on the screen. If the user is logged in, this summary is also displayed on the profile page
+  - Verdict:
+    - Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-Contact Page
+### Blog Page ###
 
-    User story being tested: As a User, I want to be able to contact the owner/lesson/s provider, so I can ask questions or write an additional query about their services.
-    Test:
-        Try to send an empty contact form
-        Try to enter an incorrect email address, without '@'
-        Try to send the form with all required fields
-        Check the pre-populated fields when the user is authenticated
-    Results:
-        After trying to send an empty contact form, validation is showing an error message on the required field
-        After trying to send the form with an incorrect email address, validation is showing an error about the wrong email address
-        Form send properly, Success messages displayed
-        When a user is authenticated, the Full name and Email address fields are auto-populated
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+- User story being tested: As a user, I want to read blog posts and add/edit/delete my personal comments and like a post
+  - Test:
+    - Click the Blog link in the navigation
+    - Click the Read More button on a blog post
+    - Click the like button
+    - Click the unlike button
+    - Click the add comment button
+    - Write a comment
+    - Edit that comment
+    - Delete that comment
+    - View number of likes and comments
+  - Result:
+    - Clicking all the buttons above produced the wanted result
+    - Adding a comment succeeded and comment was added to blogpost
+    - Edit and delete function only visible for user who has wrote that comment
+    - Those functions produced the desired result
+    - Unlike button only visible when user has liked the post. Like button only visible if user did not like the post (yet)
+    - Viewing of likes and comments works as expected and adds and subtrackts whenever the appropriate buttons are clicked.
+  - Verdict:
+    - Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-My Bookings
-Active / Archived Booking Pages - Booking Review Page
+- Store owner story being tested: As a store owner I would like to edit and delete my blog posts (adding will be covered in the account page section)
+  - Test:
+    - Log in as superuser
+    - Navigate to Blog Page
+    - Click the details button on a blog post
+    - Edit or delete a blog post
+  - Result:
+    - Edit and delete links only appear if the logged in user is also the blog poster.
+    - Editing and deleting a blog post works and gives correct feedback when appropriate.
+  - Verdict:
+    - Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-    User story being tested: As a User, I want to be able to view my ordering history.
-    Test:
-        Click on the navigation Account link
-        Choose one booking from 10 Recently Booked
-        From the dropdown user menu click on Active in My Bookings menu section
-        From dropdown user menu click on Archived in My Bookings menu section
-        Click on booking user want to display
-    Results:
-        If the user is logged in Account Page is displayed, otherwise, user is transferred to the login page
-        After logging in user is navigated to the Account Page where 10 latest orders are displayed
-        After clicking on active booking user is transferred to the Order Review page where all booking information is displayed. Including purchased lessons and details button to view lesson details
-        After clicking on the Active link in My Booking, a table with active bookings is presented. If the user booked any lessons. Otherwise, information with button navigating to Lessons Page is displayed
-        After clicking on the Archived link in My Booking, a table with archived bookings is presented. If the user hasn't got any archived bookings, a Page with information and the button 'View Active Booking' is displayed. If there is no Active Booking then information with a button navigating to the Lessons Page is displayed like in the previous case.
-        After clicking any active or archived booking user is transferred to the Order Review page with all important information and lessons booked
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+### Therapists Page ###
 
-Account Page
+- User story being tested: Not existing in user stories. Last minute addition.
+  - Test:
+    - Click the therapists link in navigation
+    - View page
+  - Result:
+    - Clicking on the link redirects the user to the correct page and the information is being displayed.
+  - Verdict:
+    - Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-    User stories being tested: As a User, I want to be able to login back anytime. As a User, I want to be able to fully changed my personal details, home address, name (in case I'm married now), phone number, e-mail address, etc.
-    Test:
-        Click on the Account link when not logged in
-        Click on the Loggin link
+### Contact Page ###
+
+- User story being tested: As a User, I want to be able to contact the owner.
+  - Test:
+    - Try to send an empty contact form
+    - Try to enter an incorrect email address, without '@'
+    - Try to send the form with all required fields
+    - Check the pre-populated fields when the user is authenticated
+  - Results:
+    - After trying to send an empty contact form, validation is showing an error message on the required field
+    - After trying to send the form with an incorrect email address, validation is showing an error about the wrong email address
+    - Form send properly, Success messages displayed
+    - When a user is authenticated, the Full name and Email address fields are auto-populated
+  - Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+
+### Account page (icon in navigation) ###
+
+Personal Information - Booking Review Page
+
+- User story being tested: As a User, I want to have a personalized account page where I can view my personal information and update them and see what bookings I’ve made
+  - Test:
+    - Click on the navigation Account icon
+    - Choose to view either Personal info or Workshops
+    - Click on booking user want to display
+  - Results:
+    - If the user is logged in Account Page is displayed, otherwise, user has options for login or register
+    - After logging in user is navigated to the Account Page two buttons, Personal Information and Workshops are being shown
+    - After clicking the Personal Information button, a dropdown is shown with the correct information and an option to update the info
+    - After clicking the Workshops button, a dropdown is shown with either no information or links to booked workshops. Clicking the booking number shows the booking review page
+  - Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+
+Login/Register
+
+- User story being tested: As a User, I want to easily register for an account, easily login or logout, easily recover my password in case I forgot, receive an email confirmation after Registering
+
+Page when SuperUser
+
+- Site owner stories being tested: As a site owner, I would like to add/edit/delete a workshop, add/edit/delete a workshop category, add a blog post and add/edit/delete therapists
+  - Test:
+    - Click on the Account link when not logged in
+    - Click on the Loggin link
         Try to Loggin in with empty input fields
         Try to Loggin in with an incorrect password
         Try to Loggin in with the wrong email address
