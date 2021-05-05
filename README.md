@@ -378,7 +378,7 @@ Log In
 
 ### In development ###
 
-Name Add blog post not working
+Name: Add blog post not working
 
 - Bug description: When adding a blog post from the front end, the add button returns an error ```Reverse for 'blog-post-detail' with arguments '('2', '6')' not found. 1 pattern(s) tried: ['blog/article/(?P<pk>[0-9]+)$']```
 It did however post the addition. It turns out I was only one comma away :)
@@ -387,15 +387,17 @@ It did however post the addition. It turns out I was only one comma away :)
 
 - Verdict: All good!
 
-Name order comfirmation emails not being printed to the console
+Name: Order comfirmation emails not being printed to the console
 
 - Bug description: When going through the secure checkout procedure, I discovered that there wasnt any indication that an order comfirmation was send upon successfull checkout. Further investigation revealed that there wasnt any data send back from the webhook, at all. With the help of Igor from tutor support I discovered that I had a type in my url handling (/webhook instead of /wh).
 
 - Fix: Fixing that, (and subsequent some additional errors in the field handling between the webhook_handlers and the fields in stripe.js), fix the problem.
 
-- Verdict: All good!
+- Unfortunately this did not make it to production. The webhook proofed to be very unreliable and was throughing tantrums on and off. After more than 10 hours of tutor support, I decided to remove the function as it was not mandatory.
 
-Name grand_total not being showed in order review
+- Verdict: Removed.
+
+Name: Grand_total not being showed in order review
 
 - Bug description: In the order review that is generated after a successfull checkout, the grand_order_total is not displayed.
 
@@ -403,9 +405,21 @@ Name grand_total not being showed in order review
 
 - Verdict: All good!
 
+Name: Template post mortem for error message
+
+- Bug description: When an error was made when filling out a form, the error message was not shown. I checked and double checked everything and then posted it on slack. Thankfully, I was made aware that the correct file format is error.htmL and not error.htm. Classic case of fatigue and code blindness. Gotta love the slack community!
+
+- Fix: Put an L in the file format. Sometimes it is really that simple.
+
+- Verdict: All good!
+
 ### From peer code review ###
 
+Due to time constraints I wasnt able to let my peers test.
+
 ### From friends and family testing ###
+
+Due to time constraints I wasnt able to let my peers test.
 
 ## Deployment ##
 
@@ -533,26 +547,12 @@ Important Note:
 That's just temporary set up, this URL should not be committed and published to GitHub for security reasons, so make sure not to commit your changes to Git while the URL is in the settings.py.
 
 - Migrate the database models to the Postgres database using the following commands in the terminal:
-IMPORTANT!
-  - Before migrating, the loop that is in the forms.py file (the first and last lines, the ones with the asterikses from below code) from the blog app should be commented out like this:
-
-```python
-choices = Category.objects.all(). values_list('name', 'name') *
-
-choice_list = []
-
-for item in choices: *
-    choice_list.append(item) *
-```
-
-This is because it will look for this, in a model that does not exist (yet).
-So to avoid migration issues, I would recommend to comment this out and uncomment it when migrations are done.
 
 ``` python3 manage.py makemigrations ```
 
 ``` python3 manage.py migrate ```
 
-- Load the data fixtures(list fixtures) into the Postgres database using the following command:
+- Load the data fixtures in this specific order, because one relies on the other (categories, workshops, therapists, comments, blog) into the Postgres database using the following command:
 
 ``` python3 manage.py loaddata <fixture_name> ```
 

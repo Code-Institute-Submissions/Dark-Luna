@@ -1,0 +1,22 @@
+[
+{
+  "model": "blog.comment",
+  "pk": 6,
+  "fields": {
+    "post": 19,
+    "name": 6,
+    "body": "I can totally relate! No more PMS and even my chronic illness symptoms have almost completely disapeared! Thank you Yanara!",
+    "date_added": "2021-05-05T07:41:04.603Z"
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 7,
+  "fields": {
+    "post": 19,
+    "name": 5,
+    "body": "Thank you, Aukje! I has been a pleasure working with you!",
+    "date_added": "2021-05-05T07:46:28.878Z"
+  }
+}
+]
