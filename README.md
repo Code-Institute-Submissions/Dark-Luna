@@ -403,7 +403,7 @@ Name: Grand_total not being showed in order review
 
 Name: Template post mortem for error message
 
-- Bug description: When an error was made when filling out a form, the error message was not shown. I checked and double checked everything and then posted it on slack. Thankfully, I was made aware that the correct file format is error.htmL and not error.htm. Classic case of fatigue and code blindness. Gotta love the slack community!
+- Bug description: When an error was made when filling out a form, the error message was not showing. I checked and double checked everything and then posted it on slack. Thankfully, I was made aware that the correct file format is error.htmL and not error.htm. Classic case of fatigue and code blindness. Gotta love the slack community!
 
 - Fix: Put an L in the file format. Sometimes it is really that simple.
 
