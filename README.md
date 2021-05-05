@@ -411,9 +411,17 @@ Name: Template post mortem for error message
 
 Name: Sorting of workshop categories not working
 
-- Bug description: When testing this function, I notices the whole function did not do anything. Oops!
+- Bug description: When testing this function, I noticed the whole function did not do anything. Oops!
 
 - Fix: This function needs JavaScript to work. So I added the JavaScript, and it worked!
+
+- Verdict: All good!
+
+Name: Remove item from bag not working
+
+- Bug description: When testing this function, I noticed that the button had no function attached
+
+- Fix: Added the correct class to the button and then it worked.
 
 - Verdict: All good!
 
