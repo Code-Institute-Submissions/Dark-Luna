@@ -409,6 +409,14 @@ Name: Template post mortem for error message
 
 - Verdict: All good!
 
+Name: Sorting of workshop categories not working
+
+- Bug description: When testing this function, I notices the whole function did not do anything. Oops!
+
+- Fix: This function needs JavaScript to work. So I added the JavaScript, and it worked!
+
+- Verdict: All good!
+
 ### From peer code review ###
 
 Due to time constraints I wasnt able to let my peers test.

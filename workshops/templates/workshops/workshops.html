@@ -38,6 +38,8 @@
             </p>
         </form>
     </div>
+</section>
+<div class="row justify-content-center">
     <div class="col-6 col-md-4">
         <p class="category-title text-center">Categories:</p>
         <div class="filter-container">
@@ -52,10 +54,7 @@
             </select>
         </div>
     </div>
-</section>
-    
- 
-
+</div>
 <div class="row justify-content-center mt-4 mb-4">  
     <div class="col-10 col-md-3 ml-auto">
         <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
