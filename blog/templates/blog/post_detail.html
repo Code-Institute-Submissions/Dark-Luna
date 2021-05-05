@@ -71,6 +71,10 @@
                 <p class="card-title text-center mb-2"> Want to comment? <a href="{% url 'add-comment' post.pk %}"
                         class="title-links">Add one </a></p>
             </div>
+            {% else %}
+            <p class="card-title text-center mb-2">
+                <a href="{% url 'account_login' %}" class="card-title">Log In</a> to comment</p>
+            {% endif %}
             {% for comment in post.comments.all %}
             <div class="comment-box">
                 <p class="card-text">
@@ -85,10 +89,7 @@
                 </p>
             </div>
             {% endfor %}
-            {% else %}
-            <p class="card-title text-center mb-2">
-                <a href="{% url 'account_login' %}" class="card-title">Log In</a> to comment</p>
-            {% endif %}
+            
         </div>
     </div>
 </section>

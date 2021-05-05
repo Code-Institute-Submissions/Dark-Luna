@@ -68,6 +68,9 @@
     font-size: 1rem;
     margin-bottom: 1rem;
 }
+label {
+    color: #79113f !important;
+}
 /* Comment section */
 .comment-box {
     border: 1px solid #79113f;
