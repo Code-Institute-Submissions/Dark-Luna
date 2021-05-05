@@ -50,6 +50,21 @@
     color: #fff;
     background: rgba(134, 15, 70, 0.377);
 }
+.cta-why {
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    color: #580c2d;
+}
+.cta-why {
+    font-family: 'Oregano', cursive;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    color: #580c2d;
+    text-decoration: underline;
+}
+
+/* Media breakpoints */
 @media (min-width: 576px) {
     .life-quote {
         margin-top: 18rem;

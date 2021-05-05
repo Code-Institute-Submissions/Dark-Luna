@@ -21,7 +21,7 @@
         </div>
     </div>   
 </section>
-<section class="container-fluid mb-4" id="workshops-cards">
+<section class="container-fluid mb-4 filter-box" id="workshops-cards">
     <div class="row justify-content-center">
         <form method="GET" action="{% url 'workshops' %}">
             <input type="text" name="q" placeholder="Search" aria-label="Search">
@@ -38,24 +38,24 @@
             </p>
         </form>
     </div>
-</section>
-    
-<div class="row justify-content-center">  
     <div class="col-6 col-md-4">
         <p class="category-title text-center">Categories:</p>
         <div class="filter-container">
             <!-- Code used from Code Institute walkthrough project (Boutique Ado) -->
             <select class="sort-selector custom-select custom-select-sm selector-border
             {% if current_sorting == 'None_None' %}selector-border-none{% endif %}">
-            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}> Name (A-Z)</option>
-            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}> Name (Z-A)</option>
+                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}> Name (A-Z)</option>
+                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}> Name (Z-A)</option>
             </select>
         </div>
     </div>
-</div>
+</section>
+    
+ 
+
 <div class="row justify-content-center mt-4 mb-4">  
     <div class="col-10 col-md-3 ml-auto">
         <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
@@ -118,6 +118,11 @@
     </div>
 </section>
 {% include 'layout/footer.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{{ block.supper }}
+<script src="{% static 'workshops/js/workshops.js' %}"></script>
 {% endblock %}
                     
                

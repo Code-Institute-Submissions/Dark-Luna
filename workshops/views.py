@@ -26,6 +26,7 @@ def workshops(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+            print('sort')
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 workshops = workshops.annotate(lower_name=Lower('name'))
