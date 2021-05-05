@@ -229,73 +229,46 @@ Personal Information - Booking Review Page
 Login/Register
 
 - User story being tested: As a User, I want to easily register for an account, easily login or logout, easily recover my password in case I forgot, receive an email confirmation after Registering
+  - Test:
+    - Click on the Account icon when not logged in
+    - Click on the Login link
+    - Try to Login in with empty input fields
+    - Try to Login in with an incorrect password
+    - Try to Login in with the wrong email address
+    - Try to Login with correct credentials
+  - Results:
+    - After clicking on the Account icon user is presented with the login and register links
+    - Clicking either of them redirects them to the correct form
+    - Login form validation system is displaying error messages
+    - When all credentials are correct, the user is returned to the homepage and a successmessage is shown.
+  - Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
-Page when SuperUser
+Page when SuperUser (CRUD)
 
 - Site owner stories being tested: As a site owner, I would like to add/edit/delete a workshop, add/edit/delete a workshop category, add a blog post and add/edit/delete therapists
   - Test:
-    - Click on the Account link when not logged in
-    - Click on the Loggin link
-        Try to Loggin in with empty input fields
-        Try to Loggin in with an incorrect password
-        Try to Loggin in with the wrong email address
-        Try to Loggin with correct credentials
-    Results:
-        After clicking on the Account link user is transferred to Login Page
-        Loggin form validation system is displaying error messages
-        When all credentials are correct, the user is returned to the page he was currently displaying/viewing.
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
-
-Authentication pages (Allauth)
-
-    User stories being tested: As a User, I want to be notified when I successfully finished the registration process. As a User, I want to be able to create my own account, which will give me the possibility to store, view, and edit my profile information. As a User, I want to be able to change my password from my profile account, in case my account was hacked, to protect my personal details.
-    Test:
-        Click on the Register link
-        Click on the Login link
-        Click on Forgot Password link
-        Click on Logout
-        Try to Loggin in with empty input fields
-        Try to Register with empty input fields
-        Try to Loggin in with incorrect credentials
-        Try to Loggin in with an incorrect password
-        Try to register with two different passwords
-        Try to register with the same existing username
-        Try to Loggin in with the wrong email address
-        Try to Register with a wrong email address
-    Results:
-        Register page with the registration form is displayed
-        Login page with login form is displayed
-        Password reset page with reset form is displayed
-        When the logout link is clicked, the user is transferred to Home Page and a success message is displayed
-        All different combinations of Try's created an error with messages displayed in forms and Django-messages.
-        When Successfully logged into account success message is displayed
-        When a user successfully registered, he is transferred to Account page to fulfill details
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
-
-Management/Administration (CRUD)
-
-    Admin & Owner stories being tested: To have the possibility to Add, Edit, and Delete lesson/s. To have a secure admin interface, easy to use. Important thing is, this interface must be available only for admins.
-    Test:
-        Try to access the administration page without login into the account
-        Try to access the administration page with a basic user account
-        Try to access the administration page with superuser account
-        Click on each Management and Home section link from the dropdown menu after the user is logged in (superuser)
-        Click on each Remove Button on the selected Lesson, Instructor Profile, or Resort element
-        Click on each Edit Button on the selected Lesson, Instructor Profile, or Resort element
-        Click on each Add + button on each Administration page
-        Trying to Add/Edit selected element with empty random required fields
-        Trying to Add/Edit selected element with all required fields filled
-    Results:
-        When a user is not logged in, the Django-allauth decorator is preventing from accessing the page by navigating the user to the Administration Login page
-        When a user is logged in with a standard user account, the Django-allauth decorator is preventing from accessing the page by navigating the user to the Administration Login page
-        When a user is logged in with superuser account, Administration/Management page is displayed
-        All links are pointing superuser to correct Administration/Management page
-        Remove functionality works as expected. By clicking Remove button all instance is removed including images if assigned to.
-        When the Edit button is clicked super user is navigated to the Edit Form Page of the selected instance
-        When Add + button is clicked super user is navigated to Add Form page of the selected instance
-        When Add/Edit form is submitted and required fields are not placed or have incorrect format validation system is showing messages and the form is not submitted until all criteria match.
-        When Add/Edit form is submitted and required fields are correctly filled in form is submitted. The instance is added or edited and updated in the database
-    Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
+    - When a superuser is logged in, additional functions become active (Blog, Categories, Workshops and Therapists)
+    - Clicking either of them should lead to an Admin page or directly to the add blog page.
+    - Try to access the administration page without login into the account
+    - Try to access the administration page with a basic user account
+    - Try to access the administration page with superuser account
+    - Click on each Admin link
+    - Click on each Add  button on each Admin page
+    - Trying to Add/Edit selected element with empty random required fields
+     -Trying to Add/Edit selected element with all required fields filled
+  - Results:
+    - All links point to the correct page and that page gives the correct options for adding, editing and deleting blog, category, workshop and therapists.
+    - All forms are validated and give an appropriate message when submitting.
+    - When a user is not logged in, the Django-allauth decorator is preventing from accessing the page by navigating the user to the Administration Login page
+    - When a user is logged in with a standard user account, the Django-allauth decorator is preventing from accessing the page by navigating the user to the Administration Login page
+    - When a user is logged in with superuser account, Administration/Management page is displayed
+    - All links are pointing superuser to correct Admin page
+    - Remove functionality works as expected. By clicking Remove button all instance is removed including images if assigned to.
+    - When the Edit button is clicked super user is navigated to the Edit Form Page of the selected instance
+    - When Add button is clicked super user is navigated to Add Form page of the selected instance
+    - When Add/Edit form is submitted and required fields are not placed or have incorrect format validation system is showing messages and the form is not submitted until all criteria match.
+    - When Add/Edit form is submitted and required fields are correctly filled in form is submitted. The instance is added or edited and updated in the database
+  - Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.
 
 Validators
 HTML
