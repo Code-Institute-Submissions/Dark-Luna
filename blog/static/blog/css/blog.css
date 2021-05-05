@@ -27,7 +27,7 @@
     background-color: #fff;
 }
 .crud-links {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #580c2d!important;
     font-weight: normal;
 }
@@ -39,7 +39,6 @@
 .title-links:hover {
     color:  #79113f;
 }
-
 #custom-btn,
 #custom-btn-home {
     background-color: #79113f;

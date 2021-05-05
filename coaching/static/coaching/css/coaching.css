@@ -26,7 +26,7 @@
 .life-text,
 .sex-text,
 .shadow-text {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #000;
     margin: 1rem 1rem 1rem 1rem;
 }
@@ -45,8 +45,8 @@
     align-items:center;
     padding: 1rem 1rem;
     justify-content: center;
-    margin-top: 12rem;
-    font-size: 0.8rem;
+    margin-top: 13rem;
+    font-size: 1rem;
     color: #fff;
     background: rgba(134, 15, 70, 0.377);
 }
@@ -57,7 +57,16 @@
 }
 @media (min-width: 768px) {
     .life-quote {
-        margin-top: 20rem;
+        margin-top: 21rem;
+        font-size: 1.3rem;
+    }
+    .life-text,
+    .sex-text,
+    .shadow-text {
+        font-size: 1rem;
+    }
+    .section-title{
+        font-size: 1.5rem;
     }
 }
 @media (min-width: 992px) {
@@ -69,10 +78,17 @@
     .shadow-text {
         font-size: 1rem;
     }
+    .page-title {
+        font-size: 3rem;
+    }
+    .contact-section-title {
+        font-size: 2rem;
+    }
 }
 @media (min-width: 1400px) {
     .life-quote {
-        margin-top: 18rem;
+        margin-top: 16rem;
+        font-size: 1.5rem;
     }
     .life-text,
     .sex-text,

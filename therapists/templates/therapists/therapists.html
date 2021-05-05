@@ -10,35 +10,35 @@
 {% endblock %}
 
 {% block content %}
-    <section class="container-fluid mb-4" id="therapists">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-                <p class="therapists-title text-center">
-                Dark Luna
-                </p>
-                <p class="therapists-sub-title text-center">
-                Meet the therapists that drive Dark Luna.    
-                </p>
-            </div>
-        </div>   
-    </section>
-    <section class="container-fluid" id="therapist-cards">
-        <div class="row justify-content-center">
-            {% for therapist in therapists %}
-            <div class="col-9 col-md-6 col-lg-2">
-            {% if therapist.image %}
-            <img src="{{therapist.image.url}}" class="card-img-top" alt="...">
-            {% else %}
-            <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
-            {% endif %}
-            <div class="col-12">
-              <p class="therapists-sub-title mb-0">{{therapist.name}}</p>
-              <p class="therapists-text">{{therapist.about}}</p>
-            </div>
-          </div>
-          {%endfor%}
-          </div>
-        
-    </section>
-    {% include 'layout/footer.html' %}
+<section class="container-fluid mb-4" id="therapists">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <p class="therapists-main-title text-center">
+            Dark Luna
+            </p>
+            <p class="therapists-title text-center">
+            Meet the therapists that drive Dark Luna.    
+            </p>
+        </div>
+    </div>   
+</section>
+<section class="container-fluid" id="therapist-cards">
+    <div class="row justify-content-center">
+        {% for therapist in therapists %}
+        <div class="col-9 col-md-5 col-lg-2 mb-3">
+        {% if therapist.image %}
+        <img src="{{therapist.image.url}}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="../../../media/backgrounds/why.jpg" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="col-12">
+            <p class="therapists-sub-title mb-0">{{therapist.name}}</p>
+            <p class="therapists-text">{{therapist.about}}</p>
+            <hr>
+        </div>
+        </div>
+        {%endfor%}
+    </div>
+</section>
+{% include 'layout/footer.html' %}
 {% endblock %}
