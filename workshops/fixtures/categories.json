@@ -1,0 +1,42 @@
+[
+{
+  "model": "workshops.category",
+  "pk": 3,
+  "fields": {
+    "name": "Red tent for Teens",
+    "friendly_name": "Red tent for Teens"
+  }
+},
+{
+  "model": "workshops.category",
+  "pk": 4,
+  "fields": {
+    "name": "Yoni Egg - basic training",
+    "friendly_name": "Yoni egg"
+  }
+},
+{
+  "model": "workshops.category",
+  "pk": 5,
+  "fields": {
+    "name": "Red Tent",
+    "friendly_name": "Red Tent"
+  }
+},
+{
+  "model": "workshops.category",
+  "pk": 7,
+  "fields": {
+    "name": "Massage",
+    "friendly_name": "Massage"
+  }
+},
+{
+  "model": "workshops.category",
+  "pk": 8,
+  "fields": {
+    "name": "Festivals",
+    "friendly_name": "Festivals"
+  }
+}
+]

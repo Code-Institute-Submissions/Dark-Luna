@@ -80,38 +80,37 @@ In the profile the can see and change their personal information and view the la
 
 ### User Stories ###
 
-Because there are many user stories for this project, I have made a spreadsheet containing different levels of users (client and user) as well as the stories for the shop owner.
-This fill is by no means complete. During development there might be some added or removed, depending on functionality and usability.
+This file is by no means complete. During development there might be some added or removed, depending on functionality and usability.
 
 | as a/an…    | I want to be able to…                                       | So that I can…                                                                         |
 |-------------|-------------------------------------------------------------|----------------------------------------------------------------------------------------|
-|             | Viewing and navigation                                      |                                                                                        |
-| User        | General:                                                    |                                                                                        |
+|             |                                                             | Viewing and navigation                                                                 |
+| User        | General                                                     |                                                                                        |
 |             | easily navigate the site on mobile, Desktop and tablet      | so I can quickly decide if this is something I would like to use                       |
 |             | Find information about what the mission Of this company is  | so I can see if this feels right for me                                                |
-|             | Sessions:                                                   |                                                                                        |
+|             | Sessions                                                    |                                                                                        |
 |             | see what therapy options are offered                        | decide what kind of session I would like to book                                       |
-|             | Workshops:                                                  |                                                                                        |
+|             | Workshops                                                   |                                                                                        |
 | user        | see what workshops are offered                              | decide if I would like to participate in a workshop                                    |
 | client      | book a workshop                                             | so i can participate                                                                   |
 | user        | see details about a workshop                                | so i can see what it is all about                                                      |
-|             | Blog:                                                       |                                                                                        |
+|             | Blog                                                        |                                                                                        |
 | user/client | read blog posts                                             | so I get informed about topics I’m interested in                                       |
 | client      | add/edit/delete comments                                    | so i can tell what I am thinking and feeling                                           |
 |             |                                                             | Sorting and Searching                                                                  |
-|             | Workshop general:                                           |                                                                                        |
+|             | Workshop general                                            |                                                                                        |
 | User        | Sort the list of workshops                                  | See workshops by name or price                                                         |
 |             | Sort for specific category                                  | Find workshops in a specific category or sort The products in that category by  name   |
 |             | Search for workshops by name or description                 | Find a specific product I’d like to purchase                                           |
 |             | Easily see what I’ve searched for and the Number of results | Quickly decide whether the workshop I want is available                                |
 |             |                                                             | Bookings, purchase and checkout                                                        |
-| Client      | Workshop booking:                                           |                                                                                        |
+| Client      | Workshop booking                                            |                                                                                        |
 |             | Easy to follow payment procedure                            | So I can book without spending much time figuring out how                              |
 |             | View bookings in my bag                                     | So I can see what I’ve booked and what the total cost is                               |
 |             | Enter my payment info easily                                | Check out quickly without problems                                                     |
 |             | Have my information stored secure                           | Rest assured my personal info is safe                                                  |
 |             | Get an order confirmation after checkout                    | Keep a copy for future reference/waranty                                               |
-|             | Registration and User Accounts:                             |                                                                                        |
+|             |                                                             | Registration and User Accounts                                                         |
 | User        | Easily register for an account                              | Have a personal account                                                                |
 |             | Easily login or logout                                      | Access my personal account information                                                 |
 |             | Easily recover my password in case I forgot                 | Recover access to my account                                                           |
@@ -156,7 +155,11 @@ WIP
 
 ### When and why i've diverted from the wireframes ###
 
-WIP
+I have decided to not have seperate pages for sex, life and shadowwork. There wasn't that much text and for faster browsing and easier reading, I decided to condence them into one app; 'Coaching'.
+
+I decided to leave the shop part out. Instead I focussed on selling workshops. Reasons being, there aren't that many products connected to the site (yet).
+
+I ended up not having a big header on all pages. I decided it would be an eye catcher on the index, but let the other content talk for itself on the other pages and use colours to brighten them up.
 
 ### Colors ###
 
@@ -255,9 +258,28 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 ### Blog Model ###
 
+| Name         | Database Key | Field Type        | Validation                                |
+|--------------|--------------|-------------------|-------------------------------------------|
+| Title        | title        | models.CharField  | max_length=255                            |
+| Tag          | tag          | models.CharField  | max_length=255                            |
+| Author       | author       | models.ForeignKey | User, on_delete=models.CASCADE, null=True |
+| header_image | header_image | models.ImageField | null=True, upload_to="user_uploads/"      |
+| Body         | body         | models.TextField  | blank=True, null=True                     |
+| post_date    | post_date    | models.DateField  | auto_now_add=True                         |
+| Snippet      | snippet      | models.CharField  | max_length=166                            |
+| likes        | likes        | models.ManyToMany | max_length=255, blank=True                |
+| source       | source       | models.CharField  | max_length=255, blank=True                |
+
 ### Blog Commments ###
 
-#### Therapists app ####
+| Name       | Database Key          | Field Type           | Validation                                              |   |
+|------------|-----------------------|----------------------|---------------------------------------------------------|---|
+| post       | post                  | models.ForeignKey    | Post, related_name="comments", on_delete=models.CASCADE |   |
+| name       | name                  | models.ForeignKey    | User, on_delete=models.CASCADE, null=True               |   |
+| body       | body                  | models.TextField     |                                                         |   |
+| date_added | database Keyate_added | models.DateTimeField | auto_now_add=True                                       |   |
+
+## Therapists app ##
 
 | Name  | Database Key | Field Type        | Validation                                   |
 |-------|--------------|-------------------|----------------------------------------------|
@@ -300,7 +322,7 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 ### Features to be implemented ###
 
 I would like to add a testimonials app. I have been working with that, but time sadly did not permit me to make a fully CRUD funtioning app of it.
-There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it got confused with the workshop categories function. And as this project is ecommerce centered, I decided to abandon this function for a later date.
+There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it was using a slug url and I couldnt figure out how to use this to create the edit/delete function. And as this project is e-commerce centered, I decided to abandon this function for a later date.
 
 ### Known issues ###
 

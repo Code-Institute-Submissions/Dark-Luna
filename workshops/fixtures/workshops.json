@@ -1,0 +1,104 @@
+[
+{
+  "model": "workshops.workshop",
+  "pk": 1,
+  "fields": {
+    "name": "Menstruation Initiation Red Tent",
+    "category": 3,
+    "description": "For most girls, getting your first period is accompanied with a lot of stress and anxiety. Unfortunately, this is mostly because there still is a big taboo around menstruation and reproductive health.\r\nWe aim to alleviate some of these feelings by offering this workshop.\r\nThis workshop will provide girls who are about to start or have already started to menstruate, with information about what is happening in their body, how to take care of themselves and how to ask for space to do so.",
+    "start_date": "2021-05-03",
+    "end_date": "2021-05-03",
+    "start_time": "19:30:00",
+    "end_time": "21:30:00",
+    "participants": 10,
+    "price": "25.00",
+    "image": "user_uploads/menstruation.jpg",
+    "therapist": "Ilsa"
+  }
+},
+{
+  "model": "workshops.workshop",
+  "pk": 2,
+  "fields": {
+    "name": "Couples massage basic",
+    "category": 7,
+    "description": "This workshop is for couples who would like to learn how to massage each other.\r\nThis workshop is suitable for couples who would love to know what turns on their partner and keeps them turned on!\r\nThe goal is to learn how to be and stay totally present and aware in the moment.\r\nYou will learn how to build up energy on your partner's body, how to guide it through the body and what that energy could do for the both of you.\r\n\r\nFor all couples, no matter what gender.\r\n\r\nMonthly recurring, four times in total.",
+    "start_date": "2021-06-12",
+    "end_date": "2021-06-13",
+    "start_time": "10:30:00",
+    "end_time": "19:30:00",
+    "participants": 10,
+    "price": "120.00",
+    "image": "user_uploads/couplesbasixc.jpg",
+    "therapist": "Ilsa"
+  }
+},
+{
+  "model": "workshops.workshop",
+  "pk": 3,
+  "fields": {
+    "name": "Couples massage advanced",
+    "category": 7,
+    "description": "This workshop is for couples who have successfully participated in the couples massage basic and would like to intensify their practice.\r\n\r\nFor all couples, no matter what gender.\r\n\r\nMonthly, 4 times.",
+    "start_date": "2021-06-26",
+    "end_date": "2021-06-27",
+    "start_time": "10:30:00",
+    "end_time": "19:30:00",
+    "participants": 10,
+    "price": "150.00",
+    "image": "user_uploads/couplesadvanced.jpg",
+    "therapist": "Ilsa"
+  }
+},
+{
+  "model": "workshops.workshop",
+  "pk": 4,
+  "fields": {
+    "name": "Red Tent Adults",
+    "category": 5,
+    "description": "Monthly recurring Red Tent gathering.\r\n\r\n\r\nThe Red Tent or Moon Lodge is simply a gathering of women that occurs at the new moon when girls & women are most in need of support, rest & reflection. This is a timeless tradition observed by ancient cultures which serves as a regular forum for empowering women’s sense of selfhood.",
+    "start_date": "2021-06-10",
+    "end_date": "2021-06-10",
+    "start_time": "19:30:00",
+    "end_time": "21:30:00",
+    "participants": 20,
+    "price": "25.00",
+    "image": "user_uploads/redtent.jpg",
+    "therapist": "Ilsa"
+  }
+},
+{
+  "model": "workshops.workshop",
+  "pk": 5,
+  "fields": {
+    "name": "Yoni Egg basic",
+    "category": 4,
+    "description": "After a Yoni Egg Workshop you will be able to connect deeper with your femininity and sexuality. If you experienced a sexual trauma or abuse this will be a very beneficial workshop for you. Yoni Egg practice will reduce PMS and you can heal traumas that are connected with sexuality.\r\n\r\nThe stone egg practice is strengthening the vagina and is coming from ancient China. For a long time it was a secret practice that was just available for the members of the royal family. Since ancient times these practices were used for improving physical and spiritual health of women.\r\n\r\nI will guide you on this journey in a safe and private environment.",
+    "start_date": "2021-06-03",
+    "end_date": "2021-06-03",
+    "start_time": "19:30:00",
+    "end_time": "21:30:00",
+    "participants": 10,
+    "price": "25.00",
+    "image": "user_uploads/yoniflower.jpg",
+    "therapist": "Ilsa"
+  }
+},
+{
+  "model": "workshops.workshop",
+  "pk": 6,
+  "fields": {
+    "name": "Summer Love Festival",
+    "category": 8,
+    "description": "3-day festival for couples and singles of all genders, ages and race.\r\nCome and enjoy a long weekend of song, dance, workshops, massages, great food and much, much more!\r\nThere is plenty of parking space and the locations is easily reached by public transport.\r\nSleeping and washing accommodations are present.\r\nIf you have special dietary requirements, we would like to ask you to send us an email so we can factor this in.",
+    "start_date": "2021-07-01",
+    "end_date": "2021-07-03",
+    "start_time": "10:30:00",
+    "end_time": "19:30:00",
+    "participants": 50,
+    "price": "120.00",
+    "image": "user_uploads/festival.jpg",
+    "therapist": "Ilsa"
+  }
+}
+]
