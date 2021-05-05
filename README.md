@@ -361,11 +361,7 @@ The project is not fully responsive and could use some major improvements on som
 - [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 - [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
-Home
-
-Register
-
-Log In
+- [Gimp](https://www.gimp.org/)
 
 ### From validating ###
 
@@ -437,10 +433,10 @@ To be able to run this project, the following tools have to be installed:
 
 Apart from that, you also need to create accounts with the following services:
 
-- Stripe
-- AWS to setup the S3 basket
-- Gmail
-- MailChimp
+- [Stripe](stripe.com/)
+- [AWS](aws.amazon.com/) to setup the S3 basket
+- [Gmail](http://mail.google.com/mail?hl=nl)
+- [MailChimp](https://mailchimp.com/)
 
 To clone the project:
 
@@ -464,14 +460,21 @@ In this it was done using the following way:
 - Add .env to the .gitignore file in your project's root directory
 - In .env file set environment variables with the following syntax:
 
-        import os  
-           
-        SECRET_KEY = <Your Secret key>    
-        STRIPE_PUBLIC_KEY = Your Stripe Public key  
-        STRIPE_SECRET_KEY = Your Stripe Secret key
-        STRIPE_WH_SECRET = Your Stripe WH_Secret key
-        MAILCHIMP_API_KEY = Your API Key
-        MAILCHIMP_AUDIENCE_ID = Your audience Key
+DEVELOPMENT=development
+SECRET_KEY=secret key
+STRIPE_PUBLIC_KEY=secret key
+STRIPE_SECRET_KEY=secret key
+
+STRIPE_WH_SECRET=secret key
+
+EMAIL_HOST_USER=secret
+EMAIL_HOST_PASSWORD=secret
+
+DATABASE_URL=database url
+
+AWS_ACCESS_KEY_ID=secret key
+AWS_SECRET_ACCESS_KEY=secret key
+AWS_S3_CUSTOM_DOMAIN=s3 url
 
 - Add the following to your settings.py
 
@@ -512,7 +515,7 @@ NOTE: these 1-3 steps already done in this project and included in the GitHub re
 As well as that, other things that are required for the Heroku deployment and have to be installed: gunicorn (WSGI HTTP Server), dj-database-url for database connection and Psycopg (PostgreSQL driver for Python).
 All of the mentioned above are already installed in this project in the requirements.txt file.
 
-- On the Heroku website you need to create a new app, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click Create app.
+- On the [Heroku](heroku.com/) website you need to create a new app, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click Create app.
 - Go to Resources tab in Heroku, then in the Add-ons search bar look for Heroku Postgres(you can type postgres), select Hobby Dev — Free and click Provision button to add it to your project.
 - In Heroku Settings click on Reveal Config Vars.
 - Set the following config variables there:
@@ -566,7 +569,7 @@ Note: for production you get the environment variable 'DATABASE_URL' from the He
 
 - Add your Heroku app URL to ALLOWED_HOSTS in the settings.py file.
 
-- You can connect Heroku to GitHub to automatically deploy each time you push to GitHub.
+- You can connect Heroku to GitHub to automatically deploy each time you push to GitHub. But be aware that if you use AWS to host your static and media files, automatic deployment may result in being billed if you are on a free account.
 
 To do so, from the Heroku dashboard follow the steps:
 
@@ -583,7 +586,7 @@ Alternatively, in the terminal you can run:
 
 ``` git push heroku master ```
 
-- After successful deployment, you can view your app bu clicking Open App on Heroku platform.
+- After successful deployment, you can view your app by clicking **Open App** on Heroku platform.
 - You will also need to verify your email address, so you need to login with your superuser credentials and verify your email address in the admin panel. Now you will be able to view the app running!
 
 Hosting media files with AWS
@@ -596,7 +599,7 @@ In order to send real emails from the application, you need to connect it to you
 
 MailChimp
 
-- First, of all you need to Sign up and create your account at MailChimp. Go to the MailChimp website to register your website.
+- First, of all you need to Sign up and create your account at [MailChimp](https://mailchimp.com/). Go to the MailChimp website to register your website.
 
   - Fill up your details or credentials of your and your website and finally activate your account from the mail they sent you.
 
@@ -620,15 +623,27 @@ MailChimp
 ## Credit ##
 
 Credits
-    • Texts are all created by myself or the client who wrote the testimonials.
+    • Texts that are not credited under the text (blog items) are created by myself.
 
 ### Source credits ###
 
 [Moon Calendar](http://www.wdisseny.com/lluna/?lang=en)
 
+The Blog app was created by following this video. I changed it to suit my needs.
+
+[Blog app](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
+
 ### Image credits ###
 
+All images are taken from: [Unsplash](unsplash.com/), except:
+
+[Yoniflower](https://img.culturacolectiva.com/content/2013/10/Las-vaginas-mas-bellas-del-mundo.jpg)
+
+[wanderingeye](https://saidadesilets.com/how-to-take-advantage-of-your-mans-wandering-eyes/)
+
 Favicon generated with: [Favicon generator](https://www.favicon-generator.org/)
+
+Logo created by myself and someone who would like to remain anonymous. I used [Gimp](https://www.gimp.org/) for the finishing touches.
 
 ### Special thanks ###
 

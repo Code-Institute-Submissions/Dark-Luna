@@ -59,7 +59,7 @@ def bookings_active(request):
     # Order user orders - newest at begining
     user_orders = profile.orders.all()
 
-    # Filter Booking orders between today and past 60 days - including today's bookings
+    # Filter Booking orders between today and past 60 days, incl today
     start_date = date.today() + timedelta(days=1)
     end_date = start_date + timedelta(days=-59)
     # Filter date range

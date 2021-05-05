@@ -11,7 +11,7 @@ def booking(request):
 
 
 def add_to_booking(request, workshop_id):
-    """ A view to add a quantity of the specified workshop to the booking_bag """
+    """ A view to add a workshop to the booking_bag """
 
     workshop = Workshop.objects.get(pk=workshop_id)
     quantity = int(request.POST.get('quantity'))

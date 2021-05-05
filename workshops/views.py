@@ -120,7 +120,8 @@ def add_categories_admin(request):
             messages.success(request, 'Category added successfully!')
             return redirect(reverse('categories_admin'))
         else:
-            messages.error(request, 'Adding new category failed. Please ensure the form is valid.')
+            messages.error(
+                request, 'Adding category failed. Form not valid.')
     else:
         form = CategoriesForm()
 
@@ -197,7 +198,8 @@ def add_workshops_admin(request):
             messages.success(request, 'Workshop added successfully!')
             return redirect(reverse('workshops_admin'))
         else:
-            messages.error(request, 'Adding new workshop failed. Form not valid.')
+            messages.error(
+                request, 'Adding new workshop failed. Form not valid.')
     else:
         form = WorkshopsForm()
 
