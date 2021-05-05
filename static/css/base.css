@@ -216,6 +216,9 @@ input {
 label {
     color: #fff!important;
 }
+.label-mailchimp {
+    color: #38051c!important;
+}
 .forgot-button {
     color: #fff;
 }

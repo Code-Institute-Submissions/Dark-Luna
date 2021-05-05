@@ -322,12 +322,12 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 ### Features to be implemented ###
 
 I would like to add a testimonials app. I have been working with that, but time sadly did not permit me to make a fully CRUD funtioning app of it.
-There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it was using a slug url and I couldnt figure out how to use this to create the edit/delete function. And as this project is e-commerce centered, I decided to abandon this function for a later date.
+There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it was using a slug url and I couldnt figure out how to use this to create the edit/delete function. Also everytime I added a new category, the server needed to be restarted. I need more time to figure this one out before feeling ready to implement this. And as this project is e-commerce centered, I decided to abandon this function for a later date.
 
 ### Known issues ###
 
 There have been many struggles concerning the back-end. Namly the function to get an email to send after a booking has been confirmed. I had that working, with the help of a tutor. I pushed the code and went to bed, feeling very relieved, because stripe webhooks have been known to cause a headache or two.
-I woke up the following morning and returned to the project, to find out the webhook had yet again failed. I asked tutor support again and spend no less that five hours with a different tutor, troubleshooting. Unfortunately we werent able to figure out what was wrong (code was valid).
+I woke up the following morning and returned to the project, to find out the webhook had yet again failed. I asked tutor support again and spend no less that five hours with a different tutor, troubleshooting. Unfortunately we werent able to figure out what was wrong (code was valid). So I ended up removing the whole code for sending a email.
 
 Unfortunately this particular problem has cause me to loose a lot of valuable time, forcing me to choose between other functionality or beauty, I choose the first. I was adament to get all functionality working as intended and I did (for the most part). But it took it's toll on the front end, something I still am gutted about.
 
