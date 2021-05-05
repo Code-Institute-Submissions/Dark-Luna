@@ -84,6 +84,15 @@
     background-size: cover;
     opacity: 0.50;
 }
+.remove-item {
+    cursor: pointer;
+}
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Media breakpoints */
 @media (min-width: 576px) {
     .section-title {
         font-size: 2rem;

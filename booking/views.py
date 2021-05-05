@@ -37,10 +37,10 @@ def remove_from_booking(request, workshop_id):
         workshop = Workshop.objects.get(pk=workshop_id)
         bag = request.session.get('bag', {})
         bag.pop(workshop_id)
-
-        request.session['bag'] = bag
         messages.info(
             request, f'{ workshop.name } removed successfully from booking!')
+
+        request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:

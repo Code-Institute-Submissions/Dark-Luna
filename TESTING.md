@@ -61,7 +61,7 @@
 
 ### Workshops Page ###
 
-- User stories being tested: As a User, I want see what workshops are offered, see details about a workshop, book a workshop, sort the list of workshops, sort for specific category, Ssarch for workshops by name or description.
+- User stories being tested: As a User, I want see what workshops are offered, book a workshop, sort the list of workshops, sort for specific category, Ssarch for workshops by name or description.
   - Test:
     - Click on the Workshops Page Link
     - Search icon clicked/enter button pressed when the field is empty
@@ -69,6 +69,8 @@
     - Click on All Workshops Buton
     - Click on a Category button
     - Change filtering option
+    - Click the 'details button'
+    - Clcik the 'book now button'
   - Results:
     - All available workshops displayed
     - When the search field is empty an error message is displayed; 'Please enter a valid search criteria'.
@@ -76,25 +78,42 @@
     - When the All Workshops button is clicked, all workshops are presented on page
     - When Category link is clicked only workshops matching clicked category are presented
     - When All Workshops or Single Category is chosen and filtering option is applied page is showing workshops in the correct order
+    - All clicked buttons lead to correct pages.
+  - Verdict: Tests passed, works as expected, after bug fix during testing. Functionality covered.
 
+### Workshop Detail Page ###
 
+- User stories being tested: As a user, I want to see details about a workshop.
+  - Test:
+    - Click on the 'Details' button
+  - Result:
+    - Clicking the button leads to the correct page and all is displayed as expected
+  - Verdict:
+    - Tests passed, works as expected, after bug fix during testing. Functionality covered.
+- User stories being tested: As a user, I want to be able to book a workshop.
+  - Test:
+    - Click on the 'book now' button.
+  - Result:
+    - Button triggers a window to be displayed, informing the user that the workshop has been added to the bag. This window also gives the user the opportunity to go directly to the secure checkout page. The price of the workshop is being displayed beneath the bag icon. Clicking the bag icon gives the user a review of the booked workshop with additional options (edit/delete).
+  - Verdict:
+    - Tests passed, works as expected, after bug fix during testing. Functionality covered.
 
 ### Booking Page (bag icon in navigation) ###
 
-    User story being tested: As a User, I want to be able to view my chosen lesson/s, total price in the cart before purchasing, so I can make my last changes if needed.
-    Test:
-        No lessons booked
-        Add one lesson to the booking
-        Add more than one lesson to booking
-        Click on the Details button of booked lessons
-        Click on the Remove button of the selected lesson
-        Click on the Clear Booking button
-    Results:
-        Display Booking Page - no lessons booked
-        Booking summary information displayed such as Booking total, Discount, if applied, Grand Total, promo banner
-        One lesson displayed on Booking Page with all information such as price, lessons name, level, participants
-        Basic information is displayed for each lesson when more than one booked, Booking summary updated
-        When the details button clicked, the user is moved to the selected lesson details page 'Lesson Page'
+- User story being tested: As a User, I want to View bookings in my bag.
+  - Test:
+    - No workshops booked
+    - Add one workshop to the booking
+    - Add more than one workshop to booking
+    - Click on the Details button of booked workshops
+    - Click on the Remove button of the selected workshop
+    - Click on the Clear Booking button
+- Results:
+  - Display Booking Page - no workshops booked
+  - Booking summary information displayed such as Booking total and grand Total
+  - One workshop displayed on Booking Page with all information such as price, name and therapist
+  - Basic information is displayed for each workshop when more than one booked, Booking summary updated
+  - When the details button clicked, the user is redirected to the selected workshop details page 'Workshop Page'
         When the Remove button is clicked, the selected lesson is removed from the booking, and the booking summary is updated.
         When the Clear Booking button is clicked. All lessons are removed from booking 'bag'. Booking - not booked page is displayed.
     Verdict: Tests passed, works as expected, no bugs were found during the testing. Functionality covered.

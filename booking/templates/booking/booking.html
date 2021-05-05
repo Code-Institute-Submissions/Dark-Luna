@@ -60,9 +60,9 @@
 {{ block.super }}
 <script>
     /**
-    * This function will remove item from booked workshops bag and update the 'bag' and reload page
+    * This function will remove item from booked workshop bag and update the 'bag' and reload page
     */
-    $('.remove-workshop').click(function (e) {
+    $('.remove-item').click(function (e) {
         let csrfToken = "{{ csrf_token }}";
         let workshopId = $(this).attr('id').split('remove_')[1];
         let url = `/booking/remove/${workshopId}`;
