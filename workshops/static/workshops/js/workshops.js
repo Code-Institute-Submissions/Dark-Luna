@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /**
- * This function will reload Lessons page and display/filter lessons with selected Sort Option only
+ * This function will reload Lessons page and display/filter workshops with selected Sort Option only
  */
  $('.sort-selector').change(function () {
     let selector = $(this);

@@ -21,8 +21,6 @@
     background-color: #bb236c3f;
     margin: 1rem 1rem 1rem 1rem;
 }
-
-
 .life-text,
 .sex-text,
 .shadow-text {
@@ -30,7 +28,6 @@
     color: #000;
     margin: 1rem 1rem 1rem 1rem;
 }
-
 #life-image {
     background-image: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/lifeimage.jpg");
     height: 40vh;
@@ -39,7 +36,6 @@
     background-position: center center;
     background-size: cover;
 }
-
 .life-quote {
     display: flex;
     align-items:center;

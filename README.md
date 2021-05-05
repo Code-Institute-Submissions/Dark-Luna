@@ -363,75 +363,9 @@ The project is not fully responsive and could use some major improvements on som
 - [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
 - [Gimp](https://www.gimp.org/)
 
-### From validating ###
+## Testing and Bugs ##
 
-- Python code has been validated for pep8 compliance with [pep8 validator](http://pep8online.com/)
-- HTML code has been validated with [HTML validator](https://validator.w3.org/nu/)
-- CSS code has been validated with [CSS validator](https://jigsaw.w3.org/css-validator/)
-- JS code has been run through [Esprima](https://esprima.org/index.html)
-
-## Bugs ##
-
-### In development ###
-
-Name: Add blog post not working
-
-- Bug description: When adding a blog post from the front end, the add button returns an error ```Reverse for 'blog-post-detail' with arguments '('2', '6')' not found. 1 pattern(s) tried: ['blog/article/(?P<pk>[0-9]+)$']```
-It did however post the addition. It turns out I was only one comma away :)
-
-- Fix: in models.py ```return reverse('blog-post-detail', args=(str(self.id),))``` added a comma between the closing parenthesis and it worked.
-
-- Verdict: All good!
-
-Name: Order comfirmation emails not being printed to the console
-
-- Bug description: When going through the secure checkout procedure, I discovered that there wasnt any indication that an order comfirmation was send upon successfull checkout. Further investigation revealed that there wasnt any data send back from the webhook, at all. With the help of Igor from tutor support I discovered that I had a type in my url handling (/webhook instead of /wh).
-
-- Fix: Fixing that, (and subsequent some additional errors in the field handling between the webhook_handlers and the fields in stripe.js), fix the problem.
-
-- Unfortunately this did not make it to production. The webhook proofed to be very unreliable and was throughing tantrums on and off. After more than 10 hours of tutor support, I decided to remove the function as it was not mandatory.
-
-- Verdict: Removed.
-
-Name: Grand_total not being showed in order review
-
-- Bug description: In the order review that is generated after a successfull checkout, the grand_order_total is not displayed.
-
-- Fix: Forgot to put ```default_app_config = 'checkout.apps.CheckoutConfig'``` in the _init_.py of the checkout app. So there was nothing listening to the signals.
-
-- Verdict: All good!
-
-Name: Template post mortem for error message
-
-- Bug description: When an error was made when filling out a form, the error message was not showing. I checked and double checked everything and then posted it on slack. Thankfully, I was made aware that the correct file format is error.htmL and not error.htm. Classic case of fatigue and code blindness. Gotta love the slack community!
-
-- Fix: Put an L in the file format. Sometimes it is really that simple.
-
-- Verdict: All good!
-
-Name: Sorting of workshop categories not working
-
-- Bug description: When testing this function, I noticed the whole function did not do anything. Oops!
-
-- Fix: This function needs JavaScript to work. So I added the JavaScript, and it worked!
-
-- Verdict: All good!
-
-Name: Remove item from bag not working
-
-- Bug description: When testing this function, I noticed that the button had no function attached
-
-- Fix: Added the correct class to the button and then it worked.
-
-- Verdict: All good!
-
-### From peer code review ###
-
-Due to time constraints I wasnt able to let my peers test.
-
-### From friends and family testing ###
-
-Due to time constraints I wasnt able to let my peers test.
+Testing and Bug information can be found in a seperate file - [Testing.md](https://github.com/byIlsa/Dark-Luna/blob/master/TESTING.md)
 
 ## Deployment ##
 
