@@ -29,6 +29,8 @@
 
 ### Responsiveness ###
 
+I have tried to make the site as responsive as I could, but I am aware there are some issues. Time was a factor in this, but a big thing is not having enough knowledge (yet). I did the best I could.
+
 - User story being tested: As a User, I want to easily navigate the site on mobile, Desktop and tablet.
 
   - Test:
