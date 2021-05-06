@@ -49,7 +49,12 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
+#checkout-page .booking-payment #card-errors span {
+    color: #f60f13;
+    font-weight: 300;
+    font-size: 0.85rem;
+    font-style: italic;
+} 
 /* Styling for stripe card element */
 .StripeElement,
 .stripe-style-input {

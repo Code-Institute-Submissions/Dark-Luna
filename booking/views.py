@@ -15,7 +15,7 @@ def add_to_booking(request, workshop_id):
 
     workshop = Workshop.objects.get(pk=workshop_id)
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+    # redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
     if workshop_id in list(bag.keys()):
@@ -27,7 +27,7 @@ def add_to_booking(request, workshop_id):
             request, f'{ workshop.name } added successfully to your booking!')
 
     request.session['bag'] = bag
-    return redirect(redirect_url)
+    return redirect('booking')
 
 
 def remove_from_booking(request, workshop_id):

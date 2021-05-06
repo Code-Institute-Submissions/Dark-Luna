@@ -103,7 +103,8 @@ a:hover {
     text-decoration: underline;
 }
 .text-uppercase {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color: #580c2d;
 }
 
 /* Media breakpoints */

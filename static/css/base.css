@@ -120,6 +120,9 @@ label {
     font-weight: 800;
     margin-right: 5rem;
 }
+.footer {
+    background: rgba(134, 15, 70, 0.377);
+}
 .footer-section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
@@ -131,6 +134,21 @@ label {
 #mc_embed_signup .button {
     background-color: #79113F!important;
     color: #f8f8ff!important;
+}
+#mc_embed_signup form {
+    display: block;
+    position: relative;
+    text-align: left;
+    padding: 10px 0 10px 3%;
+    background: rgba(134, 15, 70, 0.377);
+}
+#mc_embed_signup .mc-field-group {
+    width: 30%;
+}
+#mc_embed_signup .indicates-required {
+    text-align: left;
+    font-size: 11px;
+    margin-left: 1%;
 }
 
 /* Toasts */

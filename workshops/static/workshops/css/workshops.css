@@ -1,12 +1,12 @@
 .section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 1rem;
+    font-size: 3rem;
     color: #580c2d;
 }
 .workshop-section-title {
     font-family: 'Oregano', cursive;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: #580c2d;
     margin-top: 1.5rem;
 }
@@ -18,14 +18,14 @@
     margin-bottom: 1rem;
 }
 .body-title {
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #580c2d;
     margin-bottom: 1rem;
     font-weight: bold;
 }
 .workshops-text
 .text-body {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #15020a;
     background-color: #fff;
     margin-left: 1rem;
@@ -48,7 +48,7 @@
     background-color: #f8f8ff !important;
     color:  #79113F !important;
     width: 5rem;
-    font-size: 0.7rem;
+    font-size: 1rem;
     border: 1px solid #79113F;
 }
 .book-custom-btn-now {
@@ -84,7 +84,7 @@ p {
     display: flex;
     padding: 1rem 1rem;
     width: auto;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #580c2d;
 }
 .category-link-item:hover {
@@ -96,11 +96,11 @@ p {
 }
 .text-success {
     color: #580c2d!important;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .query-text {
     color: #15020A!important;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .cat-title {
     padding: 1rem 1rem;
@@ -145,24 +145,27 @@ p {
 /* Media breakpoints */
 @media (min-width: 768px) {
     .text-body {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     .workshops-text {
-        font-size: 0.7rem;
+        font-size: 1.3rem;
     }
     .section-title {
-        font-size: 2.5rem
+        font-size: 2rem
+    }
+    .workshop-section-title {
+        font-size: 1.8rem;
     }
 }
 @media (min-width: 992px) {
     .section-title {
-        font-size: 2rem;
+        font-size: 4rem;
         }
     .book-custom-btn-now {
         margin-left: 20rem;
     }    
     .workshop-section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .body-title {
         font-size: 1rem;

@@ -55,7 +55,7 @@
                         </label>
                         {% else %}
                         <div class="mt-4">
-                            <span>If you want to save your information, please</span>
+                            <div class="order-title">If you want to save your information, please</div>
                             <label class="buttons" for="save-info">
                                 <a href="{% url 'account_login' %}?next={{ request.path }}"
                                     class="btn">Login</a>
@@ -99,13 +99,13 @@
                             </div>
                         </div>
                         <!-- We'll put the error messages in this element -->
-                        <div id="card-errors" role="alert"></div>
-                        <input type="hidden" value="{{client_secret}}" name="client_secret">
+                        <div id="card-errors" class="error" role="alert"></div>
+                        <input type="hidden" class="error" value="{{client_secret}}" name="client_secret">
                     </fieldset>
                     <!-- Complete order button -->
                     <div class="buttons">
-                        <button type="submit" class="custom-btn-pay btn-lg"
-                            disabled>Make a Payment</button>
+                        <button type="submit" id="submit-button" class="custom-btn-pay btn-lg"
+                            disabled="disabled">Make a Payment</button>
                     </div>
                     <div class="info-sub-title text-center ml-1 mt-1">Your card will be charged € {{ grand_total|floatformat:2 }}</div>
                 </div>

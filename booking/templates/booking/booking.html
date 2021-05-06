@@ -25,9 +25,9 @@
         <!-- When any workshop is booked show booked in this container -->
         {% if booked_workshops %}
         <!-- Booked workshops -->
-        {% include './booking-general.html' %}
-        <!-- Totals -->
         {% include './booking-finalize.html' %}
+        <!-- Totals -->
+        {% include './booking-general.html' %}
     {% endif %}
 
     {% else %}
