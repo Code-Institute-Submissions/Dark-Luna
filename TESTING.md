@@ -301,7 +301,7 @@ Page when SuperUser (CRUD)
 
 All the HTML files were validated by using online code validator W3C HTML Validation Service. Errors found were about Jinja templating, sections missing headers and two instances where the aria-controles on the account and workshop buttons had incorrect values.
 A warning was given regarding MailChimp code: ```Warning: The type attribute for the style element is not needed and should be omitted.```.
-For the booking app, there where some errors saying there where unclosed div's. I checked the code, but could not find any. More like these where found, I wish I could solve them, but time did not give me any room for a search.
+For the booking app, there where some errors saying there where unclosed div's. I checked the code, and managed to resolve this issue.
 
 ### CSS ###
 
