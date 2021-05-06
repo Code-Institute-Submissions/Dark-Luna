@@ -56,24 +56,26 @@
         </div>
     </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <div class="row ml-4 mb-4">  
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
-            <div class="category-li">
-                <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
-                href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row mx-auto my-auto">  
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="category-li">
+                    <a class="category-link {% if request.get_full_path == '/workshops/' %}category-selected{% endif %} all-workshops"
+                    href="{% url 'workshops' %}">All Workshops ({{ all_workshops.count }})</a>
+                </div>
             </div>
-        </div>
-        {% for category in categories_list %}
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 mb-4">
-            <div class="category-li">
-                <a class="category-link-item {{category.name}}"
-                href="{% url 'workshops' %}?category={{ category.name }}">
-                {{ category.name }} ({{ category.workshop__count }})
-                </a>
+            {% for category in categories_list %}
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 mb-4">
+                <div class="category-li">
+                    <a class="category-link-item {{category.name}}"
+                    href="{% url 'workshops' %}?category={{ category.name }}">
+                    {{ category.name }} ({{ category.workshop__count }})
+                    </a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 <div class="container">
