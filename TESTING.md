@@ -1,5 +1,30 @@
 # Testing #
 
+- [Manual testing](#manual-testing)
+  - [Responsiveness](#responsiveness)
+  - [Navigation](#navigation)
+  - [Home Page](#home-page)
+  - [Coaching Page](#coaching-page)
+  - [Massage Page](#massage-page)
+  - [Workshops Page](#workshops-page)
+  - [Workshop Detail Page](#workshop-detail-page)
+  - [Booking Page (bag icon in navigation)](#booking-page--bag-icon-in-navigation-)
+  - [Checkout Page](#checkout-page)
+    - [Checkout Success Page](#checkout-success-page)
+  - [Blog Page](#blog-page)
+  - [Therapists Page](#therapists-page)
+  - [Contact Page](#contact-page)
+  - [Account page (icon in navigation)](#account-page--icon-in-navigation-)
+- [Validators](#validators)
+  - [HTML](#html)
+  - [CSS](#css)
+  - [JavaScript](#javascript)
+  - [Python](#python)
+- [Debug = True](#debug---true)
+- [Compatibility and Responsiveness](#compatibility-and-responsiveness)
+- [Bugs](#bugs)
+  - [In development](#in-development)
+
 ## Manual testing ##
 
 ### Responsiveness ###
