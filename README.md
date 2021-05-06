@@ -599,10 +599,13 @@ Logo created by myself and someone who would like to remain anonymous. I used [G
 
 ### Special thanks ###
 
-- My Yoda-mentor [Simen Daehlin](https://github.com/Eventyret) for being there when I lost my way and didn't know how to get back. And for being the kick-ass person that he is.
+- My Yoda-mentor [Simen Daehlin](https://github.com/Eventyret) for being there when I lost my way and didn't know how to get back. And for being the kick-ass person that he is! My ups and downs did not scare him and for that I will be forever grateful!
 - Fellow student [Karol Sliwka](https://github.com/KarolSliwka) for his [Arctic school](https://github.com/KarolSliwka/ArcticSchool) project, from whom I've learned a lot!
+- Tutors from CI; I would not have made it this far without them!
 - Everybody at Slack for their support, tips and humor!
 
 For his undying love and support and always being there, my love, you know who you are ;)
+
+This project has stretched me beyong limits. It still amazes me what I have learned in a little over a year. I know my strengths and my weaknesses and I know I really love this work!
 
 **Site for educational purposes only!**
