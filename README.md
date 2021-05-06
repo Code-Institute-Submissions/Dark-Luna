@@ -4,6 +4,10 @@
 
 ![Header Image](/wireframes/logo.png)
 
+## Project goals ##
+
+Supply a website that woman who have hormonal related issues, like problems with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointments for sessions so they can start getting healthier again.
+
 - [Project goals](#project-goals)
 - [UX](#ux)
   - [User Goals](#user-goals)
@@ -12,7 +16,6 @@
   - [View for a guest user](#view-for-a-guest-user)
   - [View for logged in user](#view-for-logged-in-user)
   - [User Stories](#user-stories)
-  - [Site owner goals](#site-owner-goals)
 - [User Requirements and Expectations](#user-requirements-and-expectations)
   - [Requirements](#requirements)
   - [Expectations](#expectations)
@@ -36,10 +39,11 @@
 - [Features](#features)
   - [Features that are implemented](#features-that-are-implemented)
   - [Features to be implemented](#features-to-be-implemented)
-  - [Known issues](#known-issues)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [Libraries and Frameworks](#libraries-and-frameworks)
+    -[Front End](#front-end)
+    -[Back End](#back-end)
   - [Tools](#tools)
 - [Testing and Bugs](#testing-and-bugs)
 - [Deployment](#deployment)
@@ -49,10 +53,6 @@
   - [Image credits](#image-credits)
   - [Special thanks](#special-thanks)
   
-## Project goals ##
-
-Supply a website that woman who have hormonal related issues, like problems with fertility, menstruation and sexuality and more general life questions can go to and get information and book appointments for sessions so they can start getting healthier again.
-
 ## UX ##
 
 ### User Goals ###
@@ -84,55 +84,43 @@ In the profile the can see and change their personal information and view the la
 
 This file is by no means complete. During development there might be some added or removed, depending on functionality and usability.
 
-| as a/an…    | I want to be able to…                                       | So that I can…                                                                         |
-|-------------|-------------------------------------------------------------|----------------------------------------------------------------------------------------|
-|             |                                                             | Viewing and navigation                                                                 |
-| User        | General                                                     |                                                                                        |
-|             | easily navigate the site on mobile, Desktop and tablet      | so I can quickly decide if this is something I would like to use                       |
-|             | Find information about what the mission Of this company is  | so I can see if this feels right for me                                                |
-|             | Sessions                                                    |                                                                                        |
-|             | see what therapy options are offered                        | decide what kind of session I would like to book                                       |
-|             | Workshops                                                   |                                                                                        |
-| user        | see what workshops are offered                              | decide if I would like to participate in a workshop                                    |
-| client      | book a workshop                                             | so i can participate                                                                   |
-| user        | see details about a workshop                                | so i can see what it is all about                                                      |
-|             | Blog                                                        |                                                                                        |
-| user/client | read blog posts                                             | so I get informed about topics I’m interested in                                       |
-| client      | add/edit/delete comments                                    | so i can tell what I am thinking and feeling                                           |
-|             |                                                             | Sorting and Searching                                                                  |
-|             | Workshop general                                            |                                                                                        |
-| User        | Sort the list of workshops                                  | See workshops by name or price                                                         |
-|             | Sort for specific category                                  | Find workshops in a specific category or sort The products in that category by  name   |
-|             | Search for workshops by name or description                 | Find a specific product I’d like to purchase                                           |
-|             | Easily see what I’ve searched for and the Number of results | Quickly decide whether the workshop I want is available                                |
-|             |                                                             | Bookings, purchase and checkout                                                        |
-| Client      | Workshop booking                                            |                                                                                        |
-|             | Easy to follow payment procedure                            | So I can book without spending much time figuring out how                              |
-|             | View bookings in my bag                                     | So I can see what I’ve booked and what the total cost is                               |
-|             | Enter my payment info easily                                | Check out quickly without problems                                                     |
-|             | Have my information stored secure                           | Rest assured my personal info is safe                                                  |
-|             | Get an order confirmation after checkout                    | Keep a copy for future reference/waranty                                               |
-|             |                                                             | Registration and User Accounts                                                         |
-| User        | Easily register for an account                              | Have a personal account                                                                |
-|             | Easily login or logout                                      | Access my personal account information                                                 |
-|             | Easily recover my password in case I forgot                 | Recover access to my account                                                           |
-|             | Receive an email confirmation after  Registering            | Verify that my account registration was successful                                     |
-| Client      | Have a personalized account page                            | View my personal order history and order confirmations and save My payment information |
-|             | See what bookings I’ve made                                 | get an overview of my bookings                                                         |
-|             |                                                             | Subscription                                                                           |
-| User        | easily register for a newsletter                            | so I can receive news when it becomes available                                        |
-|             |                                                             | Admin and Store management                                                             |
-| Store owner | Add a workshop                                              | Add new workshops to my store                                                          |
-|             | Edit a workshop                                             | Edit workshops                                                                         |
-|             | Delete a workshop                                           | Delete a workshop                                                                      |
-|             | delete/edit blog posts                                      | delete and/or edit blog posts                                                          |
-|             | Add blog posts                                              | add blog posts                                                                         |
-|             | add/edit/delete workshop categories                         | manage workshop categories                                                             |
-|             | add/edit/delete therapists                                  | manage new therapists arriving and/or therapists leaving the practice                  |
-
-### Site owner goals ###
-
-See ["User Stories"](#user-stories)
+| as a/an…    | I want to be able to…                                                          | So that I can…                                                                                               |
+|-------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| User        | easily navigate the site on mobile, Desktop and tablet                         | so I can quickly decide if this is something I would like to use                                             |
+|             | Find information about what the mission Of this company is                     | so I can see if this feels right for me                                                                      |
+|             | view a list of workshops                                                       | choose something to buy                                                                                      |
+|             | view workshop details                                                          | see price, description, rating, image and sizes                                                              |
+|             | see what therapy options are offered                                           | decide what kind of session I would like to book                                                             |
+|             | read blog posts                                                                | so I get informed about topics I’m interested in                                                             |
+|             | Easily register for an account                                                 | Have a personal account                                                                                      |
+|             | Sort the list of workshops                                                     | See best rates, best prices and search product by category                                                   |
+|             | Sort for specific category or workshop                                         | Find best-priced or best-rated product in a specific category or sort The products in that category by  name |
+|             | Easily see what I’ve searched for and the Number of results                    | Quickly decide whether the product I want is available                                                       |
+|             | Easily register for an account                                                 | Have a personal account                                                                                      |
+| Client      | see what I’ve ordered everywhere, quickly                                      | avoid spending to much                                                                                       |
+|             | Easy to follow payment procedure                                               | So I can order without spending much time figuring out how                                                   |
+|             | View the items in my bag                                                       | So I can see what I’ve ordered and what the total cost is                                                    |
+|             | Enter my payment info easily                                                   | Check out quickly without problems                                                                           |
+|             | Have my information stored secure                                              | Rest assured my personal info is safe                                                                        |
+|             | Get an order confirmation after checkout                                       | Keep a copy for future reference/waranty                                                                     |
+|             | easily book an  workshop                                                       | so I can start working on my recovery without the added stress Of a complicated booking system               |
+|             | Easily login or logout                                                         | Access my personal account information                                                                       |
+|             | Easily recover my password in case I forgot                                    | Recover access to my account                                                                                 |
+|             | Receive an email confirmation after  Registering                               | Verify that my account registration was successful                                                           |
+|             | Have a personalized account page                                               | View my personal order history and order confirmations and save My payment information                       |
+|             | See what bookings I’ve made                                                    | get an overview of my appointments and if necessary change The bookings                                      |
+|             | Get a subscription to receive an email when A new newsletter becomes available | So I can check and see if this is something I would like to buy Or attend                                    |
+| Store owner | Add a product                                                                  | Add new items to my store                                                                                    |
+|             | Edit a product                                                                 | Edt product details                                                                                          |
+|             | Delete a product                                                               | Delete a product                                                                                             |
+|             | Manage bookings                                                                | See what bookings where made so I can see my agenda                                                          |
+|             | Add blog posts                                                                 | So I can inform (potential) clients of the things I do                                                       |
+|             | Add testimonials                                                               | So I can inform (potential) clients of what other people have experienced                                    |
+|             | Edit Blog posts                                                                | So I can change the content of a blog I have posted                                                          |
+|             | Edit testimonials                                                              | So I can edit a testimonial written by a client                                                              |
+|             | Delete blogposts                                                               | So I can remove a blog I have posted                                                                         |
+|             | Delete testimonials                                                            | So I can delete a testimonial if maybe a client has requested me                                             |
+|             |                                                                                |                                                                                                              |
 
 ## User Requirements and Expectations ##
 
@@ -323,10 +311,8 @@ During the development, I worked with sqlite3 databases, installed with Django. 
 
 ### Features to be implemented ###
 
-I would like to add a testimonials app. I have been working with that, but time sadly did not permit me to make a fully CRUD funtioning app of it.
-There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it was using a slug url and I couldnt figure out how to use this to create the edit/delete function. Also everytime I added a new category, the server needed to be restarted. I need more time to figure this one out before feeling ready to implement this. And as this project is e-commerce centered, I decided to abandon this function for a later date.
-
-### Known issues ###
+- I would like to add a testimonials app. I have been working with that, but time sadly did not permit me to make a fully CRUD funtioning app of it.
+- There should also be an option to add/edit and delete categories to the blog section. Again, I have been working on it, but it was using a slug url and I couldnt figure out how to use this to create the edit/delete function. Also everytime I added a new category, the server needed to be restarted. I need more time to figure this one out before feeling ready to implement this. And as this project is e-commerce centered, I decided to abandon this function for a later date.
 
 There have been many struggles concerning the back-end. Namly the function to get an email to send after a booking has been confirmed. I had that working, with the help of a tutor. I pushed the code and went to bed, feeling very relieved, because stripe webhooks have been known to cause a headache or two.
 I woke up the following morning and returned to the project, to find out the webhook had yet again failed. I asked tutor support again and spend no less that five hours with a different tutor, troubleshooting. Unfortunately we werent able to figure out what was wrong (code was valid). So I ended up removing the whole code for sending a email.
@@ -346,10 +332,20 @@ The project is not fully responsive and could use some major improvements on som
 
 ### Libraries and Frameworks ###
 
+## Front End ##
+
 - [Font Awesome](https://fontawesome.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Google Fonts](https://fonts.google.com/)
 - [jQuery](https://jquery.com/)
+
+## Back End ##
+
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Pillow](https://pypi.org/project/Pillow/)
+- [Gunicorn](https://gunicorn.org/)
+- [PEP8](http://pep8online.com/)
+- [Stripe](https://stripe.com/en-nl)
 
 ### Tools ###
 
@@ -357,12 +353,9 @@ The project is not fully responsive and could use some major improvements on som
 - [GitPod](https://www.gitpod.io/)
 - [Heroku](https://www.heroku.com/)
 - [LucidChart](https://www.lucidchart.com/pages/)
-- [PEP8](http://pep8online.com/)
 - [W3C HTML Validation Service](https://validator.w3.org/)
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql)
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-- [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
 - [Gimp](https://www.gimp.org/)
 
 ## Testing and Bugs ##
@@ -372,7 +365,7 @@ Testing and Bug information can be found in a seperate file - [Testing.md](https
 ## Deployment ##
 
 Dark Luna was developed using the GitPod online IDE and using Git & GitHub for version control.
-It is hosted on the Heroku platform, with static files and images being hosted in AWS S3 Basket.
+It is hosted on the **Heroku** platform, with static files and images being hosted in **AWS S3 Basket**.
 
 ### Local Deployment ###
 
@@ -390,17 +383,17 @@ Apart from that, you also need to create accounts with the following services:
 - [Gmail](http://mail.google.com/mail?hl=nl)
 - [MailChimp](https://mailchimp.com/)
 
-To clone the project:
+To **clone** the project:
 
-- You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
+- You can **clone** this repository directly into the editor of your choice by pasting the following command into the terminal:
 
 ``` git clone https://github.com/byIlsa/Dark-Luna ```
 
-Alternatively, you can save a copy of this repository by clicking the green button Clone or download , then Download Zip button, and after extract the Zip file to your folder.
+Alternatively, you can **save** a copy of this repository by clicking the green button **Clone** or **download** , then **Download Zip** button, and after extract the Zip file to your folder.
 
 In the terminal window of your local IDE change the directory (CD) to the correct file location (directory that you have just created).
 
-Note: You can read more information about the cloning process on the GitHub Help page.
+Note: You can read more information about the cloning process on the [GitHub Help page](https://docs.github.com/en).
 
 - Set up environment variables.
 
@@ -408,44 +401,45 @@ Note, that this process will be different depending on IDE you use.
 
 In this it was done using the following way:
 
-- pip install python-dotenv
+``` pip install python-dotenv ```
+
 - Add .env to the .gitignore file in your project's root directory
 - In .env file set environment variables with the following syntax:
 
-DEVELOPMENT=development
-SECRET_KEY=secret key
-STRIPE_PUBLIC_KEY=secret key
-STRIPE_SECRET_KEY=secret key
+| KEY                   | VALUE       |
+|-----------------------|-------------|
+| DEVELOPMENT           | development |
+| SECRET_KEY            | secret key  |
+| STRIPE_PUBLIC_KEY     | secret key  |
+| STRIPE_SECRET_KEY     | secret key  |
+| STRIPE_SECRET_KEY     | secret key  |
+| EMAIL_HOST_USER       | secret      |
+| EMAIL_HOST_PASSWORD   | secret      |
+| DATABASE_URL          | url         |
+| AWS_ACCESS_KEY_ID     | secret key  |
+| AWS_SECRET_ACCESS_KEY | secret key  |
+| AWS_S3_CUSTOM_DOMAIN  | url         |
 
-STRIPE_WH_SECRET=secret key
-
-EMAIL_HOST_USER=secret
-EMAIL_HOST_PASSWORD=secret
-
-DATABASE_URL=database url
-
-AWS_ACCESS_KEY_ID=secret key
-AWS_SECRET_ACCESS_KEY=secret key
-AWS_S3_CUSTOM_DOMAIN=s3 url
-
-- Add the following to your settings.py
+- Add the following to your **settings.py**
 
 ```from dotenv import load_dotenv```
 ```load_dotenv()```
 
-- Read more about how to set up the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys).
+- Read more about how to **set up** the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys).
 
-Call your variables either with os.getenv() or os.environ.get()
+Call your variables either with ```os.getenv()``` or ```os.environ.get()```
 In settings.py:
-import os
-SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = "DEVELOPMENT" in os.environ
 
-Note that DEBUG will be True if there's a DEVELOPMENT key/value pair in your .env file, regardless of
+| import OS  |                                |
+|------------|--------------------------------|
+| SECRET_KEY | = os.environ.get("SECRET_KEY") |
+| DEBUG      | = "DEVELOPMENT" in os.environ  |
+
+Note that **DEBUG** will be **True** if there's a **DEVELOPMENT key/value pair** in your .env file, regardless of
 its value (i.e. if it has any value it will be True).
-This means that DEBUG will be False in production, unless the DEVELOPMENT variable is added to the
+This means that **DEBUG** will be **False** in production, unless the **DEVELOPMENT** variable is added to the
 production host's environment variables.
-Don't forget to add .env to your .gitignore and never track it with version control!
+Don't forget to add .env to your .gitignore and **never track it with version control**!
 
 - Install all requirements from the requirements.txt file putting this command into your terminal:
 
@@ -463,13 +457,13 @@ Don't forget to add .env to your .gitignore and never track it with version cont
 
 - git add, git commit and git push these files to GitHub repository.
 
-NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illustrated here as they are required for the successful deployment to Heroku.
-As well as that, other things that are required for the Heroku deployment and have to be installed: gunicorn (WSGI HTTP Server), dj-database-url for database connection and Psycopg (PostgreSQL driver for Python).
+**NOTE:** these 1-3 steps already done in this project and included in the **GitHub repository**, but illustrated here as they are required for the **successful** deployment to **Heroku**.
+As well as that, other things that are required for the Heroku deployment and have to be installed: **gunicorn (WSGI HTTP Server)**, **dj-database-url** for database connection and **Psycopg** (PostgreSQL driver for Python).
 All of the mentioned above are already installed in this project in the requirements.txt file.
 
-- On the [Heroku](heroku.com/) website you need to create a new app, assign a name (must be unique),set a region to the closest to you(for my project I set Europe) and click Create app.
-- Go to Resources tab in Heroku, then in the Add-ons search bar look for Heroku Postgres(you can type postgres), select Hobby Dev — Free and click Provision button to add it to your project.
-- In Heroku Settings click on Reveal Config Vars.
+- On the [Heroku](heroku.com/) website you need to create a **new app**, assign a name (must be unique),set a region to the **closest** to you (for my project I set Europe) and click **Create app**.
+- Go to Resources tab in **Heroku**, then in the **Add-ons search bar** look for **Heroku Postgres**(you can type postgres), select **Hobby Dev — Free** and click **Provision** button to add it to your project.
+- In **Heroku Settings** click on **Reveal Config Vars**.
 - Set the following config variables there:
 
 | KEY                  | Value    |
@@ -487,7 +481,7 @@ All of the mentioned above are already installed in this project in the requirem
 |MAILCHIMP_API_KEY     |  Your API Key|
 |MAILCHIMP_AUDIENCE_ID | Your audience Key|
 
-- Copy DATABASE_URL's value(Postgres database URL) from the Convig Vars and temporary paste it into the default database in settings.py.
+- Copy **DATABASE_URL's** value(Postgres database URL) from the **Convig Vars** and **temporary** paste it into the default database in settings.py.
 
 You can temporary comment out the current database settings code and just paste the following in the settings.py:
 
@@ -499,36 +493,36 @@ You can temporary comment out the current database settings code and just paste 
 
 Important Note:
 
-That's just temporary set up, this URL should not be committed and published to GitHub for security reasons, so make sure not to commit your changes to Git while the URL is in the settings.py.
+That's just **temporary set up**, this URL should **not be committed** and published to GitHub for **security reasons**, so make sure **not to commit your changes to Git while the URL is in the settings.py**.
 
-- Migrate the database models to the Postgres database using the following commands in the terminal:
+- Migrate the **database models** to the **Postgres database** using the following commands in the terminal:
 
 ``` python3 manage.py makemigrations ```
 
 ``` python3 manage.py migrate ```
 
-- Load the data fixtures in this specific order, because one relies on the other (categories, workshops, therapists, comments, blog) into the Postgres database using the following command:
+- Load the **data fixtures in this specific order**, because one relies on the other (categories, workshops, therapists, comments, blog) into the **Postgres database** using the following command:
 
 ``` python3 manage.py loaddata <fixture_name> ```
 
-- Create a superuser for the Postgres database by running the following command (you need to follow the instructions and inserting username, email and password):
+- Create a **superuser** for the Postgres database by running the following command (you need to follow the instructions and inserting username, email and password):
 
 ``` python3 manage.py createsuperuser ```
 
-- You need to remove your Postgres URL database from the settings and uncomment the default DATABASE settings code in the settings.py file.
+- You need to **remove** your Postgres URL database from the settings and **uncomment** the default DATABASE settings code in the settings.py file.
 
 Note: for production you get the environment variable 'DATABASE_URL' from the Heroku Config Vars and use Postgress database, while for development you use the SQLite as a default database.
 
-- Add your Heroku app URL to ALLOWED_HOSTS in the settings.py file.
+- Add your **Heroku app URL** to **ALLOWED_HOSTS** in the settings.py file.
 
-- You can connect Heroku to GitHub to automatically deploy each time you push to GitHub. But be aware that if you use AWS to host your static and media files, automatic deployment may result in being billed if you are on a free account.
+- You can connect **Heroku** to **GitHub** to automatically deploy each time you **push** to GitHub. But be **aware** that if you use **AWS** to host your static and media files, automatic deployment **may result** in being **billed** if you are on a free account.
 
-To do so, from the Heroku dashboard follow the steps:
+To do so, from the [Heroku dashboard](https://dashboard.heroku.com/) follow the steps:
 
 - Deploy section -> Deployment method -> select GitHub
-- Link the Heroku app to your GitHub repository for this project
-- Click Enable Automatic Deploys in the Automatic Deployment section
-- Run git push command in the terminal, that would now push your code to both Github and Heroku, and perform the deployment.
+- Link the **Heroku app** to **your GitHub repository** for this project
+- Click **Enable Automatic Deploys** in the **Automatic Deployment section**
+- Run **git push** command in the terminal, that would now **push your code to both Github and Heroku**, and perform the **deployment**.
 
 Alternatively, in the terminal you can run:
 
@@ -539,7 +533,7 @@ Alternatively, in the terminal you can run:
 ``` git push heroku master ```
 
 - After successful deployment, you can view your app by clicking **Open App** on Heroku platform.
-- You will also need to verify your email address, so you need to login with your superuser credentials and verify your email address in the admin panel. Now you will be able to view the app running!
+- You will also need to **verify your email address**, so you need to **login** with your **superuser credentials** and **verify your email address** in the admin panel. Now you will be able to **view the app** running!
 
 Hosting media files with AWS
 
@@ -547,30 +541,30 @@ The static files and media files (that will be uploaded by superuser - product/s
 
 Sending email via Gmail
 
-In order to send real emails from the application, you need to connect it to your Gmail account, setting up your email address in EMAIL_HOST_USER variable and your app password generated by your email provider in EMAIL_HOST_PASS variable.
+In order to **send** real emails from the application, you need to **connect** it to your Gmail account, setting up your email address in ```EMAIL_HOST_USER``` variable and your **app password** generated by your email provider in ```EMAIL_HOST_PASS``` variable.
 
 MailChimp
 
-- First, of all you need to Sign up and create your account at [MailChimp](https://mailchimp.com/). Go to the MailChimp website to register your website.
+- First, of all you need to **Sign up** and **create** your account at [MailChimp](https://mailchimp.com/). Go to the MailChimp website to register your website.
 
-  - Fill up your details or credentials of your and your website and finally activate your account from the mail they sent you.
+  - Fill up your details or credentials of your and your website and finally **activate** your account from the mail they sent you.
 
 - Create an Audience
 
-  - After complete registration with MailChimp, you will land to the Dashboard of MailChimp.
+  - After complete registration with MailChimp, you will land to the **Dashboard** of MailChimp.
 
-  - Now we have to create an Audience. So click on the Audience button in the right hand side menu bar. Then click signup forms in the yellow bar, then click Embedded Forms.
+  - Now we have to **create an Audience**. So click on the **Audience button** in the right hand side menu bar. Then click **signup forms** in the yellow bar, then click **Embedded Forms**.
 
-  - Now fill up your all necessary details in the Embedded Forms section. These details may be included in the MailChimp emails you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on Save.
+  - Now fill up your all necessary **details** in the **Embedded Forms section**. These details may be included in the **MailChimp emails** you sent, so If you have any hosted email service, use that email address. After you successfully filled up your details, click on **Save**.
 
 - Get Your Audience and API KEY
 
-  - After creating your List, get your List Key and API key.
+  - After creating your **List**, get your **List Key and API key**.
 
-  - You can get your Audience Key from audience > settings
-  - Scroll down the page, you fill find a field of Unique id for ```<your audience name>```. Copy your audience id from there.
+  - You can get your **Audience Key** from audience > settings
+  - Scroll down the page, you fill find a field of **Unique id** for ```<your audience name>```. Copy your audience id from there.
 
-  - After that, get your API key from Account > Extras > API Keys. Then click on Create a Key button to get your API key.
+  - After that, get your **API key** from Account > Extras > API Keys. Then click on **Create a Key** button to get your API key.
 
 ## Credit ##
 
