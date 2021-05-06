@@ -1,7 +1,12 @@
-.section-title,
-.workshop-section-title {
+.section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
+    font-size: 2rem;
+    color: #580c2d;
+    margin-top: 1.5rem;
+}
+.workshop-section-title {
+    font-family: 'Oregano', cursive;
     font-size: 1.5rem;
     color: #580c2d;
     margin-top: 1.5rem;
@@ -29,7 +34,7 @@
 .workshop-btn {
     background-color: #79113F !important;
     color: #f8f8ff !important;
-    width: 4rem;
+    width: auto;
     margin-bottom: 1rem;
     margin-left: 1rem;
     margin-top: 1rem;
@@ -138,18 +143,24 @@ p {
 /* Media breakpoints */
 @media (min-width: 768px) {
     .text-body {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    .workshops-text {
+        font-size: 0.7rem;
+    }
+    .section-title {
+        font-size: 2.5rem
     }
 }
 @media (min-width: 992px) {
     .section-title {
-        font-size: 2rem;
+        font-size: 3rem;
         }
     .book-custom-btn-now {
         margin-left: 20rem;
     }    
     .workshop-section-title {
-        font-size: 3rem;
+        font-size: 1.3rem;
     }
     .body-title {
         font-size: 1.5rem;
@@ -160,5 +171,5 @@ p {
         }   
     .category-link-item {
         font-size: 1rem;
-    }
+        }
     }

@@ -13,12 +13,12 @@
     
 <div class="container-fluid mb-4">
     <div class="row justify-content-center">
-        <div class="col-10 col-md-6">
+        <div class="col-10 col-md-12">
             <p class="section-title text-center">
-            Workshops
+                Workshops
             </p>
-            <p class="workshops-text text-center">
-            At Dark Luna we offer a variety of workshops. Click the cards for more information.    
+            <p class="workshop-section-title text-center">
+                At Dark Luna we offer a variety of workshops. Click the cards for more information.    
             </p>
         </div>
     </div>   
@@ -80,19 +80,18 @@
     <div class="row justify-content-center">
         {% for workshop in workshops %}
         <div class="col-10 col-md-5 col-lg-3 mb-4">
-            <div class="card mr-1" style="width: 15rem;">
             {% if workshop.image %}
                 <img src="{{ MEDIA_URL }}{{workshop.image}}" class="card-img-top" alt="...">
             {% else %}
-            <img src="{{ MEDIA_URL }}../../../media/logo/logo.png" class="card-img-top" alt="..."> 
+                <img src="{{ MEDIA_URL }}../../../media/logo/logo.png" class="card-img-top" alt="..."> 
             {% endif %}
-                <div class="card-body">
-                    <div class="col-12 col-md-12">
-                        <div class="workshop-section-title mt-0">{{workshop.name }}</div>
-                    </div>
-                    <div class="col-10 col-md-12">
-                        <div class="text-body mb-1">Participants:
-                            <span>{{ workshop.participants }}</span>
+            <div class="card-body">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="workshop-section-title mb-2 mt-0">{{workshop.name }}</div>
+                </div>
+                <div class="col-10 col-md-12">
+                    <div class="text-body mb-1">Participants:
+                        <span>{{ workshop.participants }}</span>
                     </div>
                     <div class="text-body mb-1">Price:
                         <span>€ {{ workshop.price }}</span>
@@ -101,28 +100,27 @@
                         <span>{{ workshop.therapist }}</span>
                     </div>
                     <hr>
-                    <div class="text-body">Workshop Starts:</div>
-                    <p class="workshops-text">Date: <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></p>
-                    <p class="workshops-text">Time: <span>{{ workshop.start_time|time:"H:i:s" }}</span></p>
-                    </div>
-                    <div class="button">
-                        <a href="{% url 'workshop' workshop.id %}"
-                        class="btn workshop-btn">Details</a>
-                        <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
-                            {% csrf_token %}
+                    <div class="text-body mb-1">Date: <span>{{ workshop.start_date|date:"d/M/Y (l)" }}</span></div>
+                    <div class="text-body mb-1">Time: <span>{{ workshop.start_time|time:"H:i:s" }}</span></div>
+                </div>
+                <div class="button">
+                    <a href="{% url 'workshop' workshop.id %}"
+                    class="book-btn btn mt-2">Details</a>
+                    <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
+                        {% csrf_token %}
                             <input class="form-control qty_input" type="hidden" name="quantity"
                                 value="1" data-item_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
                             <input type="hidden" name="redirect_url"
                                 value="{{ request.get_full_path }}">
-                            <button type="submit" class="book-btn btn">Book Now!</button>
+                            <button type="submit" class="btn workshop-btn">Book Now!</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
 </div>
+
 {% include 'layout/footer.html' %}
 {% endblock %}
 
