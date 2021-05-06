@@ -4,6 +4,13 @@
     font-size: 2rem;
     color: #580c2d;
 }
+.sub-title {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.fa-exclamation {
+    color: #ff0f0f;
+}
 .blog-card {
     position: relative;
     display: -ms-flexbox;
@@ -17,9 +24,8 @@
 }
 .blog-post-author,
 .card-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #580c2d;
-    background-color: #fff;
 }
 .card-sub-title {
     font-size: 0.7rem;
@@ -32,9 +38,9 @@
     font-weight: normal;
 }
 .title-links {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #580c2d!important;
-    font-weight: 300;
+    font-weight: bold;
 }
 .title-links:hover {
     color:  #79113f;
@@ -45,7 +51,7 @@
     color: #fff;
     width: 4rem;
     border-radius: 3rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
 }
@@ -54,7 +60,7 @@
     color: #fff;
     width: 3rem;
     border-radius: 3rem;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     display: flex;
     justify-content: center;
     margin-left: 1rem;
@@ -70,6 +76,7 @@
 label {
     color: #79113f !important;
 }
+
 /* Comment section */
 .comment-box {
     border: 1px solid #79113f;
@@ -81,8 +88,12 @@ label {
 .card-text {
     color: #15020a;
     font-size: 0.8rem;
-    margin-left: 1rem;
     margin-top: 1rem;
+}
+.card-text-comment {
+    color: #15020a;
+    font-size: 0.8rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 .comment-section-title{
     font-family: 'Oregano', cursive;
@@ -113,6 +124,7 @@ label {
     text-align: center;
     justify-content: center;    
 }
+
 /* Media breakpoints */
 @media (min-width: 576px) {
     .card-title {
@@ -130,6 +142,12 @@ label {
     .custom-btn-blog {
         margin-left: 0;
     }
+    .section-title {
+        font-size: 2rem;
+    }
+    .sub-title {
+        font-size: 1.5rem;
+    }
 }
 @media (min-width: 768px) {
     .card-title {
@@ -144,11 +162,17 @@ label {
         font-size: 3rem;
         margin-top: 3rem;
     }
+    .delete-btn {
+        margin-left: 4.9rem;
+    }
 }
 @media (min-width: 992px) {
     .card-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
+    }
+    .title-links {
+        font-size: 1.3rem;
     }
     .card-sub-title {
         font-size: 1rem;
@@ -160,5 +184,7 @@ label {
     .card-text {
         text-align: center;
     }
-   
+    .delete-btn {
+        margin-left: 8rem;
+    }
 }

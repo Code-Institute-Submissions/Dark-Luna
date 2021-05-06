@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{ post.title }}
+    {{ post.title }}
 {% endblock %}
 
 {% block extra_css %}
@@ -10,15 +10,15 @@
 {% endblock %}
 
 {% block content %}
-<section class="container-fluid mb-2" id="blog">
+<div class="container-fluid mb-2">
     <div class="row justify-content-center">
         <p class="section-title text-center">
             {{ post.title }}
             {% if request.user.is_superuser %}
-            {% if user.id == post.author.id %}
-            <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2">(Edit)</a>
-            <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2">(Delete)</a>
-            {% endif %}
+                {% if user.id == post.author.id %}
+                    <a href="{%url 'update-blog-post' post.pk %}" class="crud-links ml-2">(Edit)</a>
+                    <a href="{%url 'delete_post' post.pk %}" class="crud-links ml-2">(Delete)</a>
+                {% endif %}
             {% endif %}
             <a href="{% url 'blog' %}" class="btn-md mx-auto mt-3" id="custom-btn">Back</a>
         </p>
@@ -26,25 +26,25 @@
     <div class="row justify-content-center">
         <div class="col-6 col-md-6 col-lg-4 col-sm-6 ml-4">
             {% if post.header_image %}
-            <img src="{{post.header_image.url}}" class="card-img" alt="...">
+                <img src="{{ MEDIA_URL }}{{post.header_image}}" class="card-img" alt="...">
             {% else %}
-            <img src="../../../media/backgrounds/why.jpg" class="card-img" alt="...">
+                <img src="{{ MEDIA_URL }}../../../media/logo/logo.png" class="card-img" alt="...">
             {% endif %}
         </div>
         <div class="col-6 col-md-6 col-lg-8 col-sm-9 mt-4 text-center">
             <p class="card-title blog-post-author">{{ post.author.username}} - {{ post.post_date }}
                 <p class="card-sub-title mb-2"> Likes: {{ total_likes }} - Comments: {{ comments.count }}</p>
-            </p>
+            </p> 
             <form action="{%url 'like_post' post.pk %}" method="POST">
                 {% csrf_token %}
                 {% if user.is_authenticated %}
-                {% if liked %}
-                <button type="submit" name="post_id" value="{{post.id}}"
-                    class="btn-md custom-btn-blog mx-auto mb-2">Unlike</button>
-                {% else %}
-                <button type="submit" name="post_id" value="{{post.id}}"
-                    class="btn-md custom-btn-blog mx-auto mb-2">Like</button>
-                {% endif %}
+                    {% if liked %}
+                        <button type="submit" name="post_id" value="{{post.id}}"
+                            class="btn-md custom-btn-blog mx-auto mb-2">Unlike</button>
+                    {% else %}
+                        <button type="submit" name="post_id" value="{{post.id}}"
+                            class="btn-md custom-btn-blog mx-auto mb-2">Like</button>
+                    {% endif %}
                 {% else %}
                 <p class="card-title mb-2">
                     <a href="{% url 'account_login' %}" class="card-title">Log In</a> to like
@@ -52,24 +52,22 @@
                 {% endif %}
             </form>
         </div>
-        <br />   
-      
-        <div class="col-11 col-md-8 col-lg-6 mt-4 ml-4 text-center">
+        <div class="col-11 col-md-8 col-lg-6 mt-4 text-center">
             <div class="card-text">
-            {{ post.body|linebreaks}}
+                {{ post.body|linebreaks}}
             </div>
             {% if post.source %}
-            <p class="card-sub-title">Source: {{ post.source }}</p>
+                <p class="card-sub-title">Source: {{ post.source }}</p>
             {% endif %}
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-9 col-md-6 col-lg-6 col-sm-9 comment-section mb-4">
-            <p class="comment-section-title text-center mb-2"> Comments </p>
+            <p class="comment-section-title text-center mb-2">Comments </p>
             {% if user.is_authenticated %}
             <div class="col-12">
-                <p class="card-title text-center mb-2"> Want to comment? <a href="{% url 'add-comment' post.pk %}"
-                        class="title-links">Add one </a></p>
+                <p class="card-title text-center mb-2"> Want to comment? 
+                    <a href="{% url 'add-comment' post.pk %}" class="title-links">Add one </a></p>
             </div>
             {% else %}
             <p class="card-title text-center mb-2">
@@ -77,7 +75,7 @@
             {% endif %}
             {% for comment in post.comments.all %}
             <div class="comment-box">
-                <p class="card-text">
+                <p class="card-text-comment">
                     {{ comment.body }} <br />
                 </p>
                 <p class="blog-comment-author">
@@ -89,9 +87,8 @@
                 </p>
             </div>
             {% endfor %}
-            
         </div>
     </div>
-</section>
+</div>
 {% include 'layout/footer.html' %}
 {% endblock %}

@@ -1,57 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
 {% endblock %}
+
 {% block title %}
     Booking
 {% endblock %}
 
 {% block content %}
 
-<!-- Main container -->
-<div id="booking-page">
-    <!-- Top banner -->
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class= "section-title text-center">Booking</div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-            <!-- Booking container -->
-                {% if bag %}
-                    <!-- Finalise your booking -->
-                    <div class="section-title text-center">Finalise your booking:</div>
-                    <!-- When any workshop is booked show booked in this container -->
-                    {% if booked_workshops %}
-                    <!-- Booked workshops -->
-                    {% include './booking-general.html' %}
-                    <!-- Totals -->
-                    {% include './booking-finalize.html' %}
-                {% endif %}
-            </div>
-        </div>
-        {% else %}
-        <!-- Link for booking -->
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 text-center">
-                <p class="book-title text-center">Nothing booked ?</p>
-                <p class="book-title text-center">Check out our: <a href="{% url 'workshops' %}" class="section-title">Workshops!</a> </p>
-            </div>
-        </div>
-    {% endif %}
-    </div>  
-</div>
-<section class="container-fluid">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-8 col-md-6 col-lg-6" id="section-bg-dark">
+        <div class="col-md-6">
+            <div class= "section-title text-center">Booking</div>
         </div>
     </div>
-</section>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+        <!-- Booking container -->
+            {% if bag %}
+                <!-- Finalise your booking -->
+                <div class="section-title text-center">Finalise your booking:</div>
+                <!-- When any workshop is booked show booked in this container -->
+                {% if booked_workshops %}
+                <!-- Booked workshops -->
+                {% include './booking-general.html' %}
+                <!-- Totals -->
+                {% include './booking-finalize.html' %}
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+    <!-- Link for booking -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center">
+            <p class="book-title text-center">Nothing booked ?</p>
+            <p class="book-title text-center">Check out our: <a href="{% url 'workshops' %}" class="section-title">Workshops!</a> </p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-6" id="section-bg-dark">
+                <div class="col-12 header-quote text-center">
+                    “Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.”
+                    Roy T. Bennett, The Light in the Heart
+                </div> 
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
 
 {% block extra_js %}

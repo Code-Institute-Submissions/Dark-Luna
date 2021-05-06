@@ -12,22 +12,21 @@
 {% block content %}
 
 {% if user.is_authenticated %}
- <section class="container-fluid mb-4" id="blog">
-        <div class="row justify-content-center">
-            <p class="section-title text-center">
+ <div class="container-fluid mb-4" id="blog">
+    <div class="row justify-content-center">
+        <p class="section-title text-center">
             Add a blog post
-            </p>
+        </p>
+    </div>
+    <div class="form-group">
+        <div class="col-12 col-md-10 col-lg-8 mx-auto">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn blog-custom-btn">Post</button>
+            </form>
         </div>
-        <div class="form-group">
-            <div class="col-12 col-md-10 col-lg-8 mx-auto">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn blog-custom-btn">Post</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
+    </div>
+    </div>
 {% endif %}
 {% endblock %}

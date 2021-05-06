@@ -4,6 +4,9 @@
     font-size: 2rem;
     color: #580c2d;
 }
+.section-title:hover {
+    color: #79113f;
+}
 .book-title {
     font-size: 1rem;
     color: #580c2d;
@@ -84,6 +87,14 @@
     background-size: cover;
     opacity: 0.50;
 }
+.header-quote {
+    padding: 1rem 1rem;
+    margin-top: 10rem;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #bb236c83;
+    border-radius: 1rem;
+}
 .remove-item {
     cursor: pointer;
 }
@@ -91,21 +102,33 @@ a:hover {
     color: #fff;
     text-decoration: underline;
 }
+.text-uppercase {
+    font-size: 1rem;
+}
 
 /* Media breakpoints */
 @media (min-width: 576px) {
     .section-title {
+        font-size: 3rem;
+    }
+    .book-title {
         font-size: 2rem;
     }
-    
+    .header-quote {
+        font-size: 1.1rem;
+        margin-top: 18rem;
+    }
 }
 @media (min-width: 768px) {
     .book-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
-  
+    .custom-btn-gen {
+        margin-left: 4rem;
+    }
 }
 @media (min-width: 992px) {
-   
-   
+    .header-quote {
+        margin-top: 14rem
+    }
 }

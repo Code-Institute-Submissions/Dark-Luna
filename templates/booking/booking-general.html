@@ -1,49 +1,53 @@
 {% for item in booked_workshops %}
-    <div id="{{ item.workshop.id }}" class="col">
-        <div class="row justify-content-center">
-            <div class="col-6 col-md-5 justify-content-center">
-                {% if workshop.image %}
-                <img src="{{workshop.image.url}}" class="card-img-top" alt="...">
-                {% else %}
-                <img src="https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/why.jpg" class="card-img-top" alt="...">
-                {% endif %}
-            </div>
-        </div>
-        <div class="col">
-            <div class="p-1">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-12">
-                        <div class="card-title mb-3 text-center">{{ item.workshop.name }}</div>
-                    </div>
-                    <div class="col-6 col-md-6 text-center">
-                        <div class="card-sub-title">Participants: {{ item.workshop.participants }}</div>
-                    </div>
-                    <div class="col-6 col-md-6 text-center">
-                        <div class="card-sub-title">Price: € {{ item.workshop.price }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-12">
-            <div class="p-1">
-                <div class="row justify-content-center">
-                    <div class="col-6 col-md-6 my-auto">
-                        <a href="{% url 'workshop' item.workshop.id %}"
-                        class="custom-btn-gen">Details</a>
-                    </div>
-                    <div class="col-6 col-md-6 my-auto">
-                        <a class="remove-item custom-btn-gen" 
-                        id="remove_{{ item.workshop_id }}">Remove</a>
-                    </div>
-                </div> 
-            </div>
-        </div> 
-        {% endfor %}
-        <div class="col-6 text-center">
-            <form class="form" action="{% url 'clear_booking' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="custom-btn-gen-clear ml-1" id="clear-booking">Clear Booking</button>
-            </form>
+<div id="{{ item.workshop.id }}" class="col-12 mb-4">
+    <div class="row justify-content-center">
+        <!-- Images -->
+        <div class="col-10 col-md-5 justify-content-center">
+            {% if item.workshop.image %}
+            <img src="{{ MEDIA_URL }}{{item.workshop.image}}" class="card-img-top" alt="...">
+            {% else %}
+                <img src="{{ MEDIA_URL }}../../../media/logo/logo.png" class="card-img-top" alt="...">
+            {% endif %}
         </div>
     </div>
+    <div class="col-12">
+        <div class="row justify-content-center">
+            <!-- General Info -->
+            <div class="col-12 col-md-10">
+                <div class="card-title mb-1 text-center">{{ item.workshop.name }}</div>
+            </div>
+            <div class="col-7 col-md-4 col-lg-3 text-center mb-2">
+                <div class="card-sub-title">Participants: {{ item.workshop.participants }}</div>
+            </div>
+            <div class="col-7 col-md-4 col-lg-3 text-center">
+                <div class="card-sub-title">Price: € {{ item.workshop.price }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 col-md-12 mb-4">
+    <div class="row justify-content-center">
+        <div class="col-4 col-md-4 col-lg-3">
+            <!-- Details button -->
+            <a href="{% url 'workshop' item.workshop.id %}"
+            class="custom-btn-gen">Details</a>
+        </div>
+        <div class="col-4 col-md-4 col-lg-3">
+            <!-- Remove from booking button -->
+            <a class="remove-item custom-btn-gen" 
+            id="remove_{{ item.workshop_id }}">Remove</a>
+        </div>
+    </div> 
+</div>
+<hr>
+{% endfor %}
+<div class="row justify-content-center">
+    <div class="col-12 mb-4">
+        <!-- Clear whole bag button -->
+        <form class="form" action="{% url 'clear_booking' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            <button type="submit" class="custom-btn-gen-clear mx-auto" id="clear-booking">Clear Booking</button>
+        </form>
+    </div>
+</div>
