@@ -5,6 +5,14 @@
     font-size: 2rem;
     color: #580c2d;
 }
+a:hover {
+    color:#580c2d;;
+    text-decoration: underline;
+}
+.fa-reply-all:hover,
+.contact {
+    color: #580c2d;
+}
 .section-title{
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
@@ -63,12 +71,12 @@
 /* Media breakpoints */
 @media (min-width: 576px) {
     .life-quote {
-        margin-top: 18rem;
+        margin-top: 15rem;
     }
 }
 @media (min-width: 768px) {
     .life-quote {
-        margin-top: 21rem;
+        margin-top: 18rem;
         font-size: 1.3rem;
     }
     .life-text,

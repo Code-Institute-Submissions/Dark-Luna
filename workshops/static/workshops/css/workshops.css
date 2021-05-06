@@ -42,12 +42,23 @@
     font-size: 0.7rem;
     border: 1px solid #79113F;
 }
-.book-custom-btn {
+.book-custom-btn-now {
     background-color: #79113F !important;
     color: #f8f8ff !important;
     width: 10rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    margin-left: 15rem;
+}
+.contact {
+    color: #79113F !important;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-left: 15rem;
+}
+.fa-reply-all {
+    color: #580c2d;
+    margin-left: 1rem;
 }
 p {
     font-size: 1rem;
@@ -134,6 +145,12 @@ p {
     .section-title {
         font-size: 2rem;
         }
+    .book-custom-btn-now {
+        margin-left: 20rem;
+    }    
+    .workshop-section-title {
+        font-size: 3rem;
+    }
     .body-title {
         font-size: 1.5rem;
     }

@@ -18,12 +18,13 @@
     width: auto;
     font-size: 1rem;
     color: #580c2d;
+    margin-left: 1rem;
 }
 .massage-text {
     font-size: 0.8rem;
-    color: #15020a;
-    background-color: #580c2d7a;
-    margin: 1rem 1rem 1rem 1rem;
+    color: #fff;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: #580c2d77;
 }
 p {
     font-size: 2rem;
@@ -31,14 +32,20 @@ p {
     margin-bottom: 1rem;
     color: #000;
 }
+a:hover {
+    color:#580c2d;;
+    text-decoration: underline;
+}
 #massage-img {
     background: url("https://darkluna.s3.eu-west-2.amazonaws.com/media/backgrounds/bglight.jpg");
-    height: 40vh;
-    width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 0.50;
+    margin-left: 4rem;
+}
+.fa-reply-all:hover,
+.contact {
+    color: #580c2d;
 }
 
 /* Media breakpoints */ 
@@ -50,6 +57,6 @@ p {
         font-size: 1.5rem;
     }
     .massage-text {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }

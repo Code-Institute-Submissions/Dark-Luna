@@ -274,7 +274,8 @@ Page when SuperUser (CRUD)
 
 ### HTML ###
 
-All the HTML files were validated by using online code validator W3C HTML Validation Service. Errors found were about Jinja templating, sections missing headers and two instances where the aria-controles on the account and workshop buttons had incorrect values. All was corrected.
+All the HTML files were validated by using online code validator W3C HTML Validation Service. Errors found were about Jinja templating, sections missing headers and two instances where the aria-controles on the account and workshop buttons had incorrect values.
+A warning was given regarding MailChimp code: ```Warning: The type attribute for the style element is not needed and should be omitted.```. 
 
 ### CSS ###
 
