@@ -1,9 +1,10 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-    <head>
-        {% block meta %}
-        <!-- meta information -->
+
+<head>
+    {% block meta %}
+    <!-- meta information -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +16,15 @@
         <meta name="copyright" content="Aukje van der Wal, info@aukjevanderwal.nl">
         <meta name="robots" content="index,follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {% endblock %}
+    {% endblock %}
+
         <!-- Favicon | Generated at https://realfavicongenerator.net -->
         <link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL }}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ MEDIA_URL }}favicon/favicon-16x16.png">
         <link rel="manifest" href="{{ MEDIA_URL }}favicon/site.webmanifest">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
+
         <!--MailChimp styling -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
             <style type="text/css">
@@ -32,47 +35,51 @@
                     color: #580c2d;
                 }
             </style>
-        {% block extra_meta %}
-        {% endblock %}
 
-        {% block corecss %}
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    {% block extra_meta %}
+    {% endblock %}
 
-        <!-- Fontawesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    {% block corecss %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 
-        {% block extra_css %}
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <title>
+        {% block title%}
+            Dark Luna
         {% endblock %}
-        <!-- Main CSS Files -->
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        {% endblock %}
-        <title>
-            {% block title%}
-                Dark Luna
-            {% endblock %}
-        </title>
-    </head>
-    <body>
-        <header class="container-fluid pl-0 pr-0">
-            {% include 'layout/main-navbar.html' %}
-        </header>
+    </title>
+</head>
+<body>
+    <header class="container-fluid pl-0 pr-0">
+        {% include 'layout/main-navbar.html' %}
+    </header>
+
         <!-- Messages container -->
         {% if messages %}
         <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
-            <!-- Error Message -->
+                    <!-- Error Message -->
                         {% include 'includes/toasts/toast-error.html' %}
                     {% elif level == 30 %}
-            <!-- Warning Message -->
+                    <!-- Warning Message -->
                         {% include 'includes/toasts/toast-warning.html' %}
                     {% elif level == 25 %}
-            <!-- Success Message -->
+                    <!-- Success Message -->
                         {% include 'includes/toasts/toast-success.html' %}
                     {% else %}
-            <!-- Info Message -->
+                    <!-- Info Message -->
                         {% include 'includes/toasts/toast-info.html' %}
                     {% endif %}
                 {% endwith %}
@@ -109,5 +116,6 @@
 
         {% block extra_js %}
         {% endblock %}
+
     </body>
 </html>
