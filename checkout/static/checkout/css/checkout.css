@@ -1,12 +1,26 @@
 .section-title {
     font-family: 'Oregano', cursive;
     padding: 1rem 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #580c2d;
+}
+.info-title-back {
+    font-family: 'Oregano', cursive;
+    font-size: 1rem;
+    color: #580c2d;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 .info-title {
     font-family: 'Oregano', cursive;
-    font-size: 1rem;
+    font-size: 2rem;
+    color: #580c2d;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.info-sub-title {
+    font-family: 'Oregano', cursive;
+    font-size: 1.2rem;
     color: #580c2d;
     margin-left: 1rem;
     margin-top: 1rem;
@@ -14,13 +28,28 @@
 .order-title {
     font-size: 0.8rem;
     color: #580c2d;
-    margin: 1rem 1rem 1rem 1rem;
+    margin-left: 1rem;
+}
+.order-title-text,
+.email {
+    font-size: 0.8rem;
+    color: #15020a;
+    margin-left: 1rem;
 }
 .email-section-title {
     font-family: 'Oregano', cursive;
     font-size: 1.5rem;
     color: #580c2d;
 }
+.custom-btn-pay {
+    background-color: #79113F !important;
+    color: #f8f8ff !important;
+    width: 15rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 /* Styling for stripe card element */
 .StripeElement,
 .stripe-style-input {
@@ -62,6 +91,7 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
 /* Custom loading overlay during transaction check */
 #loading-overlay {
 	display: none;

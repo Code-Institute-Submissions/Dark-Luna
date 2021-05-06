@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
-{% block extra_title %}| Checkout Success!{% endblock %}
+
+{% block title %}
+    Checkout Success
+{% endblock %}
+
 {% block content %}
 
 <!-- Checkout main container -->
@@ -11,12 +16,12 @@
     <!-- Main container -->
     <div class="container py-4">
         {% if from_profile %}
-        <p class="section-title mt-1 mb-4 text-left">Order Review</p>
+            <p class="section-title mt-1 mb-4 text-left">Order Review</p>
         <!-- Back to Profile Button -->
-        <a href="{% url 'user_account' %}" class="breadcrumbs-link"><i class="fas fa-chevron-left"></i> Back to
-            Account</a>
+            <a href="{% url 'user_account' %}" class="breadcrumbs-link">
+            <i class="fas fa-chevron-left"></i> Back to Account</a>
         {% else %}
-        <p class="section-title mt-1 mb-4">Payment Success!</p>
+            <div class="section-title mt-1 mb-4">Payment Success!</div>
         {% endif %}
         <!-- Main container -->
         <div class="row justify-content-between">
@@ -24,27 +29,29 @@
             <div class="col-12 col-md-8">
                 <div class="card">
                     <!-- Order details -->
-                    <p class="section-title mb-0 mt-0">Order Details</p>
-                    <p class="order-title mb-0 mt-0">Order Number:
-                        <span>
+                    <p class="info-sub-title mb-0 mt-0">Order Details</p>
+                    <hr>
+                    <div class="order-title mb-0 mt-0">Order Number:
+                        <div class="order-title-text">
                             {% if from_profile %}
                             {{ order.order_number }}
                             {% else %}
                             <a href="{% url 'booking_review' order.order_number %}" title="{{ order.order_number }}"
-                                class="order-title ml-0">{{ order.order_number }}</a>
+                                class="order-title-text ml-0">{{ order.order_number }}</a>
                             {% endif %}
-                        </span>
-                    </p>
-                    <p class="order-title mb-0 mt-0">Full Name: <span> {{ order.full_name|title }}</span></p>
-                    <p class="order-title mb-0 mt-0">Email Address: <span> {{ order.email }}</span></p>
-                    <p class="order-title mb-0 mt-0">Phone Number: <span> {{ order.phone_number }}</span></p>
-                    <p class="order-title mb-0 mt-0">Street Addres 1: <span> {{ order.street_address1 }}</span></p>
-                    <p class="order-title mb-0 mt-0">Street Addres 2: <span> {{ order.street_address2 }}</span></p>
-                    <p class="order-title mb-0 mt-0">Postcode: <span> {{order.postcode|upper }}</span></p>
-                    <p class="order-title mb-0 mt-0">County: <span> {{order.county|title }}</span></p>
-                    <p class="order-title mb-0 mt-0">Country: <span> {{order.country.name|title }}</span></p>
+                        </div>
+                    </div>
                     <hr>
-                    <p class="ml-3">Payment: <span> € {{order.grand_total }}</span></p>
+                    <p class="order-title mb-0 mt-0">Full Name: <div class="order-title-text"> {{ order.full_name|title }}</div></p>
+                    <p class="order-title mb-0 mt-0">Email Address: <div class="order-title-text"> {{ order.email }}</div></p>
+                    <p class="order-title mb-0 mt-0">Phone Number: <div class="order-title-text">  {{ order.phone_number }}</div></p>
+                    <p class="order-title mb-0 mt-0">Street Addres 1: <div class="order-title-text">  {{ order.street_address1 }}</div></p>
+                    <p class="order-title mb-0 mt-0">Street Addres 2: <div class="order-title-text">  {{ order.street_address2 }}</div></p>
+                    <p class="order-title mb-0 mt-0">Postcode: <div class="order-title-text">  {{order.postcode|upper }}</div></p>
+                    <p class="order-title mb-0 mt-0">County: <div class="order-title-text">  {{order.county|title }}</div></p>
+                    <p class="order-title mb-0 mt-0">Country: <div class="order-title-text">  {{order.country.name|title }}</div></p>
+                    <hr>
+                    <p class="order-title ml-3">Payment: <span> € {{order.grand_total }}</span></p>
                     {% if from_profile %}
                     <p>Date: <span> {{ order.date|date:"d-m-Y (D)" }} | {{ order.date|time:"H:i "}}</span></p>
                     {% endif %}
@@ -73,7 +80,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <!-- If something went wrong -->
-                    <p class="order-title text-center">Please check this information carefully. If you feel that something isn't right, please contact us!<br>
+                    <p class="order-title text-center mt-4">Please check this information carefully. If you feel that something isn't right, please contact us!<br><br>
                         <a href="{% url 'contact' %}" class="custom-btn">Contact Form</a><br>
                     </p>
                 </div>
@@ -81,10 +88,10 @@
             <!-- Personal and Order Information -->
             <div class="col-12 col-md-8">
                 <div class="card">
-                    <div class="email-section-title mt-4 ml-3">Email notification sent successfully!</div>
-                    <p class="ml-3">All transaction details, including order details, payment, and booking information can be
-                        found on email provide when booking a workshop. This confirmation email is also your ticket! So please keep it save.
-                        <br>Please check your mailbox <span class="email"> {{ order.email }}</span>
+                    <div class="email-section-title text-center mt-4 ml-3">Email notification sent successfully!</div>
+                    <p class="ml-3 text-center">All transaction details, including order details, payment, and booking information can be
+                        found on this page. Print this confirmation, as it is also your ticket.
+                        <br>Please check your mailbox: <span class="email"> {{ order.email }}</span>
                     </p>
                 </div>
             </div>
@@ -92,5 +99,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

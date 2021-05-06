@@ -48,7 +48,7 @@
                             {{ order_form.country | as_crispy_field}}
                         </fieldset>
                         {% if user.is_authenticated %}
-                        <div class="info-title mx-auto">Your personal information could be saved for future orders..</div>
+                        <div class="info-sub-title text-center mx-auto">Your personal information could be saved for future orders..</div>
                         <hr>
                         <label for="save-info" class="mt-3"><input type="checkbox" name="save-info" class="mr-1 ml-1"
                                 id="save-info" checked>Save personal information
@@ -69,25 +69,24 @@
                 <!-- Booking Summary -->
                 <div class="col-md-6">
                     <!-- Wrapped with card style -->
-                    <div class="card  mb-3">
+                    <div class="card mb-3">
                         <div class="booking-summary">
                             <div class="section-title">Summary</div>
                             <p class="title text-center">Your booking summary includes all deductions & discount (if
                                 applied)
                             </p>
                             <hr>
-                            <div class="info-title">
-                                Total:
-                                    € {{ total|floatformat:2 }}
-                                
-                                
-                                <hr>
-                                <h6 class="grand-total">Grand Total:
-                                    <span>€ {{ grand_total|floatformat:2 }}</span>
-                                </h6>
+                            <div class="info-sub-title">
+                                Total: € {{ total|floatformat:2 }}                                
+                            <hr>
+                                Grand Total: € {{ grand_total|floatformat:2 }}
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
                     <!-- Wrapped with card style -->
                     <div class="card">
                         <!-- Stripe payments section -->
@@ -107,14 +106,12 @@
                             </fieldset>
                             <!-- Complete order button -->
                             <div class="buttons">
-                                <button type="submit" id="submit-button" class="btn"
+                                <button type="submit" class="custom-btn-pay btn-lg"
                                     disabled="disabled">Make a Payment</button>
                             </div>
-                            <p class="medium ml-1 mt-1">Your card will be charged € {{ grand_total|floatformat:2 }}</p>
+                            <div class="info-sub-title text-center ml-1 mt-1">Your card will be charged € {{ grand_total|floatformat:2 }}</div>
                         </div>
                     </div>
-                </div>
-            </div>
         </form>
     </div>
 </div>

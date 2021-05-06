@@ -1,40 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %}
     Massage
 {% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'massage/css/massage.css' %}">
 {% endblock %}
     
 {% block content %}
-    <section class="container-fluid mb-4" id="massage">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <p class="massage-title text-center">
-                    Massage
-                </p>
-                <p class="massage-text">
-                    The sensual massage for women is a wonderful massage that we at Dark Luna have specially developed to let you completely relax and unwind.
-                    You learn to feel very consciously what exactly happens in your body when you are touched.
-                    The touch that makes this massage so pleasant is a lot softer and calmer than the one you will experience during a regular relaxation massage.
-                    We also use various tools that will stimulate your senses, so that they come to life more and you will experience more of life.
-                    We use different techniques from Tao and Tantra. We start with a nice cup of tea and a good conversation.
-                    We will discuss what you expect and you will be asked which areas of your body deserve extra attention.
-                    Then we sit opposite each other and coordinate our breathing. Then you will be asked to lie down on the massage table and do nothing more than surrender to your own sensuality.    
-                </p>
-                <p class="massage-sub-title text-center">
-                    Please feel free to contact us for more information or to book a free introduction session! 
-                </p>
-            </div>
-        </div>   
-    </section>
-    <section class="container-fluid">
+<div class="container-fluid mb-4">
     <div class="row justify-content-center">
-        <div class="col-12" id="massage-img">
-
+        <div class="col-12">
+            <p class="massage-title text-center">
+                Massage
+            </p>
+            <p class="massage-text">
+                The sensual massage for women is a wonderful massage that we at Dark Luna have specially developed to let you completely relax and unwind.
+                You learn to feel very consciously what exactly happens in your body when you are touched.
+                The touch that makes this massage so pleasant is a lot softer and calmer than the one you will experience during a regular relaxation massage.
+                We also use various tools that will stimulate your senses, so that they come to life more and you will experience more of life.
+                We use different techniques from Tao and Tantra. We start with a nice cup of tea and a good conversation.
+                We will discuss what you expect and you will be asked which areas of your body deserve extra attention.
+                Then we sit opposite each other and coordinate our breathing. Then you will be asked to lie down on the massage table and do nothing more than surrender to your own sensuality.    
+            </p>
+            <p class="massage-sub-title text-center">
+                Please feel free to contact us for more information or to book a free introduction session! 
+            </p>
         </div>
+    </div>   
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12" id="massage-img"></div>
     </div>
-</section>
-    {% include 'layout/footer.html' %}
+</div>
+{% include 'layout/footer.html' %}
 {% endblock %}

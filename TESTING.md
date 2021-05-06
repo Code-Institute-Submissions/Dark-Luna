@@ -282,7 +282,7 @@ All the CSS files were validated by using an online code validator W3C CSS Valid
 
 ### JavaScript ###
 
-All the JavaScript files were validated by using an online code validator JSHint.com. Missing semicolons were added at the end of functions. 'Const' and 'Let' warning can be ignored. Own code is syntactically valid, in the how.js file there were some warnings I tried to fix. But this wasnt my own code and trying to fix these warnings, proved to complex at this stage.
+All the JavaScript files were validated by using an online code validator JSHint.com. Missing semicolons were added at the end of functions. 'Const' and 'Let' warning can be ignored. Own code is syntactically valid, in the how.js file there were some warnings I tried to fix. ``` Missing '()' invoking a constructor. (W058)jshint(W058) ``` I looked this one up and found out this is something in the linter that doesnt need fixing [article](https://github.com/jshint/jshint/issues/1357)
 
 ### Python ###
 

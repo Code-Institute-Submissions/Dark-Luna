@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'coaching/css/coaching.css' %}">
 {% endblock %}
 {% block content %}
-<section class="container">
+<div class="container">
         <div class="page-title text-center">
             Coaching
         </div>
@@ -38,8 +38,8 @@
                 <div class="cta-why">Why choose Dark Luna? <a href="{% url 'why' %}" class="col-2 cta-why-link">Click here!</a></div>
                 </div>
             </div>
-    </section>
-    <section class="container">
+        </div>
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10 bg">
                 <p class="section-title text-center">
@@ -60,8 +60,8 @@
                 <div class="cta-why">How Dark Luna can help? <a href="{% url 'how' %}" class="col-2 cta-why-link">Click here!</a></div>
             </div>
         </div>
-    </section>
-    <section class="container" id="shadow">
+    </div>
+    <div class="container" id="shadow">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10 bg">
                 <p class="section-title text-center">
@@ -79,6 +79,6 @@
                     </p>
             </div>
         </div>
-    </section>
+    </div>
     {% include 'layout/footer.html' %}
 {% endblock %}
