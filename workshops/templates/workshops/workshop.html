@@ -14,11 +14,11 @@
 <div class="container">
     <div class="row workshop-container">
         <div class="col-11">
-            <div class="workshop-section-title text-center mx-auto mt-0">
+            <div class="workshop-section-title text-center mb-4 mx-auto mt-0">
                 {{ workshop.name }} details
             </div>
         </div>    
-        <div class="col-md-3 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-4 mt-4">
             {% if workshop.image %}
                 <img src="{{ MEDIA_URL }}{{workshop.image}}" class="card-img-top" alt="...">
             {% else %}
@@ -34,7 +34,7 @@
                 <div class= "body-title">Therapist: {{ workshop.therapist }}</div>
                 <div class= "body-title">Price: € {{ workshop.price }}</div>
             </div>
-            <div class="col">
+            <div class="col-12">
                 <div class="body-title">Description</div>
                 <p class="workshops-text"><span>{{ workshop.description }}</span></p>
             </div>
@@ -53,20 +53,22 @@
     </div>
 </div>
 <!-- Bottom Section -->
-<div class="row justify-content-center">
-    <!-- Booking Button -->
-    <div class="col-10 col-md-10 col-lg-6">
-        <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
-            {% csrf_token %}
-            <input class="form-control qty_input" type="hidden" name="quantity" value="1"
-            data-lesson_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
-            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            <button type="submit" class="book-custom-btn-now">Book Now</button>
-        </form>
-    </div>
-    <!-- Contact button  -->
-    <div class="col-12 col-md-10 col-lg-6">
-        <a href="{% url 'contact' %}" class="d-flex contact"><i class="fas fa-reply-all mr-2"></i>Contact us</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Booking Button -->
+        <div class="col-6 col-md-4 col-lg-6">
+            <form class="form" action="{% url 'add_to_booking' workshop.id %}" method="POST">
+                {% csrf_token %}
+                <input class="form-control qty_input" type="hidden" name="quantity" value="1"
+                data-lesson_id="{{ workshop.id }}" id="id_qty_{{ workshop.id }}">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <button type="submit" class="book-custom-btn-now">Book Now</button>
+            </form>
+        </div>
+        <!-- Contact button  -->
+        <div class="col-6 col-md-4 col-lg-6">
+            <a href="{% url 'contact' %}" class="d-flex contact"><i class="fas fa-reply-all mr-2"></i>Contact us</a>
+        </div>
     </div>
 </div>
 {% include 'layout/footer.html' %}
