@@ -11,7 +11,7 @@
     <p class="contact-sub-title text-center"> If you have any questions or need help, please fill out the form
             below.</p>
     <!-- Contact form fields -->
-    <div class="form-group-contact">
+    <div class="form-group-contact mb-4">
         {% csrf_token %}
         {{ contact_form.name | as_crispy_field }}
         {{ contact_form.from_email | as_crispy_field }}
