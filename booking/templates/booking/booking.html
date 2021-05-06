@@ -18,22 +18,18 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-        <!-- Booking container -->
-            {% if bag %}
-                <!-- Finalise your booking -->
-                <div class="section-title text-center">Finalise your booking:</div>
-                <!-- When any workshop is booked show booked in this container -->
-                {% if booked_workshops %}
-                <!-- Booked workshops -->
-                {% include './booking-general.html' %}
-                <!-- Totals -->
-                {% include './booking-finalize.html' %}
-            {% endif %}
-        </div>
-    </div>
+<!-- Booking container -->
+    {% if bag %}
+        <!-- Finalise your booking -->
+        <div class="section-title text-center">Finalise your booking:</div>
+        <!-- When any workshop is booked show booked in this container -->
+        {% if booked_workshops %}
+        <!-- Booked workshops -->
+        {% include './booking-general.html' %}
+        <!-- Totals -->
+        {% include './booking-finalize.html' %}
+    {% endif %}
+
     {% else %}
     <!-- Link for booking -->
     <div class="row justify-content-center">
@@ -42,7 +38,6 @@
             <p class="book-title text-center">Check out our: <a href="{% url 'workshops' %}" class="section-title">Workshops!</a> </p>
         </div>
     </div>
-</div>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-6" id="section-bg-dark">
